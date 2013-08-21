@@ -1,4 +1,3 @@
-
 Tutorial para análise de NGS - alinhamento, variant calling de E. Coli
 
   -Criar pipeline (Diego)
