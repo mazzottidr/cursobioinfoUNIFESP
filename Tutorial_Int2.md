@@ -1,8 +1,11 @@
 ###Tutorial Int2 - Aula prática
 Tutorial para a aula prática Int2
+
 *Busca de informações básicas sobre unidades genéticas usando ferramentas disponíveis em bancos de dados.*
 
 Prof. Diego Mazzotti
+
+e-mail: mazzottidr@gmail.com
 
 ---
 
@@ -39,3 +42,11 @@ O resultado é a tela principal do UCSC Genome Browser. A figura abaixo mostra a
 ![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCMain.png)
 
 ---
+Nesta tela é possível buscar diversas informações como a coordenada genômica com base na montagem do genoma escolhido, o tamanho da região compreendida (que em caso de ter sido feita a busca de um gene pelo nome, coressponde ao tamanho do gene), o cromossomo e a banda cromossômica que esta região está contida, além de uma série de anotações, ou "*tracks*", que estão presentes nesta região selecionada.
+
+**Navegação.** Use os botões de zoom in ou zoom out (1.5x, 3x e 10x) para ampliar ou reduzir a região de interesse. Use as setas (< << <<< ou > >> >>>) para mover regiões fixas, ou simplesmente clique e araste em qualquer lugar da área principal para navegar pelo genoma. Ao clicar e arrastar no cromossomo, um retângulo verde aparecerá e um aviso aparecerá perguntando se deseja "pular" para a região selecionada. è possível também realizar outra busca usando a caixa de pesquisa presente acima da área principal.
+
+**Área principal.** Esta área é onde todas as informações importantes na região selecionada vão aparecer. Note que no *default* aparecem alguns *tracks* como a posição das bases, a banda cromossômica, os genes e transcritos contidos nessa região, regiões regulatórias (Ilhas CpG, regiões de ligação de fatores de transcrição, etc.), estimativas de conservação entre espécies e polimorfismos (SNPs) presentes na região. Ao deslocarmos a tela mais para baixo, é possível observar uma série de campos de seleção separados por tópicos. Estes campos apresentam o que e como os itens presentes nesta lista devem ser apresentados na área principal.
+
+
+* Como um exercício, tente deixar todos os campos selecionados em "*hide*" e aperte o botão "*refresh*". O que aparece na área principal?
