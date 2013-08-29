@@ -1,8 +1,10 @@
 ###Tutorial Int2 - Aula prática
 Tutorial para a aula prática Int2
+
 *Busca de informações básicas sobre unidades genéticas usando ferramentas disponíveis em bancos de dados.*
 
 Prof. Diego Mazzotti
+
 e-mail: mazzottidr@gmail.com
 
 ---
