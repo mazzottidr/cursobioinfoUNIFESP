@@ -21,7 +21,7 @@ Links para os bancos de dados e ferramentas a serem utilizados:
 Para explorar esta ferramenta, inicie clicando em Genome Browser:
 
 ![alt text][UCSChome]
-[UCSCHome]: (UCSCHome.png) "Entando no UCSC"
+[UCSCHome]: UCSCHome.png "Entando no UCSC"
 
 Entrando no UCSC.
 
