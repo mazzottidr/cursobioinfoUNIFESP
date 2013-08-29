@@ -1,10 +1,8 @@
 ###Tutorial Int2 - Aula prática
 Tutorial para a aula prática Int2
-
 *Busca de informações básicas sobre unidades genéticas usando ferramentas disponíveis em bancos de dados.*
 
 Prof. Diego Mazzotti
-
 e-mail: mazzottidr@gmail.com
 
 ---
@@ -27,19 +25,19 @@ Links para os bancos de dados e ferramentas a serem utilizados:
 
 Para explorar esta ferramenta, inicie clicando em Genome Browser:
 
-![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSChome.png)
+![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSChome1.png)
 
 ---
 Em seguida, insira o nome de um gene na caixa de busca, como por exemplo *DGCR2*. Note que nesta tela, é possível selecionar alguns parâmetros como a espécie a ser estudada e a montagem (*assembly*) do genoma a ser pesquisado.
 
-![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCSearch.png)
+![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCSearch1.png)
 
 ---
 Ao clicar em *submit*, você será direcionado a uma página para refinar sua busca de acordo com os seus termos de pesquisa. No caso do *DGCR2*, há vários tipos de anotações diferentes, mas é possível notar que a grande maioria representa a mesma coordenada genômica (chr22:19023795-19109967). Como o objetivo é buscar uma região genômica específica, clicar em qualquer um deles irá redirecionar para a mesma região.
 
 O resultado é a tela principal do UCSC Genome Browser. A figura abaixo mostra as principais informações que podem ser extraídas desta simples busca.
 
-![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCMain.png)
+![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCMain1.png)
 
 ---
 Nesta tela é possível buscar diversas informações como a coordenada genômica com base na montagem do genoma escolhido, o tamanho da região compreendida (que em caso de ter sido feita a busca de um gene pelo nome, coressponde ao tamanho do gene), o cromossomo e a banda cromossômica que esta região está contida, além de uma série de anotações, ou "*tracks*", que estão presentes nesta região selecionada.
@@ -48,5 +46,10 @@ Nesta tela é possível buscar diversas informações como a coordenada genômic
 
 **Área principal.** Esta área é onde todas as informações importantes na região selecionada vão aparecer. Note que no *default* aparecem alguns *tracks* como a posição das bases, a banda cromossômica, os genes e transcritos contidos nessa região, regiões regulatórias (Ilhas CpG, regiões de ligação de fatores de transcrição, etc.), estimativas de conservação entre espécies e polimorfismos (SNPs) presentes na região. Ao deslocarmos a tela mais para baixo, é possível observar uma série de campos de seleção separados por tópicos. Estes campos apresentam o que e como os itens presentes nesta lista devem ser apresentados na área principal.
 
+![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSCFields.png)
+
+---
 
 * Como um exercício, tente deixar todos os campos selecionados em "*hide*" e aperte o botão "*refresh*". O que aparece na área principal?
+
+Dessa maneira, é possível  manter na área princial, somente as informações relevantes. Os campos ainda apresentam as opções * dense, squ 
