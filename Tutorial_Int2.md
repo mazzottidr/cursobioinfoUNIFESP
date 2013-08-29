@@ -20,6 +20,6 @@ Links para os bancos de dados e ferramentas a serem utilizados:
 
 Para explorar esta ferramenta, inicie clicando em Genome Browser:
 
-![alt text][UCSChome] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSChome.png)
+![] (https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/master/Images/UCSChome.png)
 
 
