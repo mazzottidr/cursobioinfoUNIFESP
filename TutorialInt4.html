@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tutorial Int4  Linux - É um sistema operacional criado em 1991 por Linus Torvalds na universidade de Helsinki na Finlândia. É um sistema operacional de código aberto distribuído gratuitamente pela Internet. Pelo sistema operacional, queremos dizer o conjunto de programas que fazem o computador funcionar. Linux é um sistema multitarefa, multiusuário para servidores e desktops e que convivem sem nenhum tipo de conflito com outros sistemas operacionais no mesmo computador. Abaixo seguem os comandos básicos usados no Lixux.   **1. Listar arquivos e diretórios**  - ls (list)  Quando você faz seu primeiro login, o diretório de trabalho atual é o seu diretório home. O diretório home tem o mesmo nome que o seu nome de usuário e é onde seus arquivos pessoais e subdiretórios são salvos.  O comando ls (L minúsculo e S minúsculo) lista o conteúdo do seu diretório de trabalho atual. Para descobrir o que está em seu diretório home, digite:      ls **2. Criar diretório**  - mkdir (make directory)  Vamos agora fazer um subdiretório em seu diretório home para armazenar os arquivos que você criará.  Para fazer um subdiretório chamado cursobioinfo digite:       mkdir cursobioinfo Para ver o subdiretório que você criou digite:      ls **3. Mudar para um diretório diferente**  - cd (change directory)  O comando cd significa alterar o diretório de trabalho atual para outro diretório. O diretório de trabalho atual pode ser pensado como o diretório em que você está, ou seja, sua posição atual na árvore do sistema de arquivos.  Para mudaor para o diretório que você acabou de fazer, digite:      cd cursobioinfo  *Exercício:* Criar um novo diretório dento do diretório cursobioinfo e chamá-lo de *estudo.*  - cd ../  O comando cd ../ retorna para um diretório acima.   - cd ~  O comando cd ~ sempre retorna para o diretório home.  **4. Localizar diretório**  - pwd (print working directory)  O comando pwd mostra os caminhos até chegar ao diretório que você está trabalhando.  	pwd  **5. Mover arquivos**  Para mover um arquivo de um lugar para outro, use o comando mv. Ele tem o efeito de mover ao invés de copiar o arquivo, assim você acaba com apenas um arquivo ao invés de dois.  Esse comando também pode ser usado para renomear um arquivo, movendo o arquivo para o mesmo diretório, mas dando-lhe um nome diferente.      cd cursobioinfo     mv estudo aula  **6. Remover arquivos e diretórios**  Para remover um arquivo use o comando rm.  	rm pasta2 Para remover um diretório use o comando rm -R.  *Exercício:* Criar um diretório chamado stuff usando mkdir e então removê-lo usando rm -R.    **7. Editar um texto**  Para editar um texto use o comando nano.   	nano aula 	 *Exercício:* Escreva o seu objetivo com esse curso no file2. Após escrever, clique ctrl s para salvar. Ao salvar, coloque a extensão do arquivo. Nessa caso .txt.  Salve o arquivo com o nome objetivo.txt. E então clique ctrl x para sair.   **8. Copiar arquivos**  - cp (copy)  cp é o comando que faz uma cópia do arquivo no diretório de trabalho atual.       cp cursobioinfo     cp objetivo       **9. Exibir o conteúdo de um arquivo na tela**  - cat   Mostra o conteúdo de um arquivo binário ou texto          cat objetivo.txt      - less  O commando less mostra uma página por vez do conteúdo de um arquivo.  	less objetivo.txt 	 - head  O comando head mostra as primeiras 10 linhas de um arquivo na tela.  	head objetivo.txt 	 - head -n 20 Readme.txt  No exemplo acima serão mostradas as 20 primeiras linhas do arquivo Readme.txt 	 - tail  O comando tail mostra as últimas 10 linhas de um arquivo na tela.  	tail objetivo.txt  - tail -n 30 Readme.txt  No exemplo acima, serão mostradas as 30 últimas linhas do arquivo Readme.txt  **10. Pesquisar o conteúdo de um arquivo**  - grep  O comando grep procura no arquivo palavras ou padrões específicos.  	grep ‘aprender’ objetivo.txt Obs: o comando grep é *case sensitive*. Ele distingue entre Objetivo e objetivo.  - wc (word count)  Usado para contar palavras em um arquivo  	wc objetivo.txt 	 Para saber quantas linhas o arquivo, digite:      wc -l objetivo.txt      > Written with [StackEdit](http://benweet.github.io/stackedit/).</title>
+<link rel="stylesheet" href="http://benweet.github.io/stackedit/res-min/themes/default.css" />
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h2 class="wmd-title" id="tutorial-int4">Tutorial Int4</h2>
+
+<p>Linux - É um sistema operacional criado em 1991 por Linus Torvalds na
+universidade de Helsinki na Finlândia. É um sistema operacional de código aberto
+distribuído gratuitamente pela Internet. Pelo sistema operacional, queremos dizer o conjunto de programas que fazem o computador funcionar. Linux é um sistema multitarefa, multiusuário para servidores e desktops e que convivem sem nenhum tipo de conflito com outros sistemas operacionais no mesmo computador. Abaixo seguem os comandos básicos usados no Lixux. </p>
+
+<p><strong>1. Listar arquivos e diretórios</strong></p>
+
+<ul>
+<li>ls (list)</li>
+</ul>
+
+<p>Quando você faz seu primeiro login, o diretório de trabalho atual é o seu diretório home. O diretório home tem o mesmo nome que o seu nome de usuário e é onde seus arquivos pessoais e subdiretórios são salvos.</p>
+
+<p>O comando ls (L minúsculo e S minúsculo) lista o conteúdo do seu diretório de trabalho atual.
+Para descobrir o que está em seu diretório home, digite:</p>
+
+<pre><code>ls
+</code></pre>
+
+<p><strong>2. Criar diretório</strong></p>
+
+<ul>
+<li>mkdir (make directory)</li>
+</ul>
+
+<p>Vamos agora fazer um subdiretório em seu diretório home para armazenar os arquivos que você criará. 
+Para fazer um subdiretório chamado cursobioinfo digite: </p>
+
+<pre><code>mkdir cursobioinfo
+</code></pre>
+
+<p>Para ver o subdiretório que você criou digite:</p>
+
+<pre><code>ls
+</code></pre>
+
+<p><strong>3. Mudar para um diretório diferente</strong></p>
+
+<ul>
+<li>cd (change directory)</li>
+</ul>
+
+<p>O comando cd significa alterar o diretório de trabalho atual para outro diretório. O diretório de trabalho atual pode ser pensado como o diretório em que você está, ou seja, sua posição atual na árvore do sistema de arquivos.</p>
+
+<p>Para mudaor para o diretório que você acabou de fazer, digite:</p>
+
+<pre><code>cd cursobioinfo
+</code></pre>
+
+<p><em>Exercício:</em> Criar um novo diretório dento do diretório cursobioinfo e chamá-lo de <em>estudo.</em></p>
+
+<ul>
+<li>cd ../</li>
+</ul>
+
+<p>O comando cd ../ retorna para um diretório acima. </p>
+
+<ul>
+<li>cd ~</li>
+</ul>
+
+<p>O comando cd ~ sempre retorna para o diretório home.</p>
+
+<p><strong>4. Localizar diretório</strong></p>
+
+<ul>
+<li>pwd (print working directory)</li>
+</ul>
+
+<p>O comando pwd mostra os caminhos até chegar ao diretório que você está trabalhando.</p>
+
+<pre><code>pwd
+</code></pre>
+
+<p><strong>5. Mover arquivos</strong></p>
+
+<p>Para mover um arquivo de um lugar para outro, use o comando mv. Ele tem o efeito de mover ao invés de copiar o arquivo, assim você acaba com apenas um arquivo ao invés de dois.</p>
+
+<p>Esse comando também pode ser usado para renomear um arquivo, movendo o arquivo para o mesmo diretório, mas dando-lhe um nome diferente.</p>
+
+<pre><code>cd cursobioinfo
+mv estudo aula
+</code></pre>
+
+<p><strong>6. Remover arquivos e diretórios</strong></p>
+
+<p>Para remover um arquivo use o comando rm.</p>
+
+<pre><code>rm pasta2
+</code></pre>
+
+<p>Para remover um diretório use o comando rm -R.</p>
+
+<p><em>Exercício:</em> Criar um diretório chamado stuff usando mkdir e então removê-lo usando rm -R. </p>
+
+<p><strong>7. Editar um texto</strong></p>
+
+<p>Para editar um texto use o comando nano. </p>
+
+<pre><code>nano aula
+</code></pre>
+
+<p><em>Exercício:</em> Escreva o seu objetivo com esse curso no file2. Após escrever, clique ctrl s para salvar. Ao salvar, coloque a extensão do arquivo. Nessa caso .txt.  Salve o arquivo com o nome objetivo.txt. E então clique ctrl x para sair. </p>
+
+<p><strong>8. Copiar arquivos</strong></p>
+
+<ul>
+<li>cp (copy)</li>
+</ul>
+
+<p>cp é o comando que faz uma cópia do arquivo no diretório de trabalho atual. </p>
+
+<pre><code>cp cursobioinfo
+cp objetivo 
+</code></pre>
+
+<p><strong>9. Exibir o conteúdo de um arquivo na tela</strong></p>
+
+<ul>
+<li>cat </li>
+</ul>
+
+<p>Mostra o conteúdo de um arquivo binário ou texto</p>
+
+<pre><code>cat objetivo.txt
+</code></pre>
+
+<ul>
+<li>less</li>
+</ul>
+
+<p>O commando less mostra uma página por vez do conteúdo de um arquivo.</p>
+
+<pre><code>less objetivo.txt
+</code></pre>
+
+<ul>
+<li>head</li>
+</ul>
+
+<p>O comando head mostra as primeiras 10 linhas de um arquivo na tela.</p>
+
+<pre><code>head objetivo.txt
+</code></pre>
+
+<ul>
+<li>head -n 20 Readme.txt</li>
+</ul>
+
+<p>No exemplo acima serão mostradas as 20 primeiras linhas do arquivo Readme.txt</p>
+
+<ul>
+<li>tail</li>
+</ul>
+
+<p>O comando tail mostra as últimas 10 linhas de um arquivo na tela.</p>
+
+<pre><code>tail objetivo.txt
+</code></pre>
+
+<ul>
+<li>tail -n 30 Readme.txt</li>
+</ul>
+
+<p>No exemplo acima, serão mostradas as 30 últimas linhas do arquivo Readme.txt</p>
+
+<p><strong>10. Pesquisar o conteúdo de um arquivo</strong></p>
+
+<ul>
+<li>grep</li>
+</ul>
+
+<p>O comando grep procura no arquivo palavras ou padrões específicos.</p>
+
+<pre><code>grep ‘aprender’ objetivo.txt
+</code></pre>
+
+<p>Obs: o comando grep é <em>case sensitive</em>. Ele distingue entre Objetivo e objetivo.</p>
+
+<ul>
+<li>wc (word count)</li>
+</ul>
+
+<p>Usado para contar palavras em um arquivo</p>
+
+<pre><code>wc objetivo.txt
+</code></pre>
+
+<p>Para saber quantas linhas o arquivo, digite:</p>
+
+<pre><code>wc -l objetivo.txt
+</code></pre></div></body>
+</html>
