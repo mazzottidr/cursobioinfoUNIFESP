@@ -1,0 +1,2898 @@
+1: Tabot GA, Dammann JF, Berg JA, Tenore FV, Boback JL, Vogelstein RJ, Bensmaia
+SJ. Restoring the sense of touch with a prosthetic hand through a brain
+interface. Proc Natl Acad Sci U S A. 2013 Oct 14. [Epub ahead of print] PubMed
+PMID: 24127595.
+
+
+2: Thomas-Chollier M, Watson LC, Cooper SB, Pufall MA, Liu JS, Borzym K, Vingron 
+M, Yamamoto KR, Meijsing SH. A naturally occuring insertion of a single amino
+acid rewires transcriptional regulation by glucocorticoid receptor isoforms. Proc
+Natl Acad Sci U S A. 2013 Oct 14. [Epub ahead of print] PubMed PMID: 24127590.
+
+
+3: Fabbri G, Khiabanian H, Holmes AB, Wang J, Messina M, Mullighan CG,
+Pasqualucci L, Rabadan R, Dalla-Favera R. Genetic lesions associated with chronic
+lymphocytic leukemia transformation to Richter syndrome. J Exp Med. 2013 Oct 14. 
+[Epub ahead of print] PubMed PMID: 24127483.
+
+
+4: Senn S, Nanda V, Falkowski P, Bromberg Y. Function-based assessment of
+structural similarity measurements using metal co-factor orientation. Proteins.
+2013 Oct 11. doi: 10.1002/prot.24442. [Epub ahead of print] PubMed PMID:
+24127252.
+
+
+5: Kleensang A, Maertens A, Rosenberg M, Fitzpatrick S, Lamb J, Auerbach S,
+Brennan R, Crofton KM, Gordon B, Fornace Jr AJ, Gaido K, Gerhold D, Haw R, Henney
+A, Ma'ayan A, McBride M, Monti S, Ochs MF, Pandey A, Sharan R, Stierum R,
+Tugendreich S, Willett C, Wittwehr C, Xia J, Patton GW, Arvidson K, Bouhifd M,
+Hogberg HT, Luechtefeld T, Smirnova L, Zhao L, Adeleye Y, Kanehisa M, Carmichael 
+P, Andersen ME, Hartung T. t4 Workshop Report: Pathways of Toxicity. ALTEX. 2013 
+Oct 15. doi:pii: S1868696X1309261X. [Epub ahead of print] PubMed PMID: 24127042.
+
+
+6: Klein EY, Graham AL, Llinás M, Levin S. Cross-Reactive Immune Responses as
+Primary Drivers of Malaria Chronicity. Infect Immun. 2013 Oct 14. [Epub ahead of 
+print] PubMed PMID: 24126530.
+
+
+7: Lu A, Yang L, Xu S, Wang C. Various conotoxin diversifications revealed by a
+venomic study of Conus flavidus. Mol Cell Proteomics. 2013 Oct 14. [Epub ahead of
+print] PubMed PMID: 24126141.
+
+
+8: Saltz JB, Nuzhdin SV. Genetic variation in niche construction: implications
+for development and evolutionary genetics. Trends Ecol Evol. 2013 Oct 11.
+doi:pii: S0169-5347(13)00234-6. 10.1016/j.tree.2013.09.011. [Epub ahead of print]
+PubMed PMID: 24126050.
+
+
+9: Setiamarga DH, Shimizu K, Kuroda J, Inamura K, Sato K, Isowa Y, Ishikawa M,
+Maeda R, Nakano T, Yamakawa T, Hatori R, Ishio A, Kaneko K, Matsumoto K,
+Sarashina I, Teruya S, Zhao R, Satoh N, Sasaki T, Matsuno K, Endo K. An In-silico
+Genomic Survey to Annotate Genes Coding for Early Development-Relevant Signaling 
+Molecules in the Pearl Oyster, Pinctada fucata. Zoolog Sci. 2013
+Oct;30(10):877-888. PubMed PMID: 24125651.
+
+
+10: Endo K, Takeuchi T. Annotation of the Pearl Oyster Genome. Zoolog Sci. 2013
+Oct;30(10):779-780. PubMed PMID: 24125640.
+
+
+11: Gleghorn JP, Smith JP, Kirby BJ. Transport and collision dynamics in periodic
+asymmetric obstacle arrays: Rational design of microfluidic rare-cell
+immunocapture devices. Phys Rev E Stat Nonlin Soft Matter Phys. 2013
+Sep;88(3-1):032136. Epub 2013 Sep 26. PubMed PMID: 24125242.
+
+
+12: Agrawal RG, Owen JA, Levin PS, Hewetson A, Berman AE, Franklin SR, Hogue RJ, 
+Chen Y, Walz C, Colvard BD, Nguyen J, Velasquez O, Al-Hasan Y, Blednov YA, Fowler
+AK, Syapin PJ, Bergeson SE. Bioinformatics Analyses Reveal Age-Specific
+Neuroimmune Modulation as a Target for Treatment of High Ethanol Drinking.
+Alcohol Clin Exp Res. 2013 Oct 11. doi: 10.1111/acer.12288. [Epub ahead of print]
+PubMed PMID: 24125126.
+
+
+13: Sivakamavalli J, Selvaraj C, Singh SK, Vaseeharan B. Exploration of
+protein-protein interaction effects on a-2-macroglobulin in an inhibition of
+serine protease through gene expression and molecular simulations studies. J
+Biomol Struct Dyn. 2013 Oct 14. [Epub ahead of print] PubMed PMID: 24124927.
+
+
+14: Schmouth JF, Castellarin M, Laprise S, Banks KG, Bonaguro RJ, McInerny SC,
+Borretta L, Amirabbasi M, Korecki AJ, Portales-Casamar E, Wilson G, Dreolini L,
+Jones SJ, Wasserman WW, Goldowitz D, Holt RA, Simpson EM. Non-coding-regulatory
+regions of human brain genes delineated by BAC knock-in mice. BMC Biol. 2013 Oct 
+14;11(1):106. [Epub ahead of print] PubMed PMID: 24124870.
+
+
+15: Armata IA, Balaj L, Kuster JK, Zhang X, Tsai S, Armatas AA, Multhaupt-Buell
+TJ, Soberman R, Breakefield XO, Ichinose H, Sharma N. Dopa-Responsive Dystonia:
+Functional Analysis of Single Nucleotide Substitutions within the 5' Untranslated
+GCH1 Region. PLoS One. 2013 Oct 4;8(10):e76975. PubMed PMID: 24124602.
+
+
+16: Pagano B, Jama A, Martinez P, Akanho E, Bui TT, Drake AF, Fraternali F,
+Nikolova PV. Structure and Stability Insights into Tumour Suppressor p53
+Evolutionary Related Proteins. PLoS One. 2013 Oct 4;8(10):e76014. PubMed PMID:
+24124530.
+
+
+17: Li L, Huang Y, Xiao Y. How to Use Not-Always-Reliable Binding Site
+Information in Protein-Protein Docking Prediction. PLoS One. 2013 Oct
+4;8(10):e75936. PubMed PMID: 24124522.
+
+
+18: Rebholz-Schuhmann D, Kim JH, Yan Y, Dixit A, Friteyre C, Hoehndorf R,
+Backofen R, Lewin I. Evaluation and Cross-Comparison of Lexical Entities of
+Biological Interest (LexEBI). PLoS One. 2013 Oct 4;8(10):e75185. PubMed PMID:
+24124474.
+
+
+19: Chatterjee R, Halder PK, Datta S. Identification and Molecular
+Characterization of YsaL (Ye3555): A Novel Negative Regulator of YsaN ATPase in
+Type Three Secretion System of Enteropathogenic Bacteria Yersinia
+enterocolitica.. PLoS One. 2013 Oct 4;8(10):e75028. PubMed PMID: 24124464.
+
+
+20: Kim J, Kwon JS, Kim S. Gene Set Analyses of Genome-Wide Association Studies
+on 49 Quantitative Traits Measured in a Single Genetic Epidemiology Dataset.
+Genomics Inform. 2013 Sep;11(3):135-141. Epub 2013 Sep 30. PubMed PMID: 24124409.
+
+
+21: Kim M, Lee KH, Yoon SW, Kim BS, Chun J, Yi H. Analytical Tools and Databases 
+for Metagenomics in the Next-Generation Sequencing Era. Genomics Inform. 2013
+Sep;11(3):102-113. Epub 2013 Sep 30. Review. PubMed PMID: 24124405.
+
+
+22: Ross GA, Morris GM, Biggin PC. One Size Does Not Fit All: The Limits of
+Structure-Based Models in Drug Discovery. J Chem Theory Comput. 2013 Sep
+10;9(9):4266-4274. Epub 2013 Aug 5. PubMed PMID: 24124403.
+
+
+23: Chappell J, Takahashi MK, Meyer S, Loughrey D, Watters KE, Lucks J. The
+centrality of RNA for engineering gene expression. Biotechnol J. 2013 Oct 4. doi:
+10.1002/biot.201300018. [Epub ahead of print] PubMed PMID: 24124015.
+
+
+24: Mell LK, Carmona R, Gulaya S, Lu T, Wu J, Saenz CC, Vaida F. Cause-Specific
+Effects of Radiotherapy and Lymphadenectomy in Stage I-II Endometrial Cancer: A
+Population-Based Study. J Natl Cancer Inst. 2013 Oct 11. [Epub ahead of print]
+PubMed PMID: 24123960.
+
+
+25: Hess JL, Glatt SJ. How might ZNF804A variants influence risk for
+schizophrenia and bipolar disorder? A literature review, synthesis, and
+bioinformatic analysis. Am J Med Genet B Neuropsychiatr Genet. 2013 Oct 4. doi:
+10.1002/ajmg.b.32207. [Epub ahead of print] PubMed PMID: 24123948.
+
+
+26: Chylek LA, Harris LA, Tung CS, Faeder JR, Lopez CF, Hlavacek WS. Rule-based
+modeling: a computational approach for studying biomolecular site dynamics in
+cell signaling systems. Wiley Interdiscip Rev Syst Biol Med. 2013 Sep 30. doi:
+10.1002/wsbm.1245. [Epub ahead of print] PubMed PMID: 24123887.
+
+
+27: Fu WM, Wang WM, Wang H, Zhu X, Liang Y, Kung HF, Zhang JF.
+1,3,5-trihydroxy-13,13-dimethyl-2H-pyran [7,6-b] xanthone directly target Heat
+Shock Protein 27 in Hepatocellular Carcinoma. Cell Biol Int. 2013 Oct 7. doi:
+10.1002/cbin.10193. [Epub ahead of print] PubMed PMID: 24123829.
+
+
+28: Neveling K, Feenstra I, Gilissen C, Hoefsloot LH, Kamsteeg EJ, Mensenkamp AR,
+Rodenburg RJ, Yntema HG, Spruijt L, Vermeer S, Rinne T, van Gassen KL, Bodmer D, 
+Lugtenberg D, de Reuver R, Buijsman W, Derks RC, Wieskamp N, van den Heuvel B,
+Ligtenberg MJ, Kremer H, Koolen DA, van de Warrenburg BP, Cremers FP, Marcelis
+CL, Smeitink JA, Wortmann SB, van Zelst-Stams WA, Veltman JA, Brunner HG,
+Scheffer H, Nelen MR. A post-hoc comparison of the utility of Sanger sequencing
+and exome sequencing for the diagnosis of heterogeneous diseases. Hum Mutat. 2013
+Sep 30. doi: 10.1002/humu.22450. [Epub ahead of print] PubMed PMID: 24123792.
+
+
+29: Zickmann F, Lindner MS, Renard BY. GIIRA - RNA-Seq Driven Gene Finding
+Incorporating Ambiguous Reads. Bioinformatics. 2013 Oct 11. [Epub ahead of print]
+PubMed PMID: 24123675.
+
+
+30: Deshwar AG, Morris Q. PLIDA: Cross-platform gene expression normalization
+using perturbed topic models. Bioinformatics. 2013 Oct 11. [Epub ahead of print] 
+PubMed PMID: 24123674.
+
+
+31: Evangelou M, Dudbridge F, Wernisch L. Two novel pathway analysis methods
+based on a hierarchical model. Bioinformatics. 2013 Oct 11. [Epub ahead of print]
+PubMed PMID: 24123673.
+
+
+32: Rodriguez-R LM, Konstantinidis KT. Nonpareil: A redundancy-based approach to 
+assess the level of coverage in metagenomic datasets. Bioinformatics. 2013 Oct
+11. [Epub ahead of print] PubMed PMID: 24123672.
+
+
+33: Wu J, Zhang W, Huang S, He Z, Cheng Y, Wang J, Lam TW, Peng Z, Yiu SM.
+SOAPfusion: a robust and effective computational fusion discovery tool for
+RNA-seq reads. Bioinformatics. 2013 Oct 11. [Epub ahead of print] PubMed PMID:
+24123671.
+
+
+34: 7(th) International Symposium on Enabling Technologies for Life Sciences
+(ETP). Rapid Commun Mass Spectrom. 2013 Nov 30;27(22):2570-2580. doi:
+10.1002/rcm.6724. PubMed PMID: 24123647.
+
+
+35: Tepper N, Shlomi T. An integrated computational approach for metabolic flux
+analysis coupled with inference of tandem-MS collisional fragments.
+Bioinformatics. 2013 Oct 10. [Epub ahead of print] PubMed PMID: 24123514.
+
+
+36: Hwang BS, Pennell ML. Semiparametric Bayesian joint modeling of a binary and 
+continuous outcome with applications in toxicological risk assessment. Stat Med. 
+2013 Oct 9. doi: 10.1002/sim.6007. [Epub ahead of print] PubMed PMID: 24123309.
+
+
+37: Zhao H, Yang Y, Janga SC, Kao CC, Zhou Y. Prediction and validation of the
+unexplored RNA-binding protein atlas of the human proteome. Proteins. 2013 Oct 9.
+doi: 10.1002/prot.24441. [Epub ahead of print] PubMed PMID: 24123256.
+
+
+38: de Wreede LC, Watson M, van Os M, Milligan D, van Gelder M, Michallet M,
+Dreger P, Dearden CE, Homewood J, Dupuis J, Leporrier M, Karas M, Corront B,
+Baerlocher GM, Herr W, Choquet S, Niederwieser DW, Sutton L, Kröger N, de Witte
+TM, Schetelig J. Improved PFS after autologous stem cell transplantion does not
+translate into better Quality of Life in CLL: lessons from the randomized
+EBMT-Intergroup study. Am J Hematol. 2013 Oct 9. doi: 10.1002/ajh.23610. [Epub
+ahead of print] PubMed PMID: 24123244.
+
+
+39: Vreven T, Pierce BG, Hwang H, Weng Z. Performance of ZDOCK in CAPRI rounds
+20-26. Proteins. 2013 Oct 3. doi: 10.1002/prot.24432. [Epub ahead of print]
+PubMed PMID: 24123140.
+
+
+40: Azmon A, Faes C, Hens N. On the estimation of the reproduction number based
+on misreported epidemic data. Stat Med. 2013 Oct 10. doi: 10.1002/sim.6015. [Epub
+ahead of print] PubMed PMID: 24122943.
+
+
+41: Grützmann K, Szafranski K, Pohl M, Voigt K, Petzold A, Schuster S. Fungal
+Alternative Splicing is Associated with Multicellular Complexity and Virulence: A
+Genome-Wide Multi-Species Study. DNA Res. 2013 Oct 11. [Epub ahead of print]
+PubMed PMID: 24122896.
+
+
+42: Polydorides S, Simonson T. Monte carlo simulations of proteins at constant pH
+with generalized born solvent, flexible sidechains, and an effective dielectric
+boundary. J Comput Chem. 2013 Oct 5. doi: 10.1002/jcc.23450. [Epub ahead of
+print] PubMed PMID: 24122878.
+
+
+43: Fan Y, Ge N, Wang X, Sun W, Mao R, Bu W, Creighton CJ, Zheng P, Vasudevan S, 
+An L, Yang J, Zhao YJ, Zhang H, Li XN, Rao PH, Leung E, Lu YJ, Gray JW, Schiff R,
+Hilsenbeck SG, Osborne CK, Yang J, Zhang H. Amplification and overexpression of
+MAP3K3 gene in human breast cancer promotes formation and survival of breast
+cancer cells. J Pathol. 2013 Oct 1. doi: 10.1002/path.4283. [Epub ahead of print]
+PubMed PMID: 24122835.
+
+
+44: Chauhan A, Vera J, Wolkenhauer O. The systems biology of mitochondrial
+fission and fusion and implications for disease and aging. Biogerontology. 2013
+Oct 12. [Epub ahead of print] PubMed PMID: 24122214.
+
+
+45: Chen YW, Lee CH, Huang YT, Pan YJ, Lin SM, Lo YY, Lee CH, Huang LK, Huang YF,
+Hsu YD, Pan RL. Functional and fluorescence analyses of tryptophan residues in
+H(+)-pyrophosphatase of Clostridium tetani. J Bioenerg Biomembr. 2013 Oct 12.
+[Epub ahead of print] PubMed PMID: 24121937.
+
+
+46: Chawla M, Abdel-Azeim S, Oliva R, Cavallo L. Higher order structural effects 
+stabilizing the reverse Watson-Crick Guanine-Cytosine base pair in functional
+RNAs. Nucleic Acids Res. 2013 Oct 10. [Epub ahead of print] PubMed PMID:
+24121683.
+
+
+47: Mary Rajathei D, Selvaraj S. Analysis of sequence repeats of proteins in the 
+PDB. Comput Biol Chem. 2013 Sep 20;47C:156-166. doi:
+10.1016/j.compbiolchem.2013.09.001. [Epub ahead of print] PubMed PMID: 24121644.
+
+
+48: Lee CH, Chen YW, Huang YT, Pan YJ, Lee CH, Lin SM, Huang LK, Lo YY, Huang YF,
+Hsu YD, Yen SC, Hwang JK, Pan RL. Functional Investigation of Transmembrane Helix
+3 in H(+)-Translocating Pyrophosphatase. J Membr Biol. 2013 Oct 10. [Epub ahead
+of print] PubMed PMID: 24121627.
+
+
+49: Ejje N, Soe CZ, Gu J, Codd R. The variable hydroxamic acid siderophore
+metabolome of the marine actinomycete Salinispora tropica CNB-440. Metallomics.
+2013 Oct 11. [Epub ahead of print] PubMed PMID: 24121533.
+
+
+50: Jiang SY, Ma A, Ramamoorthy R, Ramachandran S. Genome-wide survey on genomic 
+variation, expression divergence and evolution in two contrasting rice genotypes 
+under high salinity stress. Genome Biol Evol. 2013 Oct 11. [Epub ahead of print] 
+PubMed PMID: 24121498.
+
+
+51: Lapinaite A, Simon B, Skjaerven L, Rakwalska-Bange M, Gabel F, Carlomagno T. 
+The structure of the box C/D enzyme reveals regulation of RNA methylation.
+Nature. 2013 Oct 13. doi: 10.1038/nature12581. [Epub ahead of print] PubMed PMID:
+24121435.
+
+
+52: Zhou YY, Zeng F. Integration-free Methods for Generating Induced Pluripotent 
+Stem Cells. Genomics Proteomics Bioinformatics. 2013 Oct 10. doi:pii:
+S1672-0229(13)00102-2. 10.1016/j.gpb.2013.09.008. [Epub ahead of print] PubMed
+PMID: 24121200.
+
+
+53: Zhou Q. Induced Pluripotent Stem Cells: Current Progress and Future
+Perspectives. Genomics Proteomics Bioinformatics. 2013 Oct 9. doi:pii:
+S1672-0229(13)00101-0. 10.1016/j.gpb.2013.10.001. [Epub ahead of print] PubMed
+PMID: 24121127.
+
+
+54: Toney MD. Aspartate Aminotransferase: an old dog teaches new tricks. Arch
+Biochem Biophys. 2013 Oct 9. doi:pii: S0003-9861(13)00304-4.
+10.1016/j.abb.2013.10.002. [Epub ahead of print] PubMed PMID: 24121043.
+
+
+55: He W, Kong Q, Shi Y, Xie B, Jiao M, Huang T, Guo S, Hu K, Liu Z. Generation
+and Developmental Characteristics of Porcine Tetraploid Embryos and
+Tetraploid/diploid Chimeric Embryos. Genomics Proteomics Bioinformatics. 2013 Oct
+8. doi:pii: S1672-0229(13)00100-9. 10.1016/j.gpb.2013.09.007. [Epub ahead of
+print] PubMed PMID: 24120753.
+
+
+56: Fletcher AG, Osborne JM, Maini PK, Gavaghan DJ. Implementing vertex dynamics 
+models of cell populations in biology within a consistent computational
+framework. Prog Biophys Mol Biol. 2013 Oct 8. doi:pii: S0079-6107(13)00098-9.
+10.1016/j.pbiomolbio.2013.09.003. [Epub ahead of print] PubMed PMID: 24120733.
+
+
+57: Agarwal S. Systems approaches in understanding evolution and evolvability.
+Prog Biophys Mol Biol. 2013 Oct 8. doi:pii: S0079-6107(13)00099-0.
+10.1016/j.pbiomolbio.2013.09.004. [Epub ahead of print] PubMed PMID: 24120732.
+
+
+58: Schwenzer H, Scheper GC, Zorn N, Moulinier L, Gaudry A, Leize E, Martin F,
+Florentz C, Poch O, Sissler M. Released selective pressure on a structural domain
+gives new insights on the functional relaxation of mitochondrial aspartyl-tRNA
+synthetase. Biochimie. 2013 Oct 8. doi:pii: S0300-9084(13)00348-9.
+10.1016/j.biochi.2013.09.027. [Epub ahead of print] PubMed PMID: 24120687.
+
+
+59: Wang Y, Li Y, Wang Q, Lv Y, Wang S, Chen X, Yu X, Jiang W, Li X.
+Computational identification of human long intergenic non-coding RNAs using a
+GA-SVM algorithm. Gene. 2013 Oct 9. doi:pii: S0378-1119(13)01352-8.
+10.1016/j.gene.2013.09.118. [Epub ahead of print] PubMed PMID: 24120395.
+
+
+60: Behar M, Barken D, Werner SL, Hoffmann A. The Dynamics of Signaling as a
+Pharmacological Target. Cell. 2013 Oct 10;155(2):448-461. doi:
+10.1016/j.cell.2013.09.018. PubMed PMID: 24120141.
+
+
+61: Lemey P, Stanojevic M, Vandamme AM. International BioInformatics Workshop on 
+Virus Evolution and Molecular Epidemiology. Infect Genet Evol. 2013
+Oct;19C:335-336. doi: 10.1016/j.meegid.2013.08.023. PubMed PMID: 24120112.
+
+
+62: Rienstra CM. Amyloid Structures from Alzheimer's Disease Patients. Structure.
+2013 Oct 8;21(10):1722-1723. doi: 10.1016/j.str.2013.09.010. PubMed PMID:
+24119671.
+
+
+63: Quillery E, Quenez O, Peterlongo P, Plantard O. Development of genomic
+resources for the tick Ixodes ricinus: isolation and characterization of Single
+Nucleotide Polymorphisms. Mol Ecol Resour. 2013 Oct 1. doi:
+10.1111/1755-0998.12179. [Epub ahead of print] PubMed PMID: 24119113.
+
+
+64: van den Akker EB, Passtoors WM, Jansen R, van Zwet EW, Goeman JJ, Hulsman M, 
+Emilsson V, Perola M, Willemsen AH, Penninx BW, Heijmans BT, Maier AB, Boomsma
+DI, Kok JN, Slagboom PE, Reinders MJ, Beekman M. Meta-Analysis on Blood
+Transcriptomic Studies Identifies Consistently Co-Expressed PPI Modules as Robust
+Markers of Human Ageing. Aging Cell. 2013 Oct 14. doi: 10.1111/acel.12160. [Epub 
+ahead of print] PubMed PMID: 24119000.
+
+
+65: Marcellin E, Licona-Cassani C, Mercer TR, Palfreyman RW, Nielsen LK.
+Re-annotation of the Saccharopolyspora erythraea genome using a systems biology
+approach. BMC Genomics. 2013 Oct 11;14(1):699. [Epub ahead of print] PubMed PMID:
+24118942.
+
+
+66: McElwee MK, Ho LA, Chou JW, Smith MV, Freedman JH. Comparative toxicogenomic 
+responses of mercuric and methyl-mercury. BMC Genomics. 2013 Oct 11;14(1):698.
+[Epub ahead of print] PubMed PMID: 24118919.
+
+
+67: Ghaffari N, Youse MR, Johnson CD, Ivanov I, Dougherty ER. Modeling the Next
+Generation Sequencing sample processing pipeline for the purposes of
+classification. BMC Bioinformatics. 2013 Oct 11;14(1):307. [Epub ahead of print] 
+PubMed PMID: 24118904.
+
+
+68: Karl S, Dandekar T. Jimena: efficient computing and system state
+identification for genetic regulatory networks. BMC Bioinformatics. 2013 Oct
+11;14(1):306. [Epub ahead of print] PubMed PMID: 24118878.
+
+
+69: Borah A, Paul R, Choudhury S, Choudhury A, Bhuyan B, Das Talukdar A, Dutta
+Choudhury M, Mohanakumar KP. Neuroprotective Potential of Silymarin against CNS
+Disorders: Insight into the Pathways and Molecular Mechanisms of Action. CNS
+Neurosci Ther. 2013 Oct 14. doi: 10.1111/cns.12175. [Epub ahead of print] PubMed 
+PMID: 24118806.
+
+
+70: Jordan DS, Daubenspeck JM, Laube AH, Renfrow MB, Dybvig K. O-Linked Protein
+Glycosylation in Mycoplasma. Mol Microbiol. 2013 Oct 4. doi: 10.1111/mmi.12415.
+[Epub ahead of print] PubMed PMID: 24118505.
+
+
+71: Bencharit S, Border MB, Edelmann A, Byrd WC. Update in research and methods
+in proteomics and bioinformatics. Expert Rev Proteomics. 2013 Oct;10(5):413-415. 
+PubMed PMID: 24117200.
+
+
+72: Yamamori Y, Kitao A. MuSTAR MD: Multi-scale sampling using temperature
+accelerated and replica exchange molecular dynamics. J Chem Phys. 2013 Oct
+14;139(14):145105. PubMed PMID: 24116651.
+
+
+73: Maity A, Yadav S, Verma CS, Ghosh Dastidar S. Dynamics of Bcl-xL in Water and
+Membrane: Molecular Simulations. PLoS One. 2013 Oct 8;8(10):e76837. PubMed PMID: 
+24116174; PubMed Central PMCID: PMC3792877.
+
+
+74: Peri S, Devarajan K, Yang DH, Knudson AG, Balachandran S. Meta-Analysis
+Identifies NF-?B as a Therapeutic Target in Renal Cancer. PLoS One. 2013 Oct
+7;8(10):e76746. PubMed PMID: 24116146; PubMed Central PMCID: PMC3792024.
+
+
+75: Tuohimaa P, Wang JH, Khan S, Kuuslahti M, Qian K, Manninen T, Auvinen P,
+Vihinen M, Lou YR. Gene Expression Profiles in Human and Mouse Primary Cells
+Provide New Insights into the Differential Actions of Vitamin D(3) Metabolites.
+PLoS One. 2013 Oct 8;8(10):e75338. PubMed PMID: 24116037; PubMed Central PMCID:
+PMC3792969.
+
+
+76: Kim B, Park H, Na D, Lee SY. Metabolic engineering of Escherichia coli for
+the production of phenol from glucose. Biotechnol J. 2013 Sep 25. doi:
+10.1002/biot.201300263. [Epub ahead of print] PubMed PMID: 24115680.
+
+
+77: Mahajan VB, Skeie JM. Translational Vitreous Proteomics. Proteomics Clin
+Appl. 2013 Sep 24. doi: 10.1002/prca.201300062. [Epub ahead of print] PubMed
+PMID: 24115652.
+
+
+78: Liberles DA, Teufel AI, Liu L, Stadler T. On the Need for Mechanistic Models 
+in Computational Genomics and Metagenomics. Genome Biol Evol. 2013 Oct 9. [Epub
+ahead of print] PubMed PMID: 24115604.
+
+
+79: Zhu Y, Wu Y, Jin K, Lu H, Liu F, Guo Y, Yan F, Shi W, Liu Y, Cao X, Hu H, Zhu
+H, Guo X, Sha J, Li Z, Zhou Z. Differential proteomic profiling in human
+spermatozoa that did or did not result in pregnancy via IVF and AID. Proteomics
+Clin Appl. 2013 Oct 1. doi: 10.1002/prca.201200078. [Epub ahead of print] PubMed 
+PMID: 24115602.
+
+
+80: Lü X, Wang J, Li B, Zhang Z, Zhao L. Gene expression profile study on
+osteoinductive effect of natural hydroxyapatite. J Biomed Mater Res A. 2013 Sep
+25. doi: 10.1002/jbm.a.34951. [Epub ahead of print] PubMed PMID: 24115491.
+
+
+81: Hardison RC, Blobel GA. GWAS to Therapy by Genome Edits? Science. 2013 Oct
+11;342(6155):206-207. PubMed PMID: 24115432.
+
+
+82: Mani T, Liu D, Zhou D, Li L, Knabe WE, Wang F, Oh K, Meroueh SO. Probing
+Binding and Cellular Activity of Pyrrolidinone and Piperidinone Small Molecules
+Targeting the Urokinase Receptor. ChemMedChem. 2013 Oct 2. doi:
+10.1002/cmdc.201300340. [Epub ahead of print] PubMed PMID: 24115356.
+
+
+83: Fan CY, Chou HC, Lo YW, Wen YF, Tsai YC, Huang H, Chan HL. Proteomic and
+redox-proteomic study on the role of glutathione reductase in human lung cancer
+cells. Electrophoresis. 2013 Oct 1. doi: 10.1002/elps.201300250. [Epub ahead of
+print] PubMed PMID: 24115172.
+
+
+84: Levinson M, Zhou Q. A Penalized Bayesian Approach to Predicting Sparse
+Protein-DNA Binding Landscapes. Bioinformatics. 2013 Oct 9. [Epub ahead of print]
+PubMed PMID: 24115169.
+
+
+85: Ekseth OK, Kuiper M, Mironov V. orthAgogue: an agile tool for the rapid
+prediction of orthology relations. Bioinformatics. 2013 Oct 9. [Epub ahead of
+print] PubMed PMID: 24115168.
+
+
+86: De Fusco M, Vago R, Striano P, Di Bonaventura C, Zara F, Mei D, Kim MS,
+Muallem S, Chen Y, Wang Q, Guerrini R, Casari G. The a(2B) adrenergic receptor is
+mutant in cortical myoclonus and epilepsy. Ann Neurol. 2013 Oct 1. doi:
+10.1002/ana.24028. [Epub ahead of print] PubMed PMID: 24114805.
+
+
+87: Costantini S, Colonna G, Castello G. A Holistic Approach to Study the Effects
+of Natural Antioxidants on Inflammation and Liver Cancer. Cancer Treat Res.
+2014;159:311-323. PubMed PMID: 24114488.
+
+
+88: Rai S, Singh S, Shrivastava AK, Rai LC. Salt and UV-B induced changes in
+Anabaena PCC 7120: physiological, proteomic and bioinformatic perspectives.
+Photosynth Res. 2013 Oct 11. [Epub ahead of print] PubMed PMID: 24113924.
+
+
+89: Ganoth A, Tsfadia Y, Wiener R. Ubiquitin: Molecular modeling and simulations.
+J Mol Graph Model. 2013 Sep 18;46C:29-40. doi: 10.1016/j.jmgm.2013.09.006. [Epub 
+ahead of print] PubMed PMID: 24113788.
+
+
+90: Yoshihara K, Shahmoradgoli M, Martínez E, Vegesna R, Kim H, Torres-Garcia W, 
+Treviño V, Shen H, Laird PW, Levine DA, Carter SL, Getz G, Stemke-Hale K, Mills
+GB, Verhaak RG. Inferring tumour purity and stromal and immune cell admixture
+from expression data. Nat Commun. 2013 Oct 11;4:2612. doi: 10.1038/ncomms3612.
+PubMed PMID: 24113773.
+
+
+91: Lagerstedt I, Moore WJ, Patwardhan A, Sanz-García E, Best C, Swedlow JR,
+Kleywegt GJ. Web-based visualisation and analysis of 3D electron-microscopy data 
+from EMDB and PDB. J Struct Biol. 2013 Oct 7. doi:pii: S1047-8477(13)00262-1.
+10.1016/j.jsb.2013.09.021. [Epub ahead of print] PubMed PMID: 24113529.
+
+
+92: Guo J, Li H, Chang JW, Yang L, Li S, Chen LL. Prediction and characterization
+of protein-protein interaction network in Xanthomonas oryzae pv. oryzae PXO99A.
+Res Microbiol. 2013 Oct 7. doi:pii: S0923-2508(13)00185-X.
+10.1016/j.resmic.2013.09.001. [Epub ahead of print] PubMed PMID: 24113387.
+
+
+93: Lee JH, Bae SE, Jung S, Ahn I, Son HS. Discriminant analysis of prion
+sequences for prediction of susceptibility. Exp Mol Med. 2013 Oct 11;45:e48. doi:
+10.1038/emm.2013.100. PubMed PMID: 24113272.
+
+
+94: Eliaš J, Dimitrio L, Clairambault J, Natalini R. The p53 protein and its
+molecular network: Modelling a missing link between DNA damage and cell fate.
+Biochim Biophys Acta. 2013 Oct 7. doi:pii: S1570-9639(13)00353-1.
+10.1016/j.bbapap.2013.09.019. [Epub ahead of print] PubMed PMID: 24113167.
+
+
+95: Gómez-Garre P, Jesús S, Carrillo F, Cáceres-Redondo MT, Huertas-Fernández I, 
+Bernal-Bernal I, Bonilla-Toribio M, Vargas-González L, Carballo M, Mir P.
+Systematic mutational analysis of FBXO7 in a Parkinson's disease population from 
+southern Spain. Neurobiol Aging. 2013 Oct 7. doi:pii: S0197-4580(13)00400-4.
+10.1016/j.neurobiolaging.2013.09.011. [Epub ahead of print] PubMed PMID:
+24112787.
+
+
+96: McArt DG, Bankhead P, Dunne PD, Salto-Tellez M, Hamilton P, Zhang SD.
+cudaMap: a GPU accelerated program for gene expression connectivity mapping. BMC 
+Bioinformatics. 2013 Oct 11;14(1):305. [Epub ahead of print] PubMed PMID:
+24112435.
+
+
+97: Kõljalg U, Nilsson RH, Abarenkov K, Tedersoo L, Taylor AF, Bahram M, Bates
+ST, Bruns TD, Bengtsson-Palme J, Callaghan TM, Douglas B, Drenkhan T, Eberhardt
+U, Dueñas M, Grebenc T, Griffith GW, Hartmann M, Kirk PM, Kohout P, Larsson E,
+Lindahl BD, Lücking R, Martín MP, Matheny PB, Nguyen NH, Niskanen T, Oja J, Peay 
+KG, Peintner U, Peterson M, Põldmaa K, Saag L, Saar I, Schüßler A, Scott JA,
+Senés C, Smith ME, Suija A, Taylor DL, Telleria MT, Weiss M, Larsson KH. Towards 
+a unified paradigm for sequence-based identification of fungi. Mol Ecol. 2013 Aug
+3. doi: 10.1111/mec.12481. [Epub ahead of print] PubMed PMID: 24112409.
+
+
+98: Lai JS, Cheng CW, Lo A, Sung TY, Hsu WL. Lipid exposure prediction enhances
+the inference of rotational angles of transmembrane helices. BMC Bioinformatics. 
+2013 Oct 11;14(1):304. [Epub ahead of print] PubMed PMID: 24112406.
+
+
+99: Huang ZX, Tan JH, Li TW, Deng WM, Qiu KW, Liao ZT, Zeng ZQ. Influence of
+sinomenine on protein profiles of peripheral blood mononuclear cells from
+ankylosing spondylitis patients: a pharmacoproteomics study. Chin Med J (Engl).
+2013 Oct;126(19):3645-3650. PubMed PMID: 24112157.
+
+
+100: Ahmed MS, Rauf S, Naeem M, Khan MN, Mir A. Identification of novel mutation 
+in the HR gene responsible for atrichia with papular lesions in a Pakistani
+family. J Dermatol. 2013 Sep 20. doi: 10.1111/1346-8138.12266. [Epub ahead of
+print] PubMed PMID: 24111842.
+
+
+101: Wang Z, Pang X, Wu W, Wang J, Wang Z, Wu R. MODELING PHENOTYPIC PLASTICITY
+IN GROWTH TRAJECTORIES: A STATISTICAL FRAMEWORK. Evolution. 2013 Sep 4. doi:
+10.1111/evo.12263. [Epub ahead of print] PubMed PMID: 24111588.
+
+
+102: Acar E, Lawaetz AJ, Rasmussen MA, Bro R. Structure-revealing data fusion
+model with applications in metabolomics. Conf Proc IEEE Eng Med Biol Soc. 2013
+Jul;2013:6023-6026. PubMed PMID: 24111112.
+
+
+103: Uslan V, Seker H. Support vector-based Takagi-Sugeno fuzzy system for the
+prediction of binding affinity of peptides. Conf Proc IEEE Eng Med Biol Soc. 2013
+Jul;2013:4062-4065. PubMed PMID: 24110624.
+
+
+104: Chrysostomou C, Seker H. Signal-processing-based bioinformatics approach for
+the identification of influenza A virus subtypes in Neuraminidase genes. Conf
+Proc IEEE Eng Med Biol Soc. 2013 Jul;2013:3066-3069. PubMed PMID: 24110375.
+
+
+105: Hussain HM, Benkrid K, Seker H. Reconfiguration-based implementation of SVM 
+classifier on FPGA for Classifying Microarray data. Conf Proc IEEE Eng Med Biol
+Soc. 2013 Jul;2013:3058-3061. PubMed PMID: 24110373.
+
+
+106: Shah HA, Hasan L, Ahmad N. An optimized and low-cost FPGA-based DNA sequence
+alignment - A step towards personal genomics. Conf Proc IEEE Eng Med Biol Soc.
+2013 Jul;2013:2696-2699. PubMed PMID: 24110283.
+
+
+107: Papadopoulos A, Kirmitzoglou I, Promponas VJ, Theocharides T. GPU technology
+as a platform for accelerating local complexity analysis of protein sequences.
+Conf Proc IEEE Eng Med Biol Soc. 2013 Jul;2013:2684-2687. PubMed PMID: 24110280.
+
+
+108: Lin FS, Shen CP, Sung HY, Lam YY, Lin JW, Lai F. A High performance cloud
+computing platform for mRNA analysis. Conf Proc IEEE Eng Med Biol Soc. 2013
+Jul;2013:1510-1513. PubMed PMID: 24109986.
+
+
+109: Waidyasooriya HM, Hariyama M, Kameyama M. Implementation of a custom
+hardware-accelerator for short-read mapping using Burrows-Wheeler alignment. Conf
+Proc IEEE Eng Med Biol Soc. 2013 Jul;2013:651-654. PubMed PMID: 24109771.
+
+
+110: Niepielko MG, Marmion RA, Kim K, Luor D, Ray C, Yakoby N. Chorion
+Patterning: A window into gene regulation and Drosophila species-relatedness. Mol
+Biol Evol. 2013 Oct 8. [Epub ahead of print] PubMed PMID: 24109603.
+
+
+111: Yeh SW, Liu JW, Yu SH, Shih CH, Hwang JK, Echave J. Site-specific structural
+constraints on protein sequence evolutionary divergence: local packing density
+vs. solvent exposure. Mol Biol Evol. 2013 Oct 8. [Epub ahead of print] PubMed
+PMID: 24109601.
+
+
+112: Blesák K, Janecek S. Two potentially novel amylolytic enzyme specificities
+in the prokaryotic glycoside hydrolase a-amylase family GH57. Microbiology. 2013 
+Oct 9. [Epub ahead of print] PubMed PMID: 24109595.
+
+
+113: Spadaro S. The dilemma of the symbols: analogies between philosophy, biology
+and artificial life. Springerplus. 2013 Oct 1;2:495. PubMed PMID: 24109563;
+PubMed Central PMCID: PMC3793079.
+
+
+114: Cock PJ, Grüning BA, Paszkiewicz K, Pritchard L. Galaxy tools and workflows 
+for sequence analysis with applications in molecular plant pathology. PeerJ. 2013
+Sep 17;1:e167. PubMed PMID: 24109552; PubMed Central PMCID: PMC3792188.
+
+
+115: Wheatley RJ. The Role 1 capability review: mitigation and innovation for Op 
+HERRICK 18 and into contingency. J R Army Med Corps. 2013 Oct 7. doi:
+10.1136/jramc-2013-000127. [Epub ahead of print] PubMed PMID: 24109113.
+
+
+116: Nesbitt V, Pitceathly R, Cockell S, Poulton J, Rahman S, Hanna M, Taylor R, 
+Chinnery P, Turnbull D, McFarland R. THE MEDICAL RESEARCH COUNCIL NEUROMUSCULAR
+CENTRE FOR TRANSLATIONAL RESEARCH MITOCHONDRIAL DISEASE PATIENT COHORT STUDY UK: 
+FROM CONCEPTUALISATION TO UTILISATION. J Neurol Neurosurg Psychiatry. 2013
+Nov;84(11):e2. doi: 10.1136/jnnp-2013-306573.69. PubMed PMID: 24109053.
+
+
+117: Oba K, Paoletti X, Alberts S, Bang YJ, Benedetti J, Bleiberg H, Catalano P, 
+Lordick F, Michiels S, Morita S, Ohashi Y, Pignon JP, Rougier P, Sasako M,
+Sakamoto J, Sargent D, Shitara K, Cutsem EV, Buyse M, Burzykowski T; on behalf of
+the GASTRIC group. Disease-Free Survival as a Surrogate for Overall Survival in
+Adjuvant Trials of Gastric Cancer: A Meta-Analysis. J Natl Cancer Inst. 2013 Oct 
+9. [Epub ahead of print] PubMed PMID: 24108812.
+
+
+118: Paoletti X, Oba K, Bang YJ, Bleiberg H, Boku N, Bouché O, Catalano P, Fuse
+N, Michiels S, Moehler M, Morita S, Ohashi Y, Ohtsu A, Roth A, Rougier P,
+Sakamoto J, Sargent D, Sasako M, Shitara K, Thuss-Patience P, Van Cutsem E,
+Burzykowski T, Buyse M; on behalf of the GASTRIC group. Progression-Free Survival
+as a Surrogate for Overall Survival in Advanced/Recurrent Gastric Cancer Trials: 
+A Meta-Analysis. J Natl Cancer Inst. 2013 Oct 9. [Epub ahead of print] PubMed
+PMID: 24108811.
+
+
+119: Yang J, Liang Y, Han H, Qin H. Identification of a miRNA signature in
+neutrophils after traumatic injury. Acta Biochim Biophys Sin (Shanghai). 2013 Oct
+9. [Epub ahead of print] PubMed PMID: 24108763.
+
+
+120: Yang P, Yoo PD, Fernando J, Zhou BB, Zhang Z, Zomaya AY. Sample Subset
+Optimization Techniques for Imbalanced and Ensemble Learning Problems in
+Bioinformatics Applications. IEEE Trans Cybern. 2013 Sep 30. [Epub ahead of
+print] PubMed PMID: 24108722.
+
+
+121: Orchard S, Binz PA, Jones AR, Vizcaino JA, Deutsch EW, Hermjakob H.
+Preparing to Work with Big Data in Proteomics - A Report on the HUPO-PSI Spring
+Workshop: April 15-17, 2013, Liverpool, UK. Proteomics. 2013
+Oct;13(20):2931-2937. doi: 10.1002/pmic.201370166. PubMed PMID: 24108681.
+
+
+122: Toptygin D. Analysis of Time-Dependent Red Shifts in Fluorescence Emission
+from Tryptophan Residues in Proteins. Methods Mol Biol. 2014;1076:215-256. PubMed
+PMID: 24108628.
+
+
+123: Eichorst JP, Wen Teng K, Clegg RM. Polar Plot Representation of
+Time-Resolved Fluorescence. Methods Mol Biol. 2014;1076:97-112. PubMed PMID:
+24108625.
+
+
+124: Li Z, Valenstein M, Pfeiffer P, Ganoczy D. A global logrank test for
+adaptive treatment strategies based on observational studies. Stat Med. 2013 Sep 
+20. doi: 10.1002/sim.5987. [Epub ahead of print] PubMed PMID: 24108518.
+
+
+125: Chu CH, Li KM, Lin SW, Chang MD, Jiang TY, Sun YJ. Crystal Structures of
+Starch Binding Domain from Rhizopus oryzae Glucoamylase in Complex with
+Isomaltooligosaccharide: Insights into Polysaccharide Binding Mechanism of CBM21 
+Family. Proteins. 2013 Oct 9. doi: 10.1002/prot.24446. [Epub ahead of print]
+PubMed PMID: 24108499.
+
+
+126: Harispe S, Ranwez S, Janaqi S, Montmain J. The Semantic Measures Library and
+Toolkit: fast computation of semantic similarity and relatedness using biomedical
+ontologies. Bioinformatics. 2013 Oct 9. [Epub ahead of print] PubMed PMID:
+24108186.
+
+
+127: Baumann DD, Doerge RW. Robust Adjustment of Sequence Tag Abundance.
+Bioinformatics. 2013 Oct 9. [Epub ahead of print] PubMed PMID: 24108185.
+
+
+128: Krag A, Munkholm P, Israelsen H, von Ryberg B, Andersen KK, Bendtsen F.
+Profermin is Efficacious in Patients with Active Ulcerative Colitis-A Randomized 
+Controlled Trial. Inflamm Bowel Dis. 2013 Oct 8. [Epub ahead of print] PubMed
+PMID: 24108114.
+
+
+129: Owczarek D, Cibor D, Salapa K, Glowacki MK, Mach T, Undas A. Reduced Plasma 
+Fibrin Clot Permeability and Susceptibility to Lysis in Patients with
+Inflammatory Bowel Disease: A Novel Prothrombotic Mechanism. Inflamm Bowel Dis.
+2013 Oct 8. [Epub ahead of print] PubMed PMID: 24108112.
+
+
+130: Maeder ML, Angstman JF, Richardson ME, Linder SJ, Cascio VM, Tsai SQ, Ho QH,
+Sander JD, Reyon D, Bernstein BE, Costello JF, Wilkinson MF, Joung JK. Targeted
+DNA demethylation and activation of endogenous genes using programmable TALE-TET1
+fusion proteins. Nat Biotechnol. 2013 Oct 9. doi: 10.1038/nbt.2726. [Epub ahead
+of print] PubMed PMID: 24108092.
+
+
+131: Kunisaki Y, Bruns I, Scheiermann C, Ahmed J, Pinho S, Zhang D, Mizoguchi T, 
+Wei Q, Lucas D, Ito K, Mar JC, Bergman A, Frenette PS. Arteriolar niches maintain
+haematopoietic stem cell quiescence. Nature. 2013 Oct 9. doi:
+10.1038/nature12612. [Epub ahead of print] PubMed PMID: 24107994.
+
+
+132: Percudani R, Carnevali D, Puggioni V. Ureidoglycolate hydrolase,
+amidohydrolase, lyase: how errors in biological databases are incorporated in
+scientific papers and vice versa. Database (Oxford). 2013 Oct 9;2013(0):bat071.
+Print 2013. PubMed PMID: 24107613.
+
+
+133: Franceschi ND, Wild K, Schlacht A, Dacks JB, Sinning I, Filippini F. Longin 
+and GAF domains: structural evolution and adaptation to the subcellular
+trafficking machinery. Traffic. 2013 Sep 23. doi: 10.1111/tra.12124. [Epub ahead 
+of print] PubMed PMID: 24107188.
+
+
+134: Böth D, Steiner EM, Izumi A, Schneider G, Schnell R. RipD (Rv1566c) from
+Mycobacterium tuberculosis: adaptation of an NlpC/p60 domain to a non-catalytic
+peptidoglycan-binding function. Biochem J. 2013 Oct 10. [Epub ahead of print]
+PubMed PMID: 24107184.
+
+
+135: Ul-Shaheed S, Rustogi N, Scally A, Wilson J, Thygesen H, Loizidou M,
+Hadjisavvas A, Hanby A, Speirs V, Loadman P, Linforth R, Kyriacou K, Sutton CW.
+Identification of Stage-Specific Breast Markers using Quantitative Proteomics. J 
+Proteome Res. 2013 Oct 9. [Epub ahead of print] PubMed PMID: 24106833.
+
+
+136: Chauhan M, Chauhan RS, Garlapati VK. Evaluation of a New Lipase from
+Staphylococcus sp. for Detergent Additive Capability. Biomed Res Int.
+2013;2013:374967. Epub 2013 Sep 10. PubMed PMID: 24106703; PubMed Central PMCID: 
+PMC3782757.
+
+
+137: D'Agostino D, Clematis A, Quarati A, Cesini D, Chiappori F, Milanesi L,
+Merelli I. Cloud Infrastructures for In Silico Drug Discovery: Economic and
+Practical Aspects. Biomed Res Int. 2013;2013:138012. Epub 2013 Sep 10. PubMed
+PMID: 24106693; PubMed Central PMCID: PMC3782806.
+
+
+138: Lee HK, Chung SY, Na Choi SJ. MicroRNA profiling of tacrolimus-stimulated
+Jurkat human T lympocytes. J Korean Surg Soc. 2013 Oct;85(4):161-168. Epub 2013
+Sep 30. PubMed PMID: 24106682; PubMed Central PMCID: PMC3791358.
+
+
+139: Zhu J, Wu X, Zhang B, McKee K, O'Dell S, Soto C, Zhou T, Casazza JP; NISC
+Comparative Sequencing Program, Mullikin JC, Kwong PD, Mascola JR, Shapiro L. De 
+novo identification of VRC01 class HIV-1-neutralizing antibodies by
+next-generation sequencing of B-cell transcripts. Proc Natl Acad Sci U S A. 2013 
+Oct 8. [Epub ahead of print] PubMed PMID: 24106303.
+
+
+140: Tastan Bishop O, Edkins AL, Blatch GL. Sequence and domain conservation of
+the coelacanth Hsp40 and Hsp90 chaperones suggests conservation of function. J
+Exp Zool B Mol Dev Evol. 2013 Sep 17. doi: 10.1002/jez.b.22541. [Epub ahead of
+print] PubMed PMID: 24106212.
+
+
+141: Picone B, Hesse U, Panji S, Van Heusden P, Jonas M, Christoffels A. Taste
+and odorant receptors of the coelacanth-A gene repertoire in transition. J Exp
+Zool B Mol Dev Evol. 2013 Sep 18. doi: 10.1002/jez.b.22531. [Epub ahead of print]
+PubMed PMID: 24106203.
+
+
+142: Santos NC, Pereira MO, Lourenço A. Pathogenicity phenomena in three model
+systems: from network mining to emerging system-level properties. Brief
+Bioinform. 2013 Oct 7. [Epub ahead of print] PubMed PMID: 24106130.
+
+
+143: Golbert DC, Santana-van-Vliet E, Mundstein AS, Calfo V, Savino W, de
+Vasconcelos AT. Laminin-database v.2.0: an update on laminins in health and
+neuromuscular disorders. Nucleic Acids Res. 2013 Oct 7. [Epub ahead of print]
+PubMed PMID: 24106090.
+
+
+144: Wang T, Liu Q, Li X, Wang X, Li J, Zhu X, Sun ZS, Wu J. RRBS-Analyser: A
+Comprehensive Web Server for Reduced Representation Bisulfite Sequencing Data
+Analysis. Hum Mutat. 2013 Sep 18. doi: 10.1002/humu.22444. [Epub ahead of print] 
+PubMed PMID: 24106010.
+
+
+145: Guo FY, Lesk AM. Sizes of interface residues account for cross-class binding
+affinity patterns in Eph Receptor-Ephrin families. Proteins. 2013 Sep 19. doi:
+10.1002/prot.24414. [Epub ahead of print] PubMed PMID: 24105818.
+
+
+146: Lee YI, Giovinazzo D, Kang HC, Lee Y, Jeong JS, Doulias PT, Xie Z, Hu J,
+Ghasemi M, Ischiropoulos H, Qian J, Zhu H, Blackshaw S, Dawson VL, Dawson TM.
+Protein microarray characterization of the S-nitrosoproteome. Mol Cell
+Proteomics. 2013 Oct 8. [Epub ahead of print] PubMed PMID: 24105792.
+
+
+147: Praktiknjo SD, Llamas B, Scott-Boyer MP, Picard S, Robert F, Langlais D,
+Haibe-Kains B, Faubert D, Silversides DW, Deschepper CF. Novel Effects of
+Chromosome Y on Cardiac Regulation, Chromatin Remodeling, and Neonatal
+Programming in Male Mice. Endocrinology. 2013 Oct 8. [Epub ahead of print] PubMed
+PMID: 24105479.
+
+
+148: Machens F, Becker M, Umrath F, Hehl R. Identification of a novel type of
+WRKY transcription factor binding site in elicitor-responsive cis-sequences from 
+Arabidopsis thaliana. Plant Mol Biol. 2013 Oct 9. [Epub ahead of print] PubMed
+PMID: 24104863.
+
+
+149: Altschul S, Demchak B, Durbin R, Gentleman R, Krzywinski M, Li H, Nekrutenko
+A, Robinson J, Rasband W, Taylor J, Trapnell C. The anatomy of successful
+computational biology software. Nat Biotechnol. 2013 Oct 8;31(10):894-897. doi:
+10.1038/nbt.2721. PubMed PMID: 24104757.
+
+
+150: Chandraseelan JG, Oliveira SM, Häkkinen A, Tran H, Potapov I, Sala A,
+Kandhavelu M, Ribeiro AS. Effects of temperature on the dynamics of the
+LacI-TetR-CI repressilator. Mol Biosyst. 2013 Oct 8. [Epub ahead of print] PubMed
+PMID: 24104727.
+
+
+151: Martis MM, Zhou R, Haseneyer G, Schmutzer T, Vrána J, Kubaláková M, König S,
+Kugler KG, Scholz U, Hackauf B, Korzun V, Schön CC, Dolezel J, Bauer E, Mayer KF,
+Stein N. Reticulate Evolution of the Rye Genome. Plant Cell. 2013 Oct 8. [Epub
+ahead of print] PubMed PMID: 24104565.
+
+
+152: Tsai EA, Grochowski CM, Loomes KM, Bessho K, Hakonarson H, Bezerra JA, Russo
+PA, Haber BA, Spinner NB, Devoto M. Replication of a GWAS signal in a Caucasian
+population implicates ADD3 in susceptibility to biliary atresia. Hum Genet. 2013 
+Oct 9. [Epub ahead of print] PubMed PMID: 24104524.
+
+
+153: Chang Q, Zuo L. The biophysical model for accuracy of cellular sensing
+spatial gradients of multiple chemoattractants. Phys Biol. 2013 Oct;10(5):056014.
+Epub 2013 Oct 8. PubMed PMID: 24104469.
+
+
+154: Yao Y, Lu WL, Xu B, Li CB, Lin CP, Waxman D, Feng JF. The Increase of the
+Functional Entropy of the Human Brain with Age. Sci Rep. 2013 Oct 9;3:2853. doi: 
+10.1038/srep02853. PubMed PMID: 24103922.
+
+
+155: Knüpfer C, Beckstein C. Function of dynamic models in systems biology:
+linking structure to behaviour. J Biomed Semantics. 2013 Oct 8;4(1):24. [Epub
+ahead of print] PubMed PMID: 24103739.
+
+
+156: Kawate T, Iwase N, Shimizu M, Stanley SA, Wellington S, Kazyanskaya E, Hung 
+DT. Synthesis and structure-activity relationships of phenyl-substituted
+coumarins with anti-tubercular activity that target FadD32. Bioorg Med Chem Lett.
+2013 Sep 19. doi:pii: S0960-894X(13)01109-8. 10.1016/j.bmcl.2013.09.035. [Epub
+ahead of print] PubMed PMID: 24103299.
+
+
+157: Zhou C, Kang J, Wang X, Nie M, Jiang W. [Screening of short peptides that
+bind specifically to ovarian cancer cell line through whole-cell subtraction
+biopanning.]. Xi Bao Yu Fen Zi Mian Yi Xue Za Zhi. 2013 Oct;29(10):1098-1101.
+Chinese. PubMed PMID: 24103273.
+
+
+158: Fuellen G, Jansen L, Leser U, Kurtz A. Using ontologies to study cell
+transitions. J Biomed Semantics. 2013 Oct 8;4(1):25. [Epub ahead of print] PubMed
+PMID: 24103098.
+
+
+159: Dejesus MA, Ioerger TR. A Hidden Markov Model for identifying essential and 
+growth-defect regions in bacterial genomes from transposon insertion sequencing
+data. BMC Bioinformatics. 2013 Oct 8;14(1):303. [Epub ahead of print] PubMed
+PMID: 24103077.
+
+
+160: Beisken S, Meinl T, Wiswedel B, de Figueiredo LF, Berthold M, Steinbeck C.
+KNIME-CDK: Workflow-driven Cheminformatics. BMC Bioinformatics. 2013 Aug
+22;14(1):257. [Epub ahead of print] PubMed PMID: 24103053; PubMed Central PMCID: 
+PMC3765822.
+
+
+161: Salim V, Yu F, Altarejos J, De Luca V. Virus induced gene silencing
+identifies Catharanthus roseus 7-deoxyloganic acid-7-hydroxylase, a step in
+iridoid and monoterpene indole alkaloid biosynthesis. Plant J. 2013 Sep 16. doi: 
+10.1111/tpj.12330. [Epub ahead of print] PubMed PMID: 24103035.
+
+
+162: Campo D, Lehmann K, Fjeldsted C, Souaiaia T, Kao J, Nuzhdin SV. Whole-genome
+sequencing of two North American Drosophila melanogaster populations reveals
+genetic differentiation and positive selection. Mol Ecol. 2013
+Oct;22(20):5084-5097. doi: 10.1111/mec.12468. Epub 2013 Sep 19. PubMed PMID:
+24102956.
+
+
+163: Peischl S, Dupanloup I, Kirkpatrick M, Excoffier L. On the accumulation of
+deleterious mutations during range expansions. Mol Ecol. 2013 Sep 18. doi:
+10.1111/mec.12524. [Epub ahead of print] PubMed PMID: 24102784.
+
+
+164: Abbasi AA, Minhas R, Schmidt A, Koch S, Grzeschik KH. Cis-regulatory
+underpinnings of human GLI3 expression in embryonic craniofacial structures and
+internal organs. Dev Growth Differ. 2013 Oct;55(8):699-709. doi:
+10.1111/dgd.12076. Epub 2013 Sep 19. PubMed PMID: 24102645.
+
+
+165: Litsios G, Wüest RO, Kostikova A, Forest F, Lexer C, Linder HP, Pearman PB, 
+Zimmermann NE, Salamin N. EFFECTS OF A FIRE RESPONSE TRAIT ON DIVERSIFICATION IN 
+REPLICATED RADIATIONS. Evolution. 2013 Sep 17. doi: 10.1111/evo.12273. [Epub
+ahead of print] PubMed PMID: 24102114.
+
+
+166: Narsai R, Whelan J. How unique is the low oxygen response? An analysis of
+the anaerobic response during germination and comparison with abiotic stress in
+rice and Arabidopsis. Front Plant Sci. 2013 Oct 1;4:349. PubMed PMID: 24101922;
+PubMed Central PMCID: PMC3787303.
+
+
+167: Kurian AW, Mitani A, Desai M, Yu PP, Seto T, Weber SC, Olson C, Kenkare P,
+Gomez SL, de Bruin MA, Horst K, Belkora J, May SG, Frosch DL, Blayney DW, Luft
+HS, Das AK. Breast cancer treatment across health care systems: Linking
+Electronic Medical Records and State Registry Data to Enable Outcomes Research.
+Cancer. 2013 Sep 24. doi: 10.1002/cncr.28395. [Epub ahead of print] PubMed PMID: 
+24101577.
+
+
+168: Nyquist MD, Li Y, Hwang TH, Manlove LS, Vessella RL, Silverstein KA, Voytas 
+DF, Dehm SM. TALEN-engineered AR gene rearrangements reveal endocrine uncoupling 
+of androgen receptor in prostate cancer. Proc Natl Acad Sci U S A. 2013 Oct 7.
+[Epub ahead of print] PubMed PMID: 24101480.
+
+
+169: Zhang S, Blain JC, Zielinska D, Gryaznov SM, Szostak JW. Fast and accurate
+nonenzymatic copying of an RNA-like synthetic genetic polymer. Proc Natl Acad Sci
+U S A. 2013 Oct 7. [Epub ahead of print] PubMed PMID: 24101473.
+
+
+170: Korevaar PA, Grenier C, Markvoort AJ, Schenning AP, de Greef TF, Meijer EW. 
+Model-driven optimization of multicomponent self-assembly processes. Proc Natl
+Acad Sci U S A. 2013 Oct 7. [Epub ahead of print] PubMed PMID: 24101463.
+
+
+171: Longa VM. The evolution of the Faculty of Language from a Chomskyan
+perspective: bridging linguistics and biology. J Anthropol Sci. 2013 Oct 7. [Epub
+ahead of print] PubMed PMID: 24101452.
+
+
+172: Zhang Z, Zhou Y, Sun J, Mao P, Jing X, Ma X, Ma L. Four novel antimicrobial 
+peptides derived from human C8a-MACPF. Biotechnol Lett. 2013 Oct 8. [Epub ahead
+of print] PubMed PMID: 24101243.
+
+
+173: Yuan H, Liu D. Genetic evidence that Arabidopsis ALTERED ROOT ARCHITECTURE
+encodes a putative dehydrogenase involved in homoserine biosynthesis. Plant Cell 
+Rep. 2013 Oct 8. [Epub ahead of print] PubMed PMID: 24101201.
+
+
+174: Choi M, Al-Zahrani SM, Lee SY. Kinetic model-based feed-forward controlled
+fed-batch fermentation of Lactobacillus rhamnosus for the production of lactic
+acid from Arabic date juice. Bioprocess Biosyst Eng. 2013 Oct 8. [Epub ahead of
+print] PubMed PMID: 24100793.
+
+
+175: Devkota S, Chang EB. Nutrition, microbiomes, and intestinal inflammation.
+Curr Opin Gastroenterol. 2013 Nov;29(6):603-607. PubMed PMID: 24100722.
+
+
+176: Begun J, Xavier RJ. Autophagy at the crossroads of metabolism and cellular
+defense. Curr Opin Gastroenterol. 2013 Nov;29(6):588-596. PubMed PMID: 24100719.
+
+
+177: Kashyap M, Sharma A, Bhavesh NS. Purification, crystallization and
+preliminary crystallographic studies of C-terminal RNA recognition motif (RRM-3) 
+of human ELAV-type RNA-binding protein 3 (ETR-3). Acta Crystallogr Sect F Struct 
+Biol Cryst Commun. 2013 Oct 1;69(Pt 10):1107-1109. Epub 2013 Sep 28. PubMed PMID:
+24100559; PubMed Central PMCID: PMC3792667.
+
+
+178: Oechslin F, Daraspe J, Giddey M, Moreillon P, Resch G. In vitro
+Characterization of PlySK1249, a Novel Phage Lysin, and Assessment of its
+Antibacterial Activity in a Mouse Model of Streptococcus agalactiae Bacteremia.
+Antimicrob Agents Chemother. 2013 Oct 7. [Epub ahead of print] PubMed PMID:
+24100496.
+
+
+179: Huang Y, Chen L, Ye M, Lin S, Zi Y, Wang S. Protein expression and
+subcellular localization of familial acute myelogenous leukemia-related factor.
+Oncol Rep. 2013 Oct 1. doi: 10.3892/or.2013.2773. [Epub ahead of print] PubMed
+PMID: 24100454.
+
+
+180: Feng C, Jia YD, Zhao XY. Pluripotency of Induced Pluripotent Stem Cells.
+Genomics Proteomics Bioinformatics. 2013 Oct 4. doi:pii: S1672-0229(13)00099-5.
+10.1016/j.gpb.2013.08.003. [Epub ahead of print] PubMed PMID: 24100275.
+
+
+181: Zhang M, Yang C, Liu H, Sun Y. Induced Pluripotent Stem Cells Are Sensitive 
+to DNA Damage. Genomics Proteomics Bioinformatics. 2013 Oct 4. doi:pii:
+S1672-0229(13)00098-3. 10.1016/j.gpb.2013.09.006. [Epub ahead of print] PubMed
+PMID: 24100274.
+
+
+182: Li ZJ, Ou-Yang PH, Han XP. Profibrotic effect of miR-33a with Akt and
+peroxisome proliferator-activated receptor-alpha activation in hepatic stellate
+cells. Cell Signal. 2013 Oct 4. doi:pii: S0898-6568(13)00299-4.
+10.1016/j.cellsig.2013.09.018. [Epub ahead of print] PubMed PMID: 24100264.
+
+
+183: Li J, Zhang Y, Wang Y, Zhang C, Wang Q, Shi X, Li C, Zhang R, Li X.
+Functional combination strategy for prioritization of human miRNA target. Gene.
+2013 Oct 4. doi:pii: S0378-1119(13)01340-1. 10.1016/j.gene.2013.09.106. [Epub
+ahead of print] PubMed PMID: 24100082.
+
+
+184: Kulkarni A, Ananthanarayan L, Raman K. Identification of putative and
+potential cross-reactive chickpea (Cicer arietinum) allergens through an in
+silico approach. Comput Biol Chem. 2013 Sep 17;47C:149-155. doi:
+10.1016/j.compbiolchem.2013.08.003. [Epub ahead of print] PubMed PMID: 24099701.
+
+
+185: Fleischman D, Berdahl JP, Fautsch MP, Chesnutt DA, Allingham RR. Increasing 
+intraocular pressure as treatment for papilledema. Exp Eye Res. 2013
+Oct;115C:278. doi: 10.1016/j.exer.2012.09.008. PubMed PMID: 24099064.
+
+
+186: Kidane YH, Lawrence C, Murali TM. Computational approaches for discovery of 
+common immunomodulators in fungal infections: towards broad-spectrum
+immunotherapeutic interventions. BMC Microbiol. 2013 Oct 7;13(1):224. [Epub ahead
+of print] PubMed PMID: 24099000.
+
+
+187: Schmidt C, Irausquin SJ, Valafar H. Advances in the REDCAT software package.
+BMC Bioinformatics. 2013 Oct 7;14(1):302. [Epub ahead of print] PubMed PMID:
+24098943.
+
+
+188: Raue A, Schilling M, Bachmann J, Matteson A, Schelke M, Kaschek D, Hug S,
+Kreutz C, Harms BD, Theis FJ, Klingmüller U, Timmer J. Lessons Learned from
+Quantitative Dynamical Modeling in Systems Biology. PLoS One. 2013 Sep
+30;8(9):e74335. PubMed PMID: 24098642; PubMed Central PMCID: PMC3787051.
+
+
+189: Kausar S, Asif M, Bibi N, Rashid S. Comparative Molecular Docking Analysis
+of Cytoplasmic Dynein Light Chain DYNLL1 with Pilin to Explore the Molecular
+Mechanism of Pathogenesis Caused by Pseudomonas aeruginosa PAO. PLoS One. 2013
+Oct 3;8(10):e76730. PubMed PMID: 24098557; PubMed Central PMCID: PMC3789673.
+
+
+190: Fujimoto K, Hayashi A, Kamata Y, Ogawa A, Watanabe T, Ichikawa R, Iso Y,
+Koba S, Kobayashi Y, Koyama T, Shichiri M. Circulating Levels of Human
+salusin-ß,a Potent Hemodynamic and Atherogenesis Regulator. PLoS One. 2013 Oct
+3;8(10):e76714. PubMed PMID: 24098553; PubMed Central PMCID: PMC3789687.
+
+
+191: Huang CC, Tu SH, Lien HH, Jeng JY, Huang CS, Huang CJ, Lai LC, Chuang EY.
+Concurrent Gene Signatures for Han Chinese Breast Cancers. PLoS One. 2013 Oct
+3;8(10):e76421. PubMed PMID: 24098497; PubMed Central PMCID: PMC3789693.
+
+
+192: Cao K, Ryvkin P, Hwang YC, Johnson FB, Wang LS. Analysis of Nonlinear Gene
+Expression Progression Reveals Extensive Pathway and Age-Specific Transitions in 
+Aging Human Brains. PLoS One. 2013 Oct 3;8(10):e74578. PubMed PMID: 24098339;
+PubMed Central PMCID: PMC3789733.
+
+
+193: Wu Z, Zhang X, Shen L, Xiong Y, Wu X, Huo R, Wei Z, Cai L, Qi G, Xu Q, Cui
+D, Cui D, Zhao G, He L, Qin S. A Systematically Combined Genotype and Functional 
+Combination Analysis of CYP2E1, CYP2D6, CYP2C9, CYP2C19 in Different Geographic
+Areas of Mainland China - A Basis for Personalized Therapy. PLoS One. 2013 Oct
+2;8(10):e71934. PubMed PMID: 24098323; PubMed Central PMCID: PMC3788764.
+
+
+194: Du Y, Zhao J, Chen T, Liu Q, Zhang H, Wang Y, Hong Y, Xiao F, Zhang L, Shen 
+Q, Liu Y. Type I J-Domain NbMIP1 Proteins Are Required for Both Tobacco Mosaic
+Virus Infection and Plant Innate Immunity. PLoS Pathog. 2013 Oct;9(10):e1003659. 
+Epub 2013 Oct 3. PubMed PMID: 24098120; PubMed Central PMCID: PMC3789785.
+
+
+195: Macintyre G, Michaut M, Abeel T. The Regional Student Group Program of the
+ISCB Student Council: Stories from the Road. PLoS Comput Biol. 2013
+Sep;9(9):e1003241. Epub 2013 Sep 26. PubMed PMID: 24098107; PubMed Central PMCID:
+PMC3784494.
+
+
+196: Martínez-Jiménez F, Papadatos G, Yang L, Wallace IM, Kumar V, Pieper U, Sali
+A, Brown JR, Overington JP, Marti-Renom MA. Target Prediction for an Open Access 
+Set of Compounds Active against Mycobacterium tuberculosis.. PLoS Comput Biol.
+2013 Oct;9(10):e1003253. Epub 2013 Oct 3. PubMed PMID: 24098102; PubMed Central
+PMCID: PMC3789770.
+
+
+197: Kashiwabara AY, Bonadio I, Onuchic V, Amado F, Mathias R, Durham AM. ToPS: A
+Framework to Manipulate Probabilistic Models of Sequence Data. PLoS Comput Biol. 
+2013 Oct;9(10):e1003234. Epub 2013 Oct 3. PubMed PMID: 24098098; PubMed Central
+PMCID: PMC3789777.
+
+
+198: Rex R, Bill N, Schmidt-Hohagen K, Schomburg D. Swimming in Light: A
+Large-Scale Computational Analysis of the Metabolism of Dinoroseobacter shibae.. 
+PLoS Comput Biol. 2013 Oct;9(10):e1003224. Epub 2013 Oct 3. PubMed PMID:
+24098096; PubMed Central PMCID: PMC3789786.
+
+
+199: Prassas I, Brinc D, Farkona S, Leung F, Dimitromanolakis A, Chrystoja CC,
+Brand R, Kulasingam V, Blasutig IM, Diamandis EP. False Biomarker Discovery due
+to Reactivity of a Commercial ELISA for CUZD1 with Cancer Antigen CA125. Clin
+Chem. 2013 Oct 11. [Epub ahead of print] PubMed PMID: 24097894.
+
+
+200: Girardot M, Hirasawa R, Kacem S, Fritsch L, Pontis J, Kota SK, Filipponi D, 
+Fabbrizio E, Sardet C, Lohmann F, Kadam S, Ait-Si-Ali S, Feil R. PRMT5-mediated
+histone H4 arginine-3 symmetrical dimethylation marks chromatin at G + C-rich
+regions of the mouse genome. Nucleic Acids Res. 2013 Oct 3. [Epub ahead of print]
+PubMed PMID: 24097435.
+
+
+201: Gonzalez-Tendero A, Torre I, Garcia-Canadilla P, Crispi F, Garcia-Garcia F, 
+Dopazo J, Bijnens B, Gratacos E. Intrauterine growth restriction is associated
+with cardiac ultrastructural and gene expression changes related to the energetic
+metabolism in a rabbit model. Am J Physiol Heart Circ Physiol. 2013 Oct 4. [Epub 
+ahead of print] PubMed PMID: 24097427.
+
+
+202: Global Lipids Genetics Consortium, Willer CJ, Schmidt EM, Sengupta S, Peloso
+GM, Gustafsson S, Kanoni S, Ganna A, Chen J, Buchkovich ML, Mora S, Beckmann JS, 
+Bragg-Gresham JL, Chang HY, Demirkan A, Den Hertog HM, Do R, Donnelly LA, Ehret
+GB, Esko T, Feitosa MF, Ferreira T, Fischer K, Fontanillas P, Fraser RM, Freitag 
+DF, Gurdasani D, Heikkilä K, Hyppönen E, Isaacs A, Jackson AU, Johansson A,
+Johnson T, Kaakinen M, Kettunen J, Kleber ME, Li X, Luan J, Lyytikäinen LP,
+Magnusson PK, Mangino M, Mihailov E, Montasser ME, Müller-Nurasyid M, Nolte IM,
+O'Connell JR, Palmer CD, Perola M, Petersen AK, Sanna S, Saxena R, Service SK,
+Shah S, Shungin D, Sidore C, Song C, Strawbridge RJ, Surakka I, Tanaka T,
+Teslovich TM, Thorleifsson G, Van den Herik EG, Voight BF, Volcik KA, Waite LL,
+Wong A, Wu Y, Zhang W, Absher D, Asiki G, Barroso I, Been LF, Bolton JL,
+Bonnycastle LL, Brambilla P, Burnett MS, Cesana G, Dimitriou M, Doney AS, Döring 
+A, Elliott P, Epstein SE, Eyjolfsson GI, Gigante B, Goodarzi MO, Grallert H,
+Gravito ML, Groves CJ, Hallmans G, Hartikainen AL, Hayward C, Hernandez D, Hicks 
+AA, Holm H, Hung YJ, Illig T, Jones MR, Kaleebu P, Kastelein JJ, Khaw KT, Kim E, 
+Klopp N, Komulainen P, Kumari M, Langenberg C, Lehtimäki T, Lin SY, Lindström J, 
+Loos RJ, Mach F, McArdle WL, Meisinger C, Mitchell BD, Müller G, Nagaraja R,
+Narisu N, Nieminen TV, Nsubuga RN, Olafsson I, Ong KK, Palotie A, Papamarkou T,
+Pomilla C, Pouta A, Rader DJ, Reilly MP, Ridker PM, Rivadeneira F, Rudan I,
+Ruokonen A, Samani N, Scharnagl H, Seeley J, Silander K, Stancáková A, Stirrups
+K, Swift AJ, Tiret L, Uitterlinden AG, van Pelt LJ, Vedantam S, Wainwright N,
+Wijmenga C, Wild SH, Willemsen G, Wilsgaard T, Wilson JF, Young EH, Zhao JH,
+Adair LS, Arveiler D, Assimes TL, Bandinelli S, Bennett F, Bochud M, Boehm BO,
+Boomsma DI, Borecki IB, Bornstein SR, Bovet P, Burnier M, Campbell H, Chakravarti
+A, Chambers JC, Chen YD, Collins FS, Cooper RS, Danesh J, Dedoussis G, de Faire
+U, Feranil AB, Ferrières J, Ferrucci L, Freimer NB, Gieger C, Groop LC, Gudnason 
+V, Gyllensten U, Hamsten A, Harris TB, Hingorani A, Hirschhorn JN, Hofman A,
+Hovingh GK, Hsiung CA, Humphries SE, Hunt SC, Hveem K, Iribarren C, Järvelin MR, 
+Jula A, Kähönen M, Kaprio J, Kesäniemi A, Kivimaki M, Kooner JS, Koudstaal PJ,
+Krauss RM, Kuh D, Kuusisto J, Kyvik KO, Laakso M, Lakka TA, Lind L, Lindgren CM, 
+Martin NG, März W, McCarthy MI, McKenzie CA, Meneton P, Metspalu A, Moilanen L,
+Morris AD, Munroe PB, Njølstad I, Pedersen NL, Power C, Pramstaller PP, Price JF,
+Psaty BM, Quertermous T, Rauramaa R, Saleheen D, Salomaa V, Sanghera DK, Saramies
+J, Schwarz PE, Sheu WH, Shuldiner AR, Siegbahn A, Spector TD, Stefansson K,
+Strachan DP, Tayo BO, Tremoli E, Tuomilehto J, Uusitupa M, van Duijn CM,
+Vollenweider P, Wallentin L, Wareham NJ, Whitfield JB, Wolffenbuttel BH, Ordovas 
+JM, Boerwinkle E, Palmer CN, Thorsteinsdottir U, Chasman DI, Rotter JI, Franks
+PW, Ripatti S, Cupples LA, Sandhu MS, Rich SS, Boehnke M, Deloukas P, Kathiresan 
+S, Mohlke KL, Ingelsson E, Abecasis GR. Discovery and refinement of loci
+associated with lipid levels. Nat Genet. 2013 Oct 6. doi: 10.1038/ng.2797. [Epub 
+ahead of print] PubMed PMID: 24097068.
+
+
+203: Yao M, Tu W, Chen X, Zhan CG. Reaction pathways and free energy profiles for
+spontaneous hydrolysis of urea and tetramethylurea: unexpected substituent
+effects. Org Biomol Chem. 2013 Oct 7. [Epub ahead of print] PubMed PMID:
+24097048.
+
+
+204: van Leersum N, Martijnse I, den Dulk M, Kolfschoten N, Le Cessie S, van de
+Velde C, Tollenaar R, Wouters M, Rutten HJ. Differences in Circumferential
+Resection Margin Involvement After Abdominoperineal Excision and Low Anterior
+Resection No Longer Significant. Ann Surg. 2013 Oct 3. [Epub ahead of print]
+PubMed PMID: 24096756.
+
+
+205: Das J, Fragoza R, Lee HR, Cordero NA, Guo Y, Meyer MJ, Vo TV, Wang X, Yu H. 
+Exploring mechanisms of human disease through structurally resolved protein
+interactome networks. Mol Biosyst. 2013 Oct 4. [Epub ahead of print] PubMed PMID:
+24096645.
+
+
+206: Hong F, Simon R. Run-In Phase III Trial Design With Pharmacodynamics
+Predictive Biomarkers. J Natl Cancer Inst. 2013 Oct 4. [Epub ahead of print]
+PubMed PMID: 24096624.
+
+
+207: Ciriello G, Sinha R, Hoadley KA, Jacobsen AS, Reva B, Perou CM, Sander C,
+Schultz N. The molecular diversity of Luminal A breast tumors. Breast Cancer Res 
+Treat. 2013 Oct 6. [Epub ahead of print] PubMed PMID: 24096568.
+
+
+208: Brown CJ, Sen D, Yano H, Bauer ML, Rogers LM, Van der Auwera GA, Top EM.
+Diverse broad-host-range plasmids from freshwater carry few accessory genes. Appl
+Environ Microbiol. 2013 Oct 4. [Epub ahead of print] PubMed PMID: 24096417.
+
+
+209: Jacobsen A, Silber J, Harinath G, Huse JT, Schultz N, Sander C. Analysis of 
+microRNA-target interactions across diverse cancer types. Nat Struct Mol Biol.
+2013 Oct 6. doi: 10.1038/nsmb.2678. [Epub ahead of print] PubMed PMID: 24096364.
+
+
+210: Choong YS, Tye GJ, Lim TS. Minireview: Applied Structural Bioinformatics in 
+Proteomics. Protein J. 2013 Oct 6. [Epub ahead of print] PubMed PMID: 24096348.
+
+
+211: Samsonov SA, Pisabarro MT. Importance of IdoA and IdoA(2S) ring
+conformations in computational studies of glycosaminoglycan-protein interactions.
+Carbohydr Res. 2013 Sep 16;381C:133-137. doi: 10.1016/j.carres.2013.09.005. [Epub
+ahead of print] PubMed PMID: 24096273.
+
+
+212: Jia W, Chen W, Kang J. The Functions of microRNAs and Long Non-coding RNAs
+in Embryonic and Induced Pluripotent Stem Cells. Genomics Proteomics
+Bioinformatics. 2013 Oct 1. doi:pii: S1672-0229(13)00096-X.
+10.1016/j.gpb.2013.09.004. [Epub ahead of print] PubMed PMID: 24096129.
+
+
+213: Nguyen N, Vo A, Won KJ. A wavelet-based method to exploit epigenomic
+language in the regulatory region. Bioinformatics. 2013 Oct 4. [Epub ahead of
+print] PubMed PMID: 24096080.
+
+
+214: Shu J, Deng H. Lineage Specifiers: New Players in the Induction of
+Pluripotency. Genomics Proteomics Bioinformatics. 2013 Oct 3. doi:pii:
+S1672-0229(13)00097-1. 10.1016/j.gpb.2013.09.005. [Epub ahead of print] PubMed
+PMID: 24095709.
+
+
+215: Liu W, Xie H. Prediction of regulation relationship between protein
+interactions in signaling networks. Biochem Biophys Res Commun. 2013 Oct 1.
+doi:pii: S0006-291X(13)01586-6. 10.1016/j.bbrc.2013.09.093. [Epub ahead of print]
+PubMed PMID: 24095690.
+
+
+216: Ishikawa F, Uno K, Nishikawa M, Tsumuraya T, Fujii I. Antibody-catalyzed
+decarboxylation and aldol reactions using a primary amine molecule as a
+functionalized small nonprotein component. Bioorg Med Chem. 2013 Sep 19. doi:pii:
+S0968-0896(13)00795-5. 10.1016/j.bmc.2013.09.015. [Epub ahead of print] PubMed
+PMID: 24094435.
+
+
+217: Gur M, Madura JD, Bahar I. Global Transitions of Proteins Explored by a
+Multiscale Hybrid Methodology: Application to Adenylate Kinase. Biophys J. 2013
+Oct 1;105(7):1643-1652. doi: 10.1016/j.bpj.2013.07.058. PubMed PMID: 24094405.
+
+
+218: Weinreich DM, Knies JL. FISHER'S GEOMETRIC MODEL OF ADAPTATION MEETS THE
+FUNCTIONAL SYNTHESIS: DATA ON PAIRWISE EPISTASIS FOR FITNESS YIELDS INSIGHTS INTO
+THE SHAPE AND SIZE OF PHENOTYPE SPACE. Evolution. 2013 Oct;67(10):2957-2972. doi:
+10.1111/evo.12156. Epub 2013 Jun 5. PubMed PMID: 24094346.
+
+
+219: Nakhleh L. Computational approaches to species phylogeny inference and gene 
+tree reconciliation. Trends Ecol Evol. 2013 Oct 1. doi:pii:
+S0169-5347(13)00213-9. 10.1016/j.tree.2013.09.004. [Epub ahead of print] PubMed
+PMID: 24094331.
+
+
+220: Hanein D, Milligan R. Structural analysis of supramolecular assemblies by
+hybrid methods. J Struct Biol. 2013 Oct;184(1):1. doi: 10.1016/j.jsb.2013.09.014.
+PubMed PMID: 24094312.
+
+
+221: Wang Y, Wang C, Hou Z, Miao K, Zhao H, Wang R, Guo M, Wu Z, Tian J, An L.
+Comparative analysis of proteomic profiles between endometrial caruncular and
+intercaruncular areas in ewes during the peri-implantation period. J Anim Sci
+Biotechnol. 2013 Oct 5;4(1):39. [Epub ahead of print] PubMed PMID: 24093944.
+
+
+222: Arévalo-Pinzón G, Curtidor H, Abril J, Patarroyo MA. Annotation and
+characterization of the Plasmodium vivax rhoptry neck protein 4 (PvRON4). Malar
+J. 2013 Oct 5;12(1):356. [Epub ahead of print] PubMed PMID: 24093777.
+
+
+223: Islam MF, Hoque MM, Banik RS, Roy S, Sumi SS, Hassan FN, Tomal MT, Ullah A, 
+Rahman KT. Comparative analysis of differential network modularity in tissue
+specific normal and cancer protein interaction networks. J Clin Bioinforma. 2013 
+Oct 6;3(1):19. [Epub ahead of print] PubMed PMID: 24093757.
+
+
+224: Jones M, Blaxter M. afterParty: turning raw transcriptomes into permanent
+resources. BMC Bioinformatics. 2013 Oct 7;14(1):301. [Epub ahead of print] PubMed
+PMID: 24093729.
+
+
+225: Fang C, Noguchi T, Tominaga D, Yamana H. MFSPSSMpred: identifying short
+disorder-to-order binding regions in disordered proteins based on contextual
+local evolutionary conservation. BMC Bioinformatics. 2013 Oct 4;14(1):300. [Epub 
+ahead of print] PubMed PMID: 24093637.
+
+
+226: Tucker G, Loh PR, Berger B. A sampling framework for incorporating
+quantitative mass spectrometry data in protein interaction analysis. BMC
+Bioinformatics. 2013 Oct 4;14(1):299. [Epub ahead of print] PubMed PMID:
+24093595.
+
+
+227: Stringham JL, Brown AS, Drewell RA, Dresch JM. Flanking sequence
+context-dependent transcription factor binding in early Drosophila development.
+BMC Bioinformatics. 2013 Oct 4;14(1):298. [Epub ahead of print] PubMed PMID:
+24093548.
+
+
+228: Wang Y, Fruhwirth G, Cai E, Ng T, Selvin PR. 3D Super-Resolution Imaging
+with Blinking Quantum Dots. Nano Lett. 2013 Oct 10. [Epub ahead of print] PubMed 
+PMID: 24093439.
+
+
+229: Choi J. Guide: a desktop application for analysing gene expression data. BMC
+Genomics. 2013 Oct 7;14(1):688. [Epub ahead of print] PubMed PMID: 24093424.
+
+
+230: Sun F. Preface: Research in Computational Molecular Biology (RECOMB 2013). J
+Comput Biol. 2013 Oct;20(10):713. PubMed PMID: 24093226.
+
+
+231: Bradshaw NJ, Hennah W, Soares DC. NDE1 and NDEL1: twin neurodevelopmental
+proteins with similar 'nature' but different 'nurture'. Biomol Concepts. 2013 Sep
+1;4(5):447-464. PubMed PMID: 24093049; PubMed Central PMCID: PMC3787581.
+
+
+232: Epa VC, Yang J, Mei Y, Hook AL, Langer R, Anderson DG, Davies MC, Alexander 
+MR, Winkler DA. Modelling human embryoid body cell adhesion to a combinatorial
+library of polymer surfaces. J Mater Chem. 2012 Sep 18;22(39):20902-20906. PubMed
+PMID: 24092955; PubMed Central PMCID: PMC3787298.
+
+
+233: Gyenesei A, Semple CA, Haley CS, Wei WH. Corrigendum of 'High throughput
+analysis of epistasis in genome-wide association studies with BiForce'.
+Bioinformatics. 2013 Oct 15;29(20):2667-2668. Epub 2013 Sep 2. PubMed PMID:
+24092873.
+
+
+234: Sun H, Wang H, Zhu R, Tang K, Gong Q, Cui J, Cao Z, Liu Q. iPEAP:
+integrating multiple omics and genetic data for pathway enrichment analysis.
+Bioinformatics. 2013 Oct 3. [Epub ahead of print] PubMed PMID: 24092766.
+
+
+235: Khurana E, Fu Y, Colonna V, Mu XJ, Kang HM, Lappalainen T, Sboner A,
+Lochovsky L, Chen J, Harmanci A, Das J, Abyzov A, Balasubramanian S, Beal K,
+Chakravarty D, Challis D, Chen Y, Clarke D, Clarke L, Cunningham F, Evani US,
+Flicek P, Fragoza R, Garrison E, Gibbs R, Gümüs ZH, Herrero J, Kitabayashi N,
+Kong Y, Lage K, Liluashvili V, Lipkin SM, Macarthur DG, Marth G, Muzny D, Pers
+TH, Ritchie GR, Rosenfeld JA, Sisu C, Wei X, Wilson M, Xue Y, Yu F; 1000 Genomes 
+Project Consortium, Dermitzakis ET, Yu H, Rubin MA, Tyler-Smith C, Gerstein M.
+Integrative Annotation of Variants from 1092 Humans: Application to Cancer
+Genomics. Science. 2013 Oct 4;342(6154):1235587. PubMed PMID: 24092746.
+
+
+236: Ngassa Mbenda HG, Das A. Occurrence of multiple chloroquine-resistant Pfcrt 
+haplotypes and emergence of the S(agt)VMNT type in Cameroonian Plasmodium
+falciparum. J Antimicrob Chemother. 2013 Oct 3. [Epub ahead of print] PubMed
+PMID: 24092656.
+
+
+237: Bartoszewska S, Kochan K, Madanecki P, Piotrowski A, Ochocka R, Collawn JF, 
+Bartoszewski R. Regulation of the unfolded protein response by microRNAs. Cell
+Mol Biol Lett. 2013 Oct 2. [Epub ahead of print] PubMed PMID: 24092331.
+
+
+238: Zhao Y, Wang J, Chen X, Luo H, Zhao Y, Xiao Y, Chen R. Large-scale study of 
+long non-coding RNA functions based on structure and expression features. Sci
+China Life Sci. 2013 Oct;56(10):953-959. Epub 2013 Oct 5. PubMed PMID: 24091687.
+
+
+239: Qi W, Song X, Li L. Long non-coding RNA-guided regulation in organisms. Sci 
+China Life Sci. 2013 Oct;56(10):891-896. Epub 2013 Oct 5. PubMed PMID: 24091686.
+
+
+240: Milotti E, Vyshemirsky V, Sega M, Stella S, Dogo F, Chignola R.
+Computer-Aided Biophysical Modeling: A Quantitative Approach to Complex
+Biological Systems. IEEE/ACM Trans Comput Biol Bioinform. 2013
+May-June;10(3):805-810. PubMed PMID: 24091412.
+
+
+241: Sengupta D, Pyne A, Maulik U, Bandyopadhyay S. Reformulated Kemeny Optimal
+Aggregation with Application in Consensus Ranking of microRNA Targets. IEEE/ACM
+Trans Comput Biol Bioinform. 2013 May-June;10(3):742-751. PubMed PMID: 24091406.
+
+
+242: Gremme G, Steinbiss S, Kurtz S. GenomeTools: A Comprehensive Software
+Library for Efficient Processing of Structured Genome Annotations. IEEE/ACM Trans
+Comput Biol Bioinform. 2013 May-June;10(3):645-656. PubMed PMID: 24091398.
+
+
+243: Jamil HM. Designing Integrated Computational Biology Pipelines Visually.
+IEEE/ACM Trans Comput Biol Bioinform. 2013 May-June;10(3):605-618. PubMed PMID:
+24091395.
+
+
+244: Dehzangi A, Paliwal K, Sharma A, Dehzangi O, Sattar A. A Combination of
+Feature Extraction Methods with an Ensemble of Different Classifiers for Protein 
+Structural Class Prediction Problem. IEEE/ACM Trans Comput Biol Bioinform. 2013
+May-June;10(3):564-575. PubMed PMID: 24091391.
+
+
+245: Miozzi L, Pantaleo V, Burgyán J, Accotto GP, Noris E. Analysis of small RNAs
+derived from tomato yellow leaf curl Sardinia virus reveals a cross reaction
+between the major viral hotspot and the plant host genome. Virus Res. 2013 Sep
+30. doi:pii: S0168-1702(13)00321-3. 10.1016/j.virusres.2013.09.029. [Epub ahead
+of print] PubMed PMID: 24091361.
+
+
+246: Lee W, Hu K, Tonelli M, Bahrami A, Neuhardt E, Glass KC, Markley JL. Fast
+automated protein NMR data collection and assignment by ADAPT-NMR on Bruker
+spectrometers. J Magn Reson. 2013 Aug 30;236C:83-88. doi:
+10.1016/j.jmr.2013.08.010. [Epub ahead of print] PubMed PMID: 24091140.
+
+
+247: Wang Y, Wang G, Zhang D, Yin H, Wang M. Identification of novel B cell
+epitopes within Toxoplasma gondii GRA1. Exp Parasitol. 2013 Oct 1. doi:pii:
+S0014-4894(13)00264-6. 10.1016/j.exppara.2013.09.019. [Epub ahead of print]
+PubMed PMID: 24090568.
+
+
+248: Powers JG, Weigman VJ, Shu J, Pufky JM, Cox D, Hurban P. Efficient and
+accurate whole genome assembly and methylome profiling of E. coli. BMC Genomics. 
+2013 Oct 3;14(1):675. [Epub ahead of print] PubMed PMID: 24090403.
+
+
+249: Buggenthin F, Marr C, Schwarzfischer M, Hoppe PS, Hilsenbeck O, Schroeder T,
+Theis FJ. An automatic method for robust and fast cell detection in bright field 
+images from high-throughput microscopy. BMC Bioinformatics. 2013 Oct 4;14(1):297.
+[Epub ahead of print] PubMed PMID: 24090363.
+
+
+250: Du CJ, Hawkins PT, Stephens LR, Bretschneider T. 3D time series analysis of 
+cell shape using Laplacian approaches. BMC Bioinformatics. 2013 Oct 4;14(1):296. 
+[Epub ahead of print] PubMed PMID: 24090312.
+
+
+251: Azuma Y, Onami S. Evaluation of the effectiveness of simple
+nuclei-segmentation methods on Caenorhabditis elegans embryogenesis images. BMC
+Bioinformatics. 2013 Oct 4;14(1):295. [Epub ahead of print] PubMed PMID:
+24090283.
+
+
+252: Navlakha S, Ahammad P, Myers EW. Unsupervised segmentation of noisy electron
+microscopy images using salient watersheds and region merging. BMC
+Bioinformatics. 2013 Oct 4;14(1):294. [Epub ahead of print] PubMed PMID:
+24090265.
+
+
+253: Peng H, Roysam B, Ascoli GA. Automated image computing reshapes
+computational neuroscience. BMC Bioinformatics. 2013 Oct 4;14(1):293. [Epub ahead
+of print] PubMed PMID: 24090217.
+
+
+254: Failmezger H, Fröhlich H, Tresch A. Unsupervised automated high throughput
+phenotyping of RNAi time-lapse movies. BMC Bioinformatics. 2013 Oct 4;14(1):292. 
+[Epub ahead of print] PubMed PMID: 24090185.
+
+
+255: Zhou J, Lamichhane S, Sterne G, Ye B, Peng H. BIOCAT: a pattern recognition 
+platform for customizable biological image classification and annotation. BMC
+Bioinformatics. 2013 Oct 4;14(1):291. [Epub ahead of print] PubMed PMID:
+24090164.
+
+
+256: Chang RF, Hou YL, Huang CS, Chen JH, Chang JM, Moon WK. Automatic detection 
+of microcalcifications in breast ultrasound. Med Phys. 2013 Oct;40(10):102901.
+PubMed PMID: 24089929.
+
+
+257: Ando T, Chow E, Skolnick J. Dynamic simulation of concentrated
+macromolecular solutions with screened long-range hydrodynamic interactions:
+Algorithm and limitations. J Chem Phys. 2013 Sep 28;139(12):121922. PubMed PMID: 
+24089734; PubMed Central PMCID: PMC3758360.
+
+
+258: Gur M, Zomot E, Bahar I. Global motions exhibited by proteins in micro- to
+milliseconds simulations concur with anisotropic network model predictions. J
+Chem Phys. 2013 Sep 28;139(12):121912. PubMed PMID: 24089724; PubMed Central
+PMCID: PMC3739829.
+
+
+259: Lyle N, Das RK, Pappu RV. A quantitative measure for protein conformational 
+heterogeneity. J Chem Phys. 2013 Sep 28;139(12):121907. PubMed PMID: 24089719;
+PubMed Central PMCID: PMC3724800.
+
+
+260: Gruebele M, Thirumalai D. Perspective: Reaches of chemical physics in
+biology. J Chem Phys. 2013 Sep 28;139(12):121701. PubMed PMID: 24089712.
+
+
+261: Tran PV, Dakoji S, Reise KH, Storey KK, Georgieff MK. Fetal iron deficiency 
+alters proteome of adult rat hippocampal synaptosomes. Am J Physiol Regul Integr 
+Comp Physiol. 2013 Oct 2. [Epub ahead of print] PubMed PMID: 24089371.
+
+
+262: Evans MR, Bithell M, Cornell SJ, Dall SR, Díaz S, Emmott S, Ernande B, Grimm
+V, Hodgson DJ, Lewis SL, Mace GM, Morecroft M, Moustakas A, Murphy E, Newbold T, 
+Norris KJ, Petchey O, Smith M, Travis JM, Benton TG. Predictive systems ecology. 
+Proc Biol Sci. 2013 Oct 2;280(1771):20131452. Print 2013. PubMed PMID: 24089332; 
+PubMed Central PMCID: PMC3790477.
+
+
+263: Luo FL, Yuan F, Peng Z, Zhou W, Fang L, Cai JF. Regulation different network
+analysis of rheumatoid arthritis (RA) and osteoarthritis (OA). Eur Rev Med
+Pharmacol Sci. 2013 Sep;17(18):2504-2511. PubMed PMID: 24089231.
+
+
+264: Duggal G, Wang H, Kingsford C. Higher-order chromatin domains link eQTLs
+with the expression of far-away genes. Nucleic Acids Res. 2013 Oct 1. [Epub ahead
+of print] PubMed PMID: 24089144.
+
+
+265: Reimand J, Wagih O, Bader GD. The mutational landscape of phosphorylation
+signaling in cancer. Sci Rep. 2013 Oct 2;3:2651. doi: 10.1038/srep02651. PubMed
+PMID: 24089029.
+
+
+266: Gong L, Han Y, Chen L, Liu F, Hao P, Sheng J, Li XH, Yu DM, Gong QM, Tian F,
+Guo XK, Zhang XX. A comparison of Next-Generation Sequencing and Clone-Based
+Sequencing in Analysis of HBV RT Quasispecies Heterogeneity. J Clin Microbiol.
+2013 Oct 2. [Epub ahead of print] PubMed PMID: 24088859.
+
+
+267: Kumar P, Goh G, Wongphayak S, Moreau D, Bard F. ScreenSifter: analysis and
+visualization of RNAi screening data. BMC Bioinformatics. 2013 Oct 3;14(1):290.
+[Epub ahead of print] PubMed PMID: 24088301.
+
+
+268: Korneliussen TS, Moltke I, Albrechtsen A, Nielsen R. Calculation of Tajima's
+D and other neutrality test statistics from low depth next-generation sequencing 
+data. BMC Bioinformatics. 2013 Oct 2;14(1):289. [Epub ahead of print] PubMed
+PMID: 24088262.
+
+
+269: Molineris I, Ala U, Provero P, Di Cunto F. Drug repositioning for orphan
+genetic diseases through Conserved Anticoexpressed Gene Clusters (CAGCs). BMC
+Bioinformatics. 2013 Oct 2;14(1):288. [Epub ahead of print] PubMed PMID:
+24088245.
+
+
+270: Chen M, Moerdyk JP, Blake GA, Bielawski CW, Lee JK. Assessing the Proton
+Affinities of N,N'-Diamidocarbenes. J Org Chem. 2013 Oct 3. [Epub ahead of print]
+PubMed PMID: 24088244.
+
+
+271: Jammalamadaka A, Banerjee S, Kosik KS, Manjunath BS. Statistical Analysis of
+Dendritic Spine Distributions in Rat Hippocampal Cultures. BMC Bioinformatics.
+2013 Oct 2;14(1):287. [Epub ahead of print] PubMed PMID: 24088199.
+
+
+272: Matsuoka Y, Matsumae H, Katoh M, Eisfeld AJ, Neumann G, Hase T, Ghosh S,
+Shoemaker JE, Lopes TJ, Watanabe T, Watanabe S, Fukuyama S, Kitano H, Kawaoka Y. 
+A comprehensive map of the influenza A virus replication cycle. BMC Syst Biol.
+2013 Oct 2;7(1):97. [Epub ahead of print] PubMed PMID: 24088197.
+
+
+273: Peng M, Scholten A, Heck AJ, van Breukelen B. Identification of enriched PTM
+cross-talk motifs from large-scale experimental datasets. J Proteome Res. 2013
+Oct 2. [Epub ahead of print] PubMed PMID: 24087892.
+
+
+274: Twin J, Bradshaw CS, Garland SM, Fairley CK, Fethers K, Tabrizi SN. The
+Potential of Metatranscriptomics for Identifying Screening Targets for Bacterial 
+Vaginosis. PLoS One. 2013 Sep 27;8(9):e76892. PubMed PMID: 24086764; PubMed
+Central PMCID: PMC3785445.
+
+
+275: Muszewska A, Steczkiewicz K, Ginalski K. DIRS and Ngaro Retrotransposons in 
+Fungi. PLoS One. 2013 Sep 25;8(9):e76319. PubMed PMID: 24086727; PubMed Central
+PMCID: PMC3783388.
+
+
+276: Kamaraj B, Kumar A, Purohit R. Evolutionary Reconstruction and Population
+Genetics Analysis of Aurora Kinases. PLoS One. 2013 Sep 24;8(9):e75763. PubMed
+PMID: 24086628; PubMed Central PMCID: PMC3782425.
+
+
+277: Liu X, Han S, Wang Z, Gelernter J, Yang BZ. Variant Callers for
+Next-Generation Sequencing Data: A Comparison Study. PLoS One. 2013 Sep
+27;8(9):e75619. PubMed PMID: 24086590; PubMed Central PMCID: PMC3785481.
+
+
+278: Smith SB, Magid-Slav M, Brown JR. Host Response to Respiratory Bacterial
+Pathogens as Identified by Integrated Analysis of Human Gene Expression Data.
+PLoS One. 2013 Sep 27;8(9):e75607. PubMed PMID: 24086587; PubMed Central PMCID:
+PMC3785471.
+
+
+279: Kleftogiannis D, Kalnis P, Bajic VB. Comparing Memory-Efficient Genome
+Assemblers on Stand-Alone and Cloud Infrastructures. PLoS One. 2013 Sep
+27;8(9):e75505. PubMed PMID: 24086547; PubMed Central PMCID: PMC3785575.
+
+
+280: Liu G, Cao P, Chen H, Yuan W, Wang J, Tang X. MiR-27a Regulates Apoptosis in
+Nucleus Pulposus Cells by Targeting PI3K. PLoS One. 2013 Sep 25;8(9):e75251.
+PubMed PMID: 24086481; PubMed Central PMCID: PMC3783482.
+
+
+281: Youssar L, Grüning BA, Günther S, Hüttel W. Characterization and
+Phylogenetic Analysis of the Mitochondrial Genome of Glarea lozoyensis Indicates 
+High Diversity within the Order Helotiales. PLoS One. 2013 Sep 25;8(9):e74792.
+PubMed PMID: 24086376; PubMed Central PMCID: PMC3783487.
+
+
+282: Qiao N, Huang Y, Naveed H, Green CD, Han JD. CoCiter: An Efficient Tool to
+Infer Gene Function by Assessing the Significance of Literature Co-Citation. PLoS
+One. 2013 Sep 23;8(9):e74074. PubMed PMID: 24086311; PubMed Central PMCID:
+PMC3781068.
+
+
+283: Pardo-Seco J, Amigo J, González-Manteiga W, Salas A. A Generalized Model to 
+Estimate the Statistical Power in Mitochondrial Disease Studies Involving 2×k
+Tables. PLoS One. 2013 Sep 27;8(9):e73567. PubMed PMID: 24086285; PubMed Central 
+PMCID: PMC3785462.
+
+
+284: Mao Y, Li Q, Zhang Y, Zhang J, Wei G, Tao S. Genome-Wide Analysis of
+Selective Constraints on High Stability Regions of mRNA Reveals Multiple
+Compensatory Mutations in Escherichia coli.. PLoS One. 2013 Sep 27;8(9):e73299.
+PubMed PMID: 24086278; PubMed Central PMCID: PMC3785496.
+
+
+285: Leger MM, Gawryluk RM, Gray MW, Roger AJ. Evidence for a Hydrogenosomal-Type
+Anaerobic ATP Generation Pathway in Acanthamoeba castellanii.. PLoS One. 2013 Sep
+27;8(9):e69532. PubMed PMID: 24086244; PubMed Central PMCID: PMC3785491.
+
+
+286: Bacolla A, Temiz NA, Yi M, Ivanic J, Cer RZ, Donohue DE, Ball EV, Mudunuri
+US, Wang G, Jain A, Volfovsky N, Luke BT, Stephens RM, Cooper DN, Collins JR,
+Vasquez KM. Guanine Holes Are Prominent Targets for Mutation in Cancer and
+Inherited Disease. PLoS Genet. 2013 Sep;9(9):e1003816. Epub 2013 Sep 26. PubMed
+PMID: 24086153; PubMed Central PMCID: PMC3784513.
+
+
+287: Barua D, Hlavacek WS. Modeling the Effect of APC Truncation on Destruction
+Complex Function in Colorectal Cancer Cells. PLoS Comput Biol. 2013
+Sep;9(9):e1003217. Epub 2013 Sep 26. PubMed PMID: 24086117; PubMed Central PMCID:
+PMC3784502.
+
+
+288: Grafton J, Baldwin E, Carrell D. PS3-1: Marshalling Site-Specific Data in
+Multi-Site Studies: Lessons from the eMERGE Network. Clin Med Res. 2013
+Sep;11(3):147. PubMed PMID: 24085934; PubMed Central PMCID: PMC3788416.
+
+
+289: Jjingo D, Wang J, Conley AB, Lunyak VV, Jordan IK. Compound cis-regulatory
+elements with both boundary and enhancer sequences in the human genome.
+Bioinformatics. 2013 Oct 10. [Epub ahead of print] PubMed PMID: 24085569.
+
+
+290: Hibsh D, Schori H, Efroni S, Shefi O. Spatial Regulation Dominates Gene
+Function in the Ganglia Chain. Bioinformatics. 2013 Oct 1. [Epub ahead of print] 
+PubMed PMID: 24085568.
+
+
+291: Wang Y, Qian X. Functional module identification in protein interaction
+networks by interaction patterns. Bioinformatics. 2013 Oct 1. [Epub ahead of
+print] PubMed PMID: 24085567.
+
+
+292: Liebner DA, Huang K, Parvin JD. MMAD: Microarray Micro-dissection with
+Analysis of Differences is a computational tool for deconvoluting cell type
+specific contributions from tissue samples. Bioinformatics. 2013 Oct 1. [Epub
+ahead of print] PubMed PMID: 24085566.
+
+
+293: Ou M, Zhang X, Dai Y, Gao J, Zhu M, Yang X, Li Y, Yang T, Ding M.
+Identification of potential microRNA-target pairs associated with osteopetrosis
+by deep sequencing, iTRAQ proteomics and bioinformatics. Eur J Hum Genet. 2013
+Oct 2. doi: 10.1038/ejhg.2013.221. [Epub ahead of print] PubMed PMID: 24084574.
+
+
+294: Afridi MI. Novel hybrid genetic algorithm for progressive multiple sequence 
+alignment. Int J Bioinform Res Appl. 2013 Jan 1;9(6):614-624. PubMed PMID:
+24084242.
+
+
+295: Kumar G, Kunal SP, Shyama SK. Evolutionary history and phylogenetic
+relationship between Auxis thazard and Auxis rochei inferred from COI sequences
+of mtDNA. Int J Bioinform Res Appl. 2013 Jan 1;9(6):604-613. PubMed PMID:
+24084241.
+
+
+296: Jain CK, Dasgupta A, Taneja N, Chaubey S, Gabrani R, Sharma SK, Gupta S.
+Putative drug targets in Rhizopus oryzae: in-silico insight. Int J Bioinform Res 
+Appl. 2013 Jan 1;9(6):595-603. PubMed PMID: 24084240.
+
+
+297: Ahrabian H, Ganjtabesh M, Nowzari-Dalini A, Razaghi-Moghadam-Kashani Z.
+Genetic algorithm solution for partial digest problem. Int J Bioinform Res Appl. 
+2013 Jan 1;9(6):584-594. PubMed PMID: 24084239.
+
+
+298: Singh TR, Gupta A, Suravajhala P. Challenges in the miRNA research. Int J
+Bioinform Res Appl. 2013 Jan 1;9(6):576-583. PubMed PMID: 24084238.
+
+
+299: Seema S, Seenivasagam R, Hemavathi K. In-silico analysis for
+RNA-interference mechanism of a-synuclein to treat Parkinson's disease. Int J
+Bioinform Res Appl. 2013 Jan 1;9(6):557-575. PubMed PMID: 24084237.
+
+
+300: Tuszynska I, Matelska D, Magnus M, Chojnowski G, Kasprzak JM, Kozlowski LP, 
+Dunin-Horkawicz S, Bujnicki JM. Computational modeling of protein-RNA complex
+structures. Methods. 2013 Sep 29. doi:pii: S1046-2023(13)00383-6.
+10.1016/j.ymeth.2013.09.014. [Epub ahead of print] PubMed PMID: 24083976.
+
+
+301: Srinivasaraghavan K, Nacro K, Grüber G, Verma CS. Effect of Ser392
+Phosphorylation on the Structure and Dynamics of the Polybasic Domain of ADP
+Ribosylation Factor Nucleotide Site Opener Protein: A Molecular Simulation Study.
+Biochemistry. 2013 Oct 1. [Epub ahead of print] PubMed PMID: 24083777.
+
+
+302: Huang YD, Shan W, Zeng L, Wu Y. Screening of Differentially Expressed Genes 
+Related to Bladder Cancer and Functional Analysis with DNA Microarray. Asian Pac 
+J Cancer Prev. 2013;14(8):4553-4557. PubMed PMID: 24083701.
+
+
+303: Zhang L, Guo Y, Li B, Qu J, Zang C, Li F, Wang Y, Pang H, Li S, Liu Q.
+Identification of biomarkers for hepatocellular carcinoma using network-based
+bioinformatics methods. Eur J Med Res. 2013 Oct 1;18(1):35. [Epub ahead of print]
+PubMed PMID: 24083576.
+
+
+304: Ayub A, Ashfaq UA, Idrees S, Haque A. Global Consensus Sequence Development 
+and Analysis of Dengue NS3 Conserved Domains. Biores Open Access. 2013
+Oct;2(5):392-396. PubMed PMID: 24083095; PubMed Central PMCID: PMC3776613.
+
+
+305: Deshmukh S, Madagi SB. A chemogenomics based approach for deorphanization of
+testicular receptor 4: An orphan receptor of nuclear receptor superfamily. J Nat 
+Sci Biol Med. 2013 Jul;4(2):276-281. Review. PubMed PMID: 24082716; PubMed
+Central PMCID: PMC3783764.
+
+
+306: Prakash Gupta RK, Pradeepa, Hanumanthappa M. In vitro antioxidant and H(+), 
+K(+)-ATPase inhibition activities of Acalypha wilkesiana foliage extract. J Pharm
+Bioallied Sci. 2013 Jul;5(3):214-223. PubMed PMID: 24082698; PubMed Central
+PMCID: PMC3778591.
+
+
+307: Gonzalez-Garay ML, McGuire AL, Pereira S, Caskey CT. Personalized genomic
+disease risk of volunteers. Proc Natl Acad Sci U S A. 2013 Sep 30. [Epub ahead of
+print] PubMed PMID: 24082139.
+
+
+308: Weber AI, Saal HP, Lieber JD, Cheng JW, Manfredi LR, Dammann JF 3rd,
+Bensmaia SJ. Spatial and temporal codes mediate the tactile perception of natural
+textures. Proc Natl Acad Sci U S A. 2013 Sep 30. [Epub ahead of print] PubMed
+PMID: 24082087.
+
+
+309: Amaral A, Castillo J, Ramalho-Santos J, Oliva R. The combined human sperm
+proteome: cellular pathways and implications for basic and clinical science. Hum 
+Reprod Update. 2013 Sep 29. [Epub ahead of print] PubMed PMID: 24082039.
+
+
+310: Khalili-Araghi F, Ziervogel B, Gumbart JC, Roux B. Molecular dynamics
+simulations of membrane proteins under asymmetric ionic concentrations. J Gen
+Physiol. 2013 Oct;142(4):465-475. PubMed PMID: 24081985.
+
+
+311: Mosca R, Céol A, Stein A, Olivella R, Aloy P. 3did: a catalog of
+domain-based interactions of known three-dimensional structure. Nucleic Acids
+Res. 2013 Sep 29. [Epub ahead of print] PubMed PMID: 24081580.
+
+
+312: Flores SC. Fast fitting to low resolution density maps: elucidating
+large-scale motions of the ribosome. Nucleic Acids Res. 2013 Sep 29. [Epub ahead 
+of print] PubMed PMID: 24081579.
+
+
+313: Vlayen A, Schrooten W, Wami W, Aerts M, Barrado LG, Claes N, Hellings J.
+Variability of Patient Safety Culture in Belgian Acute Hospitals. J Patient Saf. 
+2013 Sep 27. [Epub ahead of print] PubMed PMID: 24080722.
+
+
+314: Martínez-Pacheco M, Hidalgo-Miranda A, Romero-Córdoba S, Valverde M, Rojas
+E. mRNA and miRNA expression patterns associated to pathways linked to metal
+mixture health effects. Gene. 2013 Sep 27. doi:pii: S0378-1119(13)01254-7.
+10.1016/j.gene.2013.09.049. [Epub ahead of print] PubMed PMID: 24080485.
+
+
+315: Deepankumar K, Nadarajan SP, Ayyadurai N, Yun H. Enhancing the biophysical
+properties of mRFP1 through incorporation of fluoroproline. Biochem Biophys Res
+Commun. 2013 Sep 28. doi:pii: S0006-291X(13)01543-X. 10.1016/j.bbrc.2013.09.062. 
+[Epub ahead of print] PubMed PMID: 24080380.
+
+
+316: Wang J, Gu Q, Hao J, Bai D, Liu L, Zhao X, Liu Z, Wang L, Zhou Q. Generation
+of Induced Pluripotent Stem Cells with High Efficiency from Human Umbilical Cord 
+Blood Mononuclear Cells. Genomics Proteomics Bioinformatics. 2013 Sep 27.
+doi:pii: S1672-0229(13)00095-8. 10.1016/j.gpb.2013.08.002. [Epub ahead of print] 
+PubMed PMID: 24080286.
+
+
+317: Cingolani P, Cao X, Khetani RS, Chen CC, Coon M, Sammak AA, Bollig-Fischer
+A, Land S, Huang Y, Hudson ME, Garfinkel MD, Zhong S, Robinson GE, Ruden DM.
+Intronic Non-CG DNA hydroxymethylation and alternative mRNA splicing in honey
+bees. BMC Genomics. 2013 Sep 30;14(1):666. [Epub ahead of print] PubMed PMID:
+24079845.
+
+
+318: Wang YJ, Han DY, Tabib T, Yates JR, Mu TW. Identification of GABAC Receptor 
+Protein Homeostasis Network Components from Three Tandem Mass Spectrometry
+Proteomics Approaches. J Proteome Res. 2013 Sep 27. [Epub ahead of print] PubMed 
+PMID: 24079818.
+
+
+319: Taguchi AT, Mattis AJ, O'Malley PJ, Dikanov SA, Wraight CA. Tuning Cofactor 
+Redox Potentials: The 2-Methoxy Dihedral Angle Generates a Redox Potential
+Difference of >160 mV between the Primary (Q(A)) and Secondary (Q(B)) Quinones of
+the Bacterial Photosynthetic Reaction Center. Biochemistry. 2013 Oct 2. [Epub
+ahead of print] PubMed PMID: 24079813.
+
+
+320: Collier N, Oellrich A, Groza T. Toward knowledge support for analysis and
+interpretation of complex traits. Genome Biol. 2013 Sep 30;14(9):214. [Epub ahead
+of print] PubMed PMID: 24079802.
+
+
+321: Cameron P, Corne DW, Mason CE, Rosenfeld J. Crowdfunding genomics and
+bioinformatics. Genome Biol. 2013 Sep 30;14(9):134. [Epub ahead of print] PubMed 
+PMID: 24079746.
+
+
+322: Moal IH, Torchala M, Bates PA, Fernández-Recio J. The scoring of poses in
+protein-protein docking: current capabilities and future directions. BMC
+Bioinformatics. 2013 Oct 1;14(1):286. [Epub ahead of print] PubMed PMID:
+24079540.
+
+
+323: Mbulaiteye SM. Burkitt Lymphoma: beyond discoveries. Infect Agent Cancer.
+2013 Sep 30;8(1):35. [Epub ahead of print] PubMed PMID: 24079372.
+
+
+324: Gao F, Luo XP, Tao L, Li CL, Ding CB, Chen H, Wu Q. [Molecular cloning of
+squalene synthase gene form Paris polyphylla and its expression in Escherichia
+coli]. Zhongguo Zhong Yao Za Zhi. 2013 Jul;38(13):2086-91. Chinese. PubMed PMID: 
+24079231.
+
+
+325: Wang YJ, Jiang C, Zhao R, Zhao L, Shen Y, Huang LQ. [Cloning and
+bioinformatics analysis of SmNAC1 from Salvia miltiorrhiza hairy root]. Zhongguo 
+Zhong Yao Za Zhi. 2013 Jul;38(13):2063-7. Chinese. PubMed PMID: 24079226.
+
+
+326: Fages F, Soliman S. Guest editors' Introduction to the special section on
+computational methods in systems biology. IEEE/ACM Trans Comput Biol Bioinform.
+2013 Mar-Apr;10(2):308-9. PubMed PMID: 24079019.
+
+
+327: Chen YP. Guest editorial: Advanced algorithms of bioinformatics. IEEE/ACM
+Trans Comput Biol Bioinform. 2013 Mar-Apr;10(2):273-. PubMed PMID: 24079018.
+
+
+328: Mazandu GK, Mulder NJ. Information Content-Based Gene Ontology Semantic
+Similarity Approaches: Toward a Unified Framework Theory. Biomed Res Int.
+2013;2013:292063. Epub 2013 Sep 2. PubMed PMID: 24078912; PubMed Central PMCID:
+PMC3775452.
+
+
+329: Zhang W, Wang X, Lu B, Kim TH. Secure Encapsulation and Publication of
+Biological Services in the Cloud Computing Environment. Biomed Res Int.
+2013;2013:170580. Epub 2013 Sep 1. PubMed PMID: 24078906; PubMed Central PMCID:
+PMC3773971.
+
+
+330: Jahchan NS, Dudley JT, Mazur PK, Flores N, Yang D, Palmerton A, Zmoos AF,
+Vaka D, Tran KQ, Zhou M, Krasinska K, Riess JW, Neal JW, Khatri P, Park KS, Butte
+AJ, Sage J. A Drug Repositioning Approach Identifies Tricyclic Antidepressants as
+Inhibitors of Small Cell Lung Cancer and Other Neuroendocrine Tumors. Cancer
+Discov. 2013 Sep 26. [Epub ahead of print] PubMed PMID: 24078773.
+
+
+331: Neal ML, Galdzicki M, Gallimore JT, Sauro HM. A C library for retrieving
+specific reactions from the BioModels database. Bioinformatics. 2013 Sep 29.
+[Epub ahead of print] PubMed PMID: 24078714.
+
+
+332: Huntley MA, Larson JL, Chaivorapol C, Becker G, Lawrence M, Hackney JA,
+Kaminker JS. ReportingTools: an automated result processing and presentation
+toolkit for high throughput genomic analyses. Bioinformatics. 2013 Sep 29. [Epub 
+ahead of print] PubMed PMID: 24078713.
+
+
+333: Bock M, Scharp T, Talnikar C, Klipp E. BooleSim: An interactive Boolean
+Network Simulator. Bioinformatics. 2013 Sep 29. [Epub ahead of print] PubMed
+PMID: 24078712.
+
+
+334: Przydzial MJ, Bhhatarai B, Koleti A, Vempati U, Schürer SC. GPCR ontology:
+development and application of a G protein-coupled receptor pharmacology
+knowledge framework. Bioinformatics. 2013 Sep 29. [Epub ahead of print] PubMed
+PMID: 24078711.
+
+
+335: Xu S, Yoon HJ, Tourassi G. A User-Oriented Web Crawler for Selectively
+Acquiring Online Content in e-Health Research. Bioinformatics. 2013 Sep 29. [Epub
+ahead of print] PubMed PMID: 24078710.
+
+
+336: Dong GQ, Fan H, Schneidman-Duhovny D, Webb B, Sali A. Optimized atomic
+statistical potentials: Assessment of protein interfaces and loops.
+Bioinformatics. 2013 Sep 27. [Epub ahead of print] PubMed PMID: 24078704.
+
+
+337: Degroeve S, Martens L. MS2PIP: a tool for MS/MS peak intensity prediction.
+Bioinformatics. 2013 Oct 12. [Epub ahead of print] PubMed PMID: 24078703.
+
+
+338: Wang T, Liu J, Shen L, Tonti-Filippini J, Zhu Y, Jia H, Lister R, Ecker J,
+Millar AH, Ren B, Wang W. STAR: An Integrated Solution to Management and
+Visualization of Sequencing Data. Bioinformatics. 2013 Sep 27. [Epub ahead of
+print] PubMed PMID: 24078702.
+
+
+339: Hsu KC, Wang FS. Fuzzy Optimization for Detecting Enzyme Targets of Human
+Uric Acid Metabolism. Bioinformatics. 2013 Sep 26. [Epub ahead of print] PubMed
+PMID: 24078686.
+
+
+340: Rastas P, Paulin L, Hanski I, Lehtonen R, Auvinen P. Lep-MAP: fast and
+accurate linkage map construction for large SNP datasets. Bioinformatics. 2013
+Sep 26. [Epub ahead of print] PubMed PMID: 24078685.
+
+
+341: Xia J, Lyle NH, Mayer ML, Pena OM, Hancock RE. INVEX - a web-based tool for 
+integrative visualization of expression data. Bioinformatics. 2013 Sep 26. [Epub 
+ahead of print] PubMed PMID: 24078684.
+
+
+342: Chaves R, Pellequer J. DockAFM: benchmarking protein structures by docking
+under AFM topographs. Bioinformatics. 2013 Sep 26. [Epub ahead of print] PubMed
+PMID: 24078683.
+
+
+343: Zarringhalam K, Enayetallah A, Gutteridge A, Sidders B, Ziemek D. Molecular 
+causes of transcriptional response: A Bayesian prior knowledge approach.
+Bioinformatics. 2013 Sep 26. [Epub ahead of print] PubMed PMID: 24078682.
+
+
+344: Liu R, Xu YH, Jiang SC, Lu K, Lu YF, Feng XJ, Wu Z, Liang S, Yu YT, Wang XF,
+Zhang DP. Light-harvesting chlorophyll a/b-binding proteins, positively involved 
+in abscisic acid signalling, require a transcription repressor, WRKY40, to
+balance their function. J Exp Bot. 2013 Sep 27. [Epub ahead of print] PubMed
+PMID: 24078667.
+
+
+345: Bai L, Livnat I, Romanova EV, Alexeeva V, Yau PM, Vilim FS, Weiss KR, Jing
+J, Sweedler JV. Characterization of GdFFD, a D-Amino Acid-Containing Neuropeptide
+that Functions as an Extrinsic Modulator of the Aplysia Feeding Circuit. J Biol
+Chem. 2013 Sep 27. [Epub ahead of print] PubMed PMID: 24078634.
+
+
+346: Will T, Hutter MC, Jauch J, Helms V. Batch tautomer generation with MolTPC. 
+J Comput Chem. 2013 Oct 30;34(28):2485-92. doi: 10.1002/jcc.23397. Epub 2013 Aug 
+2. PubMed PMID: 24078443.
+
+
+347: Liu D, Morrell NW. Genetics and the Molecular Pathogenesis of Pulmonary
+Arterial Hypertension. Curr Hypertens Rep. 2013 Sep 28. [Epub ahead of print]
+PubMed PMID: 24078385.
+
+
+348: Vey G. Gene Coexpression as Hebbian Learning in Prokaryotic Genomes. Bull
+Math Biol. 2013 Sep 27. [Epub ahead of print] PubMed PMID: 24078338.
+
+
+349: Dror I, Zhou T, Mandel-Gutfreund Y, Rohs R. Covariation between homeodomain 
+transcription factors and the shape of their DNA binding sites. Nucleic Acids
+Res. 2013 Sep 27. [Epub ahead of print] PubMed PMID: 24078250.
+
+
+350: Ivica NA, Obermayer B, Campbell GW, Rajamani S, Gerland U, Chen IA. The
+Paradox of Dual Roles in the RNA World: Resolving the Conflict Between Stable
+Folding and Templating Ability. J Mol Evol. 2013 Sep 29. [Epub ahead of print]
+PubMed PMID: 24078151.
+
+
+351: Torella JP, Boehm CR, Lienert F, Chen JH, Way JC, Silver PA. Rapid
+construction of insulated genetic circuits via synthetic sequence-guided
+isothermal assembly. Nucleic Acids Res. 2013 Sep 26. [Epub ahead of print] PubMed
+PMID: 24078086.
+
+
+352: Esteban DJ, Upton C, Bartow-McKenney C, Buller RM, Chen NG, Schriewer J,
+Lefkowitz EJ, Wang C. Expression of a non-coding RNA in ectromelia virus is
+required for normal plaque formation. Virus Genes. 2013 Sep 28. [Epub ahead of
+print] PubMed PMID: 24078045.
+
+
+353: Stenson PD, Mort M, Ball EV, Shaw K, Phillips AD, Cooper DN. The Human Gene 
+Mutation Database: building a comprehensive mutation repository for clinical and 
+molecular genetics, diagnostic testing and personalized genomic medicine. Hum
+Genet. 2013 Sep 28. [Epub ahead of print] PubMed PMID: 24077912.
+
+
+354: Chong Z, Zhai W, Li C, Gao M, Gong Q, Ruan J, Li J, Jiang L, Lv X, Hungate
+E, Wu CI. The evolution of small insertions and deletions in the coding genes of 
+Drosophila melanogaster. Mol Biol Evol. 2013 Sep 26. [Epub ahead of print] PubMed
+PMID: 24077769.
+
+
+355: Liu J, Sun Y, Li G, Song B, Huang W. Heuristic-based tabu search algorithm
+for folding two-dimensional AB off-lattice model proteins. Comput Biol Chem. 2013
+Sep 8;47C:142-148. doi: 10.1016/j.compbiolchem.2013.08.011. [Epub ahead of print]
+PubMed PMID: 24077543.
+
+
+356: Hsu YT, Gu F, Huang YW, Liu J, Ruan J, Huang RL, Wang CM, Chen CL, Jadhav R,
+Lai HC, Mutch DG, Goodfellow PJ, Thompson IM Jr, Kirma NB, Huang TH. Promoter
+hypomethylation of EpCAM-regulated bone morphogenetic protein gene family in
+recurrent endometrial cancer. Clin Cancer Res. 2013 Sep 27. [Epub ahead of print]
+PubMed PMID: 24077349.
+
+
+357: Bhabha G, Ekiert DC, Jennewein M, Zmasek CM, Tuttle LM, Kroon G, Dyson HJ,
+Godzik A, Wilson IA, Wright PE. Divergent evolution of protein conformational
+dynamics in dihydrofolate reductase. Nat Struct Mol Biol. 2013 Sep 29. doi:
+10.1038/nsmb.2676. [Epub ahead of print] PubMed PMID: 24077226.
+
+
+358: Boef AG, Dekkers OM, le Cessie S, Vandenbroucke JP. Reporting instrumental
+variable analyses. Epidemiology. 2013 Nov;24(6):937-8. doi:
+10.1097/01.ede.0000434433.14388.a1. PubMed PMID: 24076999.
+
+
+359: Zinman GE, Naiman S, Kanfi Y, Cohen H, Bar-Joseph Z. ExpressionBlast: mining
+large, unstructured expression databases. Nat Methods. 2013 Sep 27;10(10):925-6. 
+doi: 10.1038/nmeth.2630. PubMed PMID: 24076985.
+
+
+360: Paulson JN, Stine OC, Bravo HC, Pop M. Differential abundance analysis for
+microbial marker-gene surveys. Nat Methods. 2013 Sep 29. doi: 10.1038/nmeth.2658.
+[Epub ahead of print] PubMed PMID: 24076764.
+
+
+361: Kim S, Chen Z, Zhang Z, Simons-Morton BG, Albert PS. Bayesian Hierarchical
+Poisson Regression Models: An Application to a Driving Study with Kinematic
+Events. J Am Stat Assoc. 2013;108(502):494-503. PubMed PMID: 24076760; PubMed
+Central PMCID: PMC3783969.
+
+
+362: Dutta S, Bhattacharyya D. Enzymatic, antimicrobial and toxicity studies of
+the aqueous extract of Ananas comosus (pineapple) crown leaf. J Ethnopharmacol.
+2013 Sep 26. doi:pii: S0378-8741(13)00578-3. 10.1016/j.jep.2013.08.024. [Epub
+ahead of print] PubMed PMID: 24076462.
+
+
+363: Chattopadhyay AS, Hsiao CL, Chang CC, Lian IB, Fann CS. Summarizing
+techniques that combine three non-parametric scores to detect disease-associated 
+2-way SNP-SNP interactions. Gene. 2013 Sep 25. doi:pii: S0378-1119(13)01231-6.
+10.1016/j.gene.2013.09.041. [Epub ahead of print] PubMed PMID: 24076437.
+
+
+364: Chipman JJ, Sanda MG, Dunn RL, Wei JT, Litwin MS, Crociani CM, Regan MM,
+Chang P; PROST-QA consortium. Measuring and Predicting Prostate Cancer Related
+Quality of Life Changes using the Expanded Prostate Cancer Index Composite for
+Clinical Practice (EPIC-CP). J Urol. 2013 Sep 24. doi:pii: S0022-5347(13)05509-2.
+10.1016/j.juro.2013.09.040. [Epub ahead of print] PubMed PMID: 24076307.
+
+
+365: Lachlan RF, Verzijden MN, Bernard CS, Jonker PP, Koese B, Jaarsma S, Spoor
+W, Slater PJ, Ten Cate C. The Progressive Loss of Syntactical Structure in Bird
+Song along an Island Colonization Chain. Curr Biol. 2013 Oct 7;23(19):1896-1901. 
+doi: 10.1016/j.cub.2013.07.057. Epub 2013 Sep 26. PubMed PMID: 24076242.
+
+
+366: Kusakabe T, Tatsuke T, Tsuruno K, Hirokawa Y, Atsumi S, Liao JC, Hanai T.
+Engineering a synthetic pathway in cyanobacteria for isopropanol production
+directly from carbon dioxide and light. Metab Eng. 2013 Sep 25;20C:101-108. doi: 
+10.1016/j.ymben.2013.09.007. [Epub ahead of print] PubMed PMID: 24076145.
+
+
+367: Xi G, Hu P, Qu C, Qiu S, Tong C, Ying QL. Induced Neural Stem Cells
+Generated from Rat Fibroblasts. Genomics Proteomics Bioinformatics. 2013 Sep 27. 
+doi:pii: S1672-0229(13)00094-6. 10.1016/j.gpb.2013.09.003. [Epub ahead of print] 
+PubMed PMID: 24076032.
+
+
+368: Zaman N, Li L, Jaramillo ML, Sun Z, Tibiche C, Banville M, Collins C,
+Trifiro M, Paliouras M, Nantel A, O'Connor-McCourt M, Wang E. Signaling Network
+Assessment of Mutations and Copy Number Variations Predict Breast Cancer
+Subtype-Specific Drug Targets. Cell Rep. 2013 Sep 25. doi:pii:
+S2211-1247(13)00469-5. 10.1016/j.celrep.2013.08.028. [Epub ahead of print] PubMed
+PMID: 24075989.
+
+
+369: Clark RI, Tan SW, Péan CB, Roostalu U, Vivancos V, Bronda K, Pilátová M, Fu 
+J, Walker DW, Berdeaux R, Geissmann F, Dionne MS. MEF2 Is an In Vivo
+Immune-Metabolic Switch. Cell. 2013 Oct 10;155(2):435-447. doi:
+10.1016/j.cell.2013.09.007. Epub 2013 Sep 26. PubMed PMID: 24075010.
+
+
+370: Hayes DF. From genome to bedside: Are we lost in translation? Breast. 2013
+Aug 1;22S2:S22-S26. doi: 10.1016/j.breast.2013.07.004. PubMed PMID: 24074786.
+
+
+371: Chen X, Liu X, Wang W, Wang J, Meng Q, Zhang D. Chicken 7SK promoter drives 
+efficient shRNA transcription with species specificity. Res Vet Sci. 2013 Aug 25.
+doi:pii: S0034-5288(13)00295-6. 10.1016/j.rvsc.2013.08.013. [Epub ahead of print]
+PubMed PMID: 24074690.
+
+
+372: Trobacher CP, Zarei A, Liu J, Clark SM, Bozzo GG, Shelp BJ.
+Calmodulin-dependent and calmodulin-independent glutamate decarboxylases in apple
+fruit. BMC Plant Biol. 2013 Sep 28;13(1):144. [Epub ahead of print] PubMed PMID: 
+24074460.
+
+
+373: Yang Z, Su D, Li Q, Ma Z, Yang F, Zhu S, Ma X. A R54L Mutation of CRYAA
+Associated with Autosomal Dominant Nuclear Cataracts in a Chinese Family. Curr
+Eye Res. 2013 Sep 27. [Epub ahead of print] PubMed PMID: 24074001.
+
+
+374: Vanden Bergh P, Heller M, Braga-Lagache S, Frey J. The Aeromonas salmonicida
+subsp. salmonicida exoproteome: determination of the complete repertoire of
+Type-Three Secretion System effectors and identification of other virulence
+factors. Proteome Sci. 2013 Sep 27;11(1):42. [Epub ahead of print] PubMed PMID:
+24073886.
+
+
+375: Harris RS. Cancer mutation signatures, DNA damage mechanisms, and potential 
+clinical implications. Genome Med. 2013 Sep 27;5(9):87. [Epub ahead of print]
+PubMed PMID: 24073723.
+
+
+376: Buhrow L, Hiser C, Van Voorst JR, Ferguson-Miller S, Kuhn LA. Computational 
+Prediction and in Vitro Analysis of Potential Physiological Ligands of the Bile
+Acid Binding Site in Cytochrome c Oxidase. Biochemistry. 2013 Sep 27. [Epub ahead
+of print] PubMed PMID: 24073649.
+
+
+377: Singh S, Sablok G, Farmer R, Singh AK, Gautam B, Kumar S. Molecular dynamic 
+simulation and inhibitor prediction of cysteine synthase structured model as a
+potential drug target for trichomoniasis. Biomed Res Int. 2013;2013:390920. doi: 
+10.1155/2013/390920. Epub 2013 Sep 1. PubMed PMID: 24073401; PubMed Central
+PMCID: PMC3773994.
+
+
+378: Sha W, Martins AM, Laubenbacher R, Mendes P, Shulaev V. The Genome-Wide
+Early Temporal Response of Saccharomyces cerevisiae to Oxidative Stress Induced
+by Cumene Hydroperoxide. PLoS One. 2013 Sep 20;8(9):e74939. doi:
+10.1371/journal.pone.0074939. PubMed PMID: 24073228; PubMed Central PMCID:
+PMC3779239.
+
+
+379: Thomas L, Stefanski LA, Davidian M. Moment Adjusted Imputation for
+Multivariate Measurement Error Data with Applications to Logistic Regression.
+Comput Stat Data Anal. 2013 Nov 1;67:15-24. PubMed PMID: 24072947; PubMed Central
+PMCID: PMC3780432.
+
+
+380: Marschall T, Hajirasouliha I, Schönhuth A. MATE-CLEVER:
+Mendelian-Inheritance-Aware Discovery and Genotyping of Midsize and Long Indels. 
+Bioinformatics. 2013 Sep 25. [Epub ahead of print] PubMed PMID: 24072733.
+
+
+381: Jiang W, Li P, Wang S, Wu Y, Xue M, Ohno-Machado L, Jiang X. WebGLORE: A
+Webservice for Grid LOgistic REgression. Bioinformatics. 2013 Sep 25. [Epub ahead
+of print] PubMed PMID: 24072732.
+
+
+382: Stitziel NO, Fouchier SW, Sjouke B, Peloso GM, Moscoso AM, Auer PL, Goel A, 
+Gigante B, Barnes TA, Melander O, Orho-Melander M, Duga S, Sivapalaratnam S,
+Nikpay M, Martinelli N, Girelli D, Jackson RD, Kooperberg C, Lange LA, Ardissino 
+D, McPherson R, Farrall M, Watkins H, Reilly MP, Rader DJ, de Faire U, Schunkert 
+H, Erdmann J, Samani NJ, Charnas L, Altshuler D, Gabriel S, Kastelein JJ,
+Defesche JC, Nederveen AJ, Kathiresan S, Hovingh GK; for the National Heart,
+Lung, and Blood Institute GO Exome Sequencing Project. Exome Sequencing and
+Directed Clinical Phenotyping Diagnose Cholesterol Ester Storage Disease
+Presenting as Autosomal Recessive Hypercholesterolemia. Arterioscler Thromb Vasc 
+Biol. 2013 Sep 26. [Epub ahead of print] PubMed PMID: 24072694.
+
+
+383: Nevin J, Myers L, Osunkwo I, Kanter J. A Retrospective Study to Assess the
+Utility of Frequent Laboratory Monitoring of Pediatric Patients With Sickle Cell 
+Disease on Hydroxyurea. J Pediatr Hematol Oncol. 2013 Sep 25. [Epub ahead of
+print] PubMed PMID: 24072249.
+
+
+384: Parra-Herran CE, Yuan L, Nucci MR, Quade BJ. Targeted development of
+specific biomarkers of endometrial stromal cell differentiation using
+bioinformatics: the IFITM1 model. Mod Pathol. 2013 Sep 27. doi:
+10.1038/modpathol.2013.123. [Epub ahead of print] PubMed PMID: 24072182.
+
+
+385: Ye W, Yang J, Yu Q, Wang W, Hancy J, Luo R, Chen HF. Kink turn sRNA folding 
+upon L7Ae binding using molecular dynamics simulations. Phys Chem Chem Phys. 2013
+Nov 14;15(42):18510-18522. Epub 2013 Sep 27. PubMed PMID: 24072031.
+
+
+386: Wang Q, Gu L, Adey A, Radlwimmer B, Wang W, Hovestadt V, Bähr M, Wolf S,
+Shendure J, Eils R, Plass C, Weichenhan D. Tagmentation-based whole-genome
+bisulfite sequencing. Nat Protoc. 2013 Oct;8(10):2022-32. doi:
+10.1038/nprot.2013.118. Epub 2013 Sep 26. PubMed PMID: 24071908.
+
+
+387: Ciriello G, Miller ML, Aksoy BA, Senbabaoglu Y, Schultz N, Sander C.
+Emerging landscape of oncogenic signatures across human cancers. Nat Genet. 2013 
+Sep 26;45(10):1127-1133. doi: 10.1038/ng.2762. [Epub ahead of print] PubMed PMID:
+24071851.
+
+
+388: Pannuzzo M, Raudino A, Milardi D, La Rosa C, Karttunen M. a-Helical
+Structures Drive Early Stages of Self-Assembly of Amyloidogenic Amyloid
+Polypeptide Aggregate Formation in Membranes. Sci Rep. 2013 Sep 27;3:2781. doi:
+10.1038/srep02781. PubMed PMID: 24071712; PubMed Central PMCID: PMC3784961.
+
+
+389: Liang WS, Aldrich J, Tembe W, Kurdoglu A, Cherni I, Phillips L, Reiman R,
+Baker A, Weiss GJ, Carpten JD, Craig DW. Long insert whole genome sequencing for 
+copy number variant and translocation detection. Nucleic Acids Res. 2013 Sep 25. 
+[Epub ahead of print] PubMed PMID: 24071583.
+
+
+390: Fischer M, Quaas M, Wintsche A, Müller GA, Engeland K. Polo-like kinase 4
+transcription is activated via CRE and NRF1 elements, repressed by DREAM through 
+CDE/CHR sites and deregulated by HPV E7 protein. Nucleic Acids Res. 2013 Sep 25. 
+[Epub ahead of print] PubMed PMID: 24071582.
+
+
+391: Siegismund D, Undisz A, Germerodt S, Schuster S, Rettenmayr M.
+Quantification of the interaction between biomaterial surfaces and bacteria by
+3-D modeling. Acta Biomater. 2013 Sep 23. doi:pii: S1742-7061(13)00469-8.
+10.1016/j.actbio.2013.09.016. [Epub ahead of print] PubMed PMID: 24071002.
+
+
+392: Winquist RJ, Mullane K, Williams M. The Fall and Rise of Pharmacology -
+(re-) defining the discipline? Biochem Pharmacol. 2013 Sep 23. doi:pii:
+S0006-2952(13)00601-1. 10.1016/j.bcp.2013.09.011. [Epub ahead of print] PubMed
+PMID: 24070656.
+
+
+393: Stojanova D, Ceci M, Malerba D, D Eroski SO. Using PPI network
+autocorrelation in hierarchical multi-label classification trees for gene
+function prediction. BMC Bioinformatics. 2013 Sep 26;14(1):285. [Epub ahead of
+print] PubMed PMID: 24070402.
+
+
+394: Donovan RM, Sedgewick AJ, Faeder JR, Zuckerman DM. Efficient stochastic
+simulation of chemical kinetics networks using a weighted ensemble of
+trajectories. J Chem Phys. 2013 Sep 21;139(11):115105. doi: 10.1063/1.4821167.
+PubMed PMID: 24070313.
+
+
+395: Pengelly RJ, Gibson J, Andreoletti G, Collins A, Mattocks CJ, Ennis S. A SNP
+profiling panel for sample tracking in whole-exome sequencing studies. Genome
+Med. 2013 Sep 27;5(9):89. [Epub ahead of print] PubMed PMID: 24070238.
+
+
+396: Podsiadlo L, Polz-Dacewicz M. Molecular evolution and phylogenetic
+implications in clinical research. Ann Agric Environ Med. 2013 Sep
+20;20(3):455-9. PubMed PMID: 24069849.
+
+
+397: Lin TW, Wu JW, Chang DT. Combining phylogenetic profiling-based and machine 
+learning-based techniques to predict functional related proteins. PLoS One. 2013 
+Sep 19;8(9):e75940. doi: 10.1371/journal.pone.0075940. PubMed PMID: 24069454;
+PubMed Central PMCID: PMC3777923.
+
+
+398: Schwämmle V, Jensen ON. A computational model for histone mark propagation
+reproduces the distribution of heterochromatin in different human cell types.
+PLoS One. 2013 Sep 19;8(9):e73818. doi: 10.1371/journal.pone.0073818. PubMed
+PMID: 24069233; PubMed Central PMCID: PMC3777982.
+
+
+399: Yan B, Li H, Yang X, Shao J, Jang M, Guan D, Zou S, Van Waes C, Chen Z, Zhan
+M. Unraveling Regulatory Programs for NF-kappaB, p53 and MicroRNAs in Head and
+Neck Squamous Cell Carcinoma. PLoS One. 2013 Sep 19;8(9):e73656. doi:
+10.1371/journal.pone.0073656. PubMed PMID: 24069219; PubMed Central PMCID:
+PMC3777940.
+
+
+400: Schmidtke C, Abendroth U, Brock J, Serrania J, Becker A, Bonas U. Small RNA 
+sX13: A Multifaceted Regulator of Virulence in the Plant Pathogen Xanthomonas.
+PLoS Pathog. 2013 Sep;9(9):e1003626. doi: 10.1371/journal.ppat.1003626. Epub 2013
+Sep 12. PubMed PMID: 24068933; PubMed Central PMCID: PMC3771888.
+
+
+401: Stahl JA, Chavan SS, Sifford JM, Macleod V, Voth DE, Edmondson RD, Forrest
+JC. Phosphoproteomic analyses reveal signaling pathways that facilitate lytic
+gammaherpesvirus replication. PLoS Pathog. 2013 Sep;9(9):e1003583. doi:
+10.1371/journal.ppat.1003583. Epub 2013 Sep 19. PubMed PMID: 24068923; PubMed
+Central PMCID: PMC3777873.
+
+
+402: Bateman A, Kelso J, Mietchen D, Macintyre G, Di Domenico T, Abeel T, Logan
+DW, Radivojac P, Rost B. ISCB Computational Biology Wikipedia Competition. PLoS
+Comput Biol. 2013 Sep;9(9):e1003242. doi: 10.1371/journal.pcbi.1003242. Epub 2013
+Sep 19. PubMed PMID: 24068913; PubMed Central PMCID: PMC3777890.
+
+
+403: Patel VN, Gokulrangan G, Chowdhury SA, Chen Y, Sloan AE, Koyutürk M,
+Barnholtz-Sloan J, Chance MR. Network signatures of survival in glioblastoma
+multiforme. PLoS Comput Biol. 2013 Sep;9(9):e1003237. doi:
+10.1371/journal.pcbi.1003237. Epub 2013 Sep 19. PubMed PMID: 24068912; PubMed
+Central PMCID: PMC3777929.
+
+
+404: Lee JJ, Huang J, England CG, McNally LR, Frieboes HB. Predictive modeling of
+in vivo response to gemcitabine in pancreatic cancer. PLoS Comput Biol. 2013
+Sep;9(9):e1003231. doi: 10.1371/journal.pcbi.1003231. Epub 2013 Sep 19. PubMed
+PMID: 24068909; PubMed Central PMCID: PMC3777914.
+
+
+405: Subramanian K, Paul MR, Tyson JJ. Potential Role of a Bistable Histidine
+Kinase Switch in the Asymmetric Division Cycle of Caulobacter crescentus. PLoS
+Comput Biol. 2013 Sep;9(9):e1003221. doi: 10.1371/journal.pcbi.1003221. Epub 2013
+Sep 12. PubMed PMID: 24068904; PubMed Central PMCID: PMC3772055.
+
+
+406: Demir E, Babur O, Rodchenkov I, Aksoy BA, Fukuda KI, Gross B, Sümer OS,
+Bader GD, Sander C. Using biological pathway data with paxtools. PLoS Comput
+Biol. 2013 Sep;9(9):e1003194. doi: 10.1371/journal.pcbi.1003194. Epub 2013 Sep
+19. PubMed PMID: 24068901; PubMed Central PMCID: PMC3777916.
+
+
+407: Fuxman Bass JI, Tamburino AM, Mori A, Beittel N, Weirauch MT, Reece-Hoyes
+JS, Walhout AJ. Transcription factor binding to Caenorhabditis elegans first
+introns reveals lack of redundancy with gene promoters. Nucleic Acids Res. 2013
+Sep 24. [Epub ahead of print] PubMed PMID: 24068555.
+
+
+408: Saltz JB. Genetic composition of social groups influences male aggressive
+behaviour and fitness in natural genotypes of Drosophila melanogaster. Proc Biol 
+Sci. 2013 Sep 25;280(1771):20131926. doi: 10.1098/rspb.2013.1926. Print 2013.
+PubMed PMID: 24068359; PubMed Central PMCID: PMC3790486.
+
+
+409: Hansen SD, Kwiatkowski AV, Ouyang CY, Liu H, Pokutta S, Watkins SC, Volkmann
+N, Hanein D, Weis WI, Mullins RD, Nelson WJ. Alpha-E-catenin Actin Binding Domain
+Alters Actin Filament Conformation and Regulates Binding of Nucleation and
+Disassembly Factors. Mol Biol Cell. 2013 Sep 25. [Epub ahead of print] PubMed
+PMID: 24068324.
+
+
+410: Yao J, Chen Z, Yang Q, Liu X, Chen X, Zhuang M, Liu Q. Proteomic analysis of
+aqueous humor from patients with branch retinal vein occlusion-induced macular
+edema. Int J Mol Med. 2013 Sep 25. doi: 10.3892/ijmm.2013.1509. [Epub ahead of
+print] PubMed PMID: 24068204.
+
+
+411: Ye Y, Wei B, Wen L, Rayner S. BlastGraph: A Comparative Genomics Tool Based 
+on BLAST and Graph Algorithms. Bioinformatics. 2013 Sep 24. [Epub ahead of print]
+PubMed PMID: 24068035.
+
+
+412: Rajaraman A, Tannier E, Chauve C. FPSAC: fast phylogenetic scaffolding of
+ancient contigs. Bioinformatics. 2013 Oct 4. [Epub ahead of print] PubMed PMID:
+24068034.
+
+
+413: Mallat Y, Tritsch E, Ladouce R, Winter DL, Friguet B, Li Z, Mericskay M.
+Proteome modulation in H9c2 cardiac cells by miR-378 and miR-378. Mol Cell
+Proteomics. 2013 Sep 25. [Epub ahead of print] PubMed PMID: 24068033.
+
+
+414: Gu P, Chen H. Modern bioinformatics meets traditional Chinese medicine.
+Brief Bioinform. 2013 Sep 24. [Epub ahead of print] PubMed PMID: 24067932.
+
+
+415: Guo Y, Ye F, Sheng Q, Clark T, Samuels DC. Three-stage quality control
+strategies for DNA re-sequencing data. Brief Bioinform. 2013 Sep 24. [Epub ahead 
+of print] PubMed PMID: 24067931.
+
+
+416: Fengos G, Iber D. Prediction stability in a data-based, mechanistic model of
+s(F) regulation during sporulation in Bacillus subtilis. Sci Rep. 2013 Sep
+25;3:2755. doi: 10.1038/srep02755. PubMed PMID: 24067622; PubMed Central PMCID:
+PMC3783014.
+
+
+417: Van Roey K, Orchard S, Kerrien S, Dumousseau M, Ricard-Blum S, Hermjakob H, 
+Gibson TJ. Capturing cooperative interactions with the PSI-MI format. Database
+(Oxford). 2013 Sep 25;2013:bat066. doi: 10.1093/database/bat066. Print 2013.
+PubMed PMID: 24067240; PubMed Central PMCID: PMC3782717.
+
+
+418: Yang JM, Zhong SH, Liang FX, Guo JS, Li WL, Li JM. [A new method for
+measuring pulmonary function parameters]. Nan Fang Yi Ke Da Xue Xue Bao. 2013
+Sep;33(9):1352-6. Chinese. PubMed PMID: 24067219.
+
+
+419: Zhou PZ, Chen B, Hu PJ, Sun Y. [Role of miR-19a in ulcerative colitis in
+mice]. Nan Fang Yi Ke Da Xue Xue Bao. 2013 Sep;33(9):1325-8. Chinese. PubMed
+PMID: 24067213.
+
+
+420: Bali KK, Venkataramani V, Satagopam VP, Gupta P, Schneider R, Kuner R.
+Transcriptional mechanisms underlying sensitization of peripheral sensory neurons
+by Granulocyte-/Granulocyte-macrophage colony stimulating factors. Mol Pain. 2013
+Sep 25;9(1):48. [Epub ahead of print] PubMed PMID: 24067145.
+
+
+421: Mazandu GK, Mulder NJ. DaGO-Fun: tool for Gene Ontology-based functional
+analysis using term information content measures. BMC Bioinformatics. 2013 Sep
+25;14(1):284. [Epub ahead of print] PubMed PMID: 24067102.
+
+
+422: Veríssimo A, Paixão L, Neves AR, Vinga S. BGFit: management and automated
+fitting of biological growth curves. BMC Bioinformatics. 2013 Sep 25;14(1):283.
+[Epub ahead of print] PubMed PMID: 24067087.
+
+
+423: Xiao J, Zhu W, Guo J. Large-scale multiple testing in genome-wide
+association studies via region-specific hidden Markov models. BMC Bioinformatics.
+2013 Sep 25;14(1):282. [Epub ahead of print] PubMed PMID: 24067069.
+
+
+424: Deshmukh L, Schwieters CD, Grishaev A, Ghirlando R, Baber JL, Clore GM.
+Structure and Dynamics of Full Length HIV-1 Capsid Protein in Solution. J Am Chem
+Soc. 2013 Sep 25. [Epub ahead of print] PubMed PMID: 24066695.
+
+
+425: Chimusa ER, Daya M, Möller M, Ramesar R, Henn BM, van Helden PD, Mulder NJ, 
+Hoal EG. Determining ancestry proportions in complex admixture scenarios in South
+Africa using a novel proxy ancestry selection method. PLoS One. 2013 Sep
+16;8(9):e73971. doi: 10.1371/journal.pone.0073971. PubMed PMID: 24066090; PubMed 
+Central PMCID: PMC3774743.
+
+
+426: Ando D, Colvin M, Rexach M, Gopinathan A. Physical Motif Clustering within
+Intrinsically Disordered Nucleoporin Sequences Reveals Universal Functional
+Features. PLoS One. 2013 Sep 16;8(9):e73831. doi: 10.1371/journal.pone.0073831.
+PubMed PMID: 24066078; PubMed Central PMCID: PMC3774778.
+
+
+427: Smith DR. The battle for user-friendly bioinformatics. Front Genet. 2013 Sep
+20;4:187. doi: 10.3389/fgene.2013.00187. PubMed PMID: 24065986; PubMed Central
+PMCID: PMC3778374.
+
+
+428: Feng D, Barnes BJ. Bioinformatics analysis of the factors controlling type I
+IFN gene expression in autoimmune disease and virus-induced immunity. Front
+Immunol. 2013 Sep 19;4:291. doi: 10.3389/fimmu.2013.00291. PubMed PMID: 24065968;
+PubMed Central PMCID: PMC3776951.
+
+
+429: Hernández-Lemus E. Further steps toward functional systems biology of
+cancer. Front Physiol. 2013 Sep 18;4:256. doi: 10.3389/fphys.2013.00256. PubMed
+PMID: 24065926; PubMed Central PMCID: PMC3776302.
+
+
+430: Luk LY, Javier Ruiz-Pernía J, Dawson WM, Roca M, Loveridge EJ, Glowacki DR, 
+Harvey JN, Mulholland AJ, Tuñón I, Moliner V, Allemann RK. Unraveling the role of
+protein dynamics in dihydrofolate reductase catalysis. Proc Natl Acad Sci U S A. 
+2013 Oct 8;110(41):16344-16349. Epub 2013 Sep 24. PubMed PMID: 24065822.
+
+
+431: Qin LJ, Lv Y, Huang QY. Meta-analysis of association of common variants in
+the KCNJ11-ABCC8 region with type 2 diabetes. Genet Mol Res. 2013 Aug
+20;12(3):2990-3002. doi: 10.4238/2013.August.20.1. PubMed PMID: 24065655.
+
+
+432: Chen JM, Cui XP, Yao XD, Huang LH, Xu H. Molecular changes of mesenchymal
+stromal cells in response to dexamethasone treatment. Eur Rev Med Pharmacol Sci. 
+2013 Sep;17(17):2318-22. PubMed PMID: 24065224.
+
+
+433: Tian L, Li X, Ha M, Zhang C, Chen ZJ. Genetic and epigenetic changes in a
+genomic region containing MIR172 in Arabidopsis allopolyploids and their
+progenitors. Heredity (Edinb). 2013 Sep 25. doi: 10.1038/hdy.2013.94. [Epub ahead
+of print] PubMed PMID: 24065179.
+
+
+434: Miller ML, Molinelli EJ, Nair JS, Sheikh T, Samy R, Jing X, He Q, Korkut A, 
+Crago AM, Singer S, Schwartz GK, Sander C. Drug Synergy Screen and Network
+Modeling in Dedifferentiated Liposarcoma Identifies CDK4 and IGF1R as Synergistic
+Drug Targets. Sci Signal. 2013 Sep 24;6(294):ra85. doi:
+10.1126/scisignal.2004014. PubMed PMID: 24065146.
+
+
+435: Quaranta V, Tyson DR. What lies beneath: looking beyond tumor genetics shows
+the complexity of signaling networks underlying drug sensitivity. Sci Signal.
+2013 Sep 24;6(294):pe32. doi: 10.1126/scisignal.2004715. PubMed PMID: 24065144.
+
+
+436: Ferrarelli LK. Focus issue: networking cancer treatment strategies. Sci
+Signal. 2013 Sep 24;6(294):eg5. doi: 10.1126/scisignal.2004723. PubMed PMID:
+24065142.
+
+
+437: Bao H, Zhao W, Ruan B, Wang Q, Zhao J, Lei X, Wang W, Liu Y, Sun J, Xiang A,
+Guo Y, Yan Z. Rapid high-throughput genotyping of HBV DNA using a modified
+hybridization-extension technique. Phys Chem Chem Phys. 2013 Nov
+7;15(41):18179-18184. Epub 2013 Sep 24. PubMed PMID: 24065125.
+
+
+438: van Duyvenvoorde HA, Lui JC, Kant SG, Oostdijk W, Gijsbers AC, Hoffer MJ,
+Karperien M, Walenkamp MJ, Noordam C, Voorhoeve PG, Mericq V, Pereira AM,
+Claahsen-van de Grinten HL, van Gool SA, Breuning MH, Losekoot M, Baron J,
+Ruivenkamp CA, Wit JM. Copy number variants in patients with short stature. Eur J
+Hum Genet. 2013 Sep 25. doi: 10.1038/ejhg.2013.203. [Epub ahead of print] PubMed 
+PMID: 24065112.
+
+
+439: Mulder RL, Knijnenburg SL, Geskus RB, van Dalen EC, van der Pal HJ, Koning
+CC, Bouts AH, Caron HN, Kremer LC. Glomerular Function Time Trends in Long-Term
+Survivors of Childhood Cancer: A Longitudinal Study. Cancer Epidemiol Biomarkers 
+Prev. 2013 Oct;22(10):1736-1746. Epub 2013 Sep 24. PubMed PMID: 24064520.
+
+
+440: Zou L, Nan C, Hu F. Accurate prediction of bacterial type IV secreted
+effectors using amino acid composition and PSSM profiles. Bioinformatics. 2013
+Sep 23. [Epub ahead of print] PubMed PMID: 24064423.
+
+
+441: Savojardo C, Fariselli P, Martelli PL, Casadio R. BCov: a method for
+predicting ß-sheet topology using sparse inverse covariance estimation and
+integer programming. Bioinformatics. 2013 Sep 23. [Epub ahead of print] PubMed
+PMID: 24064422.
+
+
+442: Purdom E, Ho C, Grasso CS, Quist MJ, Cho RJ, Spellman P. Methods and
+Challenges in Timing Chromosomal Abnormalities within Cancer Samples.
+Bioinformatics. 2013 Sep 23. [Epub ahead of print] PubMed PMID: 24064421.
+
+
+443: Fisher CP, Plant NJ, Moore JB, Kierzek AM. QSSPN: Dynamic Simulation of
+Molecular Interaction Networks Describing Gene Regulation, Signalling and
+Whole-Cell Metabolism in Human Cells. Bioinformatics. 2013 Sep 23. [Epub ahead of
+print] PubMed PMID: 24064420.
+
+
+444: Haubold B, Krause L, Horn T, Pfaffelhuber P. An alignment-free test for
+recombination. Bioinformatics. 2013 Oct 12. [Epub ahead of print] PubMed PMID:
+24064419.
+
+
+445: Holton TA, Pollastri G, Shields DC, Mooney C. CPPpred: prediction of cell
+penetrating peptides. Bioinformatics. 2013 Sep 27. [Epub ahead of print] PubMed
+PMID: 24064418.
+
+
+446: Lin X, Sun D, Rodriguez B, Zhao Q, Sun H, Zhang Y, Li W. BSeQC: quality
+control of bisulfite sequencing experiments. Bioinformatics. 2013 Oct 11. [Epub
+ahead of print] PubMed PMID: 24064417.
+
+
+447: Cokelaer T, Pultz D, Harder LM, Serra-Musach J, Saez-Rodriguez J.
+BioServices: a Common Python Package to Access Biological Web Services
+Programmatically. Bioinformatics. 2013 Sep 23. [Epub ahead of print] PubMed PMID:
+24064416.
+
+
+448: Wang L, Huang J, Jiang M, Diao H, Zhou H, Li X, Chen Q, Jiang Z, Feng H,
+Wolfl S. Cartilage oligomeric matrix protein (COMP)-mediated proteolysis to cell 
+differentiation mechanism network from human normal adjacent tissues to lung
+adenocarcinoma. Anal Cell Pathol (Amst). 2013 Sep 24. [Epub ahead of print]
+PubMed PMID: 24064399.
+
+
+449: Yao Y, Zhang X, Wang Z, Zheng C, Li P, Huang C, Tao W, Xiao W, Wang Y, Huang
+L, Yang L. Deciphering the combination principles of Traditional Chinese Medicine
+from a systems pharmacology perspective based on Ma-huang Decoction. J
+Ethnopharmacol. 2013 Sep 21. doi:pii: S0378-8741(13)00653-3.
+10.1016/j.jep.2013.09.018. [Epub ahead of print] PubMed PMID: 24064232.
+
+
+450: Yang L, He S. A bioinformatics-based update on microRNAs and their targets
+in rainbow trout (Oncorhynchus mykiss). Gene. 2013 Sep 21. doi:pii:
+S0378-1119(13)01265-1. 10.1016/j.gene.2013.09.060. [Epub ahead of print] PubMed
+PMID: 24064144.
+
+
+451: Campos D, Matos S, Oliveira JL. A modular framework for biomedical concept
+recognition. BMC Bioinformatics. 2013 Sep 24;14(1):281. [Epub ahead of print]
+PubMed PMID: 24063607.
+
+
+452: Wang G, Zhang K, He X, Zhang Y. [Identification of methylation at lysine 27 
+and 36 sites in histone H3]. Se Pu. 2013 Jun;31(6):514-7. Chinese. PubMed PMID:
+24063188.
+
+
+453: Enderling H, Rejniak KA. Simulating cancer: computational models in
+oncology. Front Oncol. 2013 Sep 13;3:233. doi: 10.3389/fonc.2013.00233. PubMed
+PMID: 24062986; PubMed Central PMCID: PMC3772565.
+
+
+454: Pazos F, Pietrosemoli N, García-Martín JA, Solano R. Protein intrinsic
+disorder in plants. Front Plant Sci. 2013 Sep 12;4:363. Review. PubMed PMID:
+24062761; PubMed Central PMCID: PMC3770944.
+
+
+455: Zoete V, Irving M, Ferber M, Cuendet MA, Michielin O. Structure-Based,
+Rational Design of?T Cell Receptors. Front Immunol. 2013 Sep 12;4:268. Review.
+PubMed PMID: 24062738; PubMed Central PMCID: PMC3770923.
+
+
+456: Kaplan BA, Lansner A, Masson GS, Perrinet LU. Anisotropic connectivity
+implements motion-based prediction in a spiking neural network. Front Comput
+Neurosci. 2013 Sep 17;7:112. doi: 10.3389/fncom.2013.00112. PubMed PMID:
+24062680; PubMed Central PMCID: PMC3775506.
+
+
+457: Chavali S, Bruhn S, Tiemann K, Sætrom P, Barrenäs F, Saito T, Kanduri K,
+Wang H, Benson M. MicroRNAs act complementarily to regulate disease-related mRNA 
+modules in human diseases. RNA. 2013 Sep 23. [Epub ahead of print] PubMed PMID:
+24062574.
+
+
+458: Wang JY, Liu LF, Chen CY, Huang YW, Hsiung CA, Tsai HJ. Acetaminophen and/or
+antibiotic use in early life and the development of childhood allergic diseases. 
+Int J Epidemiol. 2013 Aug;42(4):1087-1099. PubMed PMID: 24062298.
+
+
+459: Verma D, Guo JT, Jacobs DJ, Livesay DR. Towards comprehensive analysis of
+protein family quantitative stability-flexibility relationships using homology
+models. Methods Mol Biol. 2014;1084:239-54. doi: 10.1007/978-1-62703-658-0_13.
+PubMed PMID: 24061925.
+
+
+460: Brown MC, Verma D, Russell C, Jacobs DJ, Livesay DR. A Case Study Comparing 
+Quantitative Stability-Flexibility Relationships Across Five Metallo-ß-Lactamases
+Highlighting Differences Within NDM-1. Methods Mol Biol. 2014;1084:227-38. doi:
+10.1007/978-1-62703-658-0_12. PubMed PMID: 24061924.
+
+
+461: Lu X, Zhao T. Clinical Therapy Using iPSCs: Hopes and Challenges. Genomics
+Proteomics Bioinformatics. 2013 Sep 21. doi:pii: S1672-0229(13)00093-4.
+10.1016/j.gpb.2013.09.002. [Epub ahead of print] PubMed PMID: 24060840.
+
+
+462: Zhang XB. Cellular Reprogramming of Human Peripheral Blood Cells. Genomics
+Proteomics Bioinformatics. 2013 Sep 20. doi:pii: S1672-0229(13)00092-2.
+10.1016/j.gpb.2013.09.001. [Epub ahead of print] PubMed PMID: 24060839.
+
+
+463: Chang WC, Yen C, Chi CL, Wu FT, Huang YC, Lin JS, Huang FC, Tate JE, Wu HS, 
+Hsiung CA. Cost-effectiveness of rotavirus vaccination programs in Taiwan.
+Vaccine. 2013 Sep 20. doi:pii: S0264-410X(13)01245-0.
+10.1016/j.vaccine.2013.08.103. [Epub ahead of print] PubMed PMID: 24060569.
+
+
+464: Rosato A, Tejero R, Montelione GT. Quality assessment of protein NMR
+structures. Curr Opin Struct Biol. 2013 Sep 20. doi:pii: S0959-440X(13)00157-7.
+10.1016/j.sbi.2013.08.005. [Epub ahead of print] PubMed PMID: 24060334.
+
+
+465: Luo C, Rodriguez-R LM, Konstantinidis KT. A User's Guide to Quantitative and
+Comparative Analysis of Metagenomic Datasets. Methods Enzymol. 2013;531:525-47.
+doi: 10.1016/B978-0-12-407863-5.00023-X. PubMed PMID: 24060135.
+
+
+466: Huson DH, Weber N. Microbial Community Analysis Using MEGAN. Methods
+Enzymol. 2013;531:465-85. doi: 10.1016/B978-0-12-407863-5.00021-6. PubMed PMID:
+24060133.
+
+
+467: Navas-Molina JA, Peralta-Sánchez JM, González A, McMurdie PJ, Vázquez-Baeza 
+Y, Xu Z, Ursell LK, Lauber C, Zhou H, Song SJ, Huntley J, Ackermann GL,
+Berg-Lyons D, Holmes S, Caporaso JG, Knight R. Advancing Our Understanding of the
+Human Microbiome Using QIIME. Methods Enzymol. 2013;531:371-444. doi:
+10.1016/B978-0-12-407863-5.00019-8. PubMed PMID: 24060131.
+
+
+468: Zhang TT, Sun Y, Jia CW, Yu SN, Lu ZH, Chen J. [Target prediction and
+verification of miR-27a in pancreatic cancer]. Zhonghua Bing Li Xue Za Zhi. 2013 
+Jun;42(6):392-6. Chinese. PubMed PMID: 24060073.
+
+
+469: Ehrlich M, Lacey M. DNA methylation and differentiation: silencing,
+upregulation and modulation of gene expression. Epigenomics. 2013
+Oct;5(5):553-68. doi: 10.2217/epi.13.43. PubMed PMID: 24059801.
+
+
+470: Kruczyk M, Umer HM, Enroth S, Komorowski J. Peak Finder Metaserver - a novel
+application for finding peaks in ChIP-seq data. BMC Bioinformatics. 2013 Sep
+23;14(1):280. [Epub ahead of print] PubMed PMID: 24059758.
+
+
+471: Thøgersen JC, Mørup M, Damkiær S, Molin S, Jelsbak L. Archetypal analysis of
+diverse Pseudomonas aeruginosa transcriptomes reveals adaptation in cystic
+fibrosis airways. BMC Bioinformatics. 2013 Sep 23;14(1):279. [Epub ahead of
+print] PubMed PMID: 24059747.
+
+
+472: Crappé J, Van Criekinge W, Trooskens G, Hayakawa E, Luyten W, Baggerman G,
+Menschaert G. Combining in silico prediction and ribosome profiling in a
+genome-wide search for novel putatively coding sORFs. BMC Genomics. 2013 Sep
+23;14(1):648. [Epub ahead of print] PubMed PMID: 24059539.
+
+
+473: Stein M, Kaur-Ghumaan S. Microbial hydrogen splitting in the presence of
+oxygen. Biochem Soc Trans. 2013 Oct 1;41(5):1317-24. doi: 10.1042/BST20130033.
+PubMed PMID: 24059526.
+
+
+474: Sharabi O, Shirian J, Shifman JM. Predicting affinity- and
+specificity-enhancing mutations at protein-protein interfaces. Biochem Soc Trans.
+2013 Oct 1;41(5):1166-9. doi: 10.1042/BST20130121. PubMed PMID: 24059503.
+
+
+475: Issa NT, Byers SW, Dakshanamurthy S. Drug Repurposing: Translational
+Pharmacology, Chemistry, Computers and the Clinic. Curr Top Med Chem.
+2013;13(18):2328-2336. PubMed PMID: 24059462.
+
+
+476: Ahmed F, Ansari JA, Ansari ZE, Alam Q, Kamal MA, Ahmad E. A Molecular
+Bridge: Connecting Type 2 Diabetes and Alzheimer's Disease. CNS Neurol Disord
+Drug Targets. 2013 Sep 18. [Epub ahead of print] PubMed PMID: 24059325.
+
+
+477: Medvedeva SA, Panchin AY, Alexeevski AV, Spirin SA, Panchin YV. Comparative 
+analysis of context-dependent mutagenesis using human and mouse models. Biomed
+Res Int. 2013;2013:989410. doi: 10.1155/2013/989410. Epub 2013 Aug 22. PubMed
+PMID: 24058920; PubMed Central PMCID: PMC3766559.
+
+
+478: Warden CD, Kanaya N, Chen S, Yuan YC. BD-Func: a streamlined algorithm for
+predicting activation and inhibition of pathways. PeerJ. 2013 Sep 12;1:e159. doi:
+10.7717/peerj.159. PubMed PMID: 24058887; PubMed Central PMCID: PMC3775632.
+
+
+479: Keuschnigg J, Karinen S, Auvinen K, Irjala H, Mpindi JP, Kallioniemi O,
+Hautaniemi S, Jalkanen S, Salmi M. Plasticity of blood- and lymphatic endothelial
+cells and marker identification. PLoS One. 2013 Sep 10;8(9):e74293. doi:
+10.1371/journal.pone.0074293. PubMed PMID: 24058540; PubMed Central PMCID:
+PMC3769239.
+
+
+480: Gupta S, Kapoor P, Chaudhary K, Gautam A, Kumar R; Open Source Drug
+Discovery Consortium, Raghava GP. In silico approach for predicting toxicity of
+peptides and proteins. PLoS One. 2013 Sep 13;8(9):e73957. doi:
+10.1371/journal.pone.0073957. PubMed PMID: 24058508; PubMed Central PMCID:
+PMC3772798.
+
+
+481: Chen L. Statistical and Computational Methods for High-Throughput Sequencing
+Data Analysis of Alternative Splicing. Stat Biosci. 2013 May 1;5(1):138-155.
+PubMed PMID: 24058384; PubMed Central PMCID: PMC3776476.
+
+
+482: Osaka M, Matsuda T, Sakazono S, Masuko-Suzuki H, Maeda S, Sewaki M, Sone M, 
+Takahashi H, Nakazono M, Iwano M, Takayama S, Shimizu KK, Yano K, Lim YP, Suzuki 
+G, Suwabe K, Watanabe M. Cell type-specific transcriptome of Brassicaceae
+stigmatic papilla cells from a combination of laser microdissection and RNA
+sequencing. Plant Cell Physiol. 2013 Sep 20. [Epub ahead of print] PubMed PMID:
+24058146.
+
+
+483: Nijkamp JF, Pop M, Reinders MJ, de Ridder D. Exploring variation-aware
+contig graphs for (comparative) metagenomics using MaryGold. Bioinformatics. 2013
+Sep 23. [Epub ahead of print] PubMed PMID: 24058058.
+
+
+484: Murie C, Barette C, Lafanechère L, Nadon R. Single assay-wide variance
+experimental (SAVE) design for high-throughput screening. Bioinformatics. 2013
+Oct 11. [Epub ahead of print] PubMed PMID: 24058057.
+
+
+485: Deckard A, Anafi RC, Hogenesch JB, Haase SB, Harer J. Design and Analysis of
+Large-Scale Biological Rhythm Studies: A Comparison of Algorithms for Detecting
+Periodic Signals in Biological Data. Bioinformatics. 2013 Sep 20. [Epub ahead of 
+print] PubMed PMID: 24058056.
+
+
+486: Wang X, Zhang B. customProDB: an R package to generate customized protein
+databases from RNA-Seq data for proteomics search. Bioinformatics. 2013 Oct 7.
+[Epub ahead of print] PubMed PMID: 24058055.
+
+
+487: Grau J, Posch S, Grosse I, Keilwagen J. A general approach for
+discriminative de novo motif discovery from high-throughput data. Nucleic Acids
+Res. 2013 Sep 20. [Epub ahead of print] PubMed PMID: 24057214.
+
+
+488: Marino Gammazza A, Rizzo M, Citarrella R, Rappa F, Campanella C, Bucchieri
+F, Patti A, Nikolic D, Cabibi D, Amico G, Conaldi PG, San Biagio PL, Montalto G, 
+Farina F, Zummo G, Conway de Macario E, Macario AJ, Cappello F. Elevated blood
+Hsp60, its structural similarities and cross-reactivity with thyroid molecules,
+and its presence on the plasma membrane of oncocytes point to the chaperonin as
+an immunopathogenic factor in Hashimoto's thyroiditis. Cell Stress Chaperones.
+2013 Sep 22. [Epub ahead of print] PubMed PMID: 24057177.
+
+
+489: Rani PS, Babajan B, Tulsian NK, Begum M, Kumar A, Ahmed N. Mycobacterial
+Hsp65 potentially cross-reacts with autoantibodies of diabetes sera and also
+induces (in vitro) cytokine responses relevant to diabetes mellitus. Mol Biosyst.
+2013 Nov 1;9(11):2932-2941. Epub 2013 Sep 17. PubMed PMID: 24056978.
+
+
+490: Huang G, Zhou Y, Zhang Y, Li BQ, Zhang N, Cai YD. Prediction of carbamylated
+lysine sites based on the one-class k-nearest neighbor method. Mol Biosyst. 2013 
+Nov 1;9(11):2729-2740. Epub 2013 Sep 3. PubMed PMID: 24056952.
+
+
+491: Li W, Chen L, Li X, Jia X, Feng C, Zhang L, He W, Lv J, He Y, Li W, Qu X,
+Zhou Y, Shi Y. Cancer-related marketing centrality motifs acting as pivot units
+in the human signaling network and mediating cross-talk between biological
+pathways. Mol Biosyst. 2013 Sep 20. [Epub ahead of print] PubMed PMID: 24056896.
+
+
+492: Bhavaniprasad V, Febin Prabhu Dass J, Jayanthi S. Activation mechanism of
+claudin-4 by ephrin type-A receptor 2: a molecular dynamics approach. Mol
+Biosyst. 2013 Nov 1;9(11):2627-2634. Epub 2013 Sep 17. PubMed PMID: 24056764.
+
+
+493: Borklu Yucel E, Ulgen KO. Assessment of crosstalks between the Snf1 kinase
+complex and sphingolipid metabolism in S. cerevisiae via systems biology
+approaches. Mol Biosyst. 2013 Nov 1;9(11):2914-2931. Epub 2013 Sep 13. PubMed
+PMID: 24056632.
+
+
+494: Kumar A, Gernaey KV, Beer TD, Nopens I. Model-based analysis of high shear
+wet granulation from batch to continuous processes in pharmaceutical production -
+A critical review. Eur J Pharm Biopharm. 2013 Sep 20. doi:pii:
+S0939-6411(13)00306-8. 10.1016/j.ejpb.2013.09.013. [Epub ahead of print] PubMed
+PMID: 24056091.
+
+
+495: Wu M, Chen G, Hu B. Induced Pluripotency for Translational Research.
+Genomics Proteomics Bioinformatics. 2013 Sep 19. doi:pii: S1672-0229(13)00091-0. 
+10.1016/j.gpb.2013.08.001. [Epub ahead of print] PubMed PMID: 24056061.
+
+
+496: Davidson RM, Hasan NA, de Moura VC, Duarte RS, Jackson M, Strong M.
+Phylogenomics of Brazilian epidemic isolates of Mycobacterium abscessus subsp.
+bolletii reveals relationships of global outbreak strains. Infect Genet Evol.
+2013 Sep 18;20C:292-297. doi: 10.1016/j.meegid.2013.09.012. [Epub ahead of print]
+PubMed PMID: 24055961.
+
+
+497: Mi Z, Butt AM, An X, Jiang T, Liu W, Qin C, Cao WC, Tong Y. Genomic analysis
+of HAdV-B14 isolate from the outbreak of febrile respiratory infection in China. 
+Genomics. 2013 Sep 20. doi:pii: S0888-7543(13)00181-X.
+10.1016/j.ygeno.2013.09.001. [Epub ahead of print] PubMed PMID: 24055951.
+
+
+498: Premachandra HK, Elvitigala DA, Bathige SD, Whang I, Lee Y, De Zoysa M, Lee 
+J. Genomic structure and immunological response of an STAT4 family member from
+rock bream (Oplegnathus fasciatus). Fish Shellfish Immunol. 2013 Sep 18. doi:pii:
+S1050-4648(13)00756-0. 10.1016/j.fsi.2013.09.011. [Epub ahead of print] PubMed
+PMID: 24055510.
+
+
+499: Guo T, Leng XJ, Wu XF, Li JL, Gao JZ, Li XQ, Gan T, Wei J. Cloning,
+molecular characterization, and expression analysis of the signal transducer and 
+activator of transcription 3 (STAT(3)) gene from grass carp (Ctenopharyngodon
+idellus). Fish Shellfish Immunol. 2013 Nov;35(5):1624-1634. doi:
+10.1016/j.fsi.2013.09.012. Epub 2013 Sep 18. PubMed PMID: 24055509.
+
+
+500: He H, Mao L, Xu P, Xi Y, Xu N, Xue M, Yu J, Ye X. Ossification of the
+posterior longitudinal ligament related genes identification using microarray
+gene expression profiling and bioinformatics analysis. Gene. 2013 Sep 18.
+doi:pii: S0378-1119(13)01175-X. 10.1016/j.gene.2013.09.001. [Epub ahead of print]
+PubMed PMID: 24055420.
