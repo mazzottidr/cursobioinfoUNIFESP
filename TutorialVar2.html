@@ -1,0 +1,332 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Detecção de variantes por sequenciamento de nova geração</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p><div class="se-section-delimiter"></div>
+
+<h2 id="tutorial-var2">Tutorial Var2</h2>
+
+<h4 id="detecção-de-variantes-por-sequenciamento-de-nova-geração">Detecção de variantes por sequenciamento de nova geração</h4>
+
+<hr>
+
+<p><strong>Introdução</strong></p>
+
+<p>O desenvolvimento de tecnologias de sequenciamento de nova geração foi um grande avanço na genética e na genômica. Atualmente, genomas completos podem ser sequenciados a uma pequena fração do custo da época do Projeto Genoma Humano. Porém, em paralelo a esse desenvolvimento, a análise de dados de sequenciamento de nova geração também foi se aprimorando, mas ainda e um grande desafio para profissionais da área da saúde que não apresentam formação em programação computacional.</p>
+
+<p>O objetivo deste tutorial é mostrar um exemplo de <em>pipeline</em> simples de <strong>Alinhamento</strong>, <strong>Processamento</strong> e <strong>Identificação de Variantes</strong>, capaz de analisar os resultados de um sequenciamento de nova geração do tipo <em>paired end</em> realizado em uma plataforma da Illumina. Originalmente, a amostra a ser utilizada no tutorial foi submetida ao sequenciamento do exoma e constitui uma amostra do projeto <a href="http://www.1000genomes.org/">1000 Genomes</a>. Porém, como a análise do sequenciamento de um exoma humano é compuatacionalmente onerosa, vamos fazer todas as etapas que seriam realziadas em uma análise real, apenas com o cromossomo 20.</p>
+
+<p>Vamos dividir as etapas em:</p>
+
+<ul>
+<li><p>Download e instalação dos softwares necessários, dos arquivos brutos do sequenciamento e do genoma de referência</p></li>
+<li><p>Controle de qualidade dos reads obtidos pelo sequenciamento</p></li>
+<li><p>Alinhamento dos reads no genoma de referência</p></li>
+<li><p>Processamento dos alinhamentos e avaliação de sua qualidade</p></li>
+<li><p>Identificação das variantes</p></li>
+</ul>
+
+<p>Para a finalidade desse curso introdutório, vamos realizar apenas estas tarefas mais básicas, mas temos que lembrar que existem outras (como as diversar etapas do processamento dos read alinhados e a anotação das variantes) que são extremamente importantes.</p>
+
+<p><strong>1. Download e instalação dos softwares necessários, dos arquivos brutos do sequenciamento e do genoma de referência</strong></p>
+
+<p>Todos os softwares que vamos usar para o <em>pipeline</em> de alinhamento e identificação de variantes usam a linha de comando como interface principal. Para garantir que nosso sistema Linux tenha todos os arquivos necessários para a instalação dos softwares, vamos realizar a atualização das bivliotecas com os comandos abaixo:</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install curl
+sudo apt-get install default-jre
+sudo apt-get install libncurses5-dev libncursesw5-dev
+sudo apt-get install libperl-dev
+sudo apt-get install build-essential
+sudo apt-get install libpython2.7-dev
+sudo apt-get install zlib1g-dev
+</code></pre>
+
+<p>Não se preocupe quanto à função de cada um deles. São apenas arquivos essenciais para garantir que os softwraes serão atualizados com sucesso.</p>
+
+<p>Agora vamos instalar os seguintes softwares que usaremos nas análises: <strong>FastQC</strong>, <strong>bwa</strong>, <strong>samtools</strong>, <strong>Qualimap</strong> e <strong>GATK</strong>. Use os comandos abaixo para criar o diretório <code>cursobioinfo/bin</code> onde todos os softwares serão instalados  em seguida os comandos para dazer o download, instalar e deixá-los pronto para a análise. Note que linhas que começam com <code>#</code> são comentários.</p>
+
+<pre><code>#Criar diretório de trabalho
+
+mkdir -p ~/cursobioinfo/bin
+
+#Instalar fastqc
+cd ~/cursobioinfo/bin
+curl -O http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.10.1.zip
+unzip fastqc_v0.10.1.zip
+sudo chmod +x FastQC/fastqc
+
+#Instalar bwa
+cd ~/cursobioinfo/bin
+wget -O bwa-0.7.5a.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.5a.tar.bz2/download
+tar xvfj bwa-0.7.5a.tar.bz2
+cd bwa-0.7.5a/
+make
+
+#Instalar samtools
+cd ~/cursobioinfo/bin
+curl -O -L http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
+tar xvfj samtools-0.1.19.tar.bz2
+cd samtools-0.1.19
+make
+
+#Instalar Qualimap
+cd ~/cursobioinfo/bin
+wget http://qualimap.bioinfo.cipf.es/release/qualimap_v0.7.1.zip
+unzip qualimap_v0.7.1.zip
+
+#Instalar GATK
+cd ~/cursobioinfo/bin
+curl -O ftp://ftp.broadinstitute.org/pub/gsa/GenomeAnalysisTK/GenomeAnalysisTK-1.0.5974.tar.bz2
+tar xvfj GenomeAnalysisTK-1.0.5974.tar.bz2
+</code></pre>
+
+<p>Como curiosidade, perceba que há um padrão na instalação dos softwares: primeiro entramos no diretório com <code>cd</code>, em seguida baixamos os arquivos com <code>wget</code>ou <code>curl</code> (outro comando para baixar arquivos da Internet). em seguida descompactamos com <code>unzip</code> ou <code>tar</code> e, para aqueles que precisam ser compilados, usamos o <code>make</code>.</p>
+
+<p>Após a instalação dos softwares podemos baixar os arquivos brutos do sequenciamento do cromossomo 20 de uma amostra do 1000G dentro do diretório <code>cursobioinfo/Var2</code> que vamos criar:</p>
+
+<pre><code>mkdir -p ~/cursobioinfo/Var2
+cd ~/cursobioinfo/Var2
+wget https://www.dropbox.com/s/oft2viweqdoqyda/chr20.R1.fq.gz
+wget https://www.dropbox.com/s/f1g4bxqn0mq2kpf/chr20.R2.fq.gz
+</code></pre>
+
+<p>Como foi um sequenciamento do tipo <em>paired end</em> temos dois arquivos para cada amostra a ser analisada: <code>chr20.R1.fq.gz</code> e <code>chr20.R2.fq.gz</code>. Note que a extensão <code>.gz</code> indica que o arquivo está compactado pelo formado <code>gzip</code>, então, para trabalharmos com o arquivo vamos primeiro descompactá-los como  comando <code>gunzip</code>.</p>
+
+<pre><code>gunzip chr20.R1.fq.gz
+gunzip chr20.R2.fq.gz
+</code></pre>
+
+<p>Liste (<code>ls</code>) os arquivos no seu diretório para ver e a descompactação foi realizada com sucesso. Em seguida vamos começar a explorar os arquivos.</p>
+
+<p>Os arquivos que fizemos o download estão no formato <code>.fastq</code>, um formato padrão considerado como o “dado bruto” de uma corrida se sequenciamento de nova geração. Cada quatro linhas desse arquivo representa um <strong><em>read</em></strong> do sequenciamento, com informações sobre a identificaçao do read, sequência de nucleotídeos e escore de qualidade das bases (ou seja, qual a confiabilidade da base mostrada naquela posição). Mais informações sobre o arquivo <code>.fastq</code> pode ser encontrada neste <a href="http://en.wikipedia.org/wiki/FASTQ_format">link</a>.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Experimente abrir as 4 primeiras linhas do arquivo <code>chr20.R1.fq</code>. Qual o comando usado para realizar essa tarefa? Como saber quantos reads o sequenciamento gerou?</p>
+</blockquote>
+
+<p>Vamos olhas as 4 primeiras linhas de cada arquivo para checar se os arquivos estão corretos:</p>
+
+<pre><code>#Arquivo chr20.R1.fq
+
+@M01002:7:000000000-A2NEV:1:1111:25455:16374/1
+ACTTTGCCAGTGGCCTGGAAGCACTTTGTCCCCCCTGGCACAAAT
++
+?????BBBDDBBDDDD?FFFFFHHHHFHHFFGHCCC@7EFDFFHF
+
+#Arquivo chr20.R2.fq
+
+@M01002:7:000000000-A2NEV:1:1111:25455:16374/2
+ATTTGTGCCAGGGGGGACAAAGTGCTTCCAGGCCACTGGCAAAGT
++
+??????-&lt;BDDBB=BBFDFFFFCFBFHFCHHHFFDF;@,*@DEED
+</code></pre>
+
+<blockquote>
+  <p><strong>Exercício:</strong> O que é possivel notar de igual e de diferente nesse arquivo?</p>
+</blockquote>
+
+<p>Agora que já constatamos que nossos arquivos estão em ordem, precisamos baixar o genoma de referência, usado para o alinhamento dos reads e identificação das variantes. Como estamos apenas trabalhando com o cromossomo 20, nossa referência será um arquivo FASTA (veja mais informações sobre esse arquivo <a href="http://en.wikipedia.org/wiki/FASTA_format">aqui</a>), com a sequência e todas as bases do cromossomo 20 humano. Para fazer o download desse genoma de referência, use o comando abaixo:</p>
+
+<pre><code>wget https://www.dropbox.com/s/b3kiev5z8c1m9eo/chr20.fa.gz
+</code></pre>
+
+<p>Vamos descompactá-lo´com <code>gunzip</code> e em seguido abrí-lo com <code>less</code>:</p>
+
+<pre><code>gunzip chr20.fa.gz
+less chr20.fa
+</code></pre>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Explore esse arquivo e veja se atende as expectativas como um “genoma de referência”. Quais são as duas informações contidas nesse arquivo que voce acha que serão importantes para o alinhamento dos seus <em>reads</em> nesse genoma?</p>
+</blockquote>
+
+<p>Por fim, o único arquivo necessário para a análise que resta fazer o download é o arquivo <code>.bed</code> contendo as coordenadas genômicas de todos os éxons do cromossomo 20. <strong>Atenção!</strong> esse arquivo <code>.bed</code> não tem correspondência nenhum com o arquivo <code>.bed</code> usado no Tutorial do PLINK. Embora a extensão seja a mesma, eles contêm informações completamente diferentes. A definição de formato do arquivo <code>.bed</code> usado no presente Tutorial pode ser encontrada <a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format1">aqui</a>.</p>
+
+<p>Como estamos fazendo uma análise de Exoma, em alguns momentos durante a análise temos que informar aos softwares que embora tenhamos reads que vieram de todo o cromossomo 20 (pois nenhum kit de captura de éxons elimina completamente outras regiões não-exônicas), nosso interesse é apenas a região dos éxona, principalmente para o cálculo de cobertura. Vamos fazer o download e abrir o arquivo <code>chr20_1000G.bed</code>:</p>
+
+<pre><code>wget https://www.dropbox.com/s/s11yx3s1yrtykz4/chr20_1000G.bed
+less chr20_1000G.bed
+</code></pre>
+
+<p>Note que esse arquivo não estava compactado. É possivel perceber que cada linha do arquivo corresponde a uma coordenada genômica de cada um dos éxons do cromossomo 20 (evidenciado pelas 3 primeiras colunas - no formato <em>chr start end</em>). Os nomes dos genes estão na última coluna.</p>
+
+<p>Finalmente, temos todos os arquivos necessários para iniciar a análise:</p>
+
+<ul>
+<li><p>Dois arquivos <code>.fastq</code>(<code>chr20.R1.fq</code>e <code>chr20.R2.fq</code>), contendo os reads que foram gerados pelo sequenciador (tipo <em>paired end</em>)</p></li>
+<li><p>Um arquivo <code>.fasta</code> (<code>chr20.fa</code>) contendo a sequência do genoma de referência (no nosso caso a do cromossomo 20)</p></li>
+<li>Um arquivo <code>.bed</code> (<code>chr20_1000G.bed</code>) contendo as coordenadas dos éxons do cromossomo 20</li>
+</ul>
+
+<hr>
+
+<p><strong>2. Controle de qualidade dos reads obtidos pelo sequenciamento</strong></p>
+
+<p>Antes de começar o alinhamento em si, precisamos garantir que a qualidade dos reads gerados pelo sequenciador estão adequadas. Para isso, um software muito utilizado é o <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><strong>FastQC</strong></a>. Embora este software apresente uma versão “Desktop” para download, podemos acessá-lo pela linha de comando de modo versátil.</p>
+
+<p>Vamos criar uma pasta chamada <code>fastqc_output</code> para salvar o resultado da análise e executar o programa usando o comando abaixo. Preste atenção da estrutura do comando:</p>
+
+<pre><code>mkdir fastqc_output
+../bin/FastQC/fastqc chr20.R1.fq chr20.R2.fq --outdir=fastqc_output
+</code></pre>
+
+<p>O primeiro argumento deste comando indica onde o arquivo executável do programa se encontra no computador. No tópico anterior, nós instalamos o FastQC no diretório <code>cursobioinfo/bin/FastQC</code>. Como estamos no diretório <code>cursobioinfo/Var2</code>, para acessar algum arquivo em outro diretório usamos o comando <code>../</code> que indica que temos que voltar um diretório, juntamente com <code>bin/FastQC</code>, que e onde nosso executável <code>fastqc</code> está localizado. Assim, para completar essa tarefa, temos o primeiro argumento inteiro do comando que é o caminho até o executável do FastQC, acessado de dentro da pasta <code>Var2</code>: <code>../bin/FastQC/fastqc</code>. Em seguida, os prósimo argumentos são os arquivos <code>.fastq</code> que contêm os reads a serem avaliados, no caso <code>chr20.R1.fq</code> e <code>chr20.R2.fq</code>. Por fim, o diretório onde gostaríamos que o resultado da análise fosse salvo (<code>fastqc_output</code>).</p>
+
+<p>Vamos olhar os resultados. Usando o navegador de arquivos do Ubuntu, cá ate o diretório <code>fastqc_output</code> e entre na pasta <code>chr20.R1.fq_fastqc</code>. Acesse o arquivo <code>fastqc_report.html</code> e uma página no navegador da web abrirá com um relatório contendo uma série de imagens avaliando a qualidade dos arquivo <code>.fastq</code> em questão. Um descrição mais detalhada do que cada gráfico significa pode ser encontrado <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">aqui</a>.</p>
+
+<p>Experimente abrir também o arquivo do outro read. De fato a qualidade desse reads não está a ideal, mas para o propósito deste Tutorial, não teremos muitos problemas durante o alinhamento. Veja aqui um exemplo de arquivo com <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc/fastqc_report.html">ótima qualidade</a> e um com <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc/fastqc_report.html">péssima qualidade</a>.</p>
+
+<p>Em casos em que a qualidade dos arquivos não fica tão boa, podemos tentar limpar algumas sequências, por exemplo cortando o início e fim de todos os reads, ou eliminando reads que apresentaram baixo escore de qualidade das bases. Como esta é uma tarefa muito heterogênea, não sera discutida neste tutorial.</p>
+
+<p>Agora que avaliamos a qualidade da sequência, podemos de fato inicar o alinhamento.</p>
+
+<hr>
+
+<p><strong>3. Alinhamento dos reads no genoma de referência</strong></p>
+
+<p>A primeira etapa da análise de sequênciamento de nova geração quando se tem um genoma de referência é o alinhamento. Basicamente, a tarefa a ser realizada por um software de alinhamento é encontrar as coordenadas genômicas de cada read no genoma de referência. Basicamente é como montar um quebra-cabeça, onde cada peça (read) deve ser confrontado com a imagem do quebra-cabeça (genoma de referência) até que o padrão da peça (sequência) seja igual ao da imagem e assim conseguimos estabelecer qual a posição da peça (coordenada genômica) é a correta.</p>
+
+<p>No entanto, temos que lembrar que o objetivo do sequenciamento é identificar variantes, ou seja, regiões no genoma sequenciado da nossa amostra que diferem do genoma de referência. Assim, o algoritmo de alinhamento deve estar atento a isso também, pois se ele alinhasse apenas os reads que apresentam 100% de similaridade com alguma região do genoma de referência, não teriamos nenhuma variante identificada.</p>
+
+<p>Um dos alinhadores mais utilizados na análise de sequenciamento de nova geração é o BWA (<em>Burrows-Wheeler Aligner</em>). Mais informações e todas as suas funções podem ser encontradas no <a href="http://bio-bwa.sourceforge.net/">site</a> do programa.</p>
+
+<p>Antes de começar o alinhamento, temos que inicialmente criar um <strong>índice</strong> no nosso genoma de referência (<code>chr20.fa</code>), para facilitar a busca a ser realizada pelo alinhador. Este processo é análogo a um índice remissimo que fica no final de um livro. Caso tenhamos interesse em buscar um termo específico no livro, fica muito mais fácil se já tivermos as páginas que ele aparece de antemão. A criação do índice do genoma de referência segue esse principio, e o software BWA possui essa função, que pode ser realizada pelo seguinte comando (<strong>OBS:</strong> tenha certeza que está de volta no diretório em que baixamos todos os arquivos):</p>
+
+<pre><code>../bin/bwa-0.7.5a/bwa index chr20.fa
+</code></pre>
+
+<p>Estude a estrutura do comando e perceba que assim como feito no FastQC, demos o caminho relativo ate chegar no executável do BWA. O comando <code>index</code> diz que queremos usar a função de criar o índice no genoma de referência <code>chr20.fa</code>. Liste (<code>ls</code>) os arquivos no diretório e perceba que alguns arquivos foram criados, como parte da construção do índice.</p>
+
+<p>Agora que nossa referência está indexada, podemos realizar a primeira etapa de alinhamento com o BWA, usando a função e algoritmo <code>aln</code>. Hoje já existem algoritmos melhorados do BWA como o <code>bwa-mem</code> e recomendamos este último em um projeto real. Porém, para fins didáticos, vamos usar o <code>aln</code> para entender as etapas envolvidas.</p>
+
+<p>Para o primeiro passo da alinhamento devemos executar os seguintes comandos:</p>
+
+<pre><code>../bin/bwa-0.7.5a/bwa aln chr20.fa chr20.R1.fq &gt; chr20.R1.sai
+../bin/bwa-0.7.5a/bwa aln chr20.fa chr20.R2.fq &gt; chr20.R2.sai
+</code></pre>
+
+<p>Note que cada comando foi aplicado a cada arquivo (read 1 e read 2), e o resultado foi salvo nos arquivos <code>chr20.R1.sai</code> e <code>chr20.R2.sai</code>. Os arquivos com extensão <code>.sai</code> resultantes dessa análise são arquivos binários que contêm a informação do alinhamento. A próxima etapa é unir os dois arquivos <code>.sai</code>, um de cada read, em um único arquivo <code>.sam</code> não-binário, que conterá todas as informações do alinhamento e que pode ser legivel. Para isso usamos o comando abaixo:</p>
+
+<pre><code>../bin/bwa-0.7.5a/bwa sampe -r "@RG\tID:001\tLB:Lane_teste\tSM:Amostra_teste\tPL:ILLUMINA" chr20.fa chr20.R1.sai chr20.R2.sai chr20.R1.fq chr20.R2.fq &gt; chr20.sam
+</code></pre>
+
+<p>Agora as coisas ficaram mais complicadas! Vamos tentar entender cada uma das partes do comando acima. O primeiro argumento se refere ao caminho do executável do BWA, como discutido previamente. o sengundo arqgumento (<code>sampe</code>) indica para o software que queremos criar um arquivo no formato SAM (cujo formato sera discutido em breve) a partir de <em>paired end reads</em> (por isso <em>sam</em> <strong><em>pe</em></strong>).</p>
+
+<p>O próximo argumento (<code>r "@RG\tID:001\tLB:Lane_teste\tSM:Amostra_teste\tPL:ILLUMINA"</code>) é uma informação que obrigatoriamente deve estar presente no cabeçalho do arquivo <code>.sam</code>, por requerimento dos softwares que usarems mais adiante. Essa informação e chamada de <em>Read Group</em> e nada mais é do que uma referência à identificaçao da amostra, do <em>lane</em> do sequenciador, da biblioteca usada para o sequenciamento e da plataforma utilizada. Em uma análise que envolve várias amostra é o que será capaz de distinguí-las.</p>
+
+<p>Por fim, temos que fornecer o arquivo com o genoma de referência (<code>chr20.fa</code>), os arquivos <code>.sai</code> resultantes da análise anterior e dos arquivos do reads em <code>.fastq</code>. Em seguida colocamos um indicador para salvar o resultado no arquivo <code>chr20.sam</code>.</p>
+
+<p>Vamos agora abrir o arquivo <code>chr20.sam</code> usando o comando <code>less</code> para ver sua estrutura. Este arquivo contem informações relevantes do alinhamento e pode ser considerado como o “genoma alinhado” da amostra. Note que as primeiras linhas começam com o caractere <code>@</code>, que para esse tipo de arquivo indicam o cabeçalho apenas (ou seja não contém a informação real sobre o alinhamento). Perceba que a linha que começa com <code>@RG</code> apresenta a informação que colocamos no <em>Read Group</em> do comando <code>bwa sampe</code>.</p>
+
+<p>Após o cabeçalho, temos várias linhas que representam todos os reads que foram alinhados no genoma de referência. Note que uma linha do arquivo pode ocupar mais de uma linha na tela, portanto preste atenção na identificaçao de uma linha. Mais especificações sobre o formato SAM podem ser encontradas neste <a href="http://samtools.github.io/hts-specs/SAMv1.pdf">link</a>.</p>
+
+<p>Agora que temos nosso arquivo <code>.sam</code> que representa o resultado do alinhamento dos reads no genoma de referência, estamos prontos para a próxima etapa.</p>
+
+<hr>
+
+<p><strong>4. Processamento dos alinhamentos e avaliação de sua qualidade</strong></p>
+
+<p>Antes de seguir com a identificação das variantes, que é o objetivo da nossa análise de sequenciamento de nova geração, temos realizar uma série de etapas para melhorar e recalibrar nosso arquivo <code>.sam</code> que contém os alinhamentos. A princípio, dentre as diversas informações presentes no arquivo <code>.sam</code>, nós já temos as regiões do genoma que diferem do genoma de referência. Porém, com o objetivo de facilitar a tarefa de encontrar essas variantes e garantir que os alinhamentos estejam com alta qualidade e possam identificar variantes com confiança, as etapas de processamento são fundamentais.</p>
+
+<blockquote>
+  <p><strong>Observação:</strong> Neste tutorial não vamos entrar em todas as etapas recomendadas de processamento. No entanto, sugerimos que leia todas essas etapas no manual de <a href="https://www.broadinstitute.org/gatk/guide/best-practices">Boas Práticas</a> de processamento de dados de sequenciamento de nova geração dispinibilizado na página do software GATK / Broad Institute.</p>
+</blockquote>
+
+<p>A primeira etapa de processamento que vamos realizar é a compactação do arquivo <code>.sam</code> em um formato binário de extensão <code>.bam</code> para agilizar o acesso de dados pelos algoritmos seguintes. Para isso, vamos usar o software <a href="http://samtools.sourceforge.net/"><strong>samtools</strong></a>, que apresenta uma série de ferramentas para o processamento e visualização de arquivos no formato <code>.sam</code> e <code>.bam</code>. Para converter o arquivo <code>chr20.sam</code> para binário usamos o seguinte comando:</p>
+
+<pre><code>../bin/samtools-0.1.19/samtools view -bS chr20.sam &gt; chr20.bam
+</code></pre>
+
+<p>Este comando busca o executável do samtools, e usa o argumento <code>view</code> para converter nosso arquivo <code>chr20.sam</code> em <code>chr20.bam</code>. O <em>flag</em> <code>-bS</code>indica que nosso arquivo de entrada está no formato SAM (por isso o <code>S</code>) e que o de saída sera no formato BAM (<em>binary SAM</em> - por isso o <code>b</code>). Por fim a conversão será salva em <code>chr20.bam</code>.</p>
+
+<p>Ainda com a finalidade de facilitar o acesso ao arquivo, há mais duas etapas de processamento que vamos comentar antes de avaliar a qualidade do alinhamento. A primeira dela é que devemos ordenar o arquivo <code>.bam</code> e colocar as informações em sequência da coordenada genômica. Essa etapa pode ser comparada ao fato de que se quisermos buscar muitas palavras no dicionário, é mais fácil primeiro ordená-las e em seguida buscar todas as que começam com a letra A, depois com a B e assim por diante, economizando tempo. Para ordenar o arquivo <code>.bam</code>, usamos o seguinte comando:</p>
+
+<pre><code>../bin/samtools-0.1.19/samtools sort chr20.bam chr20.sorted
+</code></pre>
+
+<p>Aqui a estrutura é similar: caminho até o executável, argumento usado para ordenar (<code>sort</code>) arquivo de entrada e prefixo do arquivo de saída. Nesse caso, não precisamos colocar <code>&gt; chr20.sorted.bam</code> no final do comando, pois já estamos informando que o prefixo é <code>chr20.sorted</code>. Ao listar os arquivos no diretório note que o arquivo <code>chr20.sorted.bam</code> foi criado.</p>
+
+<p>Por fim, a última etapa de processamento descrita nesse tutorial é a criação de índice para o arquivo <code>.bam</code> já ordenado (ou seja, <code>.sorted.bam</code>), pelo mesmo conceito que fizemos com o genoma de referência. Como estamos trabalhando com um arquivo <code>.bam</code>, também usamos o samtools para executar essa tarefa:</p>
+
+<pre><code>../bin/samtools-0.1.19/samtools index chr20.sorted.bam chr20.sorted.bam.bai
+</code></pre>
+
+<p>Semelhantemente à ordenação do arquivo <code>.bam</code> na etapa anterior, esse comando apenas precisa do executável do samtools, o arquivo <code>.sorted.bam</code> de entrada e o nome no arquivo em que deverá ser salvo o índice criado. Por covenção, coloca-se a extensão <code>.bai</code> no final do nome do arquivo <code>.bam</code>, pois softwares subsequentes buscam automaticamente por esses arquivos quando lêem os arquivos <code>.bam</code>.</p>
+
+<p>Agora que já temos nosso arquivo <code>.bam</code> ordenado e indexado, ou seja, pronto para a análise, vamos usar o software <a href="http://qualimap.bioinfo.cipf.es/"><strong>Qualimap</strong></a> para avaliar parâmetros importantes sobre o alinhamento: a <strong>cobertura</strong>. Para executar o Qualimap podemos usar o comando abaixo:</p>
+
+<pre><code>../bin/qualimap_v0.7.1/qualimap bamqc -bam chr20.sorted.bam -gff chr20_1000G.bed -outdir qualimap_output
+</code></pre>
+
+<p>Vamos entender o comando. Inicialmente, colocamos o caminho para o executável do Qualimap. Em seguida, colocamos o argumento do software que irá realizar o controle de qualidade do arquivo <code>.bam</code>, que será o <code>bamqc</code>. Depois, delimitado pelo <em>flag</em> <code>-bam</code>, colocamos o arquivo <code>.bam</code> que desejamos avaliar (no caso <code>chr20.sorted.bam</code>) e delimitado pelo <em>flag</em> <code>-gff</code> colocamos as regiões em que gostaríamos de mostrar as estatisticas do alinhamento, no caso, os éxons do cromossomo 20 (representado pelo arquivo <code>chr20_1000G.bed</code>). Caso nosso experimento fosse de sequenciamento de genoma inteiro, não precisaríamos fornecer nenhum arquivo com este <em>flag</em>, pois as estatísticas seriam calculadas para o genoma de referência como um todo. Por fim, colocamos o diretório de saída onde o relatorio de qualidade será gerado. Neste software, não há necessidade de criar o diretório antes da análise (assim como fizemos no FastQC anteriormente), pois o diretório é criado automaticamente caso não exista.</p>
+
+<p>Entre no diretório <code>qualimap_output</code> por meio do navegador do Ubuntu e abra o arquivo <code>qualimapReport.html</code>, Este arquivo apresenta o resultado de estatísticas descritivas de qualidade do alinhamento.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Procure no arquivo <code>qualimapReport.html</code> as seguintes informações: <strong>número de reads</strong>, <strong>porcentagem de reads alinhados</strong>, <strong>cobertura média</strong> e <strong>porcentagem do genoma com cobertura mínima de 30X</strong>.</p>
+</blockquote>
+
+<p>O relatório fornecido pelo Qualimap dá importantes informações a respeito da qualidade do alinhamento, portanto, é uma etapa crucial para saber se as próximas etapas da análise serão confiáveis ou sujeitas a algum tipo de viés. De uma maneira geral, nosso alinhamento de reads no cromossomo 20 deu um resultado bom para a identificação de variantes, o que significa que podemos seguir com os próximos passos sem preocupação.</p>
+
+<p>Antes de identificar as variantes, podemos ter uma impressão visual de como o alinhamento ocorreu. Para isso, podemos usar a ferramenta <code>tview</code> como parte do samtools, fornecendo o arquivo <code>.bam</code> e o geneoma de referência:</p>
+
+<pre><code>../bin/samtools-0.1.19/samtools tview chr20.sorted.bam chr20.fa
+</code></pre>
+
+<p>No próprio terminal, uma tela com apenas alguns números na primeira linha e uma serie de “Ns” na segunda linha é mostrada. O que está sendo mostrado é a sequência do genoma de referência do início do cromossomo 20. Como é uma região muito repetitiva e dificil de anotar, o genoma de referência mostra apenas “Ns”. Vamos varrer um pouco o arquivo para identificar alguns alinhamentos. Aperte a tecla do ponto de interrogação (<code>?</code>) para mostrar uma janela de ajuda. Veja que a combinação <code>ctrl-L</code> move a janela 1000 bases (1k) para a direita. Dessa forma, movimente a tela até que apareçam algumas sequências ou pontos.</p>
+
+<p>Cada linha de pontos representa um read e quando uma letra (A,C,T ou G) aparece, é uma potencial região que difere do genoma de referência.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Perceba que algumas vezes, apenas em poucos reads aparece uma base divergente, enquanto em outros locais identificamos todos os reads com a base alternantiva, ou ainda aproximadamente metade dos reads com a base igual ao referência e a outra metadecom a base alternativa. Como explicar essas três situações?</p>
+</blockquote>
+
+<p>Após visualmente identificar locais no genoma potencialmente diferentes do genoma de referência, podemos identificar formalmente todas as reais variantes e salvá-las em outro arquivo. Esse passo será realizado no tópico a seguir.</p>
+
+<hr>
+
+<p><strong>5. Identificação das variantes</strong></p>
+
+<p>A última etapa etapa explorada neste Tutorial é a identificação das variantes contidas nos alinhamentos processados. Como comentado anteriormente, os arquivos <code>.bam</code> já carregam a informação de onde no genoma sequenciado há diferenças em relação ao genoma de referência. No entanto, precisamos que todas as informações presentes no arquivo sejam aproveitadas ao máximo (troca de nucleotideo, posição da variante, escore de qualidade das bases, qualidade do alinhamento, etc.), de forma a render um arquivo que contenha todas as alterações da maneira mais confiável possível. Para essa tarefa, nós executamos uma etapa chamada de Identificação das Variantes, ou <strong><em>Variant Calling</em></strong>.</p>
+
+<p>O variant calling é executado a partir do arquivo <code>.bam</code> previamente processado, desta vez utilizando outro software chamado <strong><em>Genome Analysis Toolkit</em></strong>, ou <a href="https://www.broadinstitute.org/gatk/"><strong>GATK</strong></a>. Este software apresenta um conjunto de soluções para etapas de processamento e identificação de variantes, e conta com um manual de boas práticas de análise, seguido por muitos pesquisadores na área de sequenciamento de nova geração. As ferramentas presentes neste software são inúmeras e vamos comentar apenas uma delas, que é chamada de <em>Unified Genotyper</em>. Esta ferramenta faz o papel de identficar as variantes do arquivo <code>.bam</code> e salvar em um arquivo denominado VCF, comentado brevemente a seguir. O comando para identificar as variantes pelo GATK é o seguinte:</p>
+
+<pre><code>java -jar ../bin/GenomeAnalysisTK-1.0.5974/GenomeAnalysisTK.jar -R chr20.fa -T UnifiedGenotyper -I chr20.sorted.bam -o chr20.vcf
+</code></pre>
+
+<p>Vamos entender a estrutura do comando. Diferentemente dos outros softwares que usamos até agora, o GATK foi escrito da linguagem de programação Java. Um programa escrito nessa linguagem de programação tem por convenção a extensão <code>.jar</code> e deve ser executado de acordo com a seguinte estrutura: <code>java -jar programa.jar</code>. Assim, o programa GATK (representado pelo arquivo <code>GenomeAnalysisTK.jar</code> é executado dessa maneira, seguido de três argumentos determinados pelos <em>flags</em> <code>-R</code> (genoma de referência), <code>-T</code> (nome da ferramenta do GATK a ser utilizada) e <code>-I</code> (arquivo de entrada). Em seguida, o <em>flag</em> <code>-o</code> determinará o nome do arquivo de saida, que por convenção é colocado com a extensão <code>.vcf</code>.</p>
+
+<p>O arquivo <code>chr20.vcf</code> apresenta o resultado da identificação de variantes da amostra que estamos estudando. Ele representa todas as posição do genoma que apresentaram uma alteração de base em relação à referência utilizada. Mais informações sobre este formato de arquivo podem ser obtidas <a href="http://www.1000genomes.org/node/101">aqui</a>. Vamos explorar o arquivo  <code>chr20.vcf</code>, abrindo-o com o comando <code>less</code>.</p>
+
+<p>Perceba que as primeiras linhas do arquivo começam com <code>#</code> e, portanto, representam comentários. Este cabeçalho do arquivo VCF apresenta informações importantes sobre cada um dos campos contidos no arquivo. A última linha do cabeçalho é mostrada abaixo e apresenta o nome de cada coluna de dados do arquivo VCF:</p>
+
+<pre><code>#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  Amostra_teste
+</code></pre>
+
+<p>A partir desta linha, cada linha representa uma variante identificada em nossa amostra que diferiu do genoma de referência (note que estamos apenas trabalhando com SNPs e, neste Tutorial não iremos abordar polimorfismos do tipo indel).</p>
+
+<p>Vamos entender os campos presentes no arquivo VCF. As primeiras duas colunas representam o cromossomo e a posição relativa ao cromossomo no genoma de referência que a variante foi detectada. A coluna ID é uma identificação da variante. Neste ponto, como não fizemos nenhuma anotação, todas as linhas apresentarão um <code>.</code> apenas, mas se fizéssemos a anotação, poderia por exemplo indicar o número rs do polimorfismo. As próximas duas colunas (REF e ALT) representam o alelo presente no genoma de referência e o alelo encontrado na amostra, chamado de alelo alternativo. Em seguida temos uma coluna com o escore de qualidade da variante (QUAL), que indica o quão confiável a variante foi após sua identificação. A próxima coluna (FILTER) indica se algum filtro (por exemplo filtro de baixa qualidade) foi aplicado no arquivo, e as duas últimas colunas (INFO e FORMAT) apresentam algumas anotações já inerentes do processamento do arquivo.</p>
+
+<blockquote>
+  <p><strong>Exercicio:</strong> Use seus conhecimentos da linha de comando do Linux para descobrir quantas variantes foram identificadas nesta amostra.</p>
+</blockquote>
+
+<p>De fato, o entendimento de todos esses campos exige leitura e dedicação. Aqui no presente tutorial vamos explorar dois deles que são importantes: os campos <code>GT</code> e <code>AD</code> da coluna FORMAT.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Inspecione algumas linhas em busca desses campos e tente identificar o que significam. Há alguma relação entre esses campos e o valor da coluna QUAL?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>Considerações finais e próximos passos</strong></p>
+
+<p>No presente Tutorial exploramos uma pipeline “simples” para alinhamento e identificação de variantes com dados resultantes do sequenciamento do exoma por metodologia de nova geração. O arquivo VCF apresenta uma lista com todas as variantes identificadas em relação ao genoma de referência e é o primeiro arquivo que deve ser inspecionado em detalhes para saber onde no genoma a nossa amostra variou. Como já temos o cromossomo e coordenada genômica, basta olhar em algum dos bancos de dados que estudamos e verificar se a alteração é ou não relevante. Obviamente, essa tarefa não deve ser realizada variante por variante, pois se tornaria inviável. Assim, uma das etapas posteriores ao <em>variant calling</em> é a anotação das variantes.</p>
+
+<p>A anotação das variantes é realizada por softwares como <a href="http://www.openbioinformatics.org/annovar/">ANNOVAR</a> e <a href="http://snpeff.sourceforge.net/SnpEff_manual.html#run">snpEff</a>, e com a experiência adquirida nesse Tutorial, é possível seguir as instruções para completar essa anotação. Como resultado, informações como o gene, alteração de aminoácido, efeito da variante, frequência nas populações do 1000 Genomes, entre outros, são anotados no próprio arquivo VCF para posterior consulta.</p>
+
+<p>Por fim, a última etapa é aquela que envolve o filtro e interpretação das variantes presentes. De fato as alterações mais importantes são aquelas raras (que nunca foram descritas em nenhum banco de dados) ou que causam um efeito grande na proteina (perda de STOP CODON, por exemplo). Quando estamos trabalhando com um arquivo com milhares ou até milhões de variantes (como no caso do sequenciamento de um genoma completo), usar filtros no Excel é inviável. Nesse sentido, o desenvolvimento de pequnos scripts e programa para acessar e filtrar esses arquivos é outro desafio dentro da área de interpretação dos resultados do sequenciamento de nova geração, mas que é capaz de motivar o estudo de linguagens de programação aplicadas a dados genéticos.</p>

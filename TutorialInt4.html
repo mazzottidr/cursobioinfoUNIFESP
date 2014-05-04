@@ -1,39 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Tutorial Int4  Linux - É um sistema operacional criado em 1991 por Linus Torvalds na universidade de Helsinki na Finlândia. É um sistema operacional de código aberto distribuído gratuitamente pela Internet. Pelo sistema operacional, queremos dizer o conjunto de programas que fazem o computador funcionar. Linux é um sistema multitarefa, multiusuário para servidores e desktops e que convivem sem nenhum tipo de conflito com outros sistemas operacionais no mesmo computador. Abaixo seguem os comandos básicos usados no Lixux.   **1. Listar arquivos e diretórios**  - ls (list)  Quando você faz seu primeiro login, o diretório de trabalho atual é o seu diretório home. O diretório home tem o mesmo nome que o seu nome de usuário e é onde seus arquivos pessoais e subdiretórios são salvos.  O comando ls (L minúsculo e S minúsculo) lista o conteúdo do seu diretório de trabalho atual. Para descobrir o que está em seu diretório home, digite:      ls **2. Criar diretório**  - mkdir (make directory)  Vamos agora fazer um subdiretório em seu diretório home para armazenar os arquivos que você criará.  Para fazer um subdiretório chamado cursobioinfo digite:       mkdir cursobioinfo Para ver o subdiretório que você criou digite:      ls **3. Mudar para um diretório diferente**  - cd (change directory)  O comando cd significa alterar o diretório de trabalho atual para outro diretório. O diretório de trabalho atual pode ser pensado como o diretório em que você está, ou seja, sua posição atual na árvore do sistema de arquivos.  Para mudaor para o diretório que você acabou de fazer, digite:      cd cursobioinfo  *Exercício:* Criar um novo diretório dento do diretório cursobioinfo e chamá-lo de *estudo.*  - cd ../  O comando cd ../ retorna para um diretório acima.   - cd ~  O comando cd ~ sempre retorna para o diretório home.  **4. Localizar diretório**  - pwd (print working directory)  O comando pwd mostra os caminhos até chegar ao diretório que você está trabalhando.  	pwd  **5. Mover arquivos**  Para mover um arquivo de um lugar para outro, use o comando mv. Ele tem o efeito de mover ao invés de copiar o arquivo, assim você acaba com apenas um arquivo ao invés de dois.  Esse comando também pode ser usado para renomear um arquivo, movendo o arquivo para o mesmo diretório, mas dando-lhe um nome diferente.      cd cursobioinfo     mv estudo aula  **6. Remover arquivos e diretórios**  Para remover um arquivo use o comando rm.  	rm pasta2 Para remover um diretório use o comando rm -R.  *Exercício:* Criar um diretório chamado stuff usando mkdir e então removê-lo usando rm -R.    **7. Editar um texto**  Para editar um texto use o comando nano.   	nano aula 	 *Exercício:* Escreva o seu objetivo com esse curso no file2. Após escrever, clique ctrl s para salvar. Ao salvar, coloque a extensão do arquivo. Nessa caso .txt.  Salve o arquivo com o nome objetivo.txt. E então clique ctrl x para sair.   **8. Copiar arquivos**  - cp (copy)  cp é o comando que faz uma cópia do arquivo no diretório de trabalho atual.       cp cursobioinfo     cp objetivo       **9. Exibir o conteúdo de um arquivo na tela**  - cat   Mostra o conteúdo de um arquivo binário ou texto          cat objetivo.txt      - less  O commando less mostra uma página por vez do conteúdo de um arquivo.  	less objetivo.txt 	 - head  O comando head mostra as primeiras 10 linhas de um arquivo na tela.  	head objetivo.txt 	 - head -n 20 Readme.txt  No exemplo acima serão mostradas as 20 primeiras linhas do arquivo Readme.txt 	 - tail  O comando tail mostra as últimas 10 linhas de um arquivo na tela.  	tail objetivo.txt  - tail -n 30 Readme.txt  No exemplo acima, serão mostradas as 30 últimas linhas do arquivo Readme.txt  **10. Pesquisar o conteúdo de um arquivo**  - grep  O comando grep procura no arquivo palavras ou padrões específicos.  	grep ‘aprender’ objetivo.txt Obs: o comando grep é *case sensitive*. Ele distingue entre Objetivo e objetivo.  - wc (word count)  Usado para contar palavras em um arquivo  	wc objetivo.txt 	 Para saber quantas linhas o arquivo, digite:      wc -l objetivo.txt      > Written with [StackEdit](http://benweet.github.io/stackedit/).</title>
-<link rel="stylesheet" href="http://benweet.github.io/stackedit/res-min/themes/default.css" />
-<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
-</head>
-<body><div class="container"><h2 class="wmd-title" id="tutorial-int4">Tutorial Int4</h2>
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Introdução ao ambiente Linux e à linguagem de programação R</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
 
-<p>Linux - É um sistema operacional criado em 1991 por Linus Torvalds na
-universidade de Helsinki na Finlândia. É um sistema operacional de código aberto
-distribuído gratuitamente pela Internet. Pelo sistema operacional, queremos dizer o conjunto de programas que fazem o computador funcionar. Linux é um sistema multitarefa, multiusuário para servidores e desktops e que convivem sem nenhum tipo de conflito com outros sistemas operacionais no mesmo computador. Abaixo seguem os comandos básicos usados no Lixux. </p>
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p><div class="se-section-delimiter"></div>
+
+<h2 id="tutorial-int4">Tutorial Int4</h2>
+
+<h4 id="introdução-ao-ambiente-linux-e-à-linguagem-de-programação-r">Introdução ao ambiente Linux e à linguagem de programação R</h4>
+
+<hr>
+
+<h4 id="contexto"><strong>Contexto</strong></h4>
+
+<p>Neste tutorial iremos praticar algumas funcionalidades básicas de programação usando o sistema operacional Linux e também a linguagem de programação do <em>software</em> R. De maneira geral, qualquer <em>software</em> ou programa de computador apresenta um código que contém as instruções para desenvolver a função pelo qual foi desenhado. Quando uma empresa decide investir em algum programa de computador para uso do público geral, grande parte do desenvolvimento é dedicada à criação do que chamamos de <strong>interface gráfica</strong>. Uma interface gráfica é o programa juntamente com as janelas, botões, links, figuras, etc. que facilitam o uso do <em>software</em>. No entanto, em bioinformática, devido à maleabilidade dos programas, a necessidade de atualizações frente ao desenvolvimento de novas ferramentas e a flexibilidade de controle dos parâmetros usados nas análises, muitas vezes não compensa a criação de uma interface gráfica. Nesse contexto, a grande maiora dos <em>softwares</em> em bioinformática acabam sendo disponíveis apenas pela <strong>interface da linha de comando</strong>.</p>
+
+<p>Embora “assustadora” em um primeiro momento, o domínio da interface da linha de comando permite que tarefas complexas e repetitivas sejam realizadas rapidamente. Dessa forma, este tutorial pretende introduzir alguns comandos básicos comumente utilizados na análise de dados em genética.</p>
+
+<h4 id="introdução-ao-linux"><strong>Introdução ao Linux</strong></h4>
+
+<p>Linux - É um sistema operacional criado em 1991 por Linus Torvalds na Universidade de Helsinki na Finlândia. É um sistema operacional de código aberto distribuído gratuitamente pela Internet. Por sistema operacional, queremos dizer o conjunto de programas que fazem o computador funcionar. Linux é um sistema multitarefa, multiusuário para servidores e <em>desktops</em> e que convivem sem nenhum tipo de conflito com outros sistemas operacionais no mesmo computador. Abaixo seguem os comandos básicos usados no Linux.</p>
+
+<h4 id="comandos-básicos-do-linux">Comandos básicos do Linux</h4>
+
+<p>Abra o <strong>Terminal</strong> (use o atalho <code>CTRL+ALT+T</code>) e tente executar os comandos abaixo. Uma breve descrição de cada um deles é colocado juntamente com um exemplo de como aplicar o programa.</p>
 
 <p><strong>1. Listar arquivos e diretórios</strong></p>
 
 <ul>
-<li>ls (list)</li>
+<li><code>ls</code> (<em>list</em>)</li>
 </ul>
 
-<p>Quando você faz seu primeiro login, o diretório de trabalho atual é o seu diretório home. O diretório home tem o mesmo nome que o seu nome de usuário e é onde seus arquivos pessoais e subdiretórios são salvos.</p>
+<p>Quando você faz seu primeiro login, o diretório de trabalho atual é o seu diretório <code>home</code>. O diretório <code>home</code> tem o mesmo nome que o seu nome de usuário e é onde seus arquivos pessoais e subdiretórios são salvos.</p>
 
-<p>O comando ls (L minúsculo e S minúsculo) lista o conteúdo do seu diretório de trabalho atual.
-Para descobrir o que está em seu diretório home, digite:</p>
+<p>O comando <code>ls</code> (L minúsculo e S minúsculo) lista o conteúdo do seu diretório de trabalho atual. Para descobrir o que está em seu diretório <code>home</code>, digite:</p>
 
 <pre><code>ls
 </code></pre>
 
+<hr>
+
 <p><strong>2. Criar diretório</strong></p>
 
 <ul>
-<li>mkdir (make directory)</li>
+<li><code>mkdir</code> (<em>make directory</em>)</li>
 </ul>
 
-<p>Vamos agora fazer um subdiretório em seu diretório home para armazenar os arquivos que você criará. 
-Para fazer um subdiretório chamado cursobioinfo digite: </p>
+<p>Vamos agora fazer um subdiretório em seu diretório <code>home</code> para armazenar os arquivos que você criará. Para fazer um subdiretório chamado <code>cursobioinfo</code> digite: </p>
 
 <pre><code>mkdir cursobioinfo
 </code></pre>
@@ -43,160 +58,756 @@ Para fazer um subdiretório chamado cursobioinfo digite: </p>
 <pre><code>ls
 </code></pre>
 
+<p>Note que  o novo diretório <code>cursobioinfo</code> agora aparece listado juntamente com os outros diretórios e arquivos presentes no seu diretório <code>home</code>.</p>
+
+<hr>
+
 <p><strong>3. Mudar para um diretório diferente</strong></p>
 
 <ul>
-<li>cd (change directory)</li>
+<li><code>cd</code> (<em>change directory</em>)</li>
 </ul>
 
-<p>O comando cd significa alterar o diretório de trabalho atual para outro diretório. O diretório de trabalho atual pode ser pensado como o diretório em que você está, ou seja, sua posição atual na árvore do sistema de arquivos.</p>
+<p>O comando <code>cd</code> significa alterar o diretório de trabalho atual para outro diretório. O diretório de trabalho atual pode ser pensado como o diretório em que você está, ou seja, sua posição atual na árvore do sistema de arquivos.</p>
 
-<p>Para mudaor para o diretório que você acabou de fazer, digite:</p>
+<p>Para mudar para o diretório que você acabou de fazer (<code>cursobioinfo</code>), digite:</p>
 
 <pre><code>cd cursobioinfo
 </code></pre>
 
-<p><em>Exercício:</em> Criar um novo diretório dento do diretório cursobioinfo e chamá-lo de <em>estudo.</em></p>
+<blockquote>
+  <p><em>Exercício:</em> Criar um novo diretório dentro do diretório cursobioinfo e chamá-lo de <code>estudo</code>.</p>
+</blockquote>
 
 <ul>
-<li>cd ../</li>
+<li><code>cd ..</code></li>
 </ul>
 
-<p>O comando cd ../ retorna para um diretório acima. </p>
+<p>O comando <code>cd ..</code> retorna para um diretório acima.</p>
+
+<blockquote>
+  <p><em>Exercício:</em> Experimente ir e voltar ao diretório <code>estudo</code> usando os comandos <code>cd estudo</code> e <code>cd ..</code></p>
+</blockquote>
 
 <ul>
-<li>cd ~</li>
+<li><code>cd ~</code> ou unicamente <code>cd</code></li>
 </ul>
 
-<p>O comando cd ~ sempre retorna para o diretório home.</p>
+<p>O comando <code>cd ~</code> sempre retorna para o diretório home.</p>
+
+<blockquote>
+  <p><em>Exercício:</em> Entre novamente no diretório <code>estudo</code>. Em seguida digite apenas <code>cd</code> e aperte Enter. Qual diretório você se encontra agora? Qual comando utilizar para listar os arquivos e diretórios contidos no seu diretório atual?</p>
+</blockquote>
+
+<hr>
 
 <p><strong>4. Localizar diretório</strong></p>
 
 <ul>
-<li>pwd (print working directory)</li>
+<li><code>pwd</code> (<em>print working directory</em>)</li>
 </ul>
 
-<p>O comando pwd mostra os caminhos até chegar ao diretório que você está trabalhando.</p>
+<p>O comando <code>pwd</code> mostra os caminhos até chegar ao diretório que você está trabalhando:</p>
 
 <pre><code>pwd
 </code></pre>
 
-<p><strong>5. Mover arquivos</strong></p>
+<blockquote>
+  <p><em>Exercício:</em> Entre novamente no diretório <code>cursobioinfo/estudo</code> e digite o comando <code>pwd</code>. O que aparece?</p>
+</blockquote>
 
-<p>Para mover um arquivo de um lugar para outro, use o comando mv. Ele tem o efeito de mover ao invés de copiar o arquivo, assim você acaba com apenas um arquivo ao invés de dois.</p>
+<hr>
 
-<p>Esse comando também pode ser usado para renomear um arquivo, movendo o arquivo para o mesmo diretório, mas dando-lhe um nome diferente.</p>
+<p><strong>5. Mover arquivos e diretórios</strong></p>
 
-<pre><code>cd cursobioinfo
-mv estudo aula
+<p>Para mover um arquivo de um lugar para outro, use o comando <code>mv</code>. Ele tem o efeito de mover ao invés de copiar o arquivo, assim você acaba com apenas um arquivo ao invés de dois. Esse comando também pode ser usado para renomear um arquivo, movendo o arquivo para o mesmo diretório, mas dando-lhe um nome diferente.</p>
+
+<p>Crie um novo diretório chamado <code>aula</code> dentro de <code>cursobioinfo</code>. Liste o que tem dentro de <code>cursobioinfo</code> para ver se os dois diretórios (<code>estudo</code> e <code>aula</code>) foram criados. Criar o hábito de listar após qualquer operação ajuda a entender se está fazendo tudo corretamente. Em seguida mova a pasta <code>estudo</code> para dentro da pasta <code>aula</code>:</p>
+
+<pre><code>mv estudo aula
 </code></pre>
 
-<p><strong>6. Remover arquivos e diretórios</strong></p>
+<p>Liste o conteúdo tanto do diretório que se encotra quanto do diretório <code>aula</code>. O que aparece dentro do diretório <code>aula</code>?</p>
 
-<p>Para remover um arquivo use o comando rm.</p>
+<hr>
 
-<pre><code>rm pasta2
+<p><strong>6. Criar / editar um arquivo</strong></p>
+
+<p>Para criar um arquivo de texto, use o comando <code>nano</code>. Vá para o diretório <code>cursobioinfo/aula/estudo/</code> e digite:</p>
+
+<pre><code>nano
 </code></pre>
 
-<p>Para remover um diretório use o comando rm -R.</p>
+<p>Uma espécie de editor de texto irá abrir. Digite alguma frase, como por exemplo o que pretende alcançar ao finalizar este curso e quais são as suas expectativas. Note que na parte inferior do editor de texto há alguns atalhos de teclado. O acento circunflexo (<code>^</code>) corresponde à tecla <code>CTRL</code> no teclado. Dessa maneira, aperte <code>CTRL+o</code> para salvar o arquivo. Ele pedirá um nome de arquivo. Escreva <code>objetivo.txt</code>, aperte Enter e em seguida pressione <code>CTRL+x</code> para fechar o arquivo e voltar para a interface dos diretórios. Ao listar (<code>ls</code>) o diretório que você está, aparecerá o arquivo que acabou de criar.</p>
 
-<p><em>Exercício:</em> Criar um diretório chamado stuff usando mkdir e então removê-lo usando rm -R. </p>
+<p>Para editar o arquivo <code>objetivo.txt</code>, basta usar o comando abaixo:</p>
 
-<p><strong>7. Editar um texto</strong></p>
-
-<p>Para editar um texto use o comando nano. </p>
-
-<pre><code>nano aula
+<pre><code>nano objetivo.txt
 </code></pre>
 
-<p><em>Exercício:</em> Escreva o seu objetivo com esse curso no file2. Após escrever, clique ctrl s para salvar. Ao salvar, coloque a extensão do arquivo. Nessa caso .txt.  Salve o arquivo com o nome objetivo.txt. E então clique ctrl x para sair. </p>
+<p>Isso abrirá o editor de texto e permitirá a edição. Use os mesmos atalhos de teclado para salvar as alterações (<code>CTRL+o</code>) e fechar o editor de texto (<code>CTRL+x</code>).</p>
+
+<blockquote>
+  <p><em>Exercício</em>: Crie um outro arquivo chamado <code>apagar.txt</code> e coloque o conteúdo que desejar neste arquivo.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>7. Remover arquivos e diretórios</strong></p>
+
+<p>Para remover um arquivo use o comando <code>rm</code>:</p>
+
+<pre><code>rm apagar.txt
+</code></pre>
+
+<blockquote>
+  <p><strong>ATENÇÃO AO USAR ESTE COMANDO!</strong> <br>
+  Em configurações padrão e em situações em que você tem domínio total sobre o sistema (também conhecido como <em>superusuário</em>), você pode acabar apagando arquivos necessários ao bom funcionamento do sistema. Diferente do sistema operacional <em>Windows</em>, que tem uma Lixeira, no Linux isso não existe, assim, remover um arquivo ou uma pasta com o comando <code>rm</code> significa apagá-lo do disco <strong>PARA SEMPRE!!!</strong></p>
+</blockquote>
+
+<p>Para remover diretórios, é necessario usar um <em>flag</em> (parâmetro) específico do comando <code>rm</code> para permitir a remoção recursiva de todos os arquivos e diretórios localizados dentro do diretório que quer apagar. Para testar essa funcionalidade, crie um novo diretório chamado <code>exclua-me</code> e digite o seguinte comando:</p>
+
+<pre><code>rm exclua-me
+</code></pre>
+
+<p>Provavelmente uma mensagem de erro aparecerá. Experimente agora usar o comando abaixo e veja o que acontece:</p>
+
+<pre><code>rm -R exclua-me
+</code></pre>
+
+<p>Liste (<code>ls</code>) o diretório atual e procure pela pasta <code>exclua-me</code>. Ela provavelmente foi excluída. <br>
+O <em>flag</em> <code>-R</code> diz ao comando que é para apagar tudo e todos que vêm pela frente, não importa se é arquivo ou diretório. Novamente, tome muito cuidado ao utilizar o comando <code>rm</code>, pois um arquivo removido é irrecuperável.</p>
+
+<hr>
 
 <p><strong>8. Copiar arquivos</strong></p>
 
 <ul>
-<li>cp (copy)</li>
+<li><code>cp</code> (<em>copy</em>)</li>
 </ul>
 
-<p>cp é o comando que faz uma cópia do arquivo no diretório de trabalho atual. </p>
+<p><code>cp</code> é o comando que faz uma cópia do arquivo no diretório de trabalho atual para outro diretório de interesse. A estrutura do commando é “<code>cp</code> + o que copiar + para onde copiar”. Vá ao diretório  <code>cursobioinfo/aula/estudo/</code>, liste e verifique se o arquivo <code>objetivo.txt</code> criado anteriormente está localizado neste diretório. Em seguida copie este arquivo para o nível acima usando o comando:</p>
 
-<pre><code>cp cursobioinfo
-cp objetivo 
+<pre><code>cp objetivo.txt ..
 </code></pre>
 
-<p><strong>9. Exibir o conteúdo de um arquivo na tela</strong></p>
+<p>Note a estrutura do comando: “Copiar <code>cp</code> o arquivo <code>objetivo.txt</code> para um nível acima <code>..</code>“. <br>
+Diferentemente do comando <code>mv</code>, o <code>cp</code> mantém uma cópia do arquivo no local de origem.</p>
+
+<blockquote>
+  <p><em>Exercício</em>: Vá para <code>cursobioinfo</code>, crie um arquivo vazio chamado <code>vazio.txt</code> e copie-o para dentro do diretório <code>estudo</code>.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>9. Realizar o <em>download</em> de um arquivo da internet</strong></p>
+
+<p>É possível realizar o <em>download</em> de arquivos da internet pela linha de comando. Existem diversas maneiras, mas a mais simples é:</p>
+
+<pre><code>wget https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/bigfile.txt
+</code></pre>
+
+<p>Esse comando realizará o download do arquivo <code>bigfile.txt</code>. O arquivo sempre será salvo no diretório atual onde o comando foi executado. Guarde a localização do arquivo que acabou de fazer o <em>download</em>, ele será usado nos próximos passos.</p>
+
+<hr>
+
+<p><strong>10. Exibir o conteúdo de um arquivo na tela</strong></p>
+
+<p>Existem diversas maneiras de exibir o conteúdo de um arquivo na janela do terminal. As mais frequentemente usadas estão listadas abaixo.</p>
 
 <ul>
-<li>cat </li>
+<li><code>cat</code></li>
 </ul>
 
-<p>Mostra o conteúdo de um arquivo binário ou texto</p>
+<p>O comando <code>cat</code> mostra o conteúdo de um arquivo na tela. Vá ao diretório que contém o arquivo <code>objetivo.txt</code> e digite:</p>
 
 <pre><code>cat objetivo.txt
 </code></pre>
 
+<p>Note que ele abre o arquivo inteiro. Para arquivos pequenos, funciona bem para ler seu conteúdo, mas para arquivos muito grandes, provavelmente a informação será “jogada” na tela e somente as últimas linhas do arquivo serão visíveis na janela do terminal.</p>
+
+<blockquote>
+  <p><em>Exercício</em>: Tente usar o comando <code>cat</code> para abrir o arquivo <code>bigfile.txt</code>. O que acontece?</p>
+</blockquote>
+
 <ul>
-<li>less</li>
+<li><code>less</code></li>
 </ul>
 
-<p>O commando less mostra uma página por vez do conteúdo de um arquivo.</p>
+<p>O comando <code>less</code> mostra uma página por vez do conteúdo de um arquivo.</p>
 
-<pre><code>less objetivo.txt
+<pre><code>less bigfile.txt
 </code></pre>
 
+<p>Para percorrer o arquivo use as setas do teclado. A vantagem do <code>less</code> em relação ao <code>cat</code> é que ele permite a visualização por partes do arquivo. Para sair do modo de visualização do <code>less</code>, aperte a tecla <code>q</code> no teclado.</p>
+
 <ul>
-<li>head</li>
+<li><code>head</code></li>
 </ul>
 
-<p>O comando head mostra as primeiras 10 linhas de um arquivo na tela.</p>
+<p>O comando <code>head</code> mostra somente o ínicio de um arquivo na tela. O padrão é mostrar as 10 primeiras linhas:</p>
 
-<pre><code>head objetivo.txt
+<pre><code>head bigfile.txt
 </code></pre>
 
-<ul>
-<li>head -n 20 Readme.txt</li>
-</ul>
+<p>É possível configurar quantas linhas deseja mostrar pelo comando <code>head</code> usando o <em>flag</em> <code>-n</code> seguido pelo número de linhas que deseja mostrar:</p>
 
-<p>No exemplo acima serão mostradas as 20 primeiras linhas do arquivo Readme.txt</p>
-
-<ul>
-<li>tail</li>
-</ul>
-
-<p>O comando tail mostra as últimas 10 linhas de um arquivo na tela.</p>
-
-<pre><code>tail objetivo.txt
+<pre><code>head -n 20 bigfile.txt
 </code></pre>
 
-<ul>
-<li>tail -n 30 Readme.txt</li>
-</ul>
+<p>No exemplo acima serão mostradas as 20 primeiras linhas do arquivo. O comportamento de saída do comando <code>head</code> é semelhante ao do comando <code>cat</code>, ou seja, se solicitar ao comando que mostre um grande número de linhas (por exemplo <code>-n 500</code>), o resultado será “jogado” na tela e somente as últimas linhas serão visíveis na janela do terminal.</p>
 
-<p>No exemplo acima, serão mostradas as 30 últimas linhas do arquivo Readme.txt</p>
+<blockquote>
+  <p><strong><em>DICA!</em></strong> Os comandos do Linux podem ser compostos, por meio do uso do caractere <code>|</code> (conhecido por <em>pipe</em> em inglês). Assim, se deseja nagevar pelas primeiras 500 linhas de um arquivo, é possível usar o seguinte comando:</p>
+</blockquote>
 
-<p><strong>10. Pesquisar o conteúdo de um arquivo</strong></p>
-
-<ul>
-<li>grep</li>
-</ul>
-
-<p>O comando grep procura no arquivo palavras ou padrões específicos.</p>
-
-<pre><code>grep ‘aprender’ objetivo.txt
+<pre><code>head -n 500 bigfile.txt | less
 </code></pre>
 
-<p>Obs: o comando grep é <em>case sensitive</em>. Ele distingue entre Objetivo e objetivo.</p>
+<blockquote>
+  <p><strong><em>Como funciona?</em></strong> O <code>less</code> após o comando inicial é aplicado à saída deste comando inicial, ou seja, o comando <code>head -n 500 bigfile.txt</code> jogaria na tela as primeiras 500 linhas do arquivo <code>bigfile.txt</code>, no entanto ao colocar no comando o <code>| less</code>, essa saída (<em>output</em>) é usada como entrada (<em>input</em>) do comando <code>less</code> e as primeiras 500 linhas são organizadas no modo de visualização do <code>less</code>. Este artifício é muito útil e descreve uma das versatilidades da linha de comando.</p>
+</blockquote>
 
 <ul>
-<li>wc (word count)</li>
+<li><code>tail</code></li>
 </ul>
 
-<p>Usado para contar palavras em um arquivo</p>
+<p>O comando <code>tail</code> mostra as últimas 10 linhas de um arquivo na tela, como padrão:</p>
 
-<pre><code>wc objetivo.txt
+<pre><code>tail bigfile.txt
 </code></pre>
 
-<p>Para saber quantas linhas o arquivo, digite:</p>
+<p>De maneira semelhante ao <code>head</code>, determinar o <em>flag</em> <code>-n</code> seguido de um número indica ao comando para mostrar o número de linhas desejado.</p>
 
-<pre><code>wc -l objetivo.txt
-</code></pre></div></body>
-</html>
+<pre><code>tail -n 30 bigfile.txt
+</code></pre>
+
+<blockquote>
+  <p><em>Exercício</em>: Experimente usar o <em>pipe</em> (<code>|</code>) para navegar entre as últimas 100 linhas do arquivo <code>bigfile.txt</code>.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>11. Pesquisar o conteúdo de um arquivo</strong></p>
+
+<p>Para finalizar a série de comandos básicos no Linux, abaixo estão descritos alguns comandos úteis para pesquisar o conteúdo de um arquivo.</p>
+
+<ul>
+<li><code>grep</code></li>
+</ul>
+
+<p>O comando <code>grep</code> procura no arquivo palavras ou padrões específicos e retorna a linha inteira que contém o padrão buscado. Por exemplo, o comando abaixo busca e retorna todas as linhas do arquivo <code>objetivo.txt</code> que contenham a palavra <code>aprender</code>. Perceba que o padrão a ser buscado precisa estar entre aspas simples.</p>
+
+<pre><code>grep 'aprender' objetivo.txt
+</code></pre>
+
+<p>Importante: o comando grep é <em>case sensitive</em>. Ele distingue entre <code>Aprender</code> e <code>aprender</code>.</p>
+
+<ul>
+<li><code>wc</code> (<em>word count</em>)</li>
+</ul>
+
+<p>Este comando é usado para contar o número de linhas, palavras e caracteres em um arquivo:</p>
+
+<pre><code>wc bigfile.txt
+</code></pre>
+
+<p>A saída deste comando é uma linha com 4 campos: o número de linhas, palavras e caracteres que contém o arquivo <code>bigfile.txt</code>. Use o <em>flag</em> <code>-l</code> (letra L minúscula) para que a saída seja somente o número de linhas.</p>
+
+<pre><code>wc -l bigfile.txt
+</code></pre>
+
+<blockquote>
+  <p><em>Exercício</em>: Em um único comando, conte o número de linhas que apresentam o termo <code>Genetic</code> nas primeiras 100 linhas do arquivo <code>bigfile.txt</code>. Use e abuse de <em>pipes</em> (<code>|</code>).</p>
+</blockquote>
+
+<hr>
+
+<h4 id="aula-prática-linux"><strong>Aula prática - Linux</strong></h4>
+
+<p>Para treinar as habilidades aprendidas durante esta aula, um exercício de “caça ao tesouro” foi desenvolvido. Siga os comandos abaixo para fazer o <em>download</em> e descompactar o arquivo <code>ex_linuxv1.1.zip</code>. Dentro deste arquivo comece abrindo o arquivo <code>start.txt</code>. Ele contém as instruções iniciais para a caça ao tesouro. A ideia é usar as ferramentas aprendidas para buscar uma senha ou um código escondido em algum lugar do arquivo <code>chocolate.txt</code>. Aquele que encontrar o código correto primeiro ganhará o prêmio!</p>
+
+<p>Boa Sorte!</p>
+
+<pre><code>mkdir tesouro
+cd tesouro
+wget https://github.com/mazzottidr/cursobioinfoUNIFESP/raw/gh-pages/files/ex_linuxv1.1.zip
+unzip ex_linuxv1.1.zip
+cd ex_linuxv1.1
+</code></pre>
+
+<hr>
+
+<h4 id="introdução-ao-ambiente-r"><strong>Introdução ao ambiente R</strong></h4>
+
+<p>O R é um <em>software</em> inicialmente desenvolvido para análise estatísitica de uma ampla variedade de dados. Assim como o Linux, ele é <em>open source</em> e oferece inúmeras possibilidades de customização e uma poderosa e flexível ferramenta de elaboração de gráficos. Embora extremamente poderoso para realização de análise de dados, especialmente de dados de bioinformática, a principal desvantagem é que não apresenta uma interface gráfica de usuário (<em>Graphical User Interface</em> - GUI) amigável. Da mesma forma como o tutorial de Linux mostrado acima, para aproveitar ao máximo sua funcionalidade, devemos usar a interface da linha de comando.</p>
+
+<p>Mesmo sem uma GUI amigável, existem <em>softwares</em> que facilitam a manipulação de arquivos, pastas e <em>scripts</em>, tornando assim seu uso um pouco mais fácil. Um destes <em>sofwtares</em> é o <a href="https://www.rstudio.com/">RStudio</a>. Neste tutorial iremos abordar fundamentos do ambiente R e apresentá-lo como uma <strong>linguagem de programação</strong> amplamente utilizada para facilitar tarefas de manipulação de dados de bioinformática.</p>
+
+<p>A linguagem de programação do R é relativamente simples de ser entendida e ideal para aqueles que estão iniciando na aprendizagem de análise de dados de bioinformática. Existe um suporte bem detalhado e completo na internet o que faz com que praticamente todas as dúvidas possam ser resolvidas com uma busca rápida no <a href="http://www.google.com.br">Google</a> (e um pouco de conhecimento de inglês).</p>
+
+<p><strong>1. Explorando a interface do RStudio</strong></p>
+
+<p>Inicialmente, vamos abrir o software RStudio. A tela inicial deve ser algo parecido com o representado abaixo.</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Rstudio.png" width="100%" height="auto"></p>
+
+<p>Como podemos observar, a tela inicial do RStudio é composta por uma série de janelas. Nas configurações padrão, existem 4 janelas principais:</p>
+
+<ul>
+<li><p><strong>Canto Inferior Esquerdo:</strong> onde está localizado o <em>console</em> do R. Nesta tela é onde comandos individuais são solicitados, e é a principal tela da chamada <strong>interface da linha de comando</strong>;</p></li>
+<li><p><strong>Canto Inferior Direito:</strong> onde estão localizados as pastas e arquivos do computador, tornando possível navegação entre diferentes diretórios de maneira fácil, sem precisar de comandos (como o <code>cd</code>, no Linux). Nesta tela também são mostrados os gráficos;</p></li>
+<li><p><strong>Canto Superior Esquerdo:</strong> é um editor de texto, onde é possível escrever um <strong><em>script</em></strong>. Este editor de texto apresenta algumas características interessantes como a <strong>marcação de sintaxe</strong>, que permite que as diferentes partes de um programa (variáveis, funções, números, etc.) sejam marcadas em cores diferentes, facilitando assim a escrita do código;</p></li>
+</ul>
+
+<blockquote>
+  <p><strong>O que é um <em>script</em>?</strong> <br>
+  Um <em>script</em>, assim como nos filmes ou nas receitas de bolo, é uma sequência de instruções ordenadas que “dizem” ao computador (ou ao ator ou à cozinheira) o que ele deve fazer. Para facilitar a realização de atividades repetitivas, recomenda-se sempre deixar salvo uma cópia dos comandos usados para determinada tarefa em um <em>script</em> para permitir que, em caso de necessidade, o comando seja executado novamente sem precisar digitá-lo (apenas copiando e colando).</p>
+</blockquote>
+
+<ul>
+<li><strong>Canto Superior Direito:</strong> chamado de <em>Workspace / History</em>, apresenta todos os objetos e variáveis criadas e um histórico de todos os comandos utilizados.</li>
+</ul>
+
+<p>Quando usamos o R para efetuar tarefas pequenas e rápidas, somente a interface da linha de comando (canto inferior esquerdo) é utilizada. No entanto, quando desejamos rodar programas maiores e mais complexos, com uso de diversas funções e objetos, é mais seguro anotarmos todos os comandos na tela de <em>script</em> (canto superior esquerdo) e executá-los um por um na tela da interface da linha de comando.</p>
+
+<hr>
+
+<p><strong>2. O conceito de <em>working directory</em></strong></p>
+
+<p>Antes de iniciarmos a definição dos elementos usados no R, é importante ter bem definido o que é o <em>Working Directory</em> (<strong>WD</strong>). O WD nada mais é do que a pasta de trabalho que o computador está utilizando naquele momento. Imagine que você queira abrir um arquivo que está localizado na pasta <code>C:\Documentos\Bioinformática\</code>. Você precisa usar o Windows Explorer (ferramenta de navegação de pastas do Windows) para ir clicando de pasta em pasta até alcançar aquela de seu interesse. Uma vez “dentro” desssa pasta, você pode clicar sobre o arquivo que quer abrir, ou apagar, ou renomear, ou seja, você pode <em>trabalhar</em> na pasta atual.</p>
+
+<p>No R, acontece de forma semelhante, no entanto, sem janelas e cliques de mouse. Quando abrimos o RStudio pela primeira vez, a interface da linha de comando está localizada no chamado <em>Default Working Directory</em>, ou diretório de trabalho padrão. Muitas vezes, os arquivos que queremos trabalhar não estão localizados nesse diretório, sendo necessário trocá-lo. Para esta tarefa, o RStudio oferece uma funcionalidade para que se escolha o WD que desejamos trabalhar pelo navegador localizado no canto inferior direito.</p>
+
+<p>Vamos criar uma pasta que será o nosso WD para as atividades desse tutorial. Usando o navegador do Linux, crie uma pasta chamada <code>aula_R</code> dentro da pasta <code>Documentos</code> em seu computador. Em seguida, vamos mudar o <em>Default Working Directory</em> no RStudio para que nosso novo WD seja esta pasta que criamos. Para isso, busque e entre na pasta pelo navegador do RStudio, clique em <code>More</code> e em seguida em <code>Set As Working Directory</code>, como mostrado na imagem abaixo.</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Rstudio_WD.png"></p>
+
+<p>Pronto, agora a pasta de trabalho foi alterada para <code>aula_R</code> e podemos copiar arquivos que desejamos trabalhar para dentro desta pasta, para que sejam acessados pelo R. Além disso, toda vez que salvarmos um resultado de análise (um arquivo contendo uma tabela, ou uma imagem), ele será salvo nessa pasta e poderá ser acessado usando o navageador no Windows.</p>
+
+<blockquote>
+  <p><strong>Dica avançada</strong> <br>
+  É possível realizar a troca do WD pela linha de comando, utilizando apenas um comando. Embora pouco intuitivo no começo, pode ser útil quando a troca entre diretórios for muito frequente em seu programa. Para alterar o diretório alterado para <code>C:\Documentos\aula_R</code>,basta usar o seguinte comando, na interface da linha de comando: <code>setwd("~/Documentos/aula_R")</code> <br>
+  Note que o caminho até o diretório deve estar entre aspas e, se estiver usando o Windows, as barras devem ser trocadas de <code>\</code> para <code>/</code>.</p>
+</blockquote>
+
+<p>Para checar se estamos trabalhando no WD correto, basta digitar o seguinte comando no <em>console</em>:</p>
+
+<pre><code>getwd()
+</code></pre>
+
+<p>Se tudo saiu corretamente, o resultado mostrado no <em>console</em> deve ser:</p>
+
+<pre><code>[1] "~/Documentos/aula_R"
+</code></pre>
+
+<hr>
+
+<p><strong>3. Pacotes (<em>packages</em>)</strong></p>
+
+<p>Assim como outras linguagens de programação, existe uma série de funções e comandos que já são disponibilizados por padrão na instalação básica. No entanto, na maioria dos casos precisamos usar outras funcionalidades que não vêm por padrão. Nestes casos, precisamos fazer o download do pacote que contém a funcionalidade desejada e em seguida ativá-lo para utilização.</p>
+
+<p>Vamos fazer o download e em seguida ativar o pacote chamado <code>gplots</code>, um pacote que tem funções para criação de gráficos. Para fazer o download, é necessário usar o comando <code>install.packages()</code>, colocando no espaço entre o parênteses o nome do pacote que se deseja instalar entre aspas. Digite no console:</p>
+
+<pre><code>install.packages("gplots")
+</code></pre>
+
+<p>Deve aparecer uma mensagem parecida com a seguinte, confirmando que fizemos o download do pacote <code>gplots</code>:</p>
+
+<pre><code>trying URL 'http://cran.rstudio.com/bin/windows/contrib/3.0/gplots_2.12.1.zip'
+Content type 'application/zip' length 474599 bytes (463 Kb)
+opened URL
+downloaded 463 Kb
+
+package ‘gplots’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+C:\Users\terminal\AppData\Local\Temp\Rtmp4qVS24\downloaded_packages
+</code></pre>
+
+<p>No entanto, não adianta apenas fazer o download do pacote, se não ativá-lo durante a sua sessão no R. Para isso, digite o seguinte comando (perceba que as aspas não são mais necessárias, pois o R entendeu que você já fez o download desse pacote):</p>
+
+<pre><code>library(gplots)
+</code></pre>
+
+<p>Deve aparecer a seguinte mensagem, confirmado que o pacote foi ativado, ou carregado em nossa sessão do R:</p>
+
+<pre><code>KernSmooth 2.23 loaded
+Copyright M. P. Wand 1997-2009
+
+Attaching package: ‘gplots’
+
+Warning message:
+package ‘gplots’ was built under R version 3.0.3 
+</code></pre>
+
+<p>Este exemplo mostrou como podemos fazer o download e instalar um pacote novo, com funções não presentes nas configurações padrão. Esse guia pode ser usado sempre que precisar instalar algum pacote novo. Note que é necessário fazer o download do pacote pelo comando <code>install.packages()</code> apenas uma vez, porém, é necessário ativá-lo com o comando <code>library()</code> toda vez que uma nova sessão do R é aberta (ou seja, se fecharmos o R e abrirmos novamente, é necessário ativar todos os pacotes novamente).</p>
+
+<hr>
+
+<p><strong>4. Objetos e atribuições de valores a variáveis</strong></p>
+
+<p>O R permite que qualquer elemento (números, caracteres, funções, etc), sejam salvos em <strong>objetos</strong>. Em outras linguagens de programação, chamamos os objetos de <strong>variáveis</strong>, ou seja, atribuímos um nome genérico para um determinado valor, conjunto de caracteres ou função. Por exemplo, podemos usar o R para salvar um determinado valor em uma variável usando o seguinde comando:</p>
+
+<pre><code>idade &lt;- 26
+</code></pre>
+
+<p>Este comando irá “salvar” o valor <code>26</code> dentro da variável <code>idade</code>. Assim toda vez que quisermos nos referir ao número 26, basta usarmos o nome da variável <code>idade</code> para isso.</p>
+
+<p>Experimente digitar no <em>console</em> a variável <code>idade</code>. O que deve aparecer como resposta no terminal?</p>
+
+<p>Da mesma maneira, podemos salvar um conjunto de caracteres em uma variável, por exemplo como descrito pelo comando:</p>
+
+<pre><code>nome &lt;- "Diego"
+</code></pre>
+
+<p>Perceba que foi  necessário colocar o conjunto de caracteres entre aspas. Experimente atribuir alguns valores a variáveis diferentes e “chame” essas variáveis no <em>console</em> para treinar.</p>
+
+<blockquote>
+  <p><strong>Importante</strong>: nunca use espaços ou caracteres especiais (ç, acentos, símbolos), ou inicie o nome da variável por um número.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>5. Tipos de estrutura de dados no R</strong></p>
+
+<p>Existem três tipos importantes de estrutura de dados que precisamos conhecer no R: os <strong>escalares</strong>, os <strong>vetores</strong> e os <strong><em>data frames</em></strong>. A definição é bem simples e diz respeito a como os dados estão organizados.</p>
+
+<ul>
+<li><p><strong>Escalares</strong> <br>
+Escalares são valores únicos. Podem ser números (<em>numeric</em>) ou composição de caracteres (<em>string</em>). As variáveis <code>idade</code> e <code>nome</code> que criamos anteriormente podem ser considerados como escalares.</p></li>
+<li><p><strong>Vetores</strong> <br>
+Vetores são conjuntos de valores em uma dimensão. Imaginem que colocamos a idade de um conjunto de pessoas em um vetor. O resultado seria algo do tipo:</p>
+
+<p>(26, 22, 21, 21, 20, 21)  </p>
+
+<p>Para montar um vetor com as idades, podemos usar a função <code>c()</code>, conhecida por <em>concatenar</em>, que irá unir os diferentes números (idades) em uma estrutura de vetor. Em seguida, podemos salvar isso como uma variável chamada <code>idade_todos</code>:</p>
+
+<pre><code>idade_todos &lt;- c(26, 22, 21, 21, 20, 21)
+</code></pre>
+
+<p>Podemos também, por exemplo montar um vetor com o nome dessas pessoas, chamado de <code>nomes</code>:</p>
+
+<pre><code>nomes &lt;- c("João", "Rafael", "Luana", "Rodrigo", "Fabiana", "Gabriela")
+</code></pre>
+
+<p>Experimente chamar as variáveis <code>idade_todos</code> e <code>nomes</code> no <em>console</em>. O que aparece?</p></li>
+<li><p><strong><em>Data Frames</em></strong> <br>
+<em>Data frames</em> são conjuntos de valores em duas dimensões. Algo parecido com o que montamos em uma planilha no Microsoft Excel.</p>
+
+<p>Vamos montar um <em>data frame</em> atribuindo um valor de <code>nomes</code> a um valor de <code>idade_todos</code>, montando então uma estrutura que em cada linha aparecerá o nome da pessoa e sua idade. Para isso, usamos a função <code>cbind()</code>, do inglês <em>column bind</em>, ou ligação de colunas.</p>
+
+<pre><code>cbind(nomes, idade_todos)
+</code></pre>
+
+<p>Note, neste caso, que usamos os nomes das variáveis, e não seus valores, para compor a função. Ao digitar essa função do <em>console</em>, o resultado será:</p>
+
+<pre><code>     nomes      idade_todos
+[1,] "João"     "26"       
+[2,] "Rafael"   "22"       
+[3,] "Luana"    "21"       
+[4,] "Rodrigo"  "21"       
+[5,] "Fabiana"  "20"       
+[6,] "Gabriela" "21" 
+</code></pre>
+
+<p>No entanto, embora estruturado em duas dimensões, do ponto de vista do R, isso ainda não é um <em>data frame</em>. Além disso, é possivel perceber que todos os valores estão entre aspas. Para transformar em um <em>data frame</em>, é preciso usar a função <code>as.data.frame()</code>, colocando entre parênteses o conteúdo da função, como em:</p>
+
+<pre><code>as.data.frame(cbind(nomes, idade_todos))
+</code></pre>
+
+<p>Essa função faz com que dois vetores unidos (<code>nomes</code>e <code>idade_todos</code>) sejam convertidos em um objeto de estrutura <code>data.frame</code>. Ao digitar este comando, é possivel perceber uma estrutura  mais parecida com o que vemos em uma planilha do Excel. No entanto, nós só mostramos na tela esse <em>data frame</em>.</p>
+
+<p>O que devemos fazer para salvar o resultado da criação desse <em>data frame</em> em outro objeto / variável?</p></li>
+</ul>
+
+<hr>
+
+<p><strong>6. Cálculos e funções</strong></p>
+
+<p>O R apresenta uma série de funções matemáticas e estatísticas pré-definidas, sem necessidade de instalar nenhum pacote adicional. Vamos comentar algumas delas e em que tipos de dados essas funções atuam.</p>
+
+<ul>
+<li><p><strong>Operações matemáticas simples</strong> <br>
+Podemos literalmente usar o R como um calculadora, tanto para realização de cálculo diretamente com números:</p>
+
+<pre><code>1 + 1
+</code></pre>
+
+<p>Ou com variáveis, desde que tenhamos atribuído valores a elas:</p>
+
+<pre><code>a &lt;- 10
+b &lt;- 5
+a - b
+</code></pre>
+
+<p>Também é possível realizar operações vetoriais, como por exemplo multiplicar um número por um vetor:</p>
+
+<pre><code>vetor &lt;- c(1, 1, 1)
+2 * vetor
+</code></pre>
+
+<p>Ou somar dois vetores:</p>
+
+<pre><code>vet1 &lt;- c(10,20,30)
+vet2 &lt;- c(90,80,70)
+vet3 &lt;- vet1 + vet2
+</code></pre>
+
+<p>Também é possível somar todos os elementos de um vetor:</p>
+
+<pre><code>sum(vet3)
+</code></pre></li>
+<li><p><strong>Operações estatísticas simples</strong> <br>
+Também podemos usar funções já existentes no R para cálculos estatísticos descritivos simples, como média (comando <code>mean</code>), desvio padrão (<code>sd</code>), mínimo (<code>min</code>), máximo (<code>max</code>). Experimente rodar os comandos abaixo, um de cada vez todos usando a variável <code>idade_todos</code> definida anteriormente como um vetor para o cálculo de estatísticas descritivas da idade das pessoas.</p>
+
+<pre><code>mean(idade_todos)
+sd(idade_todos)
+min(idade_todos)
+max(idade_todos)
+</code></pre>
+
+<p>Há um comando que calcula uma série de estatísticas descritivas de um vetor de uma só vez, chamado <code>summary</code>:</p>
+
+<pre><code>summary(idade_todos)
+</code></pre></li>
+</ul>
+
+<hr>
+
+<p><strong>6. Gráficos</strong></p>
+
+<p>Uma das funções mais poderosas do R é a capacidade de criar gráficos totalmente customizáveis. Iremos criar alguns gráficos abaixo sem explorar sua capacidade de customização, pois é uma técnica que exige treino e costume com essa linguagem de programação.</p>
+
+<p>Vamos inicialmente criar dois vetores, um com o peso e um com a altura de uma série de 15 pessoas. Note o uso de “ponto” como casa decimal.</p>
+
+<pre><code>    altura &lt;- c(1.47, 1.49, 1.52, 1.54, 1.57, 1.60, 1.62, 1.65, 1.67, 1.70, 1.72, 1.75, 1.77, 1.80, 1.82)
+    peso &lt;- c(51.75, 52.65, 54.00, 55.35, 56.70, 58.05, 59.40, 60.75, 62.55, 63.90, 65.70, 67.50, 69.30, 71.55, 73.80)
+</code></pre>
+
+<blockquote>
+  <p><strong>Exercício</strong>: experimente  calcular a média e desvio padrão do peso e da altura na amostra. Em seguida, experimente fazer uma operação matemática que calcule o índice de massa corpórea (IMC) de todas as pessoas com um único comando. <strong>Dica</strong>: lembre-se de que podemos fazer operações com vetores, e o resultado da operação será realizado para cada elemento do vetor!</p>
+</blockquote>
+
+<p>Em seguida, vamos plotar um gráfico de dispersão relacionando o peso e a altura. Para isso, vamos usar a funçao <code>plot()</code>. Essa função, diferente das outras que usamos até agora (<code>mean</code>, <code>sd</code>, por exemplo), precisa de <strong>2 argumentos</strong> para gerar o gráfico de dispersão, o que seria correspondente ao que será plotado no eixo X e no eixo Y do gráfico. Assim, usamos o seguinte comando para plotar o peso no eixo X e a altura no eixo Y:</p>
+
+<pre><code>plot(peso, altura)
+</code></pre>
+
+<p>Ao executar o comando, uma gráfico deve aparecer na janela localizada no canto inferior direito, como o da figura abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Rplot.png"></p>
+
+<p>Podemos também gerar um histograma do peso e da altura, usando a função <code>hist()</code>. Neste caso, apenas um argumento é usado, portanto devemos executar um comando para peso e um para a altura:</p>
+
+<pre><code>hist(peso)
+hist(altura)
+</code></pre>
+
+<blockquote>
+  <p><strong>Obs:</strong> Execute um comando de cada vez, pois quando outro gráfico é gerado, o anterior é apagado da memória.</p>
+</blockquote>
+
+<p>É importante ressaltar que estas são funcionalidades básicas e geração de gráficos disponibilizadas pelo R. É possivel fazer gráficos dos mais variados tipos e cores, porém exige um conhecimento mais avançado. Veja, por exemplo, um gráfico construído apenas usando o R:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Rplot2.png"></p>
+
+<hr>
+
+<p><strong>7. Importando, processando e exportando arquivos</strong></p>
+
+<p>Em todos os exemplos que mostramos até agora, nós inserimos os dados a serem análisados diretamente pela linha de comando (por exemplo, criando as variáveis <code>idade_todos</code>, <code>nomes</code>, <code>peso</code>, <code>altura</code>, etc.). No entanto, é possivel imaginar o quão tedioso seria se precisássemos sempre digitar os dados pela linha de comando. Além de trabalhoso (e chato), ficamos ainda sujeitos ao aparecimento de erros. Ainda, é muito provável que os dados que iremos trabalhar venham tabulados em planilhas como no Microsoft Excel.</p>
+
+<p>Nesse sentido, existe uma maneira muito simples de importar um conjunto de dados de uma planilha no R. Vamos por exemplo baixar uma planilha exemplo chamada <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/dados.xls?raw=true">dados.xls</a>. Clique no link e após o download, salve o arquivo dentro da pasta que foi definida anteriormente como seu <em>Working Directory</em>, conforme explicado anteriormente no item 2 deste tutorial.</p>
+
+<blockquote>
+  <p><strong>Importante!</strong> Lembre-se que sempre que trabalhamos no R, estamos em um <em>Working Directory</em> previamente definido. Todos os arquivos só serão importados adequadamente se estiverem no <em>Working Directory</em>. Da mesma forma, quando precisar salvar/ exportar um arquivo resultante de uma análise, ele será salvo no <em>Working Directory</em>!</p>
+</blockquote>
+
+<p>Para permitir que uma planilha seja importada pelo R, temos primeiro que transformá-la em um arquivo de texto. Para isso, basta seguir os seguintes passos:</p>
+
+<ul>
+<li>Vá até <strong>Arquivos &gt; Salvar Como…</strong></li>
+<li>Em seguida, selecione na caixa “Tipo” o formato <strong>Texto (separado por tabulações) (*.txt)</strong></li>
+<li>Tenha certeza que esse arquivo (de nome <code>dados.txt</code>) será salvo no mesmo diretório que está (ou seja, no <em>Working Directory</em>)</li>
+</ul>
+
+<p>Agora que preparamos o arquivo, é possivel importá-lo pela linha de comando no R. Para isso, temos que usar a função <code>read.table()</code> que pede <strong>diversos argumentos</strong>. Para o que vamos precisar, teremos que definir:</p>
+
+<ul>
+<li><strong>1º argumento</strong>: o nome do arquivo que queremos importar entre aspas, ou seja: <code>"dados.txt"</code></li>
+<li><strong>2º argumento</strong>: dizer para o R que a primeira linha apresenta um cabeçalho com o nome das colunas: <code>header=TRUE</code> </li>
+<li><strong>3º argumento</strong>: dizer para o R que estamos separando os decimais com <em>vírgula</em> (e não com <em>ponto</em>, como na língua inglesa): <code>dec=","</code></li>
+<li><strong>O nome</strong> do objeto que iremos salvar essa pequeno conjunto de dados, por exemplo: <code>dados</code></li>
+</ul>
+
+<p>Sendo assim, o comando completo para importação dos dados é:</p>
+
+<pre><code>dados &lt;- read.table("dados.txt", header=TRUE, dec=",")
+</code></pre>
+
+<p>Experimente digitar <code>dados</code> para ver a sua “planilha” importada no R.</p>
+
+<p>Com os dados importados em um objeto no R, que será do tipo <em>data frame</em> (pois apresenta os dados em duas dimensões: linhas e colunas), podemos trabalhar com cada uma das colunas separadamente, tratando-as como <strong>vetores</strong>.</p>
+
+<p>Para escolher uma coluna para trabalhar, basta usar a combinação <strong>nome_do_objeto$nome_da_coluna</strong>. Por exemplo, se quiser escolher a coluna <code>altura</code> e mostrar somente o seu conteúdo como um vetor, use o comando:</p>
+
+<pre><code>dados$altura
+</code></pre>
+
+<p>O resultado mostrado na tela será algo do tipo:</p>
+
+<pre><code>[1] 1.4732 1.4986 1.5240 1.5494 1.5748 1.6002 1.6256 1.6510 1.6764 1.7018 1.7272 1.7526 1.7780 1.8034 1.8288
+</code></pre>
+
+<p>Experimente também mostrar o conteúdo da coluna <code>peso</code>.</p>
+
+<p>Seguindo esta lógica, podemos usar os valores <code>dados$peso</code> e <code>dados$altura</code> como objetos no R e consequentemente usá-los em outras funções. Experimente executar os seguintes comandos um de cada vez e tente identificar o que eles representam:</p>
+
+<pre><code>mean(dados$peso)
+mean(dados$altura)
+plot(dados$peso, dados$altura)
+hist(dados$altura)
+dados$peso / (dados$altura * dados$altura)
+mean(dados$peso / (dados$altura * dados$altura))
+</code></pre>
+
+<p>Vamos agora calcular o IMC e em seguida acrescentar essa informação na “planilha” de peso e altura. Primeiro temos que criar um vetor que calcula o IMC. Perceba que no exercício anterior, uma das funções aplicadas calculava o IMC de cada indivíduo com base no peso e na altura. No entanto, não havíamos gravado essa informação em nenhum objeto/ variável. Sendo assim, vamos criar o objeto <code>imc</code>, que calcula o índice de massa corpórea de cada indivíduo:</p>
+
+<pre><code>imc &lt;-  dados$peso / (dados$altura * dados$altura)
+</code></pre>
+
+<p>Mostre o conteúdo do objeto <code>imc</code> e verifique se está condizente com o cálculo realizado.</p>
+
+<p>Agora precisamos “inserir” essa variável <code>imc</code> como mais uma coluna da nossa “planilha” <code>dados</code>. Para isso, usamos a função <code>cbind()</code>, assim como fizemos para montar o <em>data.frame</em> anteriormente. Para esse comando, vamos dar 2 argumentos: a planilha <code>dados</code> e o vetor <code>imc</code>. O comando final ficará:</p>
+
+<pre><code>cbind(dados, imc)
+</code></pre>
+
+<p>Verifique se a planilha ficou como esperado (com o IMC na terceira coluna). Como vamos acrescentar informação, podemos salvar o conteúdo dessa nova planilha com o mesmo nome de objeto usado anteriormente (<code>dados</code>). Sendo assim, o comando seria:</p>
+
+<pre><code>dados &lt;- cbind(dados, imc)
+</code></pre>
+
+<p>Agora temos uma planilha <code>dados</code> atualizada com os vetores <code>dados$peso</code> representando o peso, <code>dados$altura</code>representando a altura e <code>dados$imc</code> represenando o IMC que foi calculado com base no peso e na altura.</p>
+
+<p>Por fim, após todo esse processamento de dados, vamos salvar a nova planilha <code>dados</code> em um arquivo de texto que depois pode ser importado pelo Excel para posterior manipulação. Para isso, usaremos a função <code>write.table()</code>. Esta função tambem pede vários argumentos:</p>
+
+<ul>
+<li><strong>1º argumento</strong>: o nome do objeto que deseja salvar em um arquivo. No caso, nossa planilha <code>dados</code></li>
+<li><strong>2º argumento</strong>: o nome do arquivo de texto que desejamos salvar no computador entre aspas, no formato <code>file="dados_atualizados.txt"</code></li>
+<li><strong>3º argumento</strong>: dizer para o R que estamos separando os decimais com <em>vírgula</em> (e não com <em>ponto</em>, como na língua inglesa), para que seja lido adequadamento pelo Excel: <code>dec=","</code></li>
+<li><strong>4º argumento</strong>: dizer que não queremos mostrar o nome das linhas padrão do R (pois já temos uma coluna que mostra o identificação de cada individuo): <code>row.names=FALSE</code></li>
+</ul>
+
+<p>Sendo assim, o comando final será:</p>
+
+<pre><code>write.table(dados, file="dados_atualizados.txt", dec=",", row.names=FALSE)
+</code></pre>
+
+<p>Acesse seu <em>Working Directory</em> e veja se o arquivo <code>dados_atualizados.txt</code>foi criado e abra-o para checar se está tudo como esperado. Em seguida, copie o conteúdo do arquivo, abra um software de planilhas e cole. Agora a nova planilha pode ser facilmente acessada e manipulada pelo software de planilhas.</p>
+
+<hr>
+
+<p><strong>8. <em>Scripts</em> e automação de tarefas</strong></p>
+
+<p>Com o material apresentado até aqui, pudemos passar a impressão de que o aprendizado de uma linguagem de programação não é uma tarefa fácil. Decorar uma série de comandos e aplicá-los todas as vezes que precisar realizar uma análise não parece trivial de início. No entanto, existe uma funcionalidade que irá facilitar muito a realização de tarefas repetitivas e auxiliará a replicação de análises. Essa funcionalidade é chamada de <em>script</em>.</p>
+
+<p>Embora não seja o objetivo desse tutorial entrar em detalhes sobre <em>scripts</em>, a ideia é resumir todas as tarefas realizadas neste tutorial do R em um <em>script</em>. Assim, com um único comando, o usuário pode rodar todos os comandos contidos no <em>script</em> de uma só vez.</p>
+
+<p>Abaixo, uma lista de alguns comandos usados nesse tutorial. Atente para as linhas que começam com o caractere <code>#</code>. Estas linhas são comentários e não afetarão o código como um todo.</p>
+
+<pre><code># Script para realização de todas as tarefas deste tutorial do R
+
+#Definir o Working Directory
+setwd("~/Documentos/aula_R")
+
+#Carregar o pacote gplots
+library(gplots)
+
+#Criar os objetos idade e nome
+idade &lt;- 26
+nome &lt;- "Diego"
+
+#Criar o vetor idade_todos
+idade_todos &lt;- c(26, 22, 21, 21, 20, 21)
+
+#Criar o vetor nomes
+nomes &lt;- c("João", "Rafael", "Luana", "Rodrigo", "Fabiana", "Gabriela")
+
+#Criar o data frame unindo os vetores idade_todos e nomes e salvar como o objeto chamado data
+data &lt;- as.data.frame(cbind(nomes, idade_todos))
+
+#Fazer cálculos de estatística descritiva do vetor idade_todos
+mean(idade_todos)
+sd(idade_todos)
+min(idade_todos)
+max(idade_todos)
+summary(idade_todos)
+
+#Importar o arquivo dados.txt
+dados &lt;- read.table("dados.txt", header=TRUE, dec=",")
+
+#Calcular estatísticas descritivas das colunas peso e altura
+summary(dados$peso)
+summary(dados$altura)
+
+#Plotar o histograma do peso e da altura e um gráfico de dispersão e salvar cada um deles em um arquivo em pdf diferente
+pdf("hist_peso.pdf")
+hist(dados$peso)
+dev.off()
+
+pdf("hist_altura.pdf")
+hist(dados$altura)
+dev.off()
+
+pdf("dispersao.pdf")
+plot(dados$peso, dados$altura)
+dev.off()
+
+#Criar a variável imc e acrescentá-la à planilha dados e em seguida salvar em um novo arquivo dados_atualizados.txt
+imc &lt;-  dados$peso / (dados$altura * dados$altura)
+dados &lt;- cbind(dados, imc)
+write.table(dados, file="dados_atualizados.txt", dec=",", row.names=FALSE)
+</code></pre>
+
+<p>Este <em>script</em> inteiro está disponível para download clicando no link <a href="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/tutorial.R">tutorial.R</a>.</p>
+
+<p>Para rodar todas essas tarefas de uma só vez, basta simplesmente copiar o arquivo <code>tutorial.R</code> no <em>Working Directory</em>, abrir o <em>script</em> pelo RStudio (File &gt; Open file…) e depois clicar no botão <strong>Source</strong> localizado na parte superior da janela do <em>script</em>. Assim, todos os comandos serão rodados em sequência, como um programa no computador. Outra opção para rodar o <em>script</em> é usar o seguinte comando no terminal:</p>
+
+<pre><code>source("tutorial.R")
+</code></pre>
+
+<p>Algumas coisas importantes:</p>
+
+<ul>
+<li>O <em>script</em> contém todas as informações que são executadas em ordem. Assim, caso tenha algum comando no <em>script</em> que dependa da definição de algum objeto ou variável, um erro aparecerá. Portanto, tenha certeza que as instruções estejam bem detalhadas e na ordem de excecução correta.</li>
+<li>Há algumas funções não comentadas anteriormente como <code>pdf()</code> e <code>dev.off()</code>. Essas funções trabalham em conjunto de forma a salvar uma imagem gerada de um gráfico (por <code>plot()</code> ou <code>hist()</code>) em um arquivo em .pdf ao invés de mostrá-lo na tela, e em seguida “fechar a conexão”, permitindo que outras coisas não sejam salvas além do gráfico.</li>
+</ul>
+
+<hr>
+
+<p><strong>9. Ajuda</strong></p>
+
+<p>Em diversos casos você precisará efetuar uma análise cuja função envolvida não é familiar ou que envolve muitos argumentos que sao difíceis de gravar. Nestes casos existem algumas formas básicas para descobrir uma função que faça aquilo que você deseja.  <br>
+A primeira é pesquisar dentro do R com palavras chave usando a função <code>help()</code>. Por exemplo, vamos tentar descobrir como usar a função <code>anova</code>. </p>
+
+<pre><code>help(anova)
+</code></pre>
+
+<p>Uma janela no canto inferior direito do RStudio ira abrir com a entrada da ajuda da função <code>anova</code>. Essa página é padronizada para todas as funções cadastradas no R e apresenta detalhes de cada argumento e uma seção de exemplo que podem ser úteis no aprendizado da função. É importante ressaltar, porém, que essa busca só funcionará se o pacote estiver instalado e carregado na sua sessão do R.</p>
+
+<p>Para os casos em que queira fazer uma busca de alguma função ainda não instalada, ou saber de que pacote é uma determinada função, basta usar <code>??</code>, como representado abaixo:</p>
+
+<pre><code>??anova
+</code></pre>
+
+<p>Será realizada uma busca nos registros do R procurando por pacotes ou funções que contenham a palavra <code>anova</code>.</p>
+
+<hr>
+
+<p><strong>10. Considerações finais</strong></p>
+
+<p>Com esta pequena introdução, foi possível aprender algumas das funcionalidades básicas de softwares que usam a interface da linha de comando para manipulação, processamento e análise de dados biológicos. Obviamente, uma operação simples como o cálculo do IMC poderia ter sido realizada facilmente e diretamente pelo Excel ou outro software de planilhas. No entanto, para grandes quantidades de dados como os resultantes de experimentos de <em>microarray</em> ou sequenciamento de nova geração, o uso de planilhas comuns se torna inviável.</p>
+
+<p>Além disso, mesmo fora da bioinformática, o domínio dessas linguagens permite realizar automação de tarefas que a princípio seriam extremamente repetitivas se fossem realizadas “manualmente” por um software como o Excel. Dessa forma, a interface da linha de comando do software R, ou o conhecimento de programas específicos desenhados apenas para a plataforma Linux permitem abordar tópicos até então impossíveis de serem realizados por ferramentas comuns. Isso acabou se tornando uma prática comum em Ciências de maneira geral, porém mais especificamente na área da Biologia e Medicina. Cada vez mais profissionais da área da saúde estão sentindo necessidade de ter um domínio avançado de informática e muitas ideias inovadoras de empresas e start-ups iniciaram a partir dessa busca.</p>

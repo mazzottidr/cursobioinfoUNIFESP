@@ -1,0 +1,338 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Desenho de estudos em genética</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p><div class="se-section-delimiter"></div>
+
+<h2 id="tutorial-int3">Tutorial Int3</h2>
+
+<h3 id="desenhos-de-estudo-em-genética">Desenhos de estudo em genética</h3>
+
+<hr>
+
+<h4 id="prática-1-softwares-gpower-e-genetic-power-calculator"><strong>Prática 1 - </strong> Softwares G*Power e Genetic Power Calculator</h4>
+
+<p><strong>G*Power</strong></p>
+
+<p>O <a href="http://www.gpower.hhu.de/"><strong>G*Power</strong></a> é um software para cálculo de parâmetros de desenho de estudo que apresenta vantagens como: ser grátis e disponível na Web e exigir pouco do computador, já que compromete apenas alguns kb e utiliza a plataforma MS-DOS. Com ele podemos fazer vários tipos de análises como: calcular o poder estatístico, o tamanho do efeito, o tamanho amostral entre outras.</p>
+
+<p>Abaixo apresentamos descrição sobre suas principais funções e em seguida um tutorial sobre as aplicações mais utilizadas.</p>
+
+<p><strong>Descrição</strong></p>
+
+<p>G*Power abrange cinco tipos diferentes de análise de poder. Os tipos de análise diferem no parâmetro ou combinação de parâmetros escolhidos para o cálculo.</p>
+
+<p><strong>1. Análise de poder do tipo “Compromise”</strong> (análise antes ou depois de coletar seus dados)</p>
+
+<p>Nesta análise, tanto o nível de significância (α) quanto o poder (1-β) são calculadas em função do(a):</p>
+
+<ul>
+<li><p>Tamanho do efeito</p></li>
+<li><p>Tamanho amostral (N)</p></li>
+<li><p>Razão da probabilidade de erro tipo I e erro tipo II (<code>q=β/α</code>)</p></li>
+</ul>
+
+<p>Para ilustrar, o valor de <code>q=1</code> significa que o pesquisador prefere um equilíbrio entre os riscos de erro tipo I e tipo II, ou seja,  <code>α=β</code>. Uma situação em que q=4 implicaria que <code>β= 4 x α</code>, o que significa que evitar erro tipo I é muito mais importante do que evitar erro do tipo II (pois o α é 4 vezes menor que β).</p>
+
+<p>Análise do poder do tipo “Compromise” pode ser útil tanto antes como após a coleta de dados.</p>
+
+<ul>
+<li><strong>Análise antes da coleta de dados:</strong> uma análise de poder “a priori” pode resultar em um tamanho de amostra que excede os recursos disponíveis para realização da pesquisa. Em tal situação, um pesquisador pode especificar o tamanho máximo da amostra disponível e, usando uma análise de poder do tipo “Compromise”, computar o α e o poder (1-β), usando <code>q = β/α = 4</code>.</li>
+<li><strong>Análise após a coleta dos dados:</strong> Alternativamente, se um estudo já foi realizado, mas ainda não foi analisado, um pesquisador poderia pedir um critério de decisão razoável que garante os riscos de erro perfeitamente equilibrados (ou seja, <code>α = β</code> ), dado o tamanho da amostra e um tamanho de efeito crítico em que ele está interessado.</li>
+</ul>
+
+<p>Naturalmente, as análises de poder do tipo “Compromise” podem facilmente resultar em níveis de significância não convencionais maiores do que α=0,05 (no caso de pequenas amostras ou tamanho de efeito pequeno) ou menores do que α=0,001 (no caso de amostras de grandes dimensões ou tamanhos de efeito grande). No entanto, acreditamos que o equilíbrio entre os riscos de erro do tipo I e tipo II, muitas vezes pode compensar os custos de violar convenções do nível de significância.</p>
+
+<hr>
+
+<p><strong>2. Análise de poder “A priori”</strong> (cálculo amostral)</p>
+
+<p>Neste caso, o tamanho da amostra (N) é calculado em função do:</p>
+
+<ul>
+<li><p>Poder estatístico necessário (1-β)</p></li>
+<li><p>Nível de significância (α) pré-determinado </p></li>
+<li><p>Tamanho do efeito da população a ser detectado com a probabilidade (1-β)</p></li>
+</ul>
+
+<p>A análise “A priori” é um método eficiente de controlar o poder estatístico antes de um estudo ser realizado e pode ser recomendado sempre que os recursos, tais como tempo e dinheiro necessários para a coleta de dados, não são críticos.</p>
+
+<hr>
+
+<p><strong>3. Análise de critério</strong> (cálculo de α)</p>
+
+<p>Nesta análise, o critério de decisão α é calculado em função de(o):</p>
+
+<ul>
+<li><p>Poder estatístico necessário (1-β)</p></li>
+<li><p>Tamanho do efeito</p></li>
+<li><p>Tamanho da amostra (N) determinado</p></li>
+</ul>
+
+<p>As análises de critério são alternativas para análises de poder <em>post-hoc</em> depois de um estudo ter sido realizado. Elas podem ser razoáveis sempre que o controle de α é menos importante do que o controle de β.</p>
+
+<hr>
+
+<p><strong>4. Análise de poder <em>post-hoc</em></strong> (calcula o poder encontrado em um estudo já realizado)</p>
+
+<p>A análise de poder <em>post-hoc</em> muitas vezes faz sentido depois de um estudo ter sido realizado. Por exemplo, torna-se possível avaliar se um teste estatístico publicado na verdade teve uma bom poder para rejeitar uma hipótese nula incorreta.</p>
+
+<p>Ao invés de usar análises retrospectivas de poder, os pesquisadores devem especificar tamanhos de efeito na população <em>a prioori</em>. Especificação de tamanho de efeito significa simplesmente definir o grau mínimo de violação da hipótese nula que o pesquisador gostaria de detectar com uma probabilidade não inferior a (1- β). </p>
+
+<p>No G*Power as definições de efeito “pequeno”, “médio” e “grande” são dadas de acoro com Cohen (1988). Sempre que possível, o G*Power fornece essas convenções ao mover o cursor sobre o campo de parâmetro de entrada “tamanho do efeito”. No entanto, os pesquisadores devem estar cientes do fato de que essas convenções podem ter diferentes significados para diferentes testes.</p>
+
+<hr>
+
+<p><strong>5. Análise de sensibilidade</strong> (calcula o tamanho de efeito necessário)</p>
+
+<p>O tamanho de efeito é calculado em função do:</p>
+
+<ul>
+<li><p>Nível de significância (α)</p></li>
+<li><p>Poder estatístico necessário (1-β)</p></li>
+<li><p>Tamanho amostral (N)</p></li>
+</ul>
+
+<p>As análises de sensibilidade fornecem respostas a perguntas como “Qual tamanho de efeito que o estudo consegue detectar com um poder de 80%, dado o seu tamanho da amostra e nível de significância α? Em outras palavras, com que tamanho de efeito mínimo o teste seria suficientemente sensível?”</p>
+
+<hr>
+
+<p><strong>Tutorial - Usando o G*Power para calcular o tamanho amostral, tamanho de efeito e poder</strong></p>
+
+<p>Como discutido acima, o G*Power é um software que permite o cálculo do tamanho amostral necessário antes do estudo (<em>a priori</em>) dado um tamanho de efeito, significância estatística necessária e poder conhecidos. Por outro lado, o G*Power também pode calcular também o tamanho de efeito ou poder estattístico, dado o tamanho amostral já coletado (<em>post hoc</em>). </p>
+
+<p>Ao abrir o G*Power, a seguinte tela é mostrada:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Gpower1.jpg" width="50%" height="auto"></p>
+
+<p>Primeiramente, você deve escolher qual teste estatístico irá utilizar. Em <em>Test family</em> selecione o tipo de distribuição do teste e, em <em>Statistical test</em>, o teste propriamente dito.</p>
+
+<p><strong>Exemplo 1</strong></p>
+
+<p>Vamos inicialmente calcular o tamanho amostral necessário para um estudo em que iremos realizar um teste t para medidas independentes. Selecione a família do teste (<em>t tests</em>) e teste estatístico (<em>Means: Difference between two independent means (two groups)</em>) como mostrado na figura abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Gpower2.jpg" width="100%" height="auto"></p>
+
+<p>Em seguida, selecione a opção <em>A priori: Compute required sample size – given α, power, and effect size</em>. Em <em>“Input Parameters</em>”, selecione “<em>Two</em>” ou “<em>One</em>” <em>Tail</em> de acordo com a sua pergunta, o tamanho de efeito esperado para seu estudo, o nível de significância (α), o poder estatístico mínimo esperado e a proporção de indivíduos entre os grupos comparados, como na figura abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Gpower3.jpg" width="100%" height="auto"></p>
+
+<p>Também é possível calcular o tamanho de efeito da variável estudada baseado em trabalhos anteriores clicando-se em “Determine”. Uma aba será aberta onde é possível inserir os dados de média e desvio padrão dos grupos e assim calcular o tamanho de efeito da variável em questão para ser colocado posteriormente no cálculo do tamanho amostral:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Gpower4.jpg" width="70%" height="auto"></p>
+
+<p>Por fim, clique em “Calculate”. O programa irá estimar o número necessário para cada grupo como indicado na figura abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Gpower5.jpg" width="60%" height="auto"></p>
+
+<hr>
+
+<p><strong>Exemplo 2</strong></p>
+
+<p>Neste segundo exemplo, vamos calcular o poder estatístico para um estudo que já foi realizado, para saber se o tamanho amostral do estudo foi suficiente para detectar uma diferença significativa para o tamanho de efeito encontrado.</p>
+
+<p>No G*Power, mantenha o mesmo teste t para medidas independentes. Selecione <em>Post hoc: Compute achieved power - given α, sample size, and effect size</em>.</p>
+
+<p>Em seguida, vamos colocar na área <em>Input Parameters</em> que a distribuição foi bicaudal (<em>Two tailed</em>) e preencher os campos com os dados encontrados no estudo previamente realizados. Neste caso vamos supor que:</p>
+
+<ul>
+<li>Adotamos o nível de significância de <code>0.05</code></li>
+<li>O tamanho da amostra do Grupo 1 foi <code>10</code> e a do Grupo 2 também foi <code>10</code></li>
+<li>A média e desvio padrão da variável dependente no Grupo 1 foi <code>10 (3.5)</code> e do Grupo 2 foi <code>13 (1.1)</code></li>
+<li>O resultado do teste t para verificar diferenças entre as médias indicou que <code>p=0.0186</code>, ou seja, a diferença é estatisticamente significativa para o nível de significância estabelecido.</li>
+</ul>
+
+<p>Usando essas informações, podemos preencher os campos. Para o cálculo do tamanho do efeito, clique em <em>Determine</em>, selecione que o tamanho amostral dos grupos é igual (<code>n1 = n2</code>) e preencha com as médias e os desvios padrão de cada grupo. Transfira o resultado para o campo <em>Effect size d</em>, preencha os outros campos com os valores indicados e clique em <em>Calculate</em>.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Qual o poder estatístico do teste realizado? Ele foi suficiente para a diferença encontrada? Qual o tamanho amostral mínimo para um poder estatístico de 80%, considerando os mesmo valores de média e desvio padrão de cada grupo?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>Genetic Power Calculator</strong></p>
+
+<p>O software <a href="http://pngu.mgh.harvard.edu/~purcell/gpc/"><strong><em>Genetic Power Calculator</em></strong></a> é utilizado para cálculo do tamanho amostral e/ou poder estatístico usando variáveis primariamente genéticas. É desenhado na Web e pode ser acessado de qualquer computador com acesso a internet. Neste tutorial, vamos discutir alguns exemplos de aplicação para diferentes situações de estudos de associação genética entre polimorfismos e um fenótipo qualitativo (presença de uma doença, por exemplo).</p>
+
+<p><strong>Estudo caso-controle para caracteres qualitativos</strong></p>
+
+<p>Para o cálculo dos parâmetros em um estudo caso-controle para fenótipos qualitativos, os principais parâmetros que devem ser  especificados são:</p>
+
+<ul>
+<li><p><strong>Frequência do alelo de risco</strong> (alelo “A”). É a frequência alélica do polimorfismo a ser estudado. Se as frequências alélicas normais já foram estabelecidas na sua população o ideal é usar essas frequências. Se não, usar a de um grupo étnico semelhante ao da sua população de estudo.</p></li>
+<li><p><strong>Prevalência da doença na população em geral</strong> (K). Quanto menor a prevalência, maior o N necessário.</p></li>
+<li><p><strong>Riscos relativos genotípicos</strong> (para o “AA” e “Aa” em relação ao “aa” baseline dos genótipos). Segue abaixo as definições de risco de cada genótipo e risco relativo:</p>
+
+<ul><li><p><em>Risco AA</em> = r(AA) = risco de ter genótipo AA e ser afetado, ou seja, proporção de afetados com genótipo AA, ou  probabilidade de ter a doença dado o genótipo AA - P(doença | genótipo AA)</p></li>
+<li><p><em>Risco Aa</em> = r(Aa) = risco de ter genótipo Aa e ser afetado, ou seja, proporção de afetados com genótipo Aa, ou  probabilidade de ter a doença dado o genótipo Aa - P(doença | genótipo Aa)</p></li>
+<li><p><em>Risco relativo AA</em>= RR(AA) = risco AA/risco aa.</p></li>
+<li><p><em>Risco relativo Aa</em>= RR(Aa) = risco Aa/risco aa.</p>
+
+<p>O risco relativo de cada genótipo  deve ser maior que 1 (partindo do pressuposto que o portador de um alelo de risco tenha um risco maior de ter a doença do que o indivíduo sem nenhum alelo de risco. Quanto maior é o risco relativo, maior o tamanho do efeito e menor é a amostra necessária.</p>
+
+<p>Este risco é calculado a partir dos parâmetros acima. Isto é, dado a prevalência (K) e a frequência de cada genótipo (f), temos:</p>
+
+<pre><code>K = f(AA)*r(AA) + f(Aa)*r(Aa) + f(AA)*r(aa)
+</code></pre></li></ul></li>
+<li><p><strong>Frequência do alelo B e <em>D-prime</em> (D’)</strong>. Usado em casos em que estamos avaliando um marcador potencialmente em desequilíbrio de ligação com o marcador de interesse. Em situações em que estamos avaliando apenas um polimorfismo, podemos considerar que B está em completo desequilíbrio de ligação com A (nosso alelo de risco) e, portanto, a frequência de B é a mesma do A, ou seja f(A)=f(B) e o D’ (parâmetro indicativo do desequilíbrio de ligação) é D’=1. Em outros casos, usar parâmetros calculados em sua população ou populações de grupo étnico similar.</p></li>
+<li><p><strong>Número de indivíduos afetados</strong> (casos).</p></li>
+<li><p><strong>Proporção de controles em relação a casos</strong> (controle/caso). Número de casos dividido pelo número de controles. Se este for igual a 1, então o número de controles e casos é igual. Se este for 0,5 há o dobro de casos do que controles.</p></li>
+<li><p><strong>Nível de significância</strong> (alfa), ou erro do tipo I. Normalmente estabelecido como 0,05. Porém, em casos em que já se sabe que muitas comparações serão realizadas, podemos definir um valor já corrigido.</p></li>
+<li><p><strong>Poder estatístico</strong> (1 - beta). Beta é o erro do tipo II. Normalmente estabelecido como 80%, ou 0,80.</p></li>
+</ul>
+
+<hr>
+
+<p><em>Saída do software (output)</em></p>
+
+<p>Após fornecer os valores de entrada acima, uma série de resultados podem ser obtidos como as frequências  alélicas e genotípicas esperadas para casos e controles, um teste do qui-quadrado para verificar desvios do Equilíbrio de Hardy-Weinberg em casos e controles, a frequência dos haplótipos e o parâmetro r2 (também indicador de desequilíbrio de ligação). O risco genotípico do “aa” (referência) e o <em>odds ratio</em> (OR) dos genótipos “Aa” e “AA” também são mostrados. É importante ressaltar que para fenótipos muito raros, o OR é semelhante ao risco relativo do genótipo.</p>
+
+<blockquote>
+  <p><strong>Observação:</strong> Estes parâmetros são mostrados para o alelo “B” (potencial alelo em desequilíbrio com o marcador de interesse “A”. Nos casos em que estamos interessados apenas em um marcador, esses parâmetros podem ser extrapolados para o marcador “A”.</p>
+</blockquote>
+
+<p>Embora as informações mostradas sejam importantes, o principal resultado é mostrado na última tabela da página de resultados. Essa tabela representa o cálculo do Poder Estatístico e Tamanho Amostral para diferentes valores de nível de significância, considerando o risco relativo dos genótipos fornecidos pelo usuário, e considerando um modelo alélico multiplicativo.</p>
+
+<p>Um desenho de estudo bem realizado começa com algumas simulações dos quatro parâmetros abaixo:</p>
+
+<ul>
+<li>Nível de significância</li>
+<li>Tamanho do Efeito (representado pelos riscos relativos dos genótipos)</li>
+<li>Poder Estatístico</li>
+<li>Tamanho amostral</li>
+</ul>
+
+<p>De maneira geral, quando temos 3 desses parâmetros, podemos calcular o quarto. Além disso, a frequência do fenótipo estudado (prevalência) também é capaz de influenciar esses parâmetros.</p>
+
+<p>O exercício abaixo mostra um exemplo de simulação com diferentes tamanhos de efeito (risco relativo dos genótipos).</p>
+
+<hr>
+
+<p><strong>Exercício</strong></p>
+
+<p>Acesse a página do <a href="http://pngu.mgh.harvard.edu/~purcell/gpc/"><strong><em>Genetic Power Calculator</em></strong></a>. A tela abaixo é a primeira que aparece:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Int3_GPC.jpg" width="100%" height="auto"></p>
+
+<hr>
+
+<p>Vá ao link  <em>Case-control for discrete traits</em>. Irá aparecer uma tela solicitando os diversos parâmetros discutidos anteriormente. Vamos simular um estudo de associação genética do tipo caso-controle para Esquizofrenia (cuja prevalência é <code>1%</code>), com uma amostra de <code>200</code> casos e <code>200</code> controles e que o alelo de risco (A) tenha frequência de <code>0.25</code>. Além disso, vamos supor que haja um efeito genético aditivo em que o risco do genótipo AA seja maior que o do genótipo Aa.</p>
+
+<p><em>1ª Simulação</em></p>
+
+<p>Vamos assumir que o risco relativo do genótipo Aa seja <code>1.1</code> e do genótipo AA seja <code>1.2</code>. Preencha os campos de acordo com os parâmetros fornecidos (como na imagem abaixo) e depois clique em “<em>Process</em>“.</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Int3_GPC2.png" width="100%" height="auto"></p>
+
+<hr>
+
+<p>Olhando o resultado que nos interessa na última tabela, temos que para um alfa de <code>0.05</code>, com uma amostra de 200 casos e 200 controles temos um poder apenas de <code>8.9%</code>, ou seja, para esse tamanho de efeito e esse nível de significância, nossa amostra não apresenta poder estatístico suficiente. Para um poder de 80%, precisaríamos de um tamanho amostral de 4628 casos e 4628 controles.</p>
+
+<p>Essa análise mostra o quão importante é ter uma amostra grande quando estamos estudando um efeito genético pequeno (10% ou 20%, no exemplo citado com <code>RR(Aa)=1.1</code> e <code>RR(AA)=1.2</code>, respectivamente).</p>
+
+<hr>
+
+<p><em>2ª Simulação</em></p>
+
+<p>Vamos estudar uma doença em que esperamos que o efeito genético seja um pouco maior: <code>RR(Aa)=1.2</code> e <code>RR(AA)=1.4</code>. Volte na tela de submissão dos parâmetros e altere apenas os valores dos riscos relativos.</p>
+
+<p>Perceba que aumentando o risco relativo para <code>1.2</code> e <code>1.4</code>, para a nossa amostra de 200 casos e 200 controles, temos um poder de <code>19.6%</code>. E para um poder de 80%, precisaríamos de 1295 casos. Note também que variações no nível de significância também alteram o poder estatístico para a amostra que temos e o número amostral necessário para um poder de 80%.</p>
+
+<hr>
+
+<p><em>3ª Simulação</em></p>
+
+<p>Agora vamos para um efeito genético bem grande: <code>RR(Aa)=1.5</code> e <code>RR(AA)=3.0</code>. Altere os parâmetros na tela de submissão e veja o resultado.</p>
+
+<p>Aumentando o risco relativo para 1.5 e 3.0, para essa amostra temos um poder de <code>91.5%</code>, ou seja, nosso estudo está bem desenhado. E para um poder de 80%, precisaríamos de um N de apenas 141 casos.</p>
+
+<p>De fato, a maioria dos efeitos genéticos de doenças complexas são pequenos, o que faz com que estudos de associação genética precisem de números amostrais muito grandes. Esse fato justifica a realização de grandes consórcios e colaborações internacionais.</p>
+
+<blockquote>
+  <p><strong>Para pensar e treinar:</strong> Se mantivermos o tamanho do efeito constante, qual seria o efeito sobre o poder estatístico e sobre o tamanho amostral quando avaliarmos uma variante mais rara? E no caso de um fenótipo mais prevalente na população? Faça suas hipóteses e depois confirme com algumas simulações!</p>
+</blockquote>
+
+<hr>
+
+<h4 id="prática-2-cálculo-da-herdabilidade-de-caracteres-quantitativos-e-qualitativos"><strong>Prática 2 - </strong> Cálculo da herdabilidade de caracteres quantitativos e qualitativos</h4>
+
+<p>Neste Tutorial vamos abordar uma maneira de realizar o cálculo da herdabilidade de caracteres quantitativos e qualitativos multifatoriais em estudos de gêmeos.</p>
+
+<p>A herdabilidade é um cálculo desenvolvido para quantificar a contribuição genética dos caracteres multifatoriais, estimando a diferença da variância entre gêmeos monozigóticos (MZ) e gêmeos dizigóticos (DZ) no caso dos traços quantitativos e, a diferença de concordância entre MZ e DZ no caso dos caracteres qualitativos. </p>
+
+<p>Essa definição é baseada no fato de que o compartilhamento gênico entré MZ é 100% e entre DZ é cerca de 50%.</p>
+
+<hr>
+
+<p><strong>Herdabilidade de caracteres quantitativos:</strong></p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/her_quanti.jpg" align="center" border="0" width="160" height="46"></p>
+
+<p>Onde:</p>
+
+<div contenteditable="true"> <img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/sigmaDZ.jpg" align="center" border="0" width="50" height="18"> representa a variância da diferença entre pares DZ. </div>
+
+<div contenteditable="true"> <img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/sigmaMZ.jpg" align="center" border="0" width="50" height="18"> representa a variância da diferença entre pares MZ. </div>
+
+<hr>
+
+<p>Referência: Clark PJ. The heritability of certain anthropometric characters as ascertained from measurements of twins. American Journal of Human Genetics. 1956;8:49-54.</p>
+
+<hr>
+
+<p><strong>Herdabilidade de caracteres qualitativos:</strong></p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/her_quali.jpg" align="center" border="0" width="133" height="46"></p>
+
+<p>Onde:</p>
+
+<div contenteditable="true"> <img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/CMZ.jpg" border="0" width="38" height="18"> representa a taxa de concordância (quantos pares concordam/total de pares) entre pares MZ. </div>
+
+<div contenteditable="true"> <img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/CDZ.jpg" align="center" border="0" width="38" height="18"> representa a taxa de concordância entre pares DZ. </div>
+
+<hr>
+
+<p>Referência: Beiguelman, Bernardo. O estudo de caracteres qualitativos em gêmeos. In: O estudo de gêmeos. Ribeirão Preto. Ed SBG, 2008. 90p.</p>
+
+<hr>
+
+<p>Vamos treinar as etapas para o cálculo da herdabilidade da estatura (caractere quantitativo) e presença de gagueira (caractere qualitativo). Para isso, vamos fazer o download e abri o arquivo <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/banco_gemeos.xls?raw=true">banco_gemeos.xls</a>, que contém dados a respeto da estatura e presença de gagueira de 28 pares de gêmeos MZ e 51 pares de gêmeos DZ.</p>
+
+<p><strong>Exercício 1:</strong> Cálculo da herdabilidade da estatura</p>
+
+<p>Antes de começar, vamos retomar a fórmula da heradbilidade para caracteres quantitativos. Cada termo da fóruma representa a variância da diferença entre os irmãos. Portanto, temos que realizar as seguintes etapas usando fórmulas no Microsoft Excel:</p>
+
+<ul>
+<li>Calcular a diferença entre um irmão A e um irmão B MZ</li>
+<li>Arrastar a fórmula usada para que a diferença seja calculada para todos os pares de irmão;</li>
+<li>Fazer o mesmo para os irmãos DZ;</li>
+<li>Calcular a variância dessa nova coluna de diferenças calculada, tanto para MZ quanto para DZ. Use a função <code>=VAR.S()</code>;</li>
+<li>Após o estabelecimento da variância da diferença de MZ e DZ escreva uma função que faz o cálculo da herdabilidade de caracteres quantitativos como mostrado no tópico anterior.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Para pensar:</strong>  Qual a herdabilidade da estatura nessa amostra de gêmeos? Tente entender o que cada termo na fórmula significa e veja se o cálculo da herdabilidade faz sentido.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>Exercício 2:</strong> Cálculo da herdabilidade da presença de gagueira</p>
+
+<p>A fórmula para o cálculo da herdabilidade de caracteres qualitativos leva em consideração a concordância do fenótipo entre pares de gêmeos. Se dois irmãos gêmeos MZ apresentam gagueira ou são saudáves para esse fenótipo, eles concordam e isso favorece o aumento da herdabilidade. Vamos usar o Excel para verificar a taxa de concordância da gagueira entre gêmeos MZ e gêmeos DZ. Os passos que devem ser realizados estão descritos a seguir:</p>
+
+<ul>
+<li>Primeiro, precisamos usar uma fórma do Excel que testa a seguinte condição para um par de irmão MZ: o fenótipo do irmão A é igual ao do irmão B? Uma fórmula para fazer isso é a <code>=SE()</code>. Tente montar uma condição que retorna o valor <code>1</code> se os gêmeos concordam e <code>0</code> se eles não concordam;</li>
+<li>Após o estabelecimento da fórmula, arraste para ser aplicável a todos os gêmeos MZ;</li>
+<li>Faça o mesmo para os gêmeos DZ;</li>
+<li>Agora, calcule a taxa de concordância dos gêmeos MZ e DZ. Lembre-se de que a taxa de concordância é o número de pares concordantes dividido pelo número total de pares.</li>
+<li>Por fim, calcule a herdabilidade usando a fórmula para caracteres quantitativos.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Para pensar:</strong>  Qual a herdabilidade da gagueira nessa amostra de gêmeos? Tente entender o que cada termo na fórmula significa e veja se o cálculo da herdabilidade faz sentido.</p>
+</blockquote>
+
+<p>Após calcular a herdabilidade para esses dois fenótipos, faça o download do arquivo <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/banco_gemeos_respostas.xls?raw=true">banco_gemeos_respostas.xls</a> e confira se realizou o cálculo corretamente.</p>
