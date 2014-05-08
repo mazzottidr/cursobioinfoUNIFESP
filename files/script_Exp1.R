@@ -21,7 +21,7 @@ print(resultado_testet)
 
 #Calcular o Fold Change usando o grupo A como referencia
 foldchange <- 2^-(mean(deltactB)-mean(deltactA))
-print("Fold Change (A como refer�ncia):")
+print("Fold Change (A como referencia):")
 print(foldchange)
 
 #Criar um boxplot com os valores de 2^-deltaCt de cada grupo
