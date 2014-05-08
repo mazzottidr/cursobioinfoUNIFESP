@@ -9,10 +9,10 @@ grupoB <- read.table("grupoB.txt", header=T, dec=",")
 deltactA <- grupoA$CT_alvo - grupoA$CT_endo
 deltactB <- grupoB$CT_alvo - grupoB$CT_endo
 
-#Calcular m�dia do DeltaCt de cada grupo e mostrar na tela
-print("M�dia Delta Ct grupo A:")
+#Calcular media do DeltaCt de cada grupo e mostrar na tela
+print("Media Delta Ct grupo A:")
 print(mean(deltactA))
-print("M�dia Delta Ct grupo B:")
+print("Media Delta Ct grupo B:")
 print(mean(deltactB))
 
 #Fazer o teste t comparando DeltaCt do grupo A versus grupo B e mostrar na tela
