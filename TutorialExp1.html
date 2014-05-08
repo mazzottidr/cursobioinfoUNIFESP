@@ -1,0 +1,49 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Estudos de expressão gênica por qPCR</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p>
+
+<h2 id="tutorial-exp1">Tutorial Exp1</h2>
+
+<h4 id="estudos-de-expressão-gênica-por-qpcr-pcr-em-tempo-real">Estudos de Expressão Gênica por qPCR (PCR em tempo real)</h4>
+
+<hr>
+
+<p><strong>Introdução</strong></p>
+
+<p>No Tutorial desta aula, vamos relembrar alguns conceitos aprendidos no <a href="http://mazzottidr.github.io/cursobioinfoUNIFESP/TutorialInt4.html">Tutorial de Introdução ao R</a> para criar um script capaz de fazer uma análise de expressão gênica de um gene alvo e usando um gene endógeno como normalizador, comparando-os entre dois grupos. A ideia neste tutorial é aplicar ferramentas do R para importar arquivos, fazer cálculos simples, usar testes estatísticos para comparar grupos, criar gráficos e exportar os resultados.</p>
+
+<p>Esta aula será do tipo “<em>Faça você mesmo</em>“, onde este Tutorial conterá apenas dicas do que devemos fazer e que funções usar. Lembre-se de acompanhar o Tutorial do R para retomar as funções aprendidas.</p>
+
+<p><strong>Instruções “em Português” para o computador</strong></p>
+
+<p>Abaixo, vamos descrever em Português o que você precisará fazer. Seu objetivo é <em>traduzir</em> essas informações para a linguagem do R, de maneira a executar o script adequadamente.</p>
+
+<p>Primeiramente, vamos fazer o download dos arquivos que contém os valores de Ct dos genes alvo e endógenos de cada grupo: <a href="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/grupoA.txt">Grupo A</a> e <a href="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/grupoB.txt">GrupoB</a>. Para que os arquivos não abram em uma página da internet, clique com o botão direito do mouse e escolha a opção <em>Salvar link como…</em>, e salve em uma pasta que depois você irá escolher como <em>Working Directory</em> do R.</p>
+
+<p>Em seguida, monte o seu <em>script</em> de acordo com as seguintes instruções, nessa ordem:</p>
+
+<ol>
+<li>Definir o <em>Working Directory</em></li>
+<li>Importar o arquivo <code>grupoA.txt</code> e <code>grupoB.txt</code></li>
+<li>Calcular o Delta Ct (diferença entre gene alvo e gene endógeno) para cada grupo</li>
+<li>Calcular a média do Delta Ct de cada grupo e mostrar o resultado na tela (use a função <code>print()</code>)</li>
+<li>Realizar a análise estatística usando a função <code>t.test(x,y)</code> onde <code>x</code>é o vetor com os valores de Delta Ct de um grupo e <code>y</code>é o vetor com os valores de Delta Ct do outro grupo, e mostrar o resultado na tela</li>
+<li>Calcular o Fold Change usando o grupo A como referência (usar a média do DeltaCt de cada grupo no cálculo) e mostrá-lo na tela</li>
+<li>Criar um boxplot com valores de 2^-DeltaCt, representando a expressão de cada grupo e salvar em um arquivo <code>.pdf</code> (Obs: use a ajuda do R ou o Google para entender como fazer um boxplot)</li>
+</ol>
+
+<blockquote>
+  <p><strong>Dica 1:</strong> Use e abuse de comentários no seu script! Ele poderá ser usado para analisar seus próprios dados depois, desde que estejam formatados como os arquivos <code>grupoA.txt</code> <code>grupoB.txt</code>. <br>
+  <strong>Dica 2:</strong> Não se esqueça de salvar cada resultado que criar em um novo objeto.</p>
+</blockquote>
+
+<p>Ao terminar de montar o script, feche o RStudio e em seguida abra novamente e tente rodar seu script usando o comando <code>source()</code> (lembre-se de estar no mesmo diretório que o script).</p>
+
+<p>Um exemplo de script para executar todas essas tarefas está disponível <a href="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/script_Exp1.R">neste link</a>. Porém, só veja a resposta após tentar montar o seu script!</p>
+
+<p>Boa Sorte!</p>
