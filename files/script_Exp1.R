@@ -1,5 +1,5 @@
 #Definir Working Directory
-#setwd("~/aulaExp1")
+setwd("~/aulaExp1")
 
 #Importar arquivos e salvar nos objetos grupoA e grupoB
 grupoA <- read.table("grupoA.txt", header=T, dec=",")
@@ -9,10 +9,10 @@ grupoB <- read.table("grupoB.txt", header=T, dec=",")
 deltactA <- grupoA$CT_alvo - grupoA$CT_endo
 deltactB <- grupoB$CT_alvo - grupoB$CT_endo
 
-#Calcular média do DeltaCt de cada grupo e mostrar na tela
-print("Média Delta Ct grupo A:")
+#Calcular mï¿½dia do DeltaCt de cada grupo e mostrar na tela
+print("Mï¿½dia Delta Ct grupo A:")
 print(mean(deltactA))
-print("Média Delta Ct grupo B:")
+print("Mï¿½dia Delta Ct grupo B:")
 print(mean(deltactB))
 
 #Fazer o teste t comparando DeltaCt do grupo A versus grupo B e mostrar na tela
@@ -21,7 +21,7 @@ print(resultado_testet)
 
 #Calcular o Fold Change usando o grupo A como referencia
 foldchange <- 2^-(mean(deltactB)-mean(deltactA))
-print("Fold Change (A como referência):")
+print("Fold Change (A como referï¿½ncia):")
 print(foldchange)
 
 #Criar um boxplot com os valores de 2^-deltaCt de cada grupo
