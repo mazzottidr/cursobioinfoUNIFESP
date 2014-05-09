@@ -54,32 +54,32 @@ sudo apt-get install zlib1g-dev
 mkdir -p ~/cursobioinfo/bin
 
 #Instalar fastqc
-cd ~/cursobioinfo/bin
+cd ~/cursobioinfo/Var2/bin
 curl -O http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.10.1.zip
 unzip fastqc_v0.10.1.zip
 sudo chmod +x FastQC/fastqc
 
 #Instalar bwa
-cd ~/cursobioinfo/bin
+cd ~/cursobioinfo/Var2/bin
 wget -O bwa-0.7.5a.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.5a.tar.bz2/download
 tar xvfj bwa-0.7.5a.tar.bz2
 cd bwa-0.7.5a/
 make
 
 #Instalar samtools
-cd ~/cursobioinfo/bin
+cd ~/cursobioinfo/Var2/bin
 curl -O -L http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
 tar xvfj samtools-0.1.19.tar.bz2
 cd samtools-0.1.19
 make
 
 #Instalar Qualimap
-cd ~/cursobioinfo/bin
+cd ~/cursobioinfo/Var2/bin
 wget http://qualimap.bioinfo.cipf.es/release/qualimap_v0.7.1.zip
 unzip qualimap_v0.7.1.zip
 
 #Instalar GATK
-cd ~/cursobioinfo/bin
+cd ~/cursobioinfo/Var2/bin
 curl -O ftp://ftp.broadinstitute.org/pub/gsa/GenomeAnalysisTK/GenomeAnalysisTK-1.0.5974.tar.bz2
 tar xvfj GenomeAnalysisTK-1.0.5974.tar.bz2
 </code></pre>
