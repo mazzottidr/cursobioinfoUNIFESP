@@ -1,0 +1,307 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Estudos de expressão gênica por microarray</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p>
+
+<h2 id="tutorial-exp2">Tutorial Exp2</h2>
+
+<h4 id="estudos-de-expressão-gênica-por-microarray-affymetrix">Estudos de Expressão Gênica por microarray (Affymetrix)</h4>
+
+<hr>
+
+<p><strong>Introdução</strong></p>
+
+<p>No Tutorial da aula de hoje, vamos realizar uma análise de dados de experimento de microarray de expressão gênica, comparando o nível de expressão de todos os transcritos de um array do modelo Human Gene ST da Affymetrix, entre dois tecidos diferentes (Cérebro e Coração). O objetivo desta análise é identificar quais genes são diferencialmente expressos no cérebro em relação ao coração, quais estão com expressão aumentada ou diminuída e quais vias biológicas ou categorias de ontologia gênica estão super-representadas no cérebro em relação ao coração.</p>
+
+<p>Todas as análises serão realizadas usando o RStudio, com pacotes disponíveis no <a href="http://bioconductor.org/">Bioconductor</a>. O Bioconductor é um repositório de pacotes do R especializado em ferramentas de bioinformática. Neste repositório podem ser encontradas funções para uma diversidade de análises genéticas e genômicas, e ele contém o padrão ouro de ferramentas de análise de dados de microarray de expressão gênica.</p>
+
+<p><strong>Instalando e carregando os pacotes necessários</strong></p>
+
+<p>Antes de iniciar as análises, precisamos instalar os pacotes necessários que contém as funções para processamento dos dados de expressão gênica. Diferentemente de outros pacotes do R, os pacotes presentes no repositório do Bioconductor devem ser inicialmente “chamados” por meio de um script que diz ao computador onde devemos procurar os pacotes (no caso, no repositório do Bioconductor). Para isso, temos que rodar o comando abaixo:</p>
+
+<pre><code>source("http://www.bioconductor.org/biocLite.R")
+</code></pre>
+
+<p>Esse comando executa o script <code>biocLite.R</code>, disponível na página do Biocondutor, e importa a função <code>biocLite()</code>, usada para fazer o download e instalação dos pacotes que vamos precisar.</p>
+
+<p>Após a execução do comando acima, podemos instalar os pacotes necessários para a análise de hoje, usando os seguintes comandos:</p>
+
+<pre><code>biocLite("oligo")
+biocLite("limma")
+biocLite("bioDist")
+biocLite("annotate")
+biocLite("hugene10sttranscriptcluster.db")
+</code></pre>
+
+<p>Após a instalação dos pacotes, temos que carregá-los em nossa sessão do R. para isso, usamos a função <code>library()</code>:</p>
+
+<pre><code>library(oligo)
+library(limma)
+library(bioDist)
+library(annotate)
+library(hugene10sttranscriptcluster.db)
+</code></pre>
+
+<p>Agora que nossa sessão do R está pronta para analisar os dados, vamos fazer o download dos arquivos das amostras necessárias.</p>
+
+<p><strong>Fazendo o download das amostras de cérebro e coração</strong></p>
+
+<p>Para esta análise, iremos usar corridas de exemplo disponibilizadas pela Affymetrix contendo resultados de um experimento de microarray em três amostras de cérebro e três amostras de coração. O resultado de uma corrida da Affymetrix é um arquivo de extensão <code>.CEL</code> e contém informações da intensidade e localização de todas as sondas presentes do array.</p>
+
+<p>Crie uma pasta onde será o nosso <em>Working Directory</em> pelo nagevador do Rstudio e vá em <em>More &gt; Set as working directory</em> para defini-la. No tutorial, vamos criar a pasta <code>Exp2</code>, dentro de <code>cursobioinfo</code>:</p>
+
+<pre><code>mkdir ~/cursobioinfo/Exp2
+</code></pre>
+
+<p>Usando o Terminal do Linux, vá até a pasta <code>Exp2</code>, faça o download e descompacte os arquivos da Affymetrix usando o comando abaixo:</p>
+
+<pre><code>wget https://www.dropbox.com/s/6vcmpg2jcav4ac8/amostras_Exp2.zip
+unzip amostras_Exp2.zip
+</code></pre>
+
+<p>Se os passos foram seguidos corretamente as 6 amostras devem aparecer no navegador do RStudio.</p>
+
+<hr>
+
+<p><strong>Etapas da análise de dados de microarray de expressão gênica da Affymetrix</strong></p>
+
+<p>Nós vamos dividir a análise de microarray de expressão gênica nas seguintes etapas:</p>
+
+<ol>
+<li>Importar arquivos no R e definir o nome das amostras e grupos</li>
+<li>Análise exploratória antes do pré-processamento</li>
+<li>Pré-processamento dos dados (correção de <em>background</em>, normalização e sumarização)</li>
+<li>Análise exploratória após pré-processamento</li>
+<li>Análise dos genes diferencialmente expressos</li>
+<li>Análise de enriquecimento de vias biológicas e categorias de ontologia gênica</li>
+</ol>
+
+<p>Uma descrição detalhada de cada etapa é descrita abaixo.</p>
+
+<hr>
+
+<p><strong>1. Importar arquivos no R e definir o nome dos grupos</strong></p>
+
+<p>A primeira etapa após ter a sessão do R pronta para analisar os dados é importar os arquivos <code>.CEL</code> como um objeto do R. Para isso, existe uma função disponível no pacote <code>oligo</code> chamada <code>read.celfiles()</code>. Esta função pede alguns argumentos como um vetor com os nomes dos arquivos <code>.CEL</code> a serem importados, um vetor com o nome das amostras e um vetor com os grupos que as amostras pertencem.</p>
+
+<p>Para criar o vetor com o nome de todos os arquivos <code>.CEL</code>, podemos usar outra função presente no pacote <code>oligo</code> chamada <code>list.celfiles()</code>. Ao ser chamada (sem nenhum argumento), essa função busca por todos os arquivos <code>.CEL</code> no presente <em>Working Directory</em>. Então, se salvarmos o resultado dessa função em um novo objeto, por exemplo chamado de <code>arquivos_CEL</code>, podemos usar esse objeto como argumento da função <code>read.celfiles()</code>. Assim, o comando abaixo mostra como salvar um vetor contendo todos os arquivos <code>.CEL</code> presentes em nosso <em>Working Directory</em> chamado <code>arquivos_CEL</code>:</p>
+
+<pre><code>arquivos_CEL &lt;- list.celfiles()
+</code></pre>
+
+<p>Agora precisamos salvar um vetor com o nome das amostras. Perceba que precisamos criar esse vetor com os nomes na mesma ordem que os arquivos <code>.CEL</code> estão dispostos no nosso objeto <code>arquivos_CEL</code>. Para ter certeza da ordem, no terminal digite apenas <code>arquivos_CEL</code>e veja a ordem dos nomes. Em seguida, por meio do comando abaixo, crie um vetor com os nomes das ammostras usando a função <code>c()</code>, seguindo a ordem dos arquivos:</p>
+
+<pre><code>nome_amostras &lt;- c("B1","B2","B3","H1","H2","H3")
+</code></pre>
+
+<p>Vamos aproveitar e criar um vetor com o grupo que cada amostra pertence, seguindo a mesma ordem dos arquivos <code>.CEL</code>. Nós vamos usar esse objeto mais para frente, na comparação da expressão entre os grupos. Para isso, usamos o comando abaixo:</p>
+
+<pre><code>grupos &lt;- c("Brain","Brain","Brain","Heart","Heart","Heart")
+</code></pre>
+
+<p>Após a definição desses vetores (<code>arquivos_CEL</code>, <code>nome_amostras</code> e <code>grupos</code>), podemos usar esses objetos para importar as nossas amostras para a análise usando a função <code>read.celfiles()</code>, e salvando o resultado da importação em um objeto chamado <code>dados_brutos</code> da seguinte maneira:</p>
+
+<pre><code>dados_brutos &lt;- read.celfiles(filenames=arquivos_CEL, sampleNames=nome_amostras)
+</code></pre>
+
+<p>Observando a estrutura desse comando, podemos notar que definimos cada um dos argumentos da função com 2 objetos previamente definidos. De fato, se fizéssemos o comando abaixo…</p>
+
+<pre><code>dados_brutos &lt;- read.celfiles(filenames=c("TisMap_Brain_01_v1_WTGene1.CEL","TisMap_Brain_02_v1_WTGene1.CEL","TisMap_Brain_03_v1_WTGene1.CEL","TisMap_Heart_01_v1_WTGene1.CEL","TisMap_Heart_02_v1_WTGene1.CEL","TisMap_Heart_03_v1_WTGene1.CEL"), sampleNames=c("B1","B2","B3","H1","H2","H3"))
+</code></pre>
+
+<p>… o resultado seria o mesmo, mas o comando estaria muito poluído e sujeito a erros. Por esse motivo, podemos aproveitar a facilidade de salvar informações em objetos e deixar os comandos mais legíveis.</p>
+
+<p>Agora que importamos todos os dados para um objeto do R (<code>dados_brutos</code>), vamos chamá-lo para ver o que aparece. Ao digitar no terminal apenas <code>dados_brutos</code>, a seguinte mensagem aparece:</p>
+
+<pre><code>GeneFeatureSet (storageMode: lockedEnvironment)
+assayData: 1102500 features, 6 samples 
+    element names: exprs 
+protocolData
+    rowNames: B1 B2 ... H3 (6 total)
+    varLabels: exprs dates
+    varMetadata: labelDescription channel
+phenoData
+    rowNames: B1 B2 ... H3 (6 total)
+    varLabels: index
+    varMetadata: labelDescription channel
+featureData: none
+experimentData: use 'experimentData(object)'
+Annotation: pd.hugene.1.0.st.v1 
+</code></pre>
+
+<p>O nosso objeto <code>dados_brutos</code> apresenta uma estrutura de dados um pouco diferente daquelas estudadas anteriormente (escalares, vetores, data frames). Esse objeto é da classe chamada <code>GeneFeatureSet</code>, que é exclusiva para análise de dados de expressão gênica. Este objeto contém várias informações como o valor da intensidade bruta de cada sonda (<em>feature</em>) do array, além dos dados que acrescentamos como nome das amostras e nome dos grupos.</p>
+
+<p>A partir de agora, vamos começar a trabalhar com o objeto <code>dados_brutos</code> que é uma representação fiel de todos os dados brutos obtidos pela realização do experimento nessas 6 amostras.</p>
+
+<p><strong>2. Análise exploratória antes do pré-processamento</strong></p>
+
+<p>Antes de partir para a análise para encontrar os genes diferencialmente expressos, precisamos checar a qualidade do nosso sinal bruto para ver se tudo ocorreu como esperado em nosso experimento. Essa análise exploratória constitui a criação de alguns gráficos relacionados à distribuição do sinal bruto.</p>
+
+<p>O primeiro gráfico que podemos fazer é um boxplot da intensidade bruta do sinal. Para isso, podemos usar a função <code>boxplot()</code> diretamente aplicada no nosso objeto <code>dados_brutos</code>. Como o pacote <code>oligo</code> está carregado, ele automaticamente procurará na estrutura de dados onde estão os valores da intensidade das sondas e em seguida irá plotar o gráfico. Use o comando abaixo e veja o resultado:</p>
+
+<pre><code>boxplot(dados_brutos)
+</code></pre>
+
+<p>Outro gráfico importante para explorar o dado antes do pré-processamento é o histograma de densidade por meio da função <code>hist()</code>. Esse gráfico nada mais é do que um histograma da distribuição das intensidades. Assim como o gráfico anterior, o pacote já sabe que deve buscar pelas intensidades das sondas. Ao executar o comando abaixo, podemos comparar a distribuição das intensidades entre as amostras:</p>
+
+<pre><code>hist(dados_brutos)
+</code></pre>
+
+<p>Ao analisarmos esses gráficos podemos perceber uma certa variabilidade na distribuição das intensidades dos dados brutos. Isso de fato é esperado com dados brutos, pois é muito difícil garantir que diferentes leituras do array estejam sob as mesmas condições. Essa variabilidade técnica é muito comum quando olhamos dados brutos, e é por esse motivo que precisamos realizar o pré-processamento.</p>
+
+<p>Vamos agora realizar uma <strong>análise de cluster hierárquico</strong>, tentando agrupar as nossas amostras com base na intensidade de todas as sondas presentes no array. Para essa análise, vamos usar a função <code>hclust()</code> presente como padrão no R. No entanto, como esta não é uma função que “conversa” diretamente com o pacote <code>oligo</code>, usar o nosso objeto <code>dados_brutos</code> diretamente nessa função não irá funcionar. Para isso, precisamos usar uma outra função do pacote <code>oligo</code> que extrai daquela estrutura de dados uma planilha contendo o valor de intensidade de cada sonda para cada amostra. Essa função é chamada de <code>exprs()</code>. Vamos executá-la em nosso objeto <code>dados_brutos</code> e salvar o resultado no objeto <code>exp_bruto</code>:</p>
+
+<pre><code>exp_bruto &lt;- exprs(dados_brutos)
+</code></pre>
+
+<p>Para checar que a extração foi feita adequadamente, vamos olhar as primeiras linhas do objeto <code>exp_bruto</code> criado agora, usando a função <code>head()</code>:</p>
+
+<pre><code>head(exp_bruto)
+</code></pre>
+
+<p>Podemos observar um valor numérico para cada amostra (nas colunas). Esses são os valores de expressão antes do pré-processamento para as 6 primeiras sodas do array. Com esse objeto criado, podemos agora fazer a análise de cluster hierárquico, usando os seguintes comandos:</p>
+
+<pre><code>correl_bruto &lt;- cor.dist(t(exp_bruto))
+cluster_bruto &lt;- hclust(correl_bruto)
+plot(cluster_bruto)
+</code></pre>
+
+<p>Estes três comandos são necessários para a análise de cluster hierárquico. O primeiro comando calcula uma matriz de correlação entre as amostras com base nos valores de expressão bruta contida no objeto <code>exp_bruto</code> e salva o resultado no objeto <code>correl</code>. O segundo comando faz a análise de cluster usando a função <code>hclust()</code> com base na matriz de correlação calculada no objeto <code>correl</code>. Por fim, o terceiro comando faz o gráfico do cluster hierárquico usando a função <code>plot()</code>.</p>
+
+<p>Vamos analisar a figura gerada. O eixo y mostra uma medida de distância entre as amostras. Quanto maior for o braço de cada parte do gráfico, maior é a distância entre as amostras. É possivel notar que as três amostras do cerebro (B) são bem diferentes das amostras do coração (H), como esperado. No entanto, podemos perceber que a amostra B1 é mais parecida com a B2 do que a B3. Semelhantemente, a amostra H1 é mais parecida com H3 do que com H2. Essa análise é útil para identificar padrões entre as amostras. Para condições experimentais bem evidentes, grupos de estudos podem se separar já nesta análise, que considera o valor de expressão de todas as sondas, ainda no dado bruto!</p>
+
+<p>Agora que avaliamos nossos dados brutos, podemos partir para a análise de pré-processamento.</p>
+
+<hr>
+
+<p><strong>3. Pré-processamento dos dados (correção de <em>background</em>, normalização e sumarização)</strong></p>
+
+<p>A etapa de pré-processamento é uma das etapas mais importantes da análise de dados de microarray de expressão gênica. Muitos chamam essa etapa de <strong>normalização</strong>, mas é importante ressaltar que mais de uma operação é realizada com os dados brutos, que são: a correção de <em>background</em>, a normalização e a sumarização.</p>
+
+<p>Nós vamos realizar o pré-processamento dos dados brutos usando um método chamado <strong>RMA</strong> (<em>Robust Multichip Average</em>), que realiza as três etapas de pré-processamento citadas acima. Para realizar o pré-processamento no R, basta usar o seguinte comando no objeto <code>dados_brutos</code> e salvar o resultado em um novo objeto chamdo <code>dados_norm</code>:</p>
+
+<pre><code>dados_norm &lt;- rma(dados_brutos)
+</code></pre>
+
+<p>Cada uma das etapas de pré-processamento será realizada e se chamarmos o objeto <code>dados_norm</code>, vamos notar uma estrutura de dados semelhante ao de <code>dados_brutos</code>.</p>
+
+<p>Assim como fizemos com os dados brutos, podemos já criar um objeto contendo os valores das intensidades de cada conjunto de sondas (não mais sondas, pois realizamos a sumarização) usando a função <code>exprs()</code>:</p>
+
+<pre><code>exp_norm &lt;- exprs(dados_norm)
+</code></pre>
+
+<p>Abra as primeiras linhas do objeto <code>exp_norm</code> e verifique que agora temos os valores de expressão normalizada para cada amostra (nas colunas) e para cada conjunto de sondas (nas linhas). O número que aparece antes de cada linha (Ex: <code>789501</code>) apresenta uma anotação correspondente a um transcrito, portanto, podemos dizer que estes são os dados finais da expressão de cada transcrito. Estes valores é que serão usados para a análise de genes diferencialmente expressos.</p>
+
+<hr>
+
+<p><strong>4. Análise exploratória após pré-processamento</strong></p>
+
+<p>Antes de identificarmos os genes diferencialmente expressos, precisamos checar se nosso pré-processamento foi eficaz. Pra isso, podemos usar as mesmas funções usadas nos dados brutos, dessa vez no objeto <code>dados_norm</code> ou <code>exp_norm</code>:</p>
+
+<pre><code>#Plotar boxplot das intensidades normalizadas
+boxplot(dados_norm)
+
+#Plotar histograma de densidade das intensidades normalizadas
+hist(dados_norm)
+
+#Criar matriz de correlação para análise de cluster hierárquico dos dados normalizados
+correl_norm &lt;- cor.dist(t(exp_norm))
+
+#Fazer análise de cluster hierárquico dos dados normalizados
+cluster_norm &lt;- hclust(correl_norm)
+
+#Plotar o gráfico da análise de cluster dos dados normalizados
+plot(cluster_norm)
+</code></pre>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Faça a comparação dos dados brutos com os dados normalizados. Houve alguma diferença? Os dados estão mais comparáveis?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>5. Análise dos genes diferencialmente expressos</strong></p>
+
+<p>Agora que checamos que nosso pré-processamento foi eficaz, podemos realizar de fato a análise estatística para identificar genes diferencialmente expressos. Para esta análise, nós usaremos o pacote <code>limma</code> que carregamos no início do Tutorial.</p>
+
+<p>Para a análise de identificação dos genes diferencialmente expressos usando o método LIMMA (que signfica <em>Linear Models for Microarrays</em>), usamos um modelo linear para verificar diferenças nas médias da intensidade de sinal de cada conjunto de sondas (ou seja, transcritos). Para isso, antes da análise, precisamos desenhar o modelo que será testado e em seguida criar os <em>contrastes</em> ou comparações que serão realizadas. O desenho do modelo nada mais é do que definir para o software quais são as comparações que queremos fazer. Quando temos apenas dois grupos, apenas uma comparação é necessária. Para fazer o desenho do modelo e salvar em um objeto chamado <code>design</code> e criar os contrastes e salvar no objeto <code>contrast.matrix</code>, podemos usar os seguintes comandos:</p>
+
+<pre><code>design &lt;- model.matrix(~0+grupos)
+contrast.matrix &lt;- makeContrasts("gruposBrain-gruposHeart",levels=design)
+</code></pre>
+
+<p>Note que no primeiro comando ussamos o nosso objeto <code>grupos</code> criado anteriromente com a definição dos grupos que temos. Ao chamar o objeto <code>design</code>, é mostrada uma tabela que representa uma matriz com valores <code>1</code> para um grupo e <code>0</code> para outro grupo. Este desenho será usado nas funções seguintes para ajustarmos o modelo linear em nossos dados. O objeto <code>contrast.matrix</code> apresenta de fato os grupos que serão comparados e em que ordem. Agora vamos ajustar o modelo. Para isso vamos executar os seguintes comandos:</p>
+
+<pre><code>fit &lt;- lmFit(exp_norm,design)
+fit2 &lt;- contrasts.fit(fit, contrast.matrix)
+fit3 &lt;- eBayes(fit2)
+</code></pre>
+
+<p>Usando a função <code>lmFit()</code> disponível no pacote <code>limma</code>, nós ajustamos o modelo linear desenhado em <code>design</code> e salvamos o resultado no objeto <code>fit</code>. Depois, inserimos nossos contrastes (comparações) no modelo para que os valores sejam estimados comparando o grupo <em>Brain</em> em relação ao grupo <em>Heart</em>. Em seguida, nós aplicamos uma estatítica semelhante ao teste t (<em>moderated t-statistic</em>) para fazer um teste de hipótese e identificar quais dos transcritos estudados foram identificados como significativamente diferencialmente expressos entre cérebro e coração.</p>
+
+<p>Pronto! Agora que realizamos nossas análises, podemos olhar os resultados. A função <code>topTable()</code>, também presente no pacote <code>limma</code> mostra os valores de <code>logFC</code> (ou log na base 2 do <em>Fold-change</em>) e os valores de p do teste realizado para cada gene. Vamos rodar o comando abaixo:</p>
+
+<pre><code>resultados &lt;- topTable(fit3, adjust.method="fdr", number=Inf)
+</code></pre>
+
+<p>Esse comando usa a função <code>topTable()</code> para acessar o resultado do nosso modelo (<code>fit3</code>) e mostrar uma tabela com os parâmetros de interesse, fazendo uma correção para múltiplos testes de <em>FDR</em> (<em>false discovery rate</em>) e mostrando todos os genes/conjuntos de sondas (pela opção <code>number=Inf</code>). Vamos olhar o começo da tabela usando <code>head(resultados)</code> para ver sua estrutura.</p>
+
+<p>É possivel observar a identificação do conjunto de sondas (ID), o logFC, o valor de expressão médio daquele gene, o valor da estatística t, o valor de p bruto e corrigido para múltiplas comparações e o coeficiente B do modelo linear. É possível notar que os resultados já estão ordenados, sendo que o primeiro da lista é o gene mais diferencialmente expresso.</p>
+
+<p>Agora que temos essa lista de genes, primeiro seria interessante fazer a <strong>anotação</strong> de cada sonda da Affymetrix (cujo código aparece na coluna ID), para que possamos saber quais são os símbolos dos genes que correspondem essa identificação. Para isso, vamos usar algumas funções dos pacotes <code>annotate</code> (que faz a anotação) e <code>hugene10sttranscriptcluster.db</code> (que é o banco de dados com as informações sobre os genes e sondas da Affymetrix). Vamos rodar o seguinte comando:</p>
+
+<pre><code>fit3$genes$Symbol &lt;- getSYMBOL(fit3$genes$ID, "hugene10sttranscriptcluster.db")
+</code></pre>
+
+<p>Esse comando cria uma coluna no nosso objeto <code>fit3</code> com o símbolo dos genes anotatados para cada valor presente na coluna <code>ID</code>, usando a função <code>getSYMBOL()</code> do pacote <code>annotate</code>. Após a realização deste comando, vamos criar o objeto <code>resultados</code> novamente, agora usando o nosso novo objeto <code>fit3</code> que contém a informação do simbolo do gene e em seguida olhar as primeiras linhas:</p>
+
+<pre><code>resultados &lt;- topTable(fit3, adjust.method="fdr", number=Inf)
+head(resultados)
+</code></pre>
+
+<p>Uma nova coluna com o símbolo do gene aparece, tornanco mais fácil a interpretação. Por exemplo, podemos notar que nosso <em>top hit</em> foi o gene <em>MYL2</em>, cuja expressão estava diminuída no cérebro em relação ao coração (logFC negativo).</p>
+
+<p>Assim como nos outros Tutoriais, a representação gráfica de um resultado genômico sempre é bem-vinda. Assim, podemos criar um gráfico do tipo <em>Volcano Plot</em> que mostra no eixo x o logFC e no eixo Y o log10 do valor de p (quanto maior no eixo y, menor o valor de p). Para isso usamos o seguinte comando:</p>
+
+<pre><code>volcanoplot(fit3, highlight=3, names=fit3$genes$Symbol)
+</code></pre>
+
+<p>Esse comando cria um gráfico do tipo <em>Volcano plot</em> e destaca os 3 primeiros genes mais significativamente diferencialmente expressos, e coloca o nome desses 3 genes de acordo com o campo <code>fit3$genes$Symbol</code> que criamos anterioremente.</p>
+
+<p>Por último, vamos agora criar um arquivo exportando os top 100 genes diferencialmente expressos para usarmos na análise de enriquecimento descrita a seguir. Para isso, podemos usar o mesmo comando <code>topTable()</code>. agora definindo um número máximo de genes a ser mostrado na tabela, ao invés de todos, como feito no objeto <code>resultados</code>:</p>
+
+<pre><code>top100 &lt;- topTable(fit3, adjust.method="fdr", number=100)
+</code></pre>
+
+<p>Como vamos analisar estes genes com mais cuidado na próxima etapa, vamos salvá-los no formato <code>.txt</code> para analisarmos com calma no Excel:</p>
+
+<pre><code>write.table(top100,file="top100_exp.txt", sep="\t", dec=",")
+</code></pre>
+
+<p>Vamos agora abrir o Excel (ou software de planilhas) e em seguida abrir o arquivo <code>top100_exp.txt</code>, para explorar com mais facilidade os top 100 genes diferencialmente expressos.</p>
+
+<p>Com esta etapa, finalizamos a análise de identificação de genes diferencialmente expressos. Para fazer o download do script completo dessa análise, <a href="https://www.dropbox.com/s/pbuvn1wlr0go2nb/script_Exp2.R">clique aqui</a>.</p>
+
+<hr>
+
+<p><strong>6. Análise de enriquecimento de vias biológicas e categorias de ontologia gênica</strong></p>
+
+<p>Nesta última etapa do tutorial, vamos fazer uma análise de enriquecimento de vias biológicas e categorias de ontologia gênica com os top 100 genes diferencialmente expressos. Para isso, iremos usar um software disponível na Web chamado <a href="http://amp.pharm.mssm.edu/Enrichr/">Enrichr</a>.</p>
+
+<p>Este software é muito simples e intuitivo de usar. Primeiro, precisamos copiar e colar uma lista de genes, como a nossa lista de 100 genes diferencialmente expressos, na caixa de entrada da página do Enrichr. Em seguida, basta apenas clicar na seta vermelha na parte inferior da tela.</p>
+
+<p>A tela de resultados irá aparecer, com diversas categorias e listas de genes em que nossa lista de top 100 genes está sendo comparada.</p>
+
+<blockquote>
+  <p><strong>Exercício: </strong> Vamos explorar os resultados de cada uma das categorias que estamos comparando. Há algum enriquecimento esperado quando comparamos genes diferencialmente expressos no tecido cerebral e no tecido cardíaco?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>Considerações finais</strong></p>
+
+<p>Neste tutorial, apresentamos um exemplo de pipeline de análise de dados de microarray de expressão gênica usando a plataforma de Affymetrix. Existem outras abordagens para a identificação de genes diferencialmente expressos que não o LIMMA como o SAM (<em>significance analysis of microarray</em>) e o RankProd (<em>Rank Products</em>), que utilizam outros algoritmos e testes estatísticos para identificiar esses genes. Esses outros métodos devem ser usados dependendo do desenho experimental e o quão homogêneos os grupos de comparação são. Além disso, existem outras ferramentas de análise de enriquecimento de vias biológicas que são muito utilizadas, paralelamente ao Enrichr. Como conclusão, para estudos de microarray, o desenho experimental prévio pode ser determinante para a escolha da análise e seu sucesso! Boa sorte nas análises!</p>
