@@ -3,7 +3,7 @@
 <title>Tutorial - Estudos de expressão gênica por microarray</title> <br>
 <link rel="stylesheet" href="templates/markdown7.css"></p>
 
-<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML" gapi_processed="true"></script>
 
 <p></p>
 
@@ -21,7 +21,13 @@
 
 <p><strong>Instalando e carregando os pacotes necessários</strong></p>
 
-<p>Antes de iniciar as análises, precisamos instalar os pacotes necessários que contém as funções para processamento dos dados de expressão gênica. Diferentemente de outros pacotes do R, os pacotes presentes no repositório do Bioconductor devem ser inicialmente “chamados” por meio de um script que diz ao computador onde devemos procurar os pacotes (no caso, no repositório do Bioconductor). Para isso, temos que rodar o comando abaixo:</p>
+<p>Antes de iniciar as análises, precisamos instalar os pacotes necessários que contém as funções para processamento dos dados de expressão gênica. Há tanto pacotes do R para serem instalados, quanto bibliotecas do Linux. Vamos primeiro instalar as dependências do Linux usando os comandos abaixo, no Terminal do Linux:</p>
+
+<pre><code>sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libxml2-dev
+</code></pre>
+
+<p>Diferentemente de outros pacotes do R, os pacotes presentes no repositório do Bioconductor devem ser inicialmente “chamados” por meio de um script que diz ao computador onde devemos procurar os pacotes (no caso, no repositório do Bioconductor). Para isso, temos que rodar o comando abaixo no Terminal do R:</p>
 
 <pre><code>source("http://www.bioconductor.org/biocLite.R")
 </code></pre>
@@ -305,5 +311,3 @@ head(resultados)
 <p><strong>Considerações finais</strong></p>
 
 <p>Neste tutorial, apresentamos um exemplo de pipeline de análise de dados de microarray de expressão gênica usando a plataforma de Affymetrix. Existem outras abordagens para a identificação de genes diferencialmente expressos que não o LIMMA como o SAM (<em>significance analysis of microarray</em>) e o RankProd (<em>Rank Products</em>), que utilizam outros algoritmos e testes estatísticos para identificiar esses genes. Esses outros métodos devem ser usados dependendo do desenho experimental e o quão homogêneos os grupos de comparação são. Além disso, existem outras ferramentas de análise de enriquecimento de vias biológicas que são muito utilizadas, paralelamente ao Enrichr. Como conclusão, para estudos de microarray, o desenho experimental prévio pode ser determinante para a escolha da análise e seu sucesso! Boa sorte nas análises!</p>
-
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Curso Bioinformática UNIFESP</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Diego Mazzotti</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
