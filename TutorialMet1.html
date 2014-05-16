@@ -1,0 +1,106 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Epigenética: metilação do DNA</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p>
+
+<h2 id="tutorial-met1">Tutorial Met1</h2>
+
+<h4 id="estudos-de-metilação-do-dna">Estudos de metilação do DNA</h4>
+
+<hr>
+
+<p><strong>Introdução</strong></p>
+
+<p>No presente tutorial vamos abordar a utilização de ferramentas para a realização e análise de estudos de metilação. Dentre as atividades que realizaremos podemos citar a conversão de fragmentos por bissulfito de sódio (<em>in silico</em>), confeccionar <em>primers</em> para análise de metilação por sequenciamento ou PCR, e por fim, realizar as etapas da análise de metilação de dados provenientes de sequenciamento Sanger em capilar.</p>
+
+<hr>
+
+<p><strong>Obtendo a sequência alvo</strong></p>
+
+<p>Para padronizar a obtenção de dados, siga os passos abaixo para obter a sequência do gene <em>Glra1</em> de <em>Rattus novergicus</em> na base de dados <a href="http://genome.ucsc.edu/cgi-bin/hgGateway">UCSC Genome Browser</a>:</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met1.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met2.jpg" width="100%" height="auto"></p>
+
+<p>Na página <em>Get DNA</em>, adicione 600 bases extras para serem exibidades antes e depois da sequência do gene <em>Glra1</em> (<em>upstream</em> e <em>downstream</em>). Além disso, selecione <em>extended case/color option</em> para marcar informações adcionais na sequência do seu gene:</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met3.jpg" width="100%" height="auto"></p>
+
+<p>Em <em>Extended DNA case/color options</em>, selecione a obtenção da sequência complementar reversa. Você pode marcar SNPs, éxons e outras informações utilizando o sistema <em>RGB (Red/Green/Blue)</em>. Pressione <em>submit</em>.</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met4.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met5.jpg" width="100%" height="auto"></p>
+
+<p>Adicione a sequência obtida no Word, selecionando desde a primeira base até o fim do primeiro éxon. </p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met6.jpg" width="100%" height="auto"></p>
+
+<hr>
+
+<p><strong>Desenhando <em>primers</em> para a sequência alvo:</strong></p>
+
+<p>Para a confecção de primers para estudos de metilação, utilizaremos a ferramenta <strong><em>MethPrimer-Tools and Databases</em></strong> disponível em: <a href="http://www.urogene.org/methprimer/">http://www.urogene.org/methprimer/</a>.</p>
+
+<p>Insira a sequência obtida no UCSC Genome Browser na janela de input do MethPrimer. Nesta ferramenta, você pode selecionar o desenho de primers para sequenciamento flanqueando a sequência alvo, ou primers para <em>Methylation Specific PCR</em> (MSP). Caso você queira avaliar regiões de ilhas CpG (densidade mais elevada de CGs) selecione “Use CpG Island Prediction”. Além disso, você pode alterar parâmetros para a caracterização de ilhas CpGs, tamanho do produto amplificado, temperatura de <em>melting</em>, etc.</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met7.jpg" width="100%" height="auto"></p>
+
+<p>Após a submissão da sequência alvo, o resultado da busca apresentará uma representação gráfica da região com a presença de ilhas CpG (se houver) e com a localização dos possíveis primers para a amplificação da região. Abaixo deste gráfico você obterá a sequência dos primers, com seus respectivos parâmetros.</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met8.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met9.jpg" width="100%" height="auto"></p>
+
+<p>Selecione o primeiro conjunto de <em>primers</em> para buscar o <em>amplicon</em> na sequência alvo que você inseriu no programa MethPrimer. Lembre-se que a sequência final foi convertida por bissulfito de sódio, que realizou a conversão de citosinas em uracilas, que posteriormente transformaram-se em timinas. </p>
+
+<p>Para facilitar, podemos gerar a sequência convertida do gene utilizando o RStudio, e posteriormente procurar a sequência dos primers nesta sequência convertida. Abra o RStudio e insira os seguintes comandos para baixar e carregar o pacote <code>MassArray</code> que apresenta uma função específica para fazer essa conversão:</p>
+
+<pre><code>source("http://bioconductor.org/biocLite.R")
+biocLite("MassArray")
+library(MassArray)
+</code></pre>
+
+<p>Para a conversão da sequência alvo utilize o comando abaixo, susbtituindo <code>sequência alvo</code> pela sequência que quer converter:</p>
+
+<pre><code>bisConvert("sequência alvo")
+</code></pre>
+
+<p>Copie e cole a sequência convertida no documento Word e tente localizar a sequência de <em>primers</em>, destacando o fragmento alvo que será obtido. Após a identificação do fragmento que seria amplificado, partiremos para a análise de dados obtidos por sequenciamento em capilar. Para isso, utilizaremos o programa <a href="http://biq-analyzer.bioinf.mpi-inf.mpg.de/"><strong>BiQ analyzer</strong></a>.</p>
+
+<hr>
+
+<p><strong>Análise de dados de metilação obtidos por sequenciamento em capilar</strong></p>
+
+<p>Após abrir o programa BiQ analyzer, adicione a sequência amplificada na janela de <em>input</em> “Genomic sequence” do programa. É importante ressaltar que o programa requer a sequência do produto amplificado NÃO CONVERTIDA.</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met10.jpg" width="100%" height="auto"></p>
+
+<p>Clique em <em>Next</em>. O programa abrirá uma janela solicitando os arquivos <code>.seq</code> que são provenientes do sequenciamento em capilar. Faça o download dos arquivos <code>.seq</code> <a href="https://www.dropbox.com/s/aux5n75inow1z1k/Sequencias.zip">clicando aqui</a>. Descompacte o arquivo e selecione os arquivos <code>.seq</code> pelo BiQ Analyzer e clique em <em>Next</em>. Em seguida, siga os próximos passos como mostrado nas figuras abaixo:</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met11.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met12.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met13.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met14.jpg" width="100%" height="auto"></p>
+
+<p>Por fim, o programa BiQ analyzer vai solicitar que você salve um arquivo <code>.html</code> e <code>.txt</code> com os resultados do alinhamento e sequenciamento. Abra o arquivo <code>.html</code> e copie e tabela <em>Derived Methylation Data</em> e cole-a em um arquivo Excel. Os valores serão colados como texto, por isso, será necessário delimitar sua separação em: “Dados – Texto para Colunas – Delimitado – Tabulação e Espaços – Concluir”.</p>
+
+<p><img src="https://raw.githubusercontent.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/Met15.jpg" width="100%" height="auto"></p>
+
+<p>Depois disso você terá um arquivo organizado com as amostras (e respectivos clones) posicionadas nas linhas e as CpGs localizadas nas colunas. Salve este arquivo com uma extensão <code>.txt</code> (separada por tabulações) que será utilizada como input para o RStudio, onde será realizada a análise de média dos clones e obtenção de porcentagens de metilação.</p>
+
+<p>No RStudio utilizaremos o script <code>quanti_methyl.R</code> que pode ser encontrado <a href="https://www.dropbox.com/s/mygs7gnj3zxui5o/quanti_methyl.r">clicando aqui</a>.</p>
+
+<p>Abra o script no RStudio para verificarmos seus conteúdo. Em seguida, siga as instruções presentes nos comentários do script. Após checar tudo o que o script pede, execute-o usando <em>Source</em> .</p>
+
+<p>Após esta análise, o RStudio irá gerar um arquivo, que deverá ser aberto no Excel, delimitado por Tab, “;” e espaço. Neste arquivo, você observará as diferentes amostras, já com o cálculo de média dos clones calculados, e estes valores podem ser inseridos no SPSS ou outro programa de estatística para a análise dos dados.</p>
+
+<p><strong>Obs:</strong> Para conferir as sequências encontradas e convertidas faça o download <a href="https://www.dropbox.com/s/adhg656bg87wjad/SequenciasGlra1.docx">deste arquivo</a>.</p>
