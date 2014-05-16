@@ -1,0 +1,383 @@
+<p> <br>
+<meta charset="utf-8"> <br>
+<title>Tutorial - Variações de número de cópias</title> <br>
+<link rel="stylesheet" href="templates/markdown7.css"></p>
+
+<script type="text/javascript" src="http://benweet.github.io/stackedit/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p></p><div class="se-section-delimiter"></div>
+
+<h2 id="tutorial-var3">Tutorial Var3</h2>
+
+<h4 id="prática-1-detecção-de-variantes-de-número-de-cópias-por-microarray"><strong>Prática 1:</strong> Detecção de variantes de número de cópias por microarray</h4>
+
+<p><strong>Introdução</strong></p>
+
+<p>No presente tutorial, vamos abordar um exemplo de identificação de variações de número de cópias (CNVs - <em>copy number variations</em>) por meio de uma plataforma de microarray. Atualmente, o microarray é a metodologia padrão-ouro para a identificação de CNVs em larga escala e é considerado uma metodologia de varredura genômica.</p>
+
+<p>Existem inúmeros softwares e algoritmos diferentes para a identificação de CNVs a partir de resultados de arrays da Affymetrix, Agilent e Illumina. Neste tutorial vamos explorar um software muito utilizado e citado em publicações de alto impacto sobre o tema, chamado <a href="http://www.openbioinformatics.org/penncnv/"><strong><em>PennCNV</em></strong></a>, desenvolvido por pesquisadores da Universidade da Pennsylvania e do <em>Children’s Hospital of Philadelphia</em>.</p>
+
+<p>Este software foi desenhado primarimente para arrays da Illumina, mas funciona muito bem após o ajuste de alguns parâmetros em outras plataformas como a da Affymetrix. A desvantagem deste software é que apresenta interface apenas pela linha de comando e, além disso, exige uma configuração do sistema operacional muito específica.</p>
+
+<p>Por exemplo, embora no tutorial iremos treinar a realização de todos os comandos para executar o PennCNV, sua exceução nas versões atuais (&gt;13.04) do Ubuntu não funciona adequadamente. Neste caso, sugerimos outra distribuição do Linux para estas análises: <a href="http://www.centos.org/">CentOS</a>. Caso precisem realizar alguma análise de identificação de CNVs pelo PennCNV, sugerimos a instalação deste sistema operacional, ao invés do Ubuntu.</p>
+
+<blockquote>
+  <p><strong>Nota:</strong> Neste tutorial iremos seguir todas as etapas para rodar os comandos do PennCNV no Ubuntu e, no caso da análise não ser executada corretamente, forneceremos os arquivos resultantes da mesma para as etapas seguintes.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>Algoritmo</strong></p>
+
+<p>A análise de identificação de CNVs pelo PennCNV é baseada na aplicação do algoritmo HMM (<em>Hidden Markov Model</em>), que pressupõe alguns “estados” conhecidos (números de cópias: 0, 1, 2, 3, 4…) e para cada ponto (ou sonda do array), tenta estimar o estado de maior probabilidade que aquela sonda pertence, e assim realizar o <em>calling</em> daquela posição como um CNV ou uma região de duas cópias.</p>
+
+<p><strong>Download e instalação</strong></p>
+
+<p>Para instalar o PennCNV, vamos primeiro criar um diretório chamado <code>Var3</code> dentro da nossa pasta <code>cursobioinfo</code> e em seguida usar <code>wget</code> para fazer o download do programa;</p>
+
+<pre><code>mkdir -p ~/cursobioinfo/Var3
+cd ~/cursobioinfo/Var3
+wget http://www.openbioinformatics.org/penncnv/download/penncnv.latest.tar.gz
+</code></pre>
+
+<p>Após o download, precisamos descompactá-lo usando o comando <code>tar</code>:</p>
+
+<pre><code>tar xzvf penncnv.latest.tar.gz
+</code></pre>
+
+<p>Em seguida, vamos entrar no diretório criado <code>penncnv</code> e listar o seu conteúdo:</p>
+
+<pre><code>cd penncnv
+ls
+</code></pre>
+
+<p>É possível notar uma série de arquivos que apresentam a extensão <code>.pl</code>. Essa extensão é indicativa de que o programa é escrito em uma linguagem de programação chamada <strong>Perl</strong>. Para mais informações sobre essa linguagem de programação, acesse <a href="http://www.perl.org/">aqui</a>. Como regra geral para executar um programa em Perl, precisamos usar a seguinte sintaxe: “<code>perl</code> + nome do script”. Assim para testarmos a instalação do PennCNV, podemos tentar executar o seguinte comando:</p>
+
+<pre><code>perl detect_cnv.pl
+</code></pre>
+
+<p>Muito provavelmente uma mensagem de erro irá aparecer, dizendo que houve um problema de <em>compilação</em>. Compilação é a ação de interpretar um programa de acordo com a arquitetura do sistema operacional que estamos trabalhando. Neste caso de erro, precisamos garantir que o sistema tenha todas as dependências instaladas e depois <strong>compilar o código fonte</strong> do programa para que ele se adeque a nossa arquitetura do sistema. Para isso, de acordo com instruções fornecidas no próprio site do PennCNV, temos que instalar uma biblioteca do Perl (<code>libperl-dev</code>) e depois podemos entrar no diretório <code>kext</code> (dentro de <code>penncnv</code>) e realizar a compilação usando o comando <code>make</code>. As etapas estão representadas abaixo:</p>
+
+<pre><code>sudo apt-get install libperl-dev
+cd kext
+make
+</code></pre>
+
+<blockquote>
+  <p><strong>Dica avançada:</strong> As instrições para compilar um programa são sempre escritas em um arquivo chamado <code>Makefile</code>. Para executá-lo, precisamos usar o comando <code>make</code> estando no mesmo diretório que o <code>Makefile</code>. Note que já fizemos esses comandos em outros tutoriais.</p>
+</blockquote>
+
+<p>Uma série de comandos vai aparecer no terminal indicando que a compilação está sendo realizada.</p>
+
+<p>Se os passos foram seguidos corretamente, o software foi compilado corretamente e, se voltarmos ao diretório principal do PennCNV, podemos tentar executar o script <code>detect_cnv.pl</code> novamente:</p>
+
+<pre><code>cd ..
+perl detect_cnv.pl
+</code></pre>
+
+<p>Se um texto que inicia com a seguinte mensagem apareceu:</p>
+
+<pre><code>Error in argument: please specify one and only one operation such as --test, --trio, --quartet, --joint, --summary or --cctest
+Usage:
+ detect_cnv.pl [arguments] &lt;inputfile [inputfile2] ... | -listfile file&gt;
+
+ Optional arguments:
+        -v, --verbose                   use verbose output
+        -h, --help                      print help message
+        -m, --man                       print complete documentation
+</code></pre>
+
+<p>Significa que o software foi compilado corretamente e está pronto para uso.</p>
+
+<blockquote>
+  <p><strong>Nota:</strong> Estamos demostrando essas etapas para simular uma situação real de instalação de um software de bioinformática pela interface da linha de comando. Mensagens de erro confusas e pouco informativas sempre irão aparecer! Não se assuste, pois na maioria dos casos uma solução já foi publicada em algum fórum da internet e, nesses casos, uma simples busca no Google e um pouco de paciência podem ser primordiais para a resolução do erro. Não desista!</p>
+</blockquote>
+
+<p>Agora que temos o software aparentemente funcional, vamos mostrar as etapas da análise.</p>
+
+<p><strong>Etapas da análise</strong></p>
+
+<p>A análise de CNVs pode ser resumida nas seguintes etapas:</p>
+
+<ul>
+<li><p>Montagem dos arquivos de entrada</p></li>
+<li><p>Identificação das CNVs pelo PennCNV</p></li>
+<li><p>Comparação das regiões de interesse entre amostras - Operações em intervalos genômicos</p></li>
+<li><p>Visualização dos resultados em um <em>Genome Browser</em></p></li>
+</ul>
+
+<p>Vamos seguir cada uma das etapas neste tutorial, usando as amostras disponibilizadas no diretório <code>example</code>, disponível junto com a instalação do PennCNV.</p>
+
+<p><strong>1. Montagem dos arquivos de entrada</strong></p>
+
+<p>Instruções detalhadas a respeito do tipo do arquivo de entrada necessário pelo PennCNV são mostradas <a href="http://www.openbioinformatics.org/penncnv/penncnv_input.html">nesta página</a>. Basicamente, para cada amostra, nós precisamos fornecer um arquivo que contenha o nome do SNP na primeira coluna, o cromossomo na segunda coluna, a posição no cromossomo na terceira coluna e o genótipo na quarta coluna (no formato AA - homozigoto para um alelo, BB - homozigoto para outro alelo e AB - heterozigoto). Na quinta coluna, temos que colocar o valor correspondente à intensidade do sinal obtido para a sonda daquele SNP (Log R Ratio) e na sexta e última coluna o que chamamos de “Frequência do alelo B”.</p>
+
+<p>O conceito de frequência de alelo B é usado em arrays da Illumina, e é semelhante à informação do <em>Allele Peaks</em> dos arrays da Affymetrix. Para explicar a definição de frequência do alelo B, vamos olhar a figura abaixo, extraída da própria página do PennCNV:</p>
+
+<p><img src="http://www.openbioinformatics.org/penncnv/advanced/image/illustration_genotype_cluster.gif" width="100%" height="auto"></p>
+
+<p>A frequência do alelo B <strong>não tem relação nenhuma com a frequência populacional de um polimorfismo</strong>. É meramente um recurso usado para identificar a participação de um dos dois alelos do SNP na composição do sinal, usado para identificar o número de cópias. Na parte superior do gráfico, temos algumas possibilidade de valores para a frequência do alelo B.</p>
+
+<ul>
+<li><p>Em uma condição em que se espera 2 cópias de uma determinada região cromossômica, há três possibilidades de frequência do alelo B: 0% (homozigoto AA), 50% (heterozigoto AB) e 100% (homozigoto BB). Neste caso, espera-se que um gráfico apresente três “linhas”, uma em 0%, uma próxima de 50% e uma em 100%. Um exemplo pode ser mostrado na parte direita da figura (<em>Normal copy</em>)</p></li>
+<li><p>No caso de um ganho, há 4 possibilidades de combinações entre alelo A e alelo B: as três cópias com alelo A (AAA) sendo a frequência do alelo B = 0%; duas cópias do A e uma do B (AAB), sendo a frequência do alelo B = 33%; duas cópias do B e uma do A (ABB), sendo a frequência do B = 66% e três cópias do B (BBB) sendo a frequência do B = 100%. Ao plotarmos o gráfico, temos então 4 posíveis “linhas” (0%, 33%, 66% e 100%).</p></li>
+<li><p>Por fim, no caso de uma perda de uma cópia, como há apenas uma possibilidade de alelo (A ou B), a frequência do alelo B pode ser 0% (única cópia com alelo A) ou 100% (única cópia com alelo B).</p></li>
+</ul>
+
+<p>Essas três situações são as mais comuns e vamos comentar apenas sobre elas.</p>
+
+<p>Uma vez que temos o conceito de Log R Ratio (<strong>LRR</strong>) e Frequência do alelo B (<strong>BAF</strong>), podemos olhar os arquivos que vamos usar nesse tutorial.</p>
+
+<p>Como próprio recurso do PennCNV, são disponibilizados 3 arquivos de exemplo, presentes dentro do diretório <code>penncnv/examples</code>, chamados de <code>mother.txt</code>, <code>father.txt</code> e <code>offspring.txt</code>. Sem precisar entrar no diretorio <code>example</code>, vamos copiar os três arquivos de entrada para a pasta onde os scripts do PennCNV estão (pasta <code>penncnv</code>):</p>
+
+<pre><code>cp example/*.txt .
+</code></pre>
+
+<p>Note a estrutura do comando. O comando <code>cp</code> é usado para copiar arquivos. O argumento <code>example/*.txt</code> é usado para dizer ao computador que queremos copiar todos os arquivos cujo nome termina em <code>.txt</code> (por isso o <code>*</code>) que estão dentro do diretório <code>example</code>. Em seguida, temos um <code>.</code>, que representa o local onde queremos copiar esses arquivos, ou seja, no diretório atual.</p>
+
+<p>Liste (<code>ls</code>) sua pasta atual para verificar se os três arquivos <code>mother.txt</code>, <code>father.txt</code> e <code>offspring.txt</code> foram devidamente copiados.</p>
+
+<p>Vamos agora abrir um desses arquivos usando o comando <code>less</code>. Note a estrutura do arquivo e as 6 colunas mencionadas anteriormente. Perceba que na coluna referente à frequência do alelo B, a maioria dos valores varia próximo de 0, 0.5 ou 1, representando, portanto, regiões de 2 cópias.</p>
+
+<blockquote>
+  <p><strong>Nota:</strong> Nesse exemplo, estamos seguindo um arquivo já pronto e disponibilizado pelo PennCNV. No entanto, para chegar nesse arquivo, temos que usar algumas ferramentas do software da Illumina ou seguir algumas instruções para gerar os arquivos a partir de dados da Affymetrix (ver em <a href="http://www.openbioinformatics.org/penncnv/penncnv_tutorial_affy_gw6.html">PennCNV-Affy</a>).</p>
+</blockquote>
+
+<p>Para permitir a realização do tutorial em tempo hábil, estes arquivos de exemplo apresentam informações apenas de 4 cromossomos e um total de aproximadamente 90 mil sondas.</p>
+
+<hr>
+
+<p><strong>2. Identificação das CNVs pelo PennCNV</strong></p>
+
+<p>Agora que temos os três arquivos prontos para a análise, podemos executar o comando de identificação de CNVs do PennCNV. Segue o comando abaixo, com a explicação de sua sintaxe a seguir:</p>
+
+<pre><code>perl detect_cnv.pl -test -hmm lib/hhall.hmm -pfb lib/hhall.hg18.pfb father.txt -log father.log -out father.rawcnv
+</code></pre>
+
+<p>Como o PennCNV foi escrito da linguagem de programação Perl, precisamos chamá-lo primeiro indicando o comando  <code>perl</code>, seguido do script que é usado para detectar CNVs (<code>detect_cnv.pl</code>). Em seguida, temos que definir qual função desse script vamos usar; no caso é a <code>-test</code>. Em seguida, são necessários 2 arquivos pelos <em>flags</em> <code>-hmm</code>e <code>-pfb</code>, chamados, respectivamente, de <code>hhall.hmm</code> e <code>hhall.hg18.pfb</code>, ambos presentes dentro do diretório <code>lib/</code>. Em seguida, finalmente colocamos o nome do arquivo de entrada (no caso <code>father.txt</code>) seguido do <em>flag</em>  <code>-log</code>, com o nome do arquivo onde vamos salvar informações descritivas sobre a análise (no caso <code>father.log</code>) e do <em>flag</em> <code>-out</code>, com o nome do arquivo onde vamos salvar o resultado da identificação de CNVs (no caso <code>father.rawcnv</code>).</p>
+
+<p>Ao executar o comando, uma série de informações aparece dizendo que o comando está sendo executado. Como comentado no início do tutorial, infelizemente esse comando não funcionará adequadamente no Ubuntu, sendo que a execução ficará corrompida com a seguinte mensagem:</p>
+
+<pre><code>Falha de segmentação (imagem do núcleo gravada)
+</code></pre>
+
+<p>Para darmos continuidade, essas mesmas amostras foram executadas em outra distribuição do Linux (CentOS) que gerou os arquivos <code>father.log</code>, e <code>father.rawcnv</code> que serão disponibilizados abaixo.</p>
+
+<p>Ao executar para os outros dois arquivos de entrada (<code>mother.txt</code> e <code>offspring.txt</code>) com os comandos abaixo…</p>
+
+<pre><code>perl detect_cnv.pl -test -hmm lib/hhall.hmm -pfb lib/hhall.hg18.pfb mother.txt -log mother.log -out mother.rawcnv
+perl detect_cnv.pl -test -hmm lib/hhall.hmm -pfb lib/hhall.hg18.pfb offspring.txt -log offspring.log -out offspring.rawcnv
+</code></pre>
+
+<p>… temos então 6 arquivos no total como output desta análise: <code>father.log</code>, <code>father.rawcnv</code>, <code>mother.log</code>, <code>mother.rawcnv</code>, <code>offspring.log</code> e <code>offspring.rawcnv</code>. Vamos criar uma pasta chamada <code>output</code> e fazer o download desses arquivos e sua descompactação com o comando abaixo para darmos continuidade à análise.</p>
+
+<pre><code>mkdir output
+cd output
+wget https://github.com/mazzottidr/cursobioinfoUNIFESP/raw/gh-pages/files/resultados_cnv.zip
+unzip resultados_cnv.zip
+</code></pre>
+
+<p>Ao listarmos (<code>ls</code>) a pasta <code>output</code>, podemos ver que os 6 arquivos que deveriam ser gerados estão neste diretório.</p>
+
+<blockquote>
+  <p><strong>Nota sobre os arquivos <code>.hmm</code> e <code>.pfb</code>:</strong> Estes dois arquivos necessários para a identificação de CNVs correspondem à definição dos estados de números de cópias usados pelo algoritmo HMM e um arquivo contendo a frequência populacional do alelo B, usado como referência, respectivamente. Podemos usar esse padrão já fornecido pelo software, mas para plataformas mais recentes, há arquivos <code>.pfb</code>mais adequados. Ver mais informações no site do <a href="http://www.openbioinformatics.org/penncnv/penncnv_input.html#_Toc214852012">PennCNV</a>.</p>
+</blockquote>
+
+<p>Ante de ir para a próxima etapa, vamos olhar um exemplo de arquivo <code>.log</code> e um exemplo de arquivo <code>.rawcnv</code>. Primeiro vamos abrir o arquivo <code>father.log</code> usando o comando <code>less</code>. É possivel notar algumas informações importantes como o número de marcadores analisados, o número de cromossomos analisados, e algumas estatísticas, como a média e desvio padrao do LRR e BAF, além do <em>Waviness Factor</em>, um medida que contribui para um efeito de ondulação do sinal, atrapalhando a identificação de CNVs.</p>
+
+<p>Dentre estes parâmetros, o mais importante é o <code>LRR_SD</code>, que representa o desvio padrão da intensidade de sinal. O software recomenda que esse valor seja menor que <code>0.3</code>, indicando alta confiabilidade na identificação de CNVs.</p>
+
+<p>Ao checar esse parâmetro para as três amostras analisadas, notamos que todas estão adequadas e que os CNVs identificados são confiáveis.</p>
+
+<p>Agora vamos abrir o arquivo <code>father.rawcnv</code>usando <code>less</code>. Esse arquivo é o que apresenta todas as regiões identificadas como CNVs. Ele apresenta 7 colunas:</p>
+
+<ul>
+<li><strong>Coluna 1: </strong> Coordenada genômica da alteração identificada (no banco de dados hg18)</li>
+<li><strong>Coluna 2: </strong> Número de marcadores usados para identificar essa alteração (número de marcadores que estão com o sinal aumentado ou dimínuido)</li>
+<li><strong>Coluna 3: </strong> Tamanho em pares de base da alteração encontrada</li>
+<li><strong>Coluna 4: </strong> Estado (do algoritmo HMM) e número de cópias da região em questão.</li>
+<li><strong>Coluna 5: </strong> Nome da amostra que alteração foi identificada</li>
+<li><strong>Coluna 6: </strong> SNP de início (primeiro marcador da alteração)</li>
+<li><strong>Coluna 7: </strong> SNP de início (último marcador da alteração)</li>
+</ul>
+
+<p>Podemos notar que na amostra <code>father.txt</code> há um total de 6 alterações, sendo 5 perdas e 1 ganho.</p>
+
+<p>Abra os arquivos  <code>mother.rawcv</code> e <code>offspring.rawcnv</code>e identifique quantas alterações e qual o número de cópias delas, identificadas nesses indivíduos.</p>
+
+<hr>
+
+<p><strong>3. Comparação das regiões de interesse entre amostras - Operações em intervalos genômicos</strong></p>
+
+<p>Agora que identficamos as variações de número de cópia nas três amostras, podemos nos perguntar se há alguma dessas regiões que se sobrepõe em amostras diferentes. Por exemplo, quais alterações o filho recebeu do pai, e quais recebeu da mãe?</p>
+
+<p>Obviamente, para um arquivo pequeno como este, é mais fácil identificar manualmente, mas para arquivos muito grandes, isso fica inviável. Para isso vamos usar um software chamdo <a href="http://bedtools.readthedocs.org/en/latest/"><strong><em>BEDtools</em></strong></a>, especializado em operações com intervalos genômicos.</p>
+
+<p>Vamos inicialmente criar uma pasta <code>bin</code> para salvar os arquivos resultantes do download do software BEDtools e em seguida compilar o programa:</p>
+
+<pre><code>mkdir bin
+cd bin
+wget https://bedtools.googlecode.com/files/BEDTools.v2.17.0.tar.gz
+tar zxvf BEDTools.v2.17.0.tar.gz
+cd bedtools-2.17.0/
+make
+</code></pre>
+
+<p>Agora vamos preparar o arquivo <code>.rawcnv</code> para ser usado pelo BEDtools. Precisamos criar, para cada amostra um arquivo contendo apenas três colunas: o cromossomo, a cordenada de início e a coordenada de fim da CNV. Lembre-se de que a primeira coluna do arquivo <code>.rawcnv</code> apresenta essa informação, mas em um formato diferente (<code>chr3:37957465-37961253</code>). Precisamos, de alguma maneira, remover o <code>:</code> e o <code>-</code> dessa nomenclatura e colocar cada termo (<code>chr3</code>, <code>37957465</code> e <code>37961253</code>) em uma coluna diferente. Nós até poderíamos realizar essa tarefa no Excel, mas para muitos arquivos seria muito trabalhoso. Nessas situações é que pequenos códigos de linha de comando do Linux são úteis (mas mesmo assim não deixam de ser assustadores!). Vamos ver os códigos abaixo:</p>
+
+<pre><code>cut -d ' ' -f 1 father.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; father.bed
+cut -d ' ' -f 1 mother.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; mother.bed
+cut -d ' ' -f 1 offspring.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; offspring.bed
+</code></pre>
+
+<p>Execute-os e depois abra usando <code>cat</code> os arquivos resultantes <code>father.bed</code>, <code>mother.bed</code> e <code>offspring.bed</code>. Eles estão no formado esperado?</p>
+
+<blockquote>
+  <p><strong>Desafio!</strong> Tente entender o que os codigos acima fazem, somente com a informação de que o comando <code>cut</code> é usado para extrair uma determinada coluna de um arquivo e que o comando <code>sed</code> é usado para substituir caracteres de um arquivo. Use <code>man</code> para ler a entrada de ajuda de cada comando e entender seus argumentos!</p>
+</blockquote>
+
+<p>Depois de formatar os três arquivos apenas com cromossomo e coordenada genômica, chegamos a um formato de arquivo chamado <code>.bed</code>. Esse arquivo é útil pois apresenta os dados na forma de <strong>intervalo genômico</strong>. Um intervalo genômico e uma região compreendida entre duas posições genômicas.</p>
+
+<p>De maneira interessante, podemos fazer operações com intervalos genômicos. Por exemplo, podemos buscar quais as regiões que se sobrepõem entre 2 arquivos de intervalos genômicos. Ou identificar quais regiões são exclusivas de um arquivo (ou seja, não estão presentes no outro). Para isso podemos usar o software BEDtools. Veja a figura abaixo, extraída do site do BEDtools:</p>
+
+<p><img src="http://bedtools.readthedocs.org/en/latest/_images/intersect-glyph.png" width="100%" height="auto"></p>
+
+<p>Imagine que temos um arquivo A e um arquivo B, que apresenta uma série de intervalos genômicos, um em cada linha, como, por exemplo, os arquivos com regiões identificadas como CNVs. Podemos usar o BEDtools para buscar as regiões em comum entre A e B, as regiões em A que se sobrepõem de alguma maneira em B, e as regiões em A que sao exclusivas de A e não estão em B.</p>
+
+<p>Agora vamos verificar, em nossas amostras, quais CNVs no arquivo <code>offspring.cnv</code> vieram do pai (arquivo <code>father.cnv</code>). Para isso, podemos usar o seguinte comando:</p>
+
+<pre><code>./bin/bedtools-2.17.0/bin/bedtools intersect -a offspring.cnv -b father.cnv
+</code></pre>
+
+<p>Perceba a estrutura do comando. Precisamos chamar o executável do BEDtools (<code>bedtools</code>) que está no diretório <code>/bin/bedtools-2.17.0/bin/</code>. Em seguida colocamos o argumento que vai verificar a intersecção entre os intervalos genômicos de A (<code>offspring.cnv</code>) e B (<code>father.cnv</code>). O resultado é mostrado na tela, e podemos identificar que as duas alterações resultantes são as alterações que o filho recebeu do pai, pois é a intersecção entre os dois arquivos.</p>
+
+<p>Agora vamos identificar se o filho apresenta alguma alteração <em>de novo</em>, ou seja, não herdada do pai ou da mãe. Para isso vamos precisar realizar duas etapas: primeiro, identificar as alterações presentes apenas no filho e não no pai. Em seguida, salvar o resultado dessa busca em um arquivo que podemos chamar de <code>nao_recebeu_do_pai.cnv</code>. Depois, podemos verificar se nesse arquivo com alterações que o filho não recebeu do pai, se há alguma alteração exclusiva, ou seja, não presente na mãe. O resultado dessa busca identificará alterações <em>de novo</em>, não presentes nem no pai e nem na mãe. Atente aos comandos abaixo:</p>
+
+<ul>
+<li><p>Identificar alterações presentes no filho e não presentes no pai (note o uso do argumento -v), e salvar no arquivo <code>nao_recebeu_do_pai.cnv</code>:</p>
+
+<pre><code>./bin/bedtools-2.17.0/bin/bedtools intersect -v -a offspring.cnv -b father.cnv &gt; nao_recebeu_do_pai.cnv
+</code></pre></li>
+<li><p>Checar quais alterações o filho não recebeu do pai:</p>
+
+<pre><code>cat nao_recebeu_do_pai.cnv
+</code></pre></li>
+<li><p>Checar quais dessas alterações que o filho não recebeu do pai, também não recebeu da mãe:</p>
+
+<pre><code>./bin/bedtools-2.17.0/bin/bedtools intersect -v -a nao_recebeu_do_pai.cnv -b mother.cnv
+</code></pre></li>
+</ul>
+
+<p>O resultado deste último comando mostra as  alterações <em>de novo</em>, calculadas a partir de operações com intervalos genômicos.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Quantas alterações <em>de novo</em> apareceram no filho deste casal?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>4. Visualização dos resultados em um <em>Genome Browser</em></strong></p>
+
+<p>A última etapa deste tutorial é visualizar as CNVs identificadas usando o <em>UCSC Genome Browser</em>. Este <em>Genome Browser</em> permite que acrescentemos <em>tracks</em> customizáveis para aparecer na imagem, permitindo comparar nossos dados com outras anotações do genoma de maneira visual.</p>
+
+<p>Vamos pegar as regiões identificadas em cada um dos três indivíduos e criar um arquivo que poderá ser importado no <em>Genome Browser</em> para que possamos ver a localização genômica dessas CNVs. A definição do arquivo exigido pelo <em>Genome Broswer</em> para ser importado como <em>Custom Track</em> pode ser encontrada <a href="http://genome.ucsc.edu/goldenPath/help/customTrack.html">aqui</a>.</p>
+
+<p>Para garantir uma visualização adequada, temos primeiro que criar um cabeçalho para cada amostra, contendo o nome do <em>track</em> e a cor que gostaríamos que ele aparecesse no <em>Browser</em>. Para isso, podemos usar os comandos abaixo:</p>
+
+<pre><code>echo track name=FATHER color=0,0,205 &gt; header_father.txt
+echo track name=MOTHER color=0,205,0 &gt; header_mother.txt
+echo track name=OFFSPRING color=255,0,0 &gt; header_offspring.txt
+</code></pre>
+
+<p>O comando <code>echo</code> permite digitar um texto qualquer. No primeiro comando, por exemplo, vamos digitar <code>track name=FATHER color=0,0,205</code>. Se salvarmos a saída desse texto em um arquivo, podemos guardar o que escrevemos. Dessa maneira, temos 3 cabeçalhos, um para cada amostra, que, a seguir, serão combinados com os intervalos genômicos para constituir o nosso arquivo de entrada do <em>custom track</em>.</p>
+
+<blockquote>
+  <p><strong>Curiosidade:</strong> os códigos numéricos definidos para as cores são coordenadas do sistema de cores RGB - <em>Red</em>, <em>Green</em> e <em>Blue</em>. Para mais informações acesse <a href="http://en.wikipedia.org/wiki/RGB_color_model">aqui</a>.</p>
+</blockquote>
+
+<p>Agora precisamos combinar cada cabeçalho com o arquivo com as coordenadas genômicas de cada amostra, seguindo a ordem correta. Para isso podemos usar o comando <code>cat</code>. Lembre-se de que o comando <code>cat</code> além de ser usado para mostrar o conteúdo de um arquivo na tela, ele pode também ser usado para compor um arquivo formado pela junção de vários. Veja o comando abaixo:</p>
+
+<pre><code>cat header_father.txt father.cnv header_mother.txt mother.cnv header_offspring.txt offspring.cnv
+</code></pre>
+
+<p>Ao executarmos esse arquivo, o computador irá mostrar na tela todos os arquivos apresentados no comando, em ordem, um atrás do outro. Para salvarmos em um arquivo para ser importado como <em>custom track</em> no <em>UCSC Genome Browser</em>, precisamos acrescentar o sinal <code>&gt;</code> seguido do nome do arquivo, por exemplo <code>UCSC_tracks_CNV.bed</code>:</p>
+
+<pre><code>cat header_father.txt father.cnv header_mother.txt mother.cnv header_offspring.txt offspring.cnv &gt; UCSC_tracks_CNV.bed
+</code></pre>
+
+<p>Pronto! Agora temos um arquivo formatado, composto por CNVs identificadas em três amostras, pronto para ser importado.</p>
+
+<p>Vamos agora acessar o <a href="http://genome.ucsc.edu/cgi-bin/hgGateway"><em>UCSC Genome Browser</em></a>. Na tela de busca, há um botão chamado <strong><em>Add custom tracks</em></strong>. Clique neste botão e você será redirecionado para a página de importaçao de um <em>track customizado</em>.</p>
+
+<p>Antes de mais nada, selecione a versão do genoma que estamos utilizando (nesse exercício, estamos usando a versão <strong><em>hg18</em></strong>). Em seguida vá em <em>Escolher arquivo</em>, procure pelo arquivo <code>UCSC_tracks_CNV.bed</code> e depois clique em <em>Submit</em>.</p>
+
+<p>Aparecerá uma tela mostrando os três <em>tracks</em> criados (FATHER, MOTHER E OFFSPRING), confirmando a importação do arquivo. Clique em <em>go to genome browser</em> e explore o genoma olhando os CNVs identificados na tela!</p>
+
+<blockquote>
+  <p><strong>Exercício: </strong> Tente encontrar na tela as regiões <em>de novo</em>, presentes apenas em OFFSPRING. Essas regiões compreendem algum gene do OMIM?</p>
+</blockquote>
+
+<hr>
+
+<h4 id="prática-2-detecção-de-variantes-de-número-de-cópias-por-qpcr"><strong>Prática 2:</strong> Detecção de variantes de número de cópias por qPCR</h4>
+
+<p>Para este tutorial, nós vamos usar apenas o Excel para calcular parâmetros relacionados à validação e/ou identificação de CNVs por PCR em tempo real (qPCR).</p>
+
+<p>Porém, antes da análise em si, precisamos primeiro exportar os resultados da corrida de PCR em tempo real do software da Applied Biosystems/ Life Technologies. Para isso, podemos seguir os passos abaixo:</p>
+
+<ul>
+<li>Após o término da corrida selecionar a opção <em>Export</em>.</li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV1.jpg" width="100%" height="auto"></p>
+
+<ul>
+<li>Selecione <em>Results</em>, o formato <code>.xls</code> e o local onde deseja salvar o arquivo.</li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV2.jpg" width="100%" height="auto"></p>
+
+<p>Após a exportação dos dados para uma planilha em Excel, vamos selecionar apenas as colunas que nos interessam, que são <em>Sample Name</em>, <em>Target Name</em> e <em>Ct Mean</em>. Para facilitar vamos colar essas colunas correspondentes em uma nova planilha:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV3.jpg" width="100%" height="auto"></p>
+
+<hr>
+
+<p><strong>Conversão dos valores de Ct para números de cópias de CNV</strong></p>
+
+<p>Como o Ct calculado na PCR em tempo real é um parâmetro correspondente à quantidade de material amplificado, podemos usar essa informação para identificar regiões candidatas à alterações de números de cópias. Em uma região com duplicação esperamos encontrar uma diminuição do Ct, e em uma região de deleção, um aumento. No entanto, devemos sempre considerar a normalização por um gene com número de cópia constante no genoma, para controlarmos para a quantidade inicial de DNA colocado na reação.</p>
+
+<p>Para esse cálculo, vamos usar o método de quantificação relativa chamado de <strong>Delta Delta Ct</strong>. Esse método é semelhante ao usado para quantificação relativa de expressão gênica.</p>
+
+<p>Vamso fazer o _download) da planilha com os dados já organizados para usarmos neste Tutorial clicando <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/banco_CNV.xls?raw=true">aqui</a>.</p>
+
+<ul>
+<li><p><strong>Cálculo do Delta Ct:</strong> Renomeie a planilha com os dados do Ct como “Ct”. Copie a planilha atual e cole em uma nova. Nesta nova planilha, subtraia o valor do CNV alvo do ensaio referência (no caso, a RNAse P). <strong>Fórmula:</strong> <code>Ct!C4-Ct!C3</code>, onde C4 é o valor do Ct do CNV alvo e C3 é o valor do Ct da RNAse P.</p></li>
+<li><p>Limpe essa nova planilha excluindo os valores da RNAse P, a sua planilha deve ficar igual ao exemplo abaixo (CM: Amostra Controle).</p></li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV4.jpg" width="100%" height="auto"></p>
+
+<ul>
+<li><strong>Cálculo de Delta Delta Ct:</strong> Renomeie essa planilha como “DeltaCt”. Copie a planilha atual e cole em uma nova. Transforme os valores atuais em Delta Delta Ct utilizando a <strong>fórmula:</strong> <code>DeltaCt!C3-DeltaCt!C12</code>, onde C3 é o valor de DeltaCt da amostra alvo da planilha anterior e C12 é o valor de DeltaCt da amostra controle (em azul).</li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV5.jpg" width="100%" height="auto"></p>
+
+<ul>
+<li><strong>Cálculo de 2^-DeltaDeltaCt:</strong> Renomeie essa planilha como “DeltaDeltaCt”. Copie a planilha atual e cole em uma nova. Obs: No Excel o símbolo para potenciação é <code>^</code>. A <strong>fórmula</strong> para o primeiro valor ficará dessa forma: <code>2^-DeltaDeltaCt!C3</code>, onde C3 é o valor de sua amostra alvo da planilha anterior.</li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV6.jpg" width="100%" height="auto"></p>
+
+<ul>
+<li><strong>Cálculo do número de cópias do CNV</strong>: Renomeie essa planilha como “2^DeltaDeltaCt”. Copie a planilha atual e cole em uma nova. Encontre o número de cópias de cada CNV multiplicando cada célula por 2.</li>
+</ul>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/CNV7.jpg" width="100%" height="auto"></p>
+
+<p>A planilha com todas as fórmulas e resultados está disponível <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/banco_CNV_respostas.xls?raw=true">aqui</a>.</p>
+
+<hr>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Curso Bioinformática UNIFESP</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Diego Mazzotti</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
