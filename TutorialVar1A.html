@@ -1,0 +1,333 @@
+<p> <br>
+ <br>
+Tutorial - Estudos de associação genética e GWAS <br>
+</p>
+
+
+
+<p></p>
+
+
+
+<h2 id="tutorial-var1a">Tutorial Var1A</h2>
+
+<h3 id="estudos-de-associação-genética-genes-candidatos">Estudos de associação genética (genes candidatos)</h3>
+
+<hr>
+
+<h4 id="prática-teste-de-associação-entre-doença-e-snphaplótipo-cálculo-do-desequilíbrio-de-ligação"><strong>Prática</strong> - Teste de associação entre doença e SNP/haplótipo; cálculo do desequilíbrio de ligação</h4>
+
+<p><strong>Exercício de associação em estudo caso-controle</strong></p>
+
+<p>No presente tutorial, vamos abordar algumas estratégias de análise para verificar a associação entre polimorfismos genéticos e variáveis categóricas por meio do teste de qui-quadrado utilizando o software de análise estatística SPSS. Em nosso exercício, vamos verificar se existe associação entre os genótipos de três polimofismos do gene <em>DGCR2</em> (chamados aqui de rs1, rs2 e rs3) e a presença de Esquizofrenia. Faça o download do banco de dados que vamos trabalhar neste tutorial clicando <a href="https://github.com/mazzottidr/cursobioinfoUNIFESP/blob/gh-pages/files/images/Banco%20aula%20de%20associacao.sav?raw=true">aqui</a>.</p>
+
+<p>Para realizar o teste do qui-quadrado no SPSS, abra o arquivo e siga os passos abaixo:</p>
+
+<ul>
+<li><p>No menu superior, vá em <strong><em>Analyze</em></strong> → <strong><em>Descriptive Statistics</em></strong> → <strong><em>Crosstabs</em></strong></p></li>
+<li><p>Colocar no campo <em>Row(s)</em> a variável <strong>Paciente esquizofrenia</strong></p></li>
+<li><p>Colocar no campo <em>Columns(s)</em> as variáveis <strong>Genótipo DGCR2rs1</strong>, <strong>Genótipo DGCR2rs2</strong> e <strong>Genótipo DGCR2rs3</strong></p>
+
+<blockquote>
+  <p><strong>Dica:</strong> para selecionar as três variáveis simultaneamente, mantenha a tecla <code>CTRL</code> pressionada</p>
+</blockquote></li>
+<li><p>Clicar em <strong><em>Statistics…</em></strong> e selecionar a opção <strong><em>Chi-Square</em></strong>, depois clicar em <em>Continue</em></p></li>
+<li><p>Clicar em <strong>Cells…</strong> e selecionar a opção <strong><em>Row</em></strong> em <em>Percentages</em>, depois clicar em <em>Continue</em></p></li>
+<li><p>Clicar em Ok</p></li>
+</ul>
+
+<p>As imagens abaixo mostram os passos:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS1.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS2.jpg" width="100%" height="auto"></p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS3.jpg" width="50%" height="auto"></p>
+
+<hr>
+
+<p>Após a análise, aparecerão algumas tabelas no <em>output</em>:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS4.jpg" width="100%" height="auto"></p>
+
+<p>Pudemos notar que neste exemplo, não houve associação entre nenhum dos três polimorfimos estudos e presença de Esquizofrenia.</p>
+
+<p><strong>Consideração importante antes de realizar estudos de associação</strong></p>
+
+<p>Antes de testarmos a associação entre grupos (caso e controle) e genótipos de um SNP, por exemplo, é recomendado verificar se existe diferença estatística entre os grupos quanto a alguma variável que possa ter um efeito confundidor na associação. Isso poderia conduzir a uma falsa associação com a variável de interesse (por exemplo genótipo de um SNP) por causa de uma associação verdadeira com essa variável confundidora (por exemplo sexo, idade ou ancestralidade).</p>
+
+<p>Em outras palavras, encontraríamos uma frequência alélica ou genotípica maior (estatisticamente significante) em casos do que em controles, entretanto essa frequência aumentada não seria decorrente da doença e sim da alta prevalência desse alelo em uma etnia mais representada no grupo casos, por exemplo. Para evitar esses efeitos confundidores é necessário que os grupos caso e controle sejam o mais parecido possível quanto a idade, sexo, etnia, uso de medicação, etc. Outra possibilidade seria corrigir o efeito dessas variáveis de confusão usando um modelo estatístico.</p>
+
+<p>Antes de tudo, é preciso testar se existe essa diferença entre o nosso fenótipo de interesse e alguma potencial variável de confusão. Abaixo ensinamos como fazer isso usando o SPSS.</p>
+
+<p><strong>Testando se Variáveis Categóricas (Sexo) diferem entre os grupos</strong></p>
+
+<p>Para verificar se existe diferença de sexo entre os grupos de pacientes e de controles, é necessário utilizar o teste do qui-quadrado:</p>
+
+<ul>
+<li><p>No menu superior, vá em <strong><em>Analyze</em></strong> → <strong><em>Descriptive Statistics</em></strong> → <strong><em>Crosstabs</em></strong></p></li>
+<li><p>Colocar as variáveis de interesse [<strong>Paciente esquizofrenia</strong> e <strong>Sexo</strong>] em Row(s) e Columns(s), respectivamente</p></li>
+<li><p>Clicar em <strong><em>Statistics…</em></strong> e selecionar a opção <strong><em>Chi-Square</em></strong>, depois clicar em <em>Continue</em></p></li>
+<li><p>Clicar em <strong>Cells…</strong> e selecionar a opção <strong><em>Row</em></strong> em <em>Percentages</em>, depois clicar em <em>Continue</em></p></li>
+<li><p>Clicar em Ok</p></li>
+</ul>
+
+<p>Após a análise, aparecerão algumas tabelas no <em>output</em>:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS5.jpg" width="50%" height="auto"></p>
+
+<p>Neste caso, não há associação significativa entre Sexo e apresentar Esquizofrenia (p&gt;0,05). Dessa forma, parece que a variável Sexo não apresentará um efeito confundidor na associação entre os Genótipos e Esquizofrenia.</p>
+
+<p><strong>Testando se Variáveis Contínuas (Idade e ancestralidade) diferem entre os grupos</strong></p>
+
+<p>Para verificar se existe diferença de idade e de ancestralidade entre os grupos de pacientes e de controles, é necessário utilizar o teste t para variáveis independentes:</p>
+
+<ul>
+<li><p>No menu superior, vá em <strong><em>Analyze</em></strong> → <strong><em>Compare Means</em></strong> → <strong><em>Independent-Samples T Test</em></strong></p></li>
+<li><p>Colocar em <em>Test Variable(s</em>) as variáveis <strong>Idade na primeira consulta</strong>, <strong>Ancestralidade Africana</strong>, <strong>Ancestralidade Europeia</strong> e <strong>Ancestralidade Nativo-Americana</strong></p></li>
+<li><p>Colocar em <em>Grouping Variable</em> a variável <strong>Paciente esquizofrenia</strong></p></li>
+<li><p>Em <em>Define Groups</em>, colocar <code>0</code> em <em>Group 1</em> e <code>1</code> em <em>Group 2</em>. Em seguida, clicar em <em>Continue</em></p></li>
+<li><p>Clicar em Ok</p></li>
+</ul>
+
+<p>Os passos são mostrados abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS_T.jpg" width="100%" height="auto"></p>
+
+<p>No <em>Output</em> aparecerão as seguintes tabelas:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS_T2.jpg" width="100%" height="auto"></p>
+
+<p>Note que a primeira coluna que aparece com círculos em vermelho é um teste para verificar a igualdade das variâncias e, no caso desse teste ser significativo (p&lt;0,05), devemos escolher o valor do p do teste t (segunda coluna com círculos em vermelho) de baixo, na mesma casela correspondente (linha <em>Equal variances not assumed</em>).</p>
+
+<p>Pela análise dos resultados, também não há diferenças significativas entre a presença de Esquizofrenia e as variáveis testadas.</p>
+
+<p><strong>Regressão Logística - Testando a associação entre ‘cada SNP’ e ‘Esquizofrenia’</strong></p>
+
+<p>Como não existem diferenças entre os grupos de pacientes e controles em relação ao sexo, idade, ancestralidade africana, ancestralidade europeia e ancestralidade nativo-americana, elas não serão utilizadas como covariáveis na regressão logística. Para verificar se os genótipos de cada SNP do gene <em>DGCR2</em> (rs1, rs2 e rs3) estão associados à doença calcular a razão de chances (<em>odds ratio</em> - OR), é necessário realizar os seguintes passos:</p>
+
+<ul>
+<li><p><strong><em>Analyze</em></strong> → <strong><em>Regression</em></strong> → <strong><em>Binary Logistic</em></strong></p></li>
+<li><p>Colocar em <em>Dependent</em> (variável dependente) <strong>Paciente esquizofrenia</strong></p></li>
+<li><p>Colocar em <em>Covariates</em> as variáveis <strong>Genótipo DGCR2rs1</strong>, <strong>Genótipo DGCR2rs2</strong> e <strong>Genótipo DGCR2rs3</strong>. Se fossemos corrigir o teste para alguma covariável, seria aqui que colocaríamos (no nosso caso, nenhuma testada anteriormente foi diferente entre os grupos). </p></li>
+<li><p>Como as variáveis independentes (SNPs) são categóricas, é preciso especificar essa informação. Em <em>Categorical</em>, selecionar as três variáveis <strong>Genótipo DGCR2rs1</strong>, <strong>Genótipo DGCR2rs2</strong> e <strong>Genótipo DGCR2rs3</strong> e colocá-las em <em>Categorical Covariates</em> → Clicar em <em>Continue</em></p></li>
+<li><p>Para ser mostrado o intervalo de confiança do OR, clicar em <em>Options</em>, selecionar a opção <em>CI for exp(B)</em> → Clicar em <em>Continue</em></p></li>
+</ul>
+
+<p>Os passos são mostrados abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/SPSS_RL1.jpg" width="100%" height="auto"></p>
+
+<p>A janela de <em>output</em> mostrará uma série de tabelas.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Tente identificar a tabela que mostra o resultado principal. Houve associação entre os genótipos e a presença de Esquizofrenia pela regressão logística, quando todos os SNPs foram colocados como variáveis independentes?</p>
+</blockquote>
+
+<p><strong>Regressão Logística - Testando a associação entre a ‘interação de SNPs’ e ‘Esquizofrenia’</strong></p>
+
+<p>Uma análise comum em estudos de associação é verificar se a interação entre 2 ou mais SNPs pode ser capaz de predizer o risco de um fenótipo de interesse.</p>
+
+<p>Para verificar se existe associação entre interação dos SNPs do gene <em>DGCR2</em> (rs1, rs2 e rs3) e a doença, é necessário realizar os seguintes passos:</p>
+
+<ul>
+<li><p><strong><em>Analyze</em></strong> → <strong><em>Regression</em></strong> → <strong><em>Binary Logistic</em></strong></p></li>
+<li><p>Colocar em <em>Dependent</em> a variável <strong>Paciente esquizofrenia</strong></p></li>
+<li><p>Colocar em <em>Covariates</em> as variáveis <strong>Genótipo DGCR2rs1</strong>, <strong>Genótipo DGCR2rs2</strong> e <strong>Genótipo DGCR2rs3</strong> clicando pela opção <code>&gt;a*b&gt;</code></p></li>
+<li><p>Em <em>Categorical</em>, selecionar as três variáveis <strong>Genótipo DGCR2rs1</strong>, <strong>Genótipo DGCR2rs2</strong> e <strong>Genótipo DGCR2rs3</strong> e colocá-las em <em>Categorical Covariates</em> → Clicar em <em>Continue</em> </p></li>
+<li><p>Em <em>Options</em>, selecionar a opção <em>CI for exp(B)</em> → Clicar em <em>Continue</em></p></li>
+<li><p>Clicar em Ok</p></li>
+</ul>
+
+<p>Na janela de <em>output</em>, note que na tabela do resultado da associação, cada termo da regressão é um termo de interação entre os três SNPs, algo como subgrupos das possíveis combinações entr os genótipos dos 3 polimorfismos.</p>
+
+<p>Perceba que no resultado da associação nenhum termo de interação foi significativo, o que indica que não houve associação da interação entre os três SNPs e Esquizofrenia.</p>
+
+<p><strong>Regressão Logística - Usando covariáveis</strong></p>
+
+<p>Como último exemplo de associação entre SNPs e um fenótipo qualitativo, vamos mostrar o uso de covariáveis.</p>
+
+<p>Como os grupos de casos e controles não diferirem em relação ao sexo, idade e nenhuma das três ancestralidades, não seria necessário incluir nenhuma dessaas variáveis como covariável. No entanto, para explicar como utilizar uma covariável na regressão logística, daremos um exemplo utilizando a <strong>Idade na primeira consulta</strong> como covariável da associação entre o Genótipo <em>DGCR2</em> rs1 e a Esquizofrenia. Para isso, vamos seguir os passos:</p>
+
+<ul>
+<li><p><strong><em>Analyze</em></strong> → <strong><em>Regression</em></strong> → <strong><em>Binary Logistic</em></strong></p></li>
+<li><p>Colocar em <em>Dependent</em> a variável <strong>Paciente esquizofrenia</strong></p></li>
+<li><p>Colocar em <em>Covariates</em> as variáveis <strong>Genótipo DGCR2rs1</strong> e <strong>idade na primeira consulta</strong></p></li>
+<li><p>Em <em>Categorical</em>, selecionar a variável <strong>Genótipo DGCR2rs1</strong> e colocá-la em <em>Categorical Covariates</em> (não é necessário fazer nada com a variável <strong>Idade na primeira consulta</strong>) → Clicar em <em>Continue</em></p></li>
+<li><p>Em <em>Options</em>, selecionar a opção <em>CI for exp(B)</em> → Clicar em Continue</p></li>
+<li><p>Clicar em Ok</p></li>
+</ul>
+
+<p>No <em>output</em>, perceba que mais um termo aparece, além dos correspondentes aos genótipos do SNP de interesse: a idade. Neste <em>output</em> podemos notar que a idade de fato não é um fator preditor da Esquizofrenia, tampouco os genótipos do SNP de interesse. No entanto, podemos assumir que os valores de OR calculado para os genótipos do SNP agora estão corrigidos para a idade, pois a mesma também estava presente no modelo de regressão.</p>
+
+<hr>
+
+<p><strong>O software <em>Haploview</em> - Desequilíbrio de Ligação e associação entre haplótipos de uma região genômica com fenótipo qualitativo.</strong></p>
+
+<p>Nos exemplos acima, vimos testes de associação entre um ou poucos SNPs individuais ou sua interação, com um fenótipo qualitativo. No entanto, quando os SNPs estão localizados próximos, em uma mesma região genômica, podemos verificar se estes estão em desequilíbrio de ligação e, consequentemente, checar se os haplótipos formados por estes SNPs estão associados com o fenótipo de interesse.</p>
+
+<p>O <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview"><strong><em>Haploview</em></strong></a> é capaz de verificar se dois ou mais SNPs estão em desequilíbrio de ligação calculando parâmetros como D’ e r2 (os dois mais usados), calculando a frequência dos haplótipos formados por dois ou mais SNPs e montando o padrão de blocos de haplótipos formados pelos SNPs estudados, como na figura abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/haploview1.jpg" width="50%" height="auto"></p>
+
+<p>Além disso, é capaz de realizar a análise de associação entre SNPs individualmente ou entre blocos de haplótipos escolhidos e uma variável categórica binária (do tipo sim ou não, por exemplo). Há outras funções que são mais utilizadas para estudos de genotipagem em larga escala como caracterização de Tag SNPs quando se tem grandes quantidades de SNPs em um mesmo cromossomo, entre outras. Porém, as mais comumente utilizadas são as citadas anteriormente.</p>
+
+<p><strong>Tutorial para executar o software Haploview</strong></p>
+
+<p>Para rodar o programa Haploview, são necessários dois arquivos essenciais:</p>
+
+<ol>
+<li><p>O primeiro, chamado de <code>.ped</code>, é o arquivo onde são colocadas as informações de cada indivíduo, como o sexo, família a qual pertence (no caso de estudos de famílias), status da afecção (se o indivíduo é caso ou controle) e genótipos.</p></li>
+<li><p>O outro arquivo, chamado de <code>.info</code> é o arquivo onde são colocados as informações sobre os polimorfismos ou marcadores que serão estudados.</p></li>
+</ol>
+
+<p>A seguir, ma explicação detalhada de como montar esses dois arquivos.</p>
+
+<p><strong>Construindo o arquivo <code>.info</code></strong></p>
+
+<p><strong>1.</strong> Abrir o Excel. <br>
+<strong>2.</strong> Só será usada a primeira coluna. É preciso ter em mãos o nome do polimorfismo (pode ser arbitrário) e a posição do polimorfismo no cromossomo. Esse dado é conseguido facilmente digitando o rs do SNP na seção SNP do site do NCBI ou no site do ‘Genome Browser’ da UCSC. <br>
+<strong>3.</strong> Preencher as linhas da primeira coluna de acordo com a ordem do polimorfismo no cromossomo, obedecendo a seguinte regra: digitar o nome desejado do polimorfismo, colocar um espaço e digitar a posição do polimorfismo no cromossomo. Exemplo:</p>
+
+<pre><code>SNP1 112837323
+</code></pre>
+
+<p>A imagem abaixo mostra um exemplo de arquivo <code>.info</code>:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/haploview2.jpg" width="100%" height="auto"></p>
+
+<blockquote>
+  <p><strong>Dica:</strong> Se você não souber a posição dos SNPs é possível colocar a posição relativa dos mesmos. Por exemplo, se o SNP1 está a 1000 pb do SNP2, posso colocar que a posição do SNP1 é <code>1</code> e do SNP2 é <code>1001</code>.</p>
+</blockquote>
+
+<p><strong>4.</strong> Salvar o arquivo. Atenção:  há uma maneira correta de salvar esse arquivo para ser detectado pelo software. Ir em “Salvar Como” e escolher em “Tipo” a opção “Texto (Separado por tabulações) (*.txt)”. Em seguida escrever o nome desejado no campo “Nome do Arquivo” e ao fim do nome, colocar “.info” (sem aspas). Por exemplo, o nome do arquivo salvo pode ser <code>banco_haploview.info</code>.</p>
+
+<p><strong>Construindo o arquivo <code>.ped</code></strong></p>
+
+<p><strong>1.</strong> Abrir o Excel.</p>
+
+<p><strong>2.</strong> Na planilha, cada coluna será uma variável diferente. Atenção: O software Haploview só é capaz de detectar a planilha se ela estiver EXATAMENTE como está descrito abaixo. Qualquer incongruência será detectada por um erro na hora de carregar a planilha para as análises.</p>
+
+<p><strong>3.</strong> Preencher as colunas de acordo com a seguinte regra:</p>
+
+<table>
+<thead>
+<tr>
+  <th>1ª Col</th>
+  <th>2ª Col</th>
+  <th>3ª Col</th>
+  <th>4ª Col</th>
+  <th>5ª Col</th>
+  <th>6ª Col</th>
+  <th>7ª Col</th>
+  <th>8ª Col</th>
+  <th>9ª Col</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Família</td>
+  <td>Identificação</td>
+  <td>Pai</td>
+  <td>Mãe</td>
+  <td>Sexo</td>
+  <td>Afecção</td>
+  <td>SNP1</td>
+  <td>SNP2</td>
+  <td>…</td>
+</tr>
+</tbody></table>
+
+
+<ul>
+<li><p><strong>1ª Coluna:</strong> Identificação da Família do Indivíduo. No caso de um estudo de populações, e não de família como teoricamente cada indivíduo pertence a uma família diferente, colocar 1 para o 1º indivíduo, 2 para o 2º, 3 para o 3º e assim por diante. No caso de estudo em populações, se os indivíduos são da mesma família, colocar o mesmo valor para os indivíduos da mesma família. A discriminação em Pai e Mãe será dada pelas colunas 3 e 4, explicadas adiante. Atenção: essa coluna só comporta números.</p></li>
+<li><p><strong>2ª Coluna:</strong> Identificação individual. Essa coluna comporta qualquer caractere (letras e números). Colocar aqui a identificação da amostra.</p></li>
+<li><p><strong>3ª e 4ª Colunas:</strong> Identificação Pai ou Mãe. Essas colunas servem para indicar se o indivíduo da linha correspondente é o Pai ou Mãe de alguma família representada no caso de estudos de famílias. Em estudos de população, o valor que deve ser colocado nessas colunas é <code>0</code>.</p></li>
+<li><p><strong>5ª Coluna:</strong> Sexo do indivíduo. Colocar <code>1</code> se homem e <code>2</code> se mulher.</p></li>
+<li><p><strong>6ª Coluna:</strong> Status de Afecção. Colocar <code>1</code> se não for afetado e <code>2</code> se for. Atenção: O Haploview comporta somente uma Afecção por arquivo. Assim, se houver mais de uma variável para associar com os haplótipos, devem ser criados bancos diferentes para cada variável.</p></li>
+<li><p><strong>7ª Coluna em diante:</strong> Genótipo do SNP. A 7ª Coluna representa o genótipo do primeiro SNP, a 8ª do segundo e assim por diante. Atenção: a maneira correta de se digitar o genótipo é <code>T A</code> (por exemplo), ou seja, digitar o primeiro alelo, colocar um espaço e digitar o segundo alelo. Essa regra deve ser obedecida para o funcionamento correto do software. Colocar somente as letras correspondentes aos quatro nucleotídeos (ACTG). Colocar ‘0 0’ quando não se tem o genótipo do indivíduo. Atenção: colocar os genótipos na mesma ordem em que foram colocados os nomes no arquivo ‘.info’. Essa instrução é essencial para o funcionamento correto do software.</p></li>
+</ul>
+
+<p>Assim, um exemplo de como ficará um banco está representado abaixo:</p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/haploview3.jpg" width="100%" height="auto"></p>
+
+<p>A coluna 1 (A) é a família (números sequenciais), a coluna 2 (B) é a identificação do indivíduo, a 3 (C) e 4 (D) se são Pai ou Mãe, a 5 (E) se é homem ou mulher, a 6 (F) se é afetado ou não e a 7 (G) em diante são os genótipos. Note que o indivíduo 111 em questão é da família de número 6, é uma mulher, não é afetado e só possui genotipado o marcador da coluna K, cujo seu genótipo para esse marcador é CC.</p>
+
+<p><strong>4.</strong> Salvar o arquivo. Atenção:  há uma maneira correta de se salvar esse arquivo para ser detectado pelo software como um arquivo a ser lido por ele. Ir em “Salvar Como”“, em “Tipo” a opção “Texto (Separado por tabulações) (*.txt)”. Em seguida escrever o nome desejado no campo “Nome do Arquivo” e ao fim do nome, colocar <code>.ped</code>. Por exemplo, o nome do arquivo salvo pode ser <code>banco_haploview.ped</code>.</p>
+
+<p><strong>Uso do software Haploview</strong></p>
+
+<p>Para facilitar o uso, é recomendado salvar os arquivos ‘.info’ e ‘.ped’ em uma mesma pasta e se possível com o mesmo nome (no entanto não é necessário). Se há mais de um banco com status de afecção diferentes, por exemplo, pode-se usar o mesmo arquivo ‘.info’ para os bancos ‘.ped’ correspondentes.</p>
+
+<p>Ao abrir o software, no campo <em>Data File</em>, clicar em <em>Browse</em> e procurar pelo arquivo <code>.ped</code>. No campo _ Locus Information File_, clicar em <em>Browse</em> e procurar pelo arquivo <code>.info</code>.</p>
+
+<blockquote>
+  <p><strong>Nota:</strong> se o nome dos arquivos for o mesmo e se estiverem na mesma pasta, quando abrir o arquivo <code>. ped</code>, o <code>.info</code> será carregado automaticamente.</p>
+</blockquote>
+
+<p>Em seguida, Marcar a opção <em>X Chromosome</em> no caso de algum marcador estar no cromossomo X. Marcar <em>Do association test</em> se deseja que o software faça a análise de associação entre os haplótipos e a variável colocada na coluna Status de Afecção. Selecionar <em>Case/Control data</em> no caso de estudos de populações ou <em>Family trio data</em> no caso de estudos de famílias. Para os estudos comumente realizados deixar as outras informações como estão, e clicar OK.</p>
+
+<p>A tela seguinte ao OK mostra os resultados obtidos. Na parte superior, é possível ver 5 abas: <strong>LD Plot</strong>, <strong>Haplotypes</strong>, <strong>Check Markers</strong>, <strong>Tagger</strong> e <strong>Association</strong>.</p>
+
+<p><strong>LD Plot</strong></p>
+
+<p>É o gráfico que representa os blocos de haplótipos. Cada número dentro de cada quadrado pequeno representa o parâmetro D’ do desequilíbrio de ligação entre os dois SNPs. Quanto mais próximo de 100 (e quanto mais vermelho o losango), maior é a ligação entre os dois polimorfismos. </p>
+
+<p><img src="https://raw.github.com/mazzottidr/cursobioinfoUNIFESP/gh-pages/files/images/haploview4.jpg" width="100%" height="auto"></p>
+
+<p>No exemplo acima, bo bloco selecionado (polimorfismos 3, 4, 5 e 6), temos que o valor de D’ entre os polimorfismos 3 e 4 é 88 (ou mais corretamente <code>0.88</code>). Já entre o 5 e o 6 é <code>0.34</code> e entre o 3 e o 6 é <code>0.22</code>. Os losangos que não tem números dentro e são vermelhos representam <code>D'=1.0</code>, ou seja, total desequilíbrio de ligação.</p>
+
+<p>Losangos azuis aparecem quando há discordância entre dois parâmetros de desequilíbrio de ligação, o D’ e o r2. Quando o D’ é muito alto e o r2 é muito baixo, o quadrado fica azul, mas pode-se considerar que estão ligados, uma vez que o r2 é muito criterioso para considerar ligação entre os polimorfismos.</p>
+
+<p>Ao clicar com o botão direito do mouse em algum desses losangos, algumas informações adicionais são fornecidas como valor de outros parâmetros de desequilíbrio de ligação e a frequência dos haplótipos formados entre os dois polimorfismos selecionados. A frequência pode ser visualizada melhor na aba que será explicada a seguir.</p>
+
+<p>Ainda no <strong>LD Plot</strong>, é possível selecionar os blocos de haplótipos que se quer estudar, tanto para saber a frequência dos haplótipos formados por esse bloco quanto para realizar associação entre estes haplótipos e o status de afecção presente no banco.</p>
+
+<p>Para selecionar um bloco específico, clique no número representado pelo polimorfismo  arraste até o outro polimorfismo desejado. Um contorno preto ira surgir envolvendo todos os losangos na qual esses polimorfismos estão sendo representados (como na figura acima – <em>Block 1 (25kb)</em>). É possível selecionar mais de um bloco. Basta manter a tecla <code>CTRL</code> pressionada enquanto seleciona um segundo bloco. O bloco selecionado é o que irá ter a frequência de seus haplótipos estimada na aba Haplotypes e é o que terá seus haplótipos escolhidos para testar a associação com o status de afecção na aba <em>Association</em>, explicados abaixo.</p>
+
+<p><strong>Haplotypes</strong></p>
+
+<p>Nessa aba aparece a frequência dos possíveis haplótipos formados pelos polimorfismos selecionados na aba anterior, <em>LD Plot</em>. É possível delimitar um limiar de detecção de haplótipos raros. O padrão é analisar somente haplótipos que aparecem com frequência maior que 1% na amostra. É necessário que se tenha escolhido um bloco na aba <em>LD Plot</em> para os resultados na aba <em>Haplotypes</em> aparecerem.</p>
+
+<p><strong>Check markers</strong></p>
+
+<p>Como o nome já diz, é a aba onde é possível checar todos os marcadores. É onde aparece o nome, posição no cromossomo, informações sobre o Equilíbrio de Hardy-Weinberg (Nota: só é possível estimar frequência de haplótipos quando os polimorfismos que compõe esse haplótipo seguem a distribuição esperada de acordo com o Equilíbrio de Hardy-Weinberg), frequência do alelo mais raro, entre outras informações. Em relação ao Equilíbrio de Hardy-Weinberg, ele já exclui automaticamente polimorfismos que apresentam valor de p&lt;0,001 para o teste realizado para avaliar se a população está ou não em Equilíbrio. No entanto esse limiar pode ser modificado na própria janela (É necessário clicar em <em>Rescore Markers</em> para as alterações atualizarem).</p>
+
+<p><strong>Tagger</strong></p>
+
+<p>Essa aba é útil quando se tem muitos SNPs genotipados e se quer saber quais podem servir de <em>TagSNPs</em>, ou seja, SNPs que representem outros SNPs numa região com alto desequilíbrio de ligação (ou seja, em um haplótipo). </p>
+
+<p><strong>Association</strong></p>
+
+<p>Nessa aba são representados os resultados do teste de associação tanto dos SNPs individuais quanto dos haplótipos formados pelos blocos selecionados na aba <em>LD Plot</em> com o status de afecção. Na sub-aba <em>Single Marker</em>, são mostrados os resultados da associação individual, mostrando qual alelo foi associado com a afecção, o resultado do qui-quadrado e o valor de p. Para facilitar a interpretação, recomenda-se selecionar a opção <em>Show CC frequencies</em>, localizada na parte inferior dessa janela. Dessa forma, a frequência do alelo representado é mostrada entre casos e controles.</p>
+
+<p>Na sub-aba <em>Haplotypes</em>, é possível escolher o bloco selecionado na aba <em>LD Plot</em> e verificar a associação de seus haplótipos com o status de afecção. Semelhantemente à associação individual, é representado o valor do qui-quadrado e do p. Clicar em <em>Show CC frequencies</em> também facilita a interpretação.</p>
+
+<p>Há outra sub-aba, <em>Permutation Tests</em>. Nessa aba é possível fazer uma correção estatística por permutações tanto para as análises individuais quanto para a análise de haplótipos. É necessário colocar um número de permutações, que pode ser 10000. Ao clicar em <em>Do Permutations</em>, são representados valores de p corrigidos. Essa seção é útil no caso de análise de múltiplos testes.</p>
+
+<p><strong>Exemplo de uma análise de desequilíbrio de ligação e de um teste de associação de haplótipos</strong></p>
+
+<p>Vamos fazer uma análise de desequilíbrio de ligação e um teste de associação entre haplótipos e Esquizofrenia, usando o mesmo banco de dados que usamos para as análises individuais. Siga os passos abaixo:</p>
+
+<ul>
+<li><p>Com base no tutorial acima, construa os arquivos <code>.ped</code> e <code>.info</code> utilizando as informações presentes no banco do SPSS <code>Banco aula de associacao.sav</code></p></li>
+<li><p>Lembre-se de procurar no banco de SNPs do NCBI ou Genome Browser da UCSC a posição (coordenada genômica) de cada um dos seguintes SNPs (rs2073776, rs2072123 e rs807759) para inserir no arquivo <code>.info</code>.</p></li>
+<li><p>Depois de construir os arquivos <code>.info</code> e <code>.ped</code>, abra o Haploview e no campo <em>Data File</em>, clicar em <em>Browse</em> e procurar o arquivo <code>.ped</code>. No campo <em>Locus Information File</em>, clicar em <em>Browse</em>  ao lado e procurar pelo arquivo <code>.info</code>.</p></li>
+<li><p>Para testar a associação entre os haplótipos e a doença (no caso Esquizofrenia), marque <em>Do association test</em>.</p></li>
+<li><p>Como esse é um estudo populacional caso-controle, selecione <em>Case/Control data</em>.</p></li>
+<li><p>A tela seguinte ao OK mostra os resultados obtidos.</p></li>
+<li><p>Entre na aba ‘LD Plot’ para verificar se os SNPs testados estão em desequilíbrio de ligação. Lembre-se que você só pode testar associação com um bloco de SNPs se os mesmos estiverem em desequilíbrio de ligação. Selecione o bloco que queremos testar a associação.</p></li>
+<li><p>Entre na aba <em>Haplotypes</em> para verificar a frequência dos haplótipos do bloco selecionado</p></li>
+<li><p>Para verificar se esses SNPs estão em equilíbrio de Hardy-Weinberg, entre na aba <em>Check Markers</em></p></li>
+<li><p>Na aba <em>Association</em>, verificaremos os resultados do teste de associação, tanto dos SNPs individuais quanto dos haplótipos.</p></li>
+<li><p>Na sub-aba <em>Single Marker</em> são mostrados os resultados da associação individual, mostrando qual alelo foi associado com a afecção, o resultado do qui-quadrado e o valor de p. Selecione a opção <em>Show CC frequencies</em>, para verificarmos a frequência desse alelo entre casos e controles.</p></li>
+<li><p>Na sub-aba <em>Haplotypes</em> verificaremos  a associação dos haplótipos com a doença (valor do qui-quadrado e do p). Também vamos clicar em <em>Show CC frequencies</em>.</p></li>
+</ul>
+
+<blockquote>
+  <p>Há alguma associação significativa entre os SNPs individuais e a Esquizofrenia? E em relação aos haplótipos formados por estes três SNPs e a doença?</p>
+</blockquote>
+
+<hr>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/4.0/80x15.png"></a><br><span>Curso Bioinformática UNIFESP</span> by <span>Diego Mazzotti</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>

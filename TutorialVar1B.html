@@ -1,0 +1,445 @@
+<p> <br>
+ <br>
+Tutorial - Estudos de associação genética e GWAS <br>
+</p>
+
+
+
+<p></p>
+
+
+
+<h2 id="tutorial-var1b">Tutorial Var1B</h2>
+
+<h3 id="estudos-de-associação-genética-em-larga-escala-gwas">Estudos de associação genética em larga escala (GWAS)</h3>
+
+<hr>
+
+<h4 id="prática-teste-de-associação-entre-muitos-snps-e-uma-doença-genome-wide-association-studies"><strong>Prática</strong> - Teste de associação entre muitos SNPs e uma doença – <em>Genome Wide Association Studies</em></h4>
+
+<p>Neste tutorial, será abordado uma possível estratégia de análise de estudo do tipo <strong><em>GWAS</em></strong> (<em>Genome Wide Association Studies</em>), também chamados de estudos de associação genética em larga escala. Nestes estudos, são realizadas genotipagens de milhares de SNPs (<em>single nucleotide polymorphisms</em>) em um grande número de indivíduos.</p>
+
+<p>Dependendo da plataforma utilizada (Illumina, Affymetrix), até 5 milhões de SNPs podem ser genotipados simultaneamente para cada amostra, permitindo uma cobertura do genoma completo. Assim, ao invés de serem realizadas análises de associação entre um ou poucos SNPs e um fenótipo, 5 milhões de SNPs podem ser testados quanto à associação com este fenótipo simultaneamente.</p>
+
+<p>A principal vantagem deste tipo de estudo é permitir a associação simultânea de todos estes SNPs com o fenótipo e ter uma estimativa genômica global de que regiões podem ou não estar assocadas. Além disso, é possível ter uma estimativa muito precisa da ancestralidade dos indivíduos e identificar subestruturas populacionais que podem interferir na associação. No entanto, além de ser uma metodologia cara (atualmente, ~US$ 300,00 por amostra - lembrando que um número expressivo de amostras deve ser incluído no estudo, pelo menos 1000), ela demanda um cuidado maior em relação aos controles de qualidade e correções estatísticas (principalmente correções para múltiplos testes).</p>
+
+<p>Neste tutorial iremos aprender os comandos básicos de um <em>pipeline</em> de análise de <em>GWAS</em>, contendo as principais etapas de controle de qualidade, cálculo das estimativas de ancestralidade (subestrutura populacional) e testes de associação bruta e ajustada para ancestralidade.</p>
+
+<p>Para as análises a seguir será utilizado o software <a href="http://pngu.mgh.harvard.edu/~purcell/plink/">PLINK</a>, uma ferramenta poderosa e amplamente utilizada para estes tipos de estudo. Iremos utilizar somente uma pequena amostra de suas funcionalidades, mas será possível ter uma ideia de quão importante e flexível este software é. Para plotar alguns gráficos, também usaremos o software R.</p>
+
+<p><strong>Instalando o PLINK</strong></p>
+
+<p>Para instalar o <em>software</em> PLINK, primeiro devemos entrar no terminal. Estando em seu <code>home</code>, vá ao diretório <code>cursobioinfo</code> e crie um diretório chamado <code>Var1</code>. Em seguida, será necessário baixar o PLINK.  </p>
+
+<p>A versão adequada para computadores 64-bit é a Linux (x86_64). Após o término do <em>download</em>, será necessário descompactar a pasta baixada usando o comando <code>unzip</code>. Os comandos abaixo resumem as etapas descritas até aqui:</p>
+
+<pre><code>cd cursobioinfo
+mkdir Var1
+wget http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1.07-x86_64.zip
+unzip plink-1.07-x86_64.zip
+</code></pre>
+
+<p>Após o <em>download</em> e descompactação, acesse a pasta criada (<code>cd plink-1.07-x86_64</code>) e você verá todos os arquivos baixados. Um deles possui o nome <code>plink</code>. Este é o arquivo executável que permitira rodar todas as análises dependentes deste <em>software</em>.  </p>
+
+<blockquote>
+  <p><strong>Dica</strong>: Caso tenha acesso ou a senha do superusuário, você pode copiar o executável do PLINK para a sua pasta <code>/usr/bin/</code> por meio do comando <code>cp plink /usr/bin/</code>. Isso permitirá que execute o PLINK de qualquer diretório, sem precisar colocar o caminho completo ao executável do PLINK. Caso contrário, copie <code>plink</code> para o diretório que contém os arquivos que quer trabalhar, ou copie os arquivos que quer trabalhar dentro do diretóirio onde <code>plink</code> está presente.</p>
+</blockquote>
+
+<p>Para checar a instalação, simplesmente rode o seguinte comando (estando dentro de um diretório em que <code>plink</code> está também presente):</p>
+
+<pre><code>./plink
+</code></pre>
+
+<p>Uma série de mensagens iniciando com o que está representado abaixo confirma que a instalação foi efetuada com êxito:</p>
+
+<pre><code>@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation &amp; bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+</code></pre>
+
+<p><strong>Instalando o R na linha de comando do Ubuntu</strong></p>
+
+<p>Alguns dos gráficos que iremos produzir dependerá da funcionalidade do R. É possível acessar o R diretamente da linha de comando do Ubuntu, desde que ele esteja instalado no sistema operacional. Para instalar o R, use o comando abaixo:</p>
+
+<pre><code>sudo apt-get install r-base-core
+</code></pre>
+
+<p>Experimente acessá-lo diretamente do terminal usando o comando:</p>
+
+<pre><code>sudo R
+</code></pre>
+
+<p>Se a janela do terminal do R aparecer corretamente, o software foi instalado corretamente e estamos prontos para iniciar as análises.</p>
+
+<p><strong>Baixando os arquivos necesários para a análise</strong></p>
+
+<p>O PLINK usa, de maneira geral, dois tipos de formatos. O primeiro tipo exige que o usuário tenha dois arquivos: <code>.ped</code> e <code>.map</code>. A descrição destes arquivos pode ser encontrada <a href="http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped">aqui</a>. Esté é o formato “não-binário”, melhor utilizado para arquivos pequenos (poucos SNPs). <br>
+O segundo tipo de formato é o chamado de formato binário, e está relacionado a um processamento do arquivo <code>.ped</code> de forma a torná-lo compacto e acessível de forma mais rápida pelos algoritmos do PLINK. Este formato exige três arquivos: .<code>bed</code> (<em>binary ped</em>), <code>.bim</code> e .<code>fam</code>. Um descrição mais detalahada deste formato de arquivo pode ser encontrada <a href="http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#bed">aqui</a>.</p>
+
+<p>Use os comandos abaixo para fazer o <em>download</em> dos arquivos necessários para a análise deste tutorial, que já estão no formato <em>binary_ped</em>:</p>
+
+<pre><code>wget https://www.dropbox.com/s/eilcm1b9ha4rivt/gwas.zip
+unzip gwas.zip
+ls
+</code></pre>
+
+<p>Deverão aparecer os arquivos <code>gwas.bed</code>, <code>gwas.bim</code> e <code>gwas.fam</code>, necessários para a análise. Use <code>less</code> em cada um deles para abrí-los e visualizar seu conteúdo. Note que o arquivo <code>.bed</code>, por ser binário, não apresentará um conteúdo legível.</p>
+
+<p><strong>Análise de associação genética em larga escala usando o PLINK</strong></p>
+
+<p>A princípio, tendo o <em>software</em> instalado e os arquivos prontos para a análise, é possível começar a explorar algumas das funcionalidades do PLINK. Em resumo as principais etapas da análise são descritas abaixo:</p>
+
+<ul>
+<li><p><strong>Análise exploratória:</strong> Envolve a descrição de índices de qualidade como a frequência dos alelos, a porcentagem de indivíduos genotipados, a porcentagem de SNPs genotipados e os resultados da análise do <a href="http://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle">Equilíbrio de Hardy-Weinberg</a>;</p></li>
+<li><p><strong>Controle de qualidade:</strong> Nesta etapa, são aplicados filtros para remover indivíduos ou SNPs que não antendem um determinado critério, normalmente estabelecido após a análise exploratória;</p></li>
+<li><p><strong>Estimativa de parâmetros de <em>Identity by Descent (IBD):</em></strong> Esta análise calcula um parâmetro que equivale à proporção de marcadores compartilhados entre dois indivíduos na amostra. É importante para detectar algum grau de parentesco que não foi detectado anteriormente (<em>cryptic relatedness</em>) ou amostras duplicadas;</p></li>
+<li><p><strong>Escalonamento multidimensional:</strong> Análise realizada para calcular uma estimativa de subestrutura populacional. Essencial em populações miscigenadas como a brasileira;</p></li>
+<li><p><strong>Testes de associação:</strong> A análise de associação entre os SNPs e a doença de interesse é realizada nesta etapa. Verifica-se inicialmente a associação bruta e, em seguida, corrigida para potenciais covariáveis como a estimativa de subestrutura populacional;</p></li>
+<li><p><strong>Visualização dos resultados em larga escala:</strong> Envolve a criação de gráficos como o <em>QQ-Plot</em> e o <em>Manhattan Plot</em>, que auxiliam a interpretação dos resultados;</p></li>
+<li><p><strong>Análise de regiões específicas:</strong> Após a identificação de potenciais regiões associadas, é possível realizar análises mais sofisticadas como análise de haplótipos ou imputação, também conhecida como <em>fine mapping</em>;</p></li>
+</ul>
+
+<p>Todas estas análises podem ser realizadas pelo PLINK, mas os gráficos gerados são realizados pelo R. Abaixo uma descrição mais detalhada e os comandos necessários para cada uma das etapas.</p>
+
+<hr>
+
+<p><strong>1. Análise exploratória</strong></p>
+
+<p>Existem diversos parâmetros relacionados à análise exploratória. Os mais importantes são <strong>frequência do alelo raro</strong> (<em>minor allele frequency - MAF</em>), <strong>taxa de perda de indivíduos</strong> (<em>individual missingness</em>), <strong>taxa de perda de genótipos</strong> (<em>locus missingness</em>) e <strong>equilíbrio de Hardy-Weinberg</strong>. Os comandos abaixo mostram como gerar tabelas que contém estas informações, que servirão para avaliar quais filtros devem ser usados na etapa do controle de qualidade.</p>
+
+<p>Para gerar uma tabela com a frequêcia do alelo raro de todos os SNPs use o comando:</p>
+
+<pre><code>./plink --bfile gwas --freq --out freqstats
+</code></pre>
+
+<p>Note a estrutura de um comando do PLINK. Ele sempre inicia com o comando <code>plink</code> seguido de <code>--bfile</code> (no caso de arquivos binários - <code>.bed</code>, <code>.bim</code> e .<code>fam</code>) ou <code>--file</code> (no caso de arquivos não binários - <code>.ped</code> e <code>.map</code>) e o prefixo do nome do arquivo de dados, sem a extensão. Os outros argumentos do comando são referentes à função do PLINK que deseja usar. Nesse caso estamos solicitando a frequência dos alelos de todos os SNPs - essa função é chamada pelo argumento <code>--freq</code>. Por fim, o argumento <code>--out</code> seguido de um nome de arquivo indicam ao PLINK com que nome o prefixo arquivo será salvo.</p>
+
+<p>Note que a extensão dos arquivos de saída é dependente da função que foi chamada. Neste caso, foram gerados 2 arquivos: <code>freqstats.frq</code>, que contém os resultados do comando (a frequência dos alelos) e <code>freqstats.log</code>, que contém o “log” (descrição) da análise que foi realizada (mesmo conteúdo que é mostrado na tela enquanto o comando está sendo exceutado).</p>
+
+<p>Em seguida vamos criar um arquivo que contém o resultado da análise que mostra a porcentagem de marcadores não genotipados por indivíduo (<em>imiss</em>), e a porcentagem de indivíduos não genotipados por genótipo (<em>lmiss</em>):</p>
+
+<pre><code>./plink --bfile gwas --missing --out miss_stats
+</code></pre>
+
+<p>Por fim, criaremos o arquivo que contém o resultado da análise do Equilíbrio de Hardy-Weinberg:</p>
+
+<pre><code>./plink --bfile gwas --hardy --out hardy_stats
+</code></pre>
+
+<p>Após a realização desses comandos, foi possivel criar quatro arquivos importantes, que mostram estatísticas descritivas de cada polimorfismo genotipado e de cada individuo estudado: <code>freqstats.frq</code>, <code>miss_stats.imiss</code>, <code>miss_stats.lmiss</code> e <code>hardy_stats.hwe</code>. Experimente abrir cada um deles usando o comando <code>less</code> para uma breve inspeção do seu conteúdo.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Como saber quantos polimorfismos foram genotipados por essa plataforma? E quantos indivíduos foram genotipados?</p>
+</blockquote>
+
+<p>De fato, a inspeção visual de cada amostra e cada polimorfismo não é recomendada, devido a grande quantidade de dados gerados por um experimento desse tipo. No entanto, seria interessante saber se no arquivo em que estamos trabalhando há algum indicador de baixa qualidade da reação:</p>
+
+<ul>
+<li>Há algum individuo que apresentou uma baixa taxa de genotipagem, ou <em>Genotyping Call Rate</em> (indicando por exemplo que a amostra apresentou baixa qualidade)?</li>
+<li>Há algum polimorfismo que foi genotipado com sucesso apenas em poucas amostras?</li>
+<li>Há algum polimorfismo muito raro na amostra estudada, que não permite a comparação adequada entre grupos (baixo poder estatístico)?</li>
+<li>Há algum polimorfismo que não está em Equilíbrio de Hardy-Weinberg na amostra estudada?</li>
+</ul>
+
+<p>Essa tarefa seria facilmente realizada usando um <em>software</em> de planilhas como o Microsoft Excel para ordenar/classificar/filtrar as colunas correspondentes a essas frequências. No entanto, como os arquivos que estamos trabalhando são grandes e apresentam muitas linhas, isso acaba sendo inviável. Para contornar isso, podemos usar algumas ferramentas da linha de comando do Linux.</p>
+
+<p>Abaixo alguns exemplos de alguns comandos úteis para essa tarefa</p>
+
+<ul>
+<li><p><strong>Ordenar o arquivo <code>freqstats.frq</code> de acordo com a frequência dos polimorfismos, do menor para o maior, e mostrar o arquivo resultante em partes:</strong></p>
+
+<pre><code>sort -k 5 freqstats.frq | less
+</code></pre>
+
+<p>Note que comando <code>sort</code>pede um argumento <code>-k</code> que é correspondente ao número da coluna do arquivo que deseja ordenar.</p></li>
+<li><p><strong>Filtrar todas as linhas que apresentam individuos com frequência de dados faltantes (F_MISS) maiores que 1% (0,01) e mostrar na tela:</strong></p>
+
+<pre><code>awk '{if ($6 &gt; 0.01) print $0}' miss_stats.imiss
+</code></pre>
+
+<p>O comando acima já começa a ficar um pouco <em>assustador</em>. O comando <code>awk</code> é muito usado para filtrar arquivos de texto com base em algumas condições. O que o comando vai fazer está colocado entre  <code>'{ }'</code> (aspas simples seguida de um colchete), e o nome do arquivo em que o comando deve fazer a instrução vem em seguida. Como no nosso caso temos uma condição para testar (se frequência de dados faltantes de um indivíduo é maior que 1%), colocamos essa condição entre parênteses. Como a coluna que representa a frequência de dados faltantes é a sexta coluna do arquivo <code>miss_stats.imiss</code>, a condição fica <code>if ($6 &gt; 0.01)</code>. Em seguida queremos mostrar na tela todas as colunas de todas as linhas que atendem à essa condição. Por esse motivo, temos o argumento <code>print $0</code>, que significa “todas as colunas”.</p>
+
+<p>Assim o comando acima mostra todas as linhas que apresentam frequência de dados faltantes (F_MISS - coluna 6 do arquivo <code>miss_stats.imiss</code>) maiores que 1%.</p></li>
+</ul>
+
+<p>Numa análise do “mundo real” o ideal seria plotar esses valores de frequência representativos de controle de qualidade em graficos e assim decidir, com base na distribuição desses dados, quantas amostras e polimorfismos devem ser removidos da análise.</p>
+
+<p>Após o estabelecimento dos cut-offs dos parâmetros de qualidade, podemos seguir para a proxima etapa.</p>
+
+<hr>
+
+<p><strong>2. Controle de qualidade</strong></p>
+
+<p>A análise de controle de qualidade inicia após o estabelecimento dos cut-offs de <strong>frequência do alelo raro</strong> (<em>minor allele frequency</em> - MAF), <strong>taxa de perda de indivíduos</strong> (<em>individual missingness</em>), <strong>taxa de perda de genótipos</strong> (<em>locus missingness</em>) e <strong>equilíbrio de Hardy-Weinberg</strong>. Em nossa análise iremos usar valores padrão que são bem aceitos na literatura para filtrar adequadamente uma amostra de indivíduos e polimorfismos e atender aos criterios mínimos de qualidade para um experimento de GWAS.</p>
+
+<p>Nós queremos um arquivo de alta qualidade de acordo com os seguintes parâmetros:</p>
+
+<ul>
+<li><strong>Frequência do alelo raro</strong> maior que 5% (ou seja excluir alelos raros na população estudada);</li>
+<li><strong>Taxa de perda de indivíduos</strong> menor que 1% (ou seja, remover indivíduos que apresentam falha da genotipagem em mais de 1% dos polimorfismos);</li>
+<li><strong>Taxa de perda de genótipos</strong> menor que 1% (ou seja, remover polimorfismos que não foram genotipados em pelo menos 1% das amostras);</li>
+<li>Resultado do <strong>Equilíbrio de Hardy-Weinberg</strong> com p&gt;0,001 (ou seja, excluir polimorfismos que apresentaram desvios no Equilíbrio de Hardy-Weinberg neste nível de significância.</li>
+</ul>
+
+<p>Para isso, podemos usar um comando do PLINK para criar um novo conjunto de arquivos (<code>.bed</code>, <code>.bim</code> e <code>.fam</code>) somente com individuos e polimorfismos que passaram no controle de qualidade:</p>
+
+<pre><code>./plink --bfile gwas --maf 0.05 --mind 0.01 --geno 0.01 --hwe 0.001 --make-bed --out gwasQCpass
+</code></pre>
+
+<p>Este comando aplica os filtros <code>--maf</code>,  <code>--mind</code>, <code>--geno</code> e <code>--hwe</code>, com os respectivos valores de cut-off estabelecidos e cria outro conjunto de arquivos (por meio do argumento <code>--make-bed</code>) com o prefixo <code>gwasQCpass</code>, contendo apenas os individuos e genótipos que atenderam aos critérios de controle de qualidade.</p>
+
+<p>A partir de agora, todas as etapas serão realizadas com os arquivos <code>gwasQCpass.bed</code>, <code>gwasQCpass.bim</code> e <code>gwasQCpass.fam</code>.</p>
+
+<hr>
+
+<p><strong>3. Estimativa de parâmetros de <em>Identity by Descent</em> (IBD):</strong></p>
+
+<p>Esta talvez seja uma das etapas mais importantes, pois é capaz de estimar, com base nos genótipos, um parâmetro chamado PIHAT, que corresponde ao grau de compartilhamento genético entre duas pessoas. Com a genotipagem de muitos polimorfismos espalhados pelo genoma, essa estimativa é muito precisa. Em uma análise real, devemos rodar essa análise com todos os polimorfismos presentes na arquivo resultante do controle de qualidade. Porém, por ser uma tarefa computacionalmente onerosa, vamos fazer a análise com uma subamostra aleatória de 20.000 polimorfismos, que também renderá bons resultados.</p>
+
+<p>Primeiro, vamos criar um arquivo contendo 20.000 polimorfismos aleatórios. Podemos usar ferramentas da linha de comando do Linux para concluir essa tarefa. Vamos lembrar que o arquivo <code>gwasQCpass.bim</code> apresenta na segunda coluna os identificadores dos polimorfismos. Vamos inicialmente criar um arquivo de texto chamado <code>snps_todos.txt</code> contendo uma lista com todos os polimorfismos que passaram no controle de qualidade, usando o comando do Linux chamdo <code>cut</code>:</p>
+
+<pre><code>cut -f 2 gwasQCpass.bim &gt; snps_todos.txt
+</code></pre>
+
+<p>Abra o arquivo <code>snps_todos.txt</code> com o <code>less</code> veja se o comando usado fez o esperado. O próximo passo será pegar uma amostra aleatória de 20.000 polimorfismos. Para fazer isso, usamos o comando <code>sort</code> com o argumento <code>-R</code>, que irá ordenar o arquivo aleatoriamente. Em seguida combinamos com o comando <code>head</code> para pegar as primeiras 20.000 linhas e salvar no arquivo <code>random20000snps.txt</code>:</p>
+
+<pre><code>sort -R  snps_todos.txt | head -n 20000 &gt; random20000snps.txt
+</code></pre>
+
+<p>Conte o número de linhas do arquivo gerado para checar se o arquivo resultante está correto. Agora, toda vez que precisarmos executar um comando no PLINK com estes polimorfismos, ao invés de todos do <em>array</em>, podemos usar o <em>flag</em> <code>--extract random20000snps.txt</code>.</p>
+
+<p>Agora, vamos realizar o comando <code>--genome</code> do PLINK para estimar o parâmetro PIHAT, usando apenas os 20.000 polimorfismos aleatórios que criamos anteriormente:</p>
+
+<pre><code>./plink --bfile gwasQCpass --genome --extract random20000snps.txt --out IBD_20000
+</code></pre>
+
+<p>Note que passamos a usar o prefixo <code>gwasQCpass</code> após <code>--bfile</code> para nos referir aos arquivos contendo apenas as amostras/polimorfismos que passaram no controle de qualidade. Note também que usamos o <em>flag</em> <code>--extract random20000snps.txt</code> para usar apenas 20.000 os polimorfismos aleatórios.</p>
+
+<p>O arquivo com extensão <code>.genome</code> resultante desta análise é o mais importante e apresenta as estimativas de PIHAT para cada par de amostras. Experimente abrir o arquivo usando o comando <code>less</code> para ver sua estrutura. Cada linha é a comparação de um par de amostras e a coluna chamada “PI_HAT” apresenta a estimativa que estamos procurando. O parâmetro PIHAT varia de 0 (sem similaridade genética) a 1 (100% de similaridade genética). Casos com PIHAT=1 correspondem a irmãos gêmeos monozigóticos ou amostra em duplicata. PIHAT=0,5 corresponde a irmãos e pares pai/mãe e filho, por exemplo.</p>
+
+<p>O parâmetro PIHAT é um ótimo indicador de subestrutura populacional e auxilia a remoção de potenciais casos de grau de parentesco não identificado. A presença de grau de parentesco próximo é um potencial viés que deve ser levado em consideração em estudos de associação genética em larga escala populacionais, portanto, deve ser evitado.</p>
+
+<p>Para identificar potenciais pares de amostras com grau de parentesco, seria interessante ordenar em ordem decrescente a coluna correspondente ao PIHAT (coluna 10) no arquivo <code>IBD_20000.genome</code>. Como o arquivo é muito grande, precisamos usar ferramentas do Linux para realizar essa tarefa.</p>
+
+<pre><code>sort -rk 10 IBD_20000.genome | less
+</code></pre>
+
+<p>Note o argumento <code>-rk</code> do comando <code>sort</code>. A letra <code>-r</code> corresponde ao fato da ordenação ser em ordem decrescente (<em>reverse sort</em>) e a letra <code>-k</code> seguida do número 10 representa a coluna que deve ser usada para a ordenação</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Ao inspecionar o arquivo, o que podemos observar? Existem amostras que apresentam 100% de similaridade genética? Existem amostras que compartilham 50% do material genético?</p>
+</blockquote>
+
+<p>Em uma análise no mundo real, temos que remover um elemento de cada par que apresenta valor de PIHAT maior que 0,3. Para isso, assim como fizemos quando selecionamos os 20.000 polimorfismos usando o <em>flag</em> <code>--extract</code>, podemos usar o <em>flag</em> <code>--remove</code> seguido de um arquivo com uma lista de indivíduos a serem removidos (um em cada linha). Neste tutorial, não vamos entrar nesse ponto, mas recomendamos como uma uma etapa fundamental da análise.</p>
+
+<hr>
+
+<p><strong>4. Escalonamento multidimensional (<em>multidimensional scaling</em>):</strong></p>
+
+<p>O escalonamento multidimensional é uma ferramenta de redução de dimensionalidade dos dados, capaz de “resumir” em poucas variáveis um conjunto de dados com muitas variáveis, como o arquivo que estamos trabalhando. Assim como outras metodologias como a análise de componentes principais (<em>principal component analysis</em> ou PCA), é um método robusto capaz de identificar padrões em dados que apresentam muitas dimensões. Em estudos de associação genética em larga escala, o escalonamento multidimensional é capaz de identificar subestrutura populacional, que está diretamente relacionado com a miscigenação e ancestralidade da população brasileira.</p>
+
+<p>O PLINK apresenta um comando que usa o arquivo de extensão <code>.genome</code> para estimar as dimensões dos dados de genotipagem do array. Ao usá-lo nos dados que estamos analisando, temos o seguinte comando:</p>
+
+<pre><code>./plink --bfile gwasQCpass --read-genome IBD_20000.genome --cluster --mds-plot 4 --out MDS
+</code></pre>
+
+<p>Este comando lê o arquivo <code>IBD_20000.genome</code> e calcula os valores para cada dimensão da amostra. O número de dimensões testadas é fornecido ao software pelo argumento <code>--mds-plot</code>. Nesse exemplo, solicitamos 4 dimensões.</p>
+
+<p>O arquivo com extensão <code>.mds</code> apresenta as quatro dimensões que foram calculadas com base nos 20.000 genótipos que usamos na análise. Inspecione este arquivo com <code>less</code> para entender sua estrutura.</p>
+
+<p>Para facilitar a interpretação dos dados deste arquivo podemos plotá-los usando o R. Para isso, temos que usar as ferramentas aprendidas no Tutorial do R. Caso não tenha o RStudio instalado na sua versão do Linux, podemos usar o R nativo, que pode ser acessado pela própria linha de comando do Linux. Digite o seguinte comando para entrar no ambiente R:</p>
+
+<pre><code>sudo R
+</code></pre>
+
+<p>Coloque a senha de superusuário para poder instalar livremente algum possível pacote necessário para esta análise.</p>
+
+<p>A principal vantagem de acessar o R diretamente da linha de comando do Linux é que o <em>Working Directory</em> é automaticamente o diretório que já estava no Linux. Assim, podemos diretamente importar o arquivo <code>MDS.mds</code>em um objeto do R que podemos chamar de <code>dados_MDS</code>. No terminal do R, importe o arquivo de interesse com <code>read.table()</code> e mostre as primeiras linhas usando a função <code>head()</code>:</p>
+
+<pre><code>dados_MDS &lt;- read.table("MDS.mds", header=T)
+head(dados_MDS)
+</code></pre>
+
+<p>É possível notar as colunas “C1”, “C2”, “C3” e “C4”, que representam as 4 dimensões calculadas pelo escalonamento multidimensional. Vamos inicialmente plotar a dimensão C1 com a dimensão C2 para explorar os dados:</p>
+
+<pre><code>plot(dados_MDS$C1,dados_MDS$C2)
+</code></pre>
+
+<blockquote>
+  <p><strong>Analise o gráfico resultante e tente intepretá-lo.</strong> Lembre-se que estes dados foram extraídos de uma população brasileira.</p>
+</blockquote>
+
+<p>Agora vamos plotar outras dimensões:</p>
+
+<pre><code>plot(dados_MDS$C2,dados_MDS$C3)
+</code></pre>
+
+<p>Perceba que é como se estivéssemos olhando a primeira figura por outro ângulo. Por fim, vamos usar o pacote <code>rgl</code> para plotar um gráfico 3D. Primeiro vamos baixar o pacote, em seguida instalá-lo:</p>
+
+<pre><code>install.packages("rgl")
+</code></pre>
+
+<p>É muito provável que o comando acima tenha dado um erro, pois algumas bibliotecas do Linux não foram instaladas. Para resolver esse problema, abra um novo terminal do Linux e rode o seguinte comando <strong>no terminal do Linux</strong> (e não no terminal do R):</p>
+
+<pre><code>sudo apt-get install r-cran-rgl xorg-dev libglu1-mesa-dev
+</code></pre>
+
+<p>Esta etapa é para mostrar que em uma análise no mundo real problemas desse tipo são muito comuns. Uma rápida pesquisa no Google, porém, pode ser capaz de resolver o problema rapidamente e indica a instalação dessas bibliotecas no Linux.</p>
+
+<p>Voltando ao R vamos instalar o pacote <code>rgl</code> e carregá-lo. Em seguida rodamos o comando para plotar um gráfico em 3D com 3 das 4 dimensões que foram calculadas pelo escalonamento multidimensional usando a função <code>plot3d()</code>. No terminal do R, digite:</p>
+
+<pre><code>install.packages("rgl")
+library(rgl)
+plot3d(dados_MDS$C1, dados_MDS$C2, dados_MDS$C3, type="p", col="blue")
+</code></pre>
+
+<p>Explore o gráfico gerado clicando e arrastando para movimentá-lo e perceba como é possível visualizar facilmente padrões.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> É possível identificar subestrutura populacional observando esse gráfico 3d?</p>
+</blockquote>
+
+<p>As dimensões da análise de escalonamento multidimensional são relacionadas à proporção de ancestralidade de cada população fundadora que constitui a população. Por esse motivo, devemos sempre controlar o efeito dessas variáveis em testes de associação. Isso será discutido na próxima seção.</p>
+
+<hr>
+
+<p><strong>5. Testes de associação:</strong></p>
+
+<p>Agora que já exploramos descritivamente um perfil bem característico dos dados genéticos da amostra estudada, podemos finalmente fazer o primeiro teste de associação, ou seja verificar quais são os polimorfismos que apresentam diferenças de frequências entre casos e controles.</p>
+
+<p>Para fazer a associação entre todos os polimorfismos do array (e não apenas os 20.000 que usamos para a análise anterior), devemos voltar ao Linux e usar os argumentos <code>--assoc</code> e <code>--adjust</code> do PLINK:</p>
+
+<pre><code>./plink --bfile gwasQCpass --assoc --adjust --out assoc_bruta
+</code></pre>
+
+<p>Dois arquivos principais são gerados: o com extensão <code>.assoc</code> e o com extensão <code>.assoc.adjusted</code>. Ambos apresentam número de linhas correspondente ao número de polimorfismos  do <em>array</em>.</p>
+
+<p>O arquivo <code>.assoc</code> apresenta o resultado bruto do qui-quadrado para cada polimorfismo estudado. Abra o arquivo com <code>less</code> para verificar sua estrutura.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> Como ordenar esse arquivo em ordem crescente de valores de p, para saber quais os polimorfismos que apresentaram resultados mais significativos?</p>
+</blockquote>
+
+<p>O arquivo <code>.assoc.adjusted</code> mostra o resultado das associações após correção por diversos métodos de correções de múltiplos testes, incluindo correção de Bonferroni, <em>False Discovery Rate</em> , entre outros. Esse arquivo já está em ordem crescente de valor de p, ou seja, o primeiro da lista é o mais significativo.</p>
+
+<p>Uma vez que estamos fazendo mais de 600.000 testes estatísticos (um para cada polimorfismo), a correção de múltiplos testes é extremamente necessária devido à elevada taxa de falsos positivos. Assim, ao inspecionar o arquivo <code>.assoc.adjusted</code> já temos uma ideia do achado mais significativo.</p>
+
+<p>Porém, como comentado anteriormente, não basta apenas o resultado bruto ou corrigido para múltiplos testes, principalmente quando sabemos que a nossa população apresenta subestrutura identificada pelos genótipos estudados. Sendo assim, podemos realizar regressões logísticas usando o status caso/controle como variável dependente e cada um dos polimorfismos como variáveis independentes juntamente com as três dimensões calculadas pelo escalonamento multidimensional, como uma medida para corrigir para a subestrutura populacional. No PLINK, o comando para fazer isso é:</p>
+
+<pre><code>./plink --bfile gwasQCpass --logistic --adjust --covar MDS.mds --covar-number 2,3,4 --out assoc_logistic
+</code></pre>
+
+<p>Esse resultado talvez seja o mais robusto pois além de estar corrigido para múltiplas comparações (pelo argumento <code>--adjust</code>), também está corrigido para as três primeiras dimensões calculadas pelo escalonamento multidimensional por meio da regressão logística. Note que o argumento <code>--covar</code> pede o arquivo que contém as covariáveis da regressão logística e o argumento <code>--covar-number</code> indica quais as colunas do arquivo que serão usadas, contando a partir da terceira (pois a primeira e a segunda são os identificadores da amostra - FID e IID, que devem ser correspondentes ao do arquivo <code>.fam</code>).</p>
+
+<p>Ao abrirmos o arquivo <code>assoc_logistic.assoc.logistic</code> percebemos que cada polimorfismo é representado por 4 linhas. Na coluna TEST, temos as diferenças das linhas que são: “ADD”, “C1”, “C2” e “C3”, ou o efeito genético aditivo do polimorfismo em questão, e o efeito de cada dimensão do escalonamento multidimensional, respectivamente. Cada linha corresponde ao termo calculado da regressão logística e os resultados mostrados nas colunas OR, STAT e P já estão corrigidos para os outros termos.</p>
+
+<p>Como na maioria das vezes estamos apenas interessados nos resultados corrigidos de cada polimorfismo, podemos criar um arquivo apenas com as linha “ADD”, que correspondem a esses resultados. Para isso, podemos usar uma ferramenta do Linux, que é uma variação do comando <code>grep</code>, chamado <code>egrep</code>:</p>
+
+<pre><code>egrep 'SNP|ADD' assoc_logistic.assoc.logistic &gt; SNPs.assoc.logistic
+</code></pre>
+
+<p>Assim como o <code>grep</code>, o <code>egrep</code> também busca padrões no arquivo e retorna as linhas em que o padrão aparece. No entanto, o <code>egrep</code> tem a possibilidade de colocar condições. Neste comando, nós pedimos para ele buscar todas as linhas do arquivo <code>assoc_logistic.assoc.logistic</code> que apresentam a palavra <code>SNP</code> ou (representado pelo símbolo <code>|</code>) a palavra <code>ADD</code> e em seguida salvar em um novo arquivo chamado <code>SNPs.assoc.logistic</code>. Em outras palavras, queremos apenas o cabeçalho e as linhas correspondentes aos resultados dos polimorfismos.</p>
+
+<p>Experimente abrir esse novo arquivo formado e veja se o comando foi realizado corretamente.</p>
+
+<p>Agora temos quatro arquivos principais de resultado do nosso estudo de associação:</p>
+
+<ul>
+<li><p><code>assoc_bruta.assoc</code>, contendo os resultados das frequências dos alelos de cada polimorfismo em casos e controles, o resultado do teste do qui-quadrado bruto (sem correção para outras covariáveis), o <em>odds ratio</em> e o valor de p não corrigido para múltiplas comparações;</p></li>
+<li><p><code>assoc_bruta.assoc.adjusted</code>, contendo os valores de p corrigidos para múltiplas comparações da análise bruta acima;</p></li>
+<li><p><code>SNPs.assoc.logistic</code>, contendo os resultados da regressão logística de cada polimorfismo corrigido para subestrutura populacional, com valores de p não corrigidos para múltiplas comparações;</p></li>
+<li><p><code>assoc_logistic.assoc.logistic.adjusted</code>, contendo os valores de p corrigidos para múltiplas comparações da análise corrigida para subestrutura populacional acima.</p></li>
+</ul>
+
+<p>Estes arquivos resumem todos os resultados da análise de associação, e se ordenarmos (usando <code>sort</code>) ou filtrarmos (usando <code>awk</code>) como em alguns exemplos acima, podemos identificar os principais polimorfismos associados com o fenótipo de interesse.</p>
+
+<p>No entanto, para facilitar a interpretação, podemos construir alguns gráficos, como explicados agora na seção a seguir.</p>
+
+<hr>
+
+<p><strong>6. Visualização dos resultados em larga escala:</strong></p>
+
+<p>Mostrar resultados de análises em larga escala de forma gráfica é um desafio. Por sorte, pesquisadores ao redor do mundo disponibilizam “pedaços de códigos” que podem facilitar muito a vida de quem continuamente está envolvido em análise de dados genéticos. Esse é o exemplo do blog <a href="gettinggeneticsdone.blogspot.com"><strong>Getting Genetics Done</strong></a>, que apresenta uma seré de <em>posts</em> sobre análise de dados de bioinformática aplicada à genética, que é altamente recomendável. Ele é mantido pelo professor Stephen Turner da Universidade da Virgínia.</p>
+
+<p>Uma de suas postagens descreve um código em R montado para a criação de dois dos principais gráficos de resultados de estudos de associação genética em larga escala: o <em>Manhattan Plot</em> e o <em>Q-Q Plot</em>.</p>
+
+<p>Inicialmente, vamos fazer o download do script em R que contém todos os códigos para elaboração destes gráficos na mesma pasta em que estão todos os nossos arquivos, disponibilizado pelo GitHub the Stephen Turner:</p>
+
+<pre><code>wget https://raw.github.com/stephenturner/qqman/master/qqman.r
+</code></pre>
+
+<p>O objetivo não é entender o significado de todas as linhas de código que o arquivo <code>qqman.R</code> apresenta, mas é interessante abrí-lo (com <code>less</code>) para ver um exemplo de código bem montado que faz uma tarefa específica. Esse script basicamente contém funções que foram definidas para fazer os gráficos que queremos. Assim, executar esse script no R significa definir essas funções para que sejam disponíveis para uso em nossa seção do R.</p>
+
+<p>Vamos acessar o R:</p>
+
+<pre><code>sudo R
+</code></pre>
+
+<p>E no terminal do R, executar o script usando a função <code>source()</code>:</p>
+
+<pre><code>source("qqman.r")
+</code></pre>
+
+<p>Após definir as funções, temos que importar os arquivos que serão usados para essa análise. Vamos comparar os resultados da associação antes e depois da correção para subestrutura populacional, para checar se o fato da população ser miscigenada atrapalha as associações encontradas. Use os comando abaixo para importar os arquivos <code>assoc_bruta.assoc</code>(resultados da associação bruta) e <code>SNPs.assoc.logistic</code> (resultados da associaçao corrigida para subestrutura populacional) e vamos olhar as primeiras linhas de cada arquivo para checar se a importação ocorreu corretamente:</p>
+
+<pre><code>bruto &lt;- read.table("assoc_bruta.assoc", header=T)
+corrigido &lt;- read.table("SNPs.assoc.logistic", header=T)
+
+head(bruto)
+head(corrigido)
+</code></pre>
+
+<p>Para a função de criação dos gráficos funcionar corretamente, é preciso que o arquivo de entrada (objetos <code>bruto</code> e <code>corrigido</code>) tenham as colunas SNP, CHR, BP e P. Se tudo estiver correto, os arquivos que importamos apresentam essas colunas e, portanto, estamos prontos para criar os gráficos. Vamos execeutar os comandos abaixo, um de cada vez para observar o _ Q-Q plot_ dos dados brutos e dos dados corrigidos para subestrutura populacional:</p>
+
+<pre><code>#Q-Q plot dos dados brutos e salvar no arquivo qqplot_brutos.pdf
+pdf("qqplot_brutos.pdf")
+qq(bruto$P)
+dev.off()
+
+#Q-Q plot dos dados corrigidos para subestrutura populacional e salvar no arquivo qqplot_corrigidos.pdf
+pdf("qqplot_corrigidos.pdf")
+qq(corrigido$P)
+dev.off()
+</code></pre>
+
+<p>Note que a função <code>qq()</code> foi definida pelo script <code>qqman.R</code> e usa como único argumento a coluna P (que corresponde ao valor de p) dos objetos <code>bruto</code> e <code>corrigido</code>.</p>
+
+<blockquote>
+  <p><strong>Exercício: </strong> O que é possivel notar de diferente entre os dois gráficos? Qual o motivo dessa diferença?</p>
+</blockquote>
+
+<p>Agora vamos criar o <em>Manhattan Plot</em>:</p>
+
+<pre><code>#Manhattan Plot dos dados brutos e salvar no arquivo manhattan_bruto.pdf
+pdf("manhattan_brutos.pdf")
+manhattan(bruto)
+dev.off()
+
+#Manhattan Plot dos dados corrigidos e salvar no arquivo mahattan_corrigidos.pdf
+pdf("manhattan_corrigidos.pdf")
+manhattan(corrigido)
+dev.off()
+</code></pre>
+
+<p>Note que a função <code>manhattan()</code>, que também foi definida pelo script <code>qqman.R</code> mas usa o objeto inteiro para a análise.</p>
+
+<blockquote>
+  <p><strong>Exercício: </strong> O que é possivel notar de diferente entre os dois gráficos? Qual o motivo dessa diferença?</p>
+</blockquote>
+
+<p>A análise desses gráficos nos dá algumas regiões candidatas interessantes, que, em uma análise no mundo real, iríamos investigar mais a fundo como exemplificado no tópico <strong>Análise de regiões específicas</strong>, brevemente comentado no início deste tutorial. No entanto, essa análise é muito específica para cada projeto e demandaria muito tempo para comentar em um curso como este. Por esse motivo, esta análise não será realizada em aula, mas ficamos à disposição para olharmos estes resultados em mais detalhes depois.</p>
+
+<p><strong>Conclusões</strong></p>
+
+<p>Com o desenvolvimento de metodologias de genotipagem em larga escala de polimorfismos espalhados pelo genoma, diversas ferramentas para a análise desses dados foram desenvolvidas. Nesse sentido, foi possível identificar regiões genômicas associadas com uma série de fenótipos, além de identificar indicadores de subestrutura populacional pela genotipagem desses polimorfismos.</p>
+
+<p>Esperamos que com este tutorial todos tenham aprimorado as habilidades em linha de comando e os conceitos envolvidos para a análise de um estudo de associação em larga escala!</p>
+
+<hr>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/4.0/80x15.png"></a><br><span>Curso Bioinformática UNIFESP</span> by <span>Diego Mazzotti</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
