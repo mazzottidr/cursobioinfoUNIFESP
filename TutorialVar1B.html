@@ -2,27 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TutorialVar1B</title>
-<link rel="stylesheet" href="templates/markdown7.css">
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body><div class="container"><p> <br>
  <br>
-Tutorial - Estudos de associação genética e GWAS <br>
+ <br>
+ <br>
+ <br>
 </p>
 
 
 
 <p></p>
 
-
-
 <h2 id="tutorial-var1b">Tutorial Var1B</h2>
+
+
 
 <h3 id="estudos-de-associação-genética-em-larga-escala-gwas">Estudos de associação genética em larga escala (GWAS)</h3>
 
 <hr>
+
+
 
 <h4 id="prática-teste-de-associação-entre-muitos-snps-e-uma-doença-genome-wide-association-studies"><strong>Prática</strong> - Teste de associação entre muitos SNPs e uma doença – <em>Genome Wide Association Studies</em></h4>
 
@@ -51,15 +54,17 @@ unzip plink-1.07-x86_64.zip
 <p>Após o <em>download</em> e descompactação, acesse a pasta criada (<code>cd plink-1.07-x86_64</code>) e você verá todos os arquivos baixados. Um deles possui o nome <code>plink</code>. Este é o arquivo executável que permitira rodar todas as análises dependentes deste <em>software</em>.  </p>
 
 <blockquote>
-  <p><strong>Dica</strong>: Caso tenha acesso ou a senha do superusuário, você pode copiar o executável do PLINK para a sua pasta <code>/usr/bin/</code> por meio do comando <code>cp plink /usr/bin/</code>. Isso permitirá que execute o PLINK de qualquer diretório, sem precisar colocar o caminho completo ao executável do PLINK. Caso contrário, copie <code>plink</code> para o diretório que contém os arquivos que quer trabalhar, ou copie os arquivos que quer trabalhar dentro do diretóirio onde <code>plink</code> está presente.</p>
+  <p><strong>Dica</strong>: Caso tenha acesso ou a senha do superusuário, você pode copiar o executável do PLINK para a sua pasta <code>/usr/bin/</code> por meio do comando <code>sudo cp plink /usr/bin/</code>. Isso permitirá que execute o PLINK de qualquer diretório, sem precisar colocar o caminho completo ao executável do PLINK. Caso contrário, copie <code>plink</code> para o diretório que contém os arquivos que quer trabalhar, ou copie os arquivos que quer trabalhar dentro do diretóirio onde <code>plink</code> está presente.</p>
 </blockquote>
 
 <p>Para checar a instalação, simplesmente rode o seguinte comando (estando dentro de um diretório em que <code>plink</code> está também presente):</p>
 
-<pre><code>./plink
+<pre><code>plink  --noweb
 </code></pre>
 
-<p>Uma série de mensagens iniciando com o que está representado abaixo confirma que a instalação foi efetuada com êxito:</p>
+<p>Note que o <em>flag</em> <code>--noweb</code> é usado para corrigir uma falha que tenta conectar o <code>plink</code> com a internet para buscar atualizações. Para evitar essa busca, sempre devemos usar esse <em>flag</em> como último argumento do comando.</p>
+
+<p>Ao executar o comando acima, uma série de mensagens iniciando com o que está representado abaixo confirma que a instalação foi efetuada com êxito:</p>
 
 <pre><code>@----------------------------------------------------------@
 |        PLINK!       |     v1.07      |   10/Aug/2009     |
@@ -123,7 +128,7 @@ ls
 
 <p>Para gerar uma tabela com a frequêcia do alelo raro de todos os SNPs use o comando:</p>
 
-<pre><code>./plink --bfile gwas --freq --out freqstats
+<pre><code>plink --bfile gwas --freq --out freqstats --noweb
 </code></pre>
 
 <p>Note a estrutura de um comando do PLINK. Ele sempre inicia com o comando <code>plink</code> seguido de <code>--bfile</code> (no caso de arquivos binários - <code>.bed</code>, <code>.bim</code> e .<code>fam</code>) ou <code>--file</code> (no caso de arquivos não binários - <code>.ped</code> e <code>.map</code>) e o prefixo do nome do arquivo de dados, sem a extensão. Os outros argumentos do comando são referentes à função do PLINK que deseja usar. Nesse caso estamos solicitando a frequência dos alelos de todos os SNPs - essa função é chamada pelo argumento <code>--freq</code>. Por fim, o argumento <code>--out</code> seguido de um nome de arquivo indicam ao PLINK com que nome o prefixo arquivo será salvo.</p>
@@ -132,12 +137,12 @@ ls
 
 <p>Em seguida vamos criar um arquivo que contém o resultado da análise que mostra a porcentagem de marcadores não genotipados por indivíduo (<em>imiss</em>), e a porcentagem de indivíduos não genotipados por genótipo (<em>lmiss</em>):</p>
 
-<pre><code>./plink --bfile gwas --missing --out miss_stats
+<pre><code>plink --bfile gwas --missing --out miss_stats --noweb
 </code></pre>
 
 <p>Por fim, criaremos o arquivo que contém o resultado da análise do Equilíbrio de Hardy-Weinberg:</p>
 
-<pre><code>./plink --bfile gwas --hardy --out hardy_stats
+<pre><code>plink --bfile gwas --hardy --out hardy_stats --noweb
 </code></pre>
 
 <p>Após a realização desses comandos, foi possivel criar quatro arquivos importantes, que mostram estatísticas descritivas de cada polimorfismo genotipado e de cada individuo estudado: <code>freqstats.frq</code>, <code>miss_stats.imiss</code>, <code>miss_stats.lmiss</code> e <code>hardy_stats.hwe</code>. Experimente abrir cada um deles usando o comando <code>less</code> para uma breve inspeção do seu conteúdo.</p>
@@ -197,7 +202,7 @@ ls
 
 <p>Para isso, podemos usar um comando do PLINK para criar um novo conjunto de arquivos (<code>.bed</code>, <code>.bim</code> e <code>.fam</code>) somente com individuos e polimorfismos que passaram no controle de qualidade:</p>
 
-<pre><code>./plink --bfile gwas --maf 0.05 --mind 0.01 --geno 0.01 --hwe 0.001 --make-bed --out gwasQCpass
+<pre><code>plink --bfile gwas --maf 0.05 --mind 0.01 --geno 0.01 --hwe 0.001 --make-bed --out gwasQCpass --noweb
 </code></pre>
 
 <p>Este comando aplica os filtros <code>--maf</code>,  <code>--mind</code>, <code>--geno</code> e <code>--hwe</code>, com os respectivos valores de cut-off estabelecidos e cria outro conjunto de arquivos (por meio do argumento <code>--make-bed</code>) com o prefixo <code>gwasQCpass</code>, contendo apenas os individuos e genótipos que atenderam aos critérios de controle de qualidade.</p>
@@ -224,7 +229,7 @@ ls
 
 <p>Agora, vamos realizar o comando <code>--genome</code> do PLINK para estimar o parâmetro PIHAT, usando apenas os 20.000 polimorfismos aleatórios que criamos anteriormente:</p>
 
-<pre><code>./plink --bfile gwasQCpass --genome --extract random20000snps.txt --out IBD_20000
+<pre><code>plink --bfile gwasQCpass --genome --extract random20000snps.txt --out IBD_20000 --noweb
 </code></pre>
 
 <p>Note que passamos a usar o prefixo <code>gwasQCpass</code> após <code>--bfile</code> para nos referir aos arquivos contendo apenas as amostras/polimorfismos que passaram no controle de qualidade. Note também que usamos o <em>flag</em> <code>--extract random20000snps.txt</code> para usar apenas 20.000 os polimorfismos aleatórios.</p>
@@ -254,7 +259,7 @@ ls
 
 <p>O PLINK apresenta um comando que usa o arquivo de extensão <code>.genome</code> para estimar as dimensões dos dados de genotipagem do array. Ao usá-lo nos dados que estamos analisando, temos o seguinte comando:</p>
 
-<pre><code>./plink --bfile gwasQCpass --read-genome IBD_20000.genome --cluster --mds-plot 4 --out MDS
+<pre><code>plink --bfile gwasQCpass --read-genome IBD_20000.genome --cluster --mds-plot 4 --out MDS --noweb
 </code></pre>
 
 <p>Este comando lê o arquivo <code>IBD_20000.genome</code> e calcula os valores para cada dimensão da amostra. O número de dimensões testadas é fornecido ao software pelo argumento <code>--mds-plot</code>. Nesse exemplo, solicitamos 4 dimensões.</p>
@@ -323,7 +328,7 @@ plot3d(dados_MDS$C1, dados_MDS$C2, dados_MDS$C3, type="p", col="blue")
 
 <p>Para fazer a associação entre todos os polimorfismos do array (e não apenas os 20.000 que usamos para a análise anterior), devemos voltar ao Linux e usar os argumentos <code>--assoc</code> e <code>--adjust</code> do PLINK:</p>
 
-<pre><code>./plink --bfile gwasQCpass --assoc --adjust --out assoc_bruta
+<pre><code>plink --bfile gwasQCpass --assoc --adjust --out assoc_bruta --noweb
 </code></pre>
 
 <p>Dois arquivos principais são gerados: o com extensão <code>.assoc</code> e o com extensão <code>.assoc.adjusted</code>. Ambos apresentam número de linhas correspondente ao número de polimorfismos  do <em>array</em>.</p>
@@ -340,7 +345,7 @@ plot3d(dados_MDS$C1, dados_MDS$C2, dados_MDS$C3, type="p", col="blue")
 
 <p>Porém, como comentado anteriormente, não basta apenas o resultado bruto ou corrigido para múltiplos testes, principalmente quando sabemos que a nossa população apresenta subestrutura identificada pelos genótipos estudados. Sendo assim, podemos realizar regressões logísticas usando o status caso/controle como variável dependente e cada um dos polimorfismos como variáveis independentes juntamente com as três dimensões calculadas pelo escalonamento multidimensional, como uma medida para corrigir para a subestrutura populacional. No PLINK, o comando para fazer isso é:</p>
 
-<pre><code>./plink --bfile gwasQCpass --logistic --adjust --covar MDS.mds --covar-number 2,3,4 --out assoc_logistic
+<pre><code>plink --bfile gwasQCpass --logistic --adjust --covar MDS.mds --covar-number 2,3,4 --out assoc_logistic --noweb
 </code></pre>
 
 <p>Esse resultado talvez seja o mais robusto pois além de estar corrigido para múltiplas comparações (pelo argumento <code>--adjust</code>), também está corrigido para as três primeiras dimensões calculadas pelo escalonamento multidimensional por meio da regressão logística. Note que o argumento <code>--covar</code> pede o arquivo que contém as covariáveis da regressão logística e o argumento <code>--covar-number</code> indica quais as colunas do arquivo que serão usadas, contando a partir da terceira (pois a primeira e a segunda são os identificadores da amostra - FID e IID, que devem ser correspondentes ao do arquivo <code>.fam</code>).</p>
@@ -375,26 +380,20 @@ plot3d(dados_MDS$C1, dados_MDS$C2, dados_MDS$C3, type="p", col="blue")
 
 <p>Mostrar resultados de análises em larga escala de forma gráfica é um desafio. Por sorte, pesquisadores ao redor do mundo disponibilizam “pedaços de códigos” que podem facilitar muito a vida de quem continuamente está envolvido em análise de dados genéticos. Esse é o exemplo do blog <a href="gettinggeneticsdone.blogspot.com"><strong>Getting Genetics Done</strong></a>, que apresenta uma seré de <em>posts</em> sobre análise de dados de bioinformática aplicada à genética, que é altamente recomendável. Ele é mantido pelo professor Stephen Turner da Universidade da Virgínia.</p>
 
-<p>Uma de suas postagens descreve um código em R montado para a criação de dois dos principais gráficos de resultados de estudos de associação genética em larga escala: o <em>Manhattan Plot</em> e o <em>Q-Q Plot</em>.</p>
-
-<p>Inicialmente, vamos fazer o download do script em R que contém todos os códigos para elaboração destes gráficos na mesma pasta em que estão todos os nossos arquivos, disponibilizado pelo GitHub the Stephen Turner:</p>
-
-<pre><code>wget https://raw.github.com/stephenturner/qqman/master/qqman.r
-</code></pre>
-
-<p>O objetivo não é entender o significado de todas as linhas de código que o arquivo <code>qqman.R</code> apresenta, mas é interessante abrí-lo (com <code>less</code>) para ver um exemplo de código bem montado que faz uma tarefa específica. Esse script basicamente contém funções que foram definidas para fazer os gráficos que queremos. Assim, executar esse script no R significa definir essas funções para que sejam disponíveis para uso em nossa seção do R.</p>
+<p>Uma de suas postagens descreve um pacote em R montado para a criação de dois dos principais gráficos de resultados de estudos de associação genética em larga escala: o <em>Manhattan Plot</em> e o <em>Q-Q Plot</em>.</p>
 
 <p>Vamos acessar o R:</p>
 
 <pre><code>sudo R
 </code></pre>
 
-<p>E no terminal do R, executar o script usando a função <code>source()</code>:</p>
+<p>Inicialmente, vamos instalar e carregar o pacote <code>qqman</code>, disponibilizado pelo GitHub the Stephen Turner:</p>
 
-<pre><code>source("qqman.r")
+<pre><code>install.packages("qqman")
+library(qqman)
 </code></pre>
 
-<p>Após definir as funções, temos que importar os arquivos que serão usados para essa análise. Vamos comparar os resultados da associação antes e depois da correção para subestrutura populacional, para checar se o fato da população ser miscigenada atrapalha as associações encontradas. Use os comando abaixo para importar os arquivos <code>assoc_bruta.assoc</code>(resultados da associação bruta) e <code>SNPs.assoc.logistic</code> (resultados da associaçao corrigida para subestrutura populacional) e vamos olhar as primeiras linhas de cada arquivo para checar se a importação ocorreu corretamente:</p>
+<p>Após carregar o pacote, temos que importar os arquivos que serão usados para essa análise. Vamos comparar os resultados da associação antes e depois da correção para subestrutura populacional, para checar se o fato da população ser miscigenada atrapalha as associações encontradas. Use os comando abaixo para importar os arquivos <code>assoc_bruta.assoc</code>(resultados da associação bruta) e <code>SNPs.assoc.logistic</code> (resultados da associaçao corrigida para subestrutura populacional) e vamos olhar as primeiras linhas de cada arquivo para checar se a importação ocorreu corretamente:</p>
 
 <pre><code>bruto &lt;- read.table("assoc_bruta.assoc", header=T)
 corrigido &lt;- read.table("SNPs.assoc.logistic", header=T)
