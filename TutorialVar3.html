@@ -225,18 +225,18 @@ make
 
 <p>Agora vamos preparar o arquivo <code>.rawcnv</code> para ser usado pelo BEDtools. Precisamos criar, para cada amostra um arquivo contendo apenas três colunas: o cromossomo, a cordenada de início e a coordenada de fim da CNV. Lembre-se de que a primeira coluna do arquivo <code>.rawcnv</code> apresenta essa informação, mas em um formato diferente (<code>chr3:37957465-37961253</code>). Precisamos, de alguma maneira, remover o <code>:</code> e o <code>-</code> dessa nomenclatura e colocar cada termo (<code>chr3</code>, <code>37957465</code> e <code>37961253</code>) em uma coluna diferente. Nós até poderíamos realizar essa tarefa no Excel, mas para muitos arquivos seria muito trabalhoso. Nessas situações é que pequenos códigos de linha de comando do Linux são úteis (mas mesmo assim não deixam de ser assustadores!). Vamos ver os códigos abaixo:</p>
 
-<pre><code>cut -d ' ' -f 1 father.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; father.bed
-cut -d ' ' -f 1 mother.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; mother.bed
-cut -d ' ' -f 1 offspring.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; offspring.bed
+<pre><code>cut -d ' ' -f 1 father.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; father.cnv
+cut -d ' ' -f 1 mother.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; mother.cnv
+cut -d ' ' -f 1 offspring.rawcnv | sed 's/:/\t/g' | sed 's/-/\t/g' &gt; offspring.cnv
 </code></pre>
 
-<p>Execute-os e depois abra usando <code>cat</code> os arquivos resultantes <code>father.bed</code>, <code>mother.bed</code> e <code>offspring.bed</code>. Eles estão no formado esperado?</p>
+<p>Execute-os e depois abra usando <code>cat</code> os arquivos resultantes <code>father.cnv</code>, <code>mother.cnv</code> e <code>offspring.cnv</code>. Eles estão no formado esperado?</p>
 
 <blockquote>
   <p><strong>Desafio!</strong> Tente entender o que os codigos acima fazem, somente com a informação de que o comando <code>cut</code> é usado para extrair uma determinada coluna de um arquivo e que o comando <code>sed</code> é usado para substituir caracteres de um arquivo. Use <code>man</code> para ler a entrada de ajuda de cada comando e entender seus argumentos!</p>
 </blockquote>
 
-<p>Depois de formatar os três arquivos apenas com cromossomo e coordenada genômica, chegamos a um formato de arquivo chamado <code>.bed</code>. Esse arquivo é útil pois apresenta os dados na forma de <strong>intervalo genômico</strong>. Um intervalo genômico e uma região compreendida entre duas posições genômicas.</p>
+<p>Depois de formatar os três arquivos apenas com cromossomo e coordenada genômica, chegamos a um formato de arquivo chamado <code>BED</code>. Esse arquivo é útil pois apresenta os dados na forma de <strong>intervalo genômico</strong>. Um intervalo genômico e uma região compreendida entre duas posições genômicas.</p>
 
 <p>De maneira interessante, podemos fazer operações com intervalos genômicos. Por exemplo, podemos buscar quais as regiões que se sobrepõem entre 2 arquivos de intervalos genômicos. Ou identificar quais regiões são exclusivas de um arquivo (ou seja, não estão presentes no outro). Para isso podemos usar o software BEDtools. Veja a figura abaixo, extraída do site do BEDtools:</p>
 
