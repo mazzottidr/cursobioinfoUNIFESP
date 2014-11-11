@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TutorialExp3</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><p> <br>
+ <br>
+Tutorial - Estudos de expressão gênica por RNAseq <br>
+</p>
+
+
+
+<p></p>
+
+
+
+<h2 id="tutorial-exp3">Tutorial Exp3</h2>
+
+
+
+<h4 id="estudos-de-expressão-gênica-por-rna-seq">Estudos de Expressão Gênica por RNA-Seq</h4>
+
+<hr>
+
+<p><strong>Introdução</strong></p>
+
+<p>No presente tutorial vamos abordar um exemplo de análise de dados de expressão gênica por meio de um experimento de RNA-seq. Dentre as abordagens discutidas, nós vamos realizar o alinhamento dos reads obtidos pelo sequenciamento com um transcriptoma de referência, que contém a sequência de todos os transcritos descritos para uma determinada espécie. Dessa maneira, nós não dos preocupamos com os reads que compreendem as junções éxon-éxon, que provavelmente não seriam alinhados caso escolhêssemos alinhar no genoma de referência completo.</p>
+
+<p>Assim, para esta análise, além dos softwares necessários para a análise dos dados que vamos fazer o download a seguir, vamos fornecer arquivos <code>.fastq</code> com reads do cromossomo 20 de 2 tecidos (<em>liver</em> e <em>kidney</em>) de um experimento de RNA-seq do tipo <em>single-end</em> e os arquivos <code>chr20transcripts.fa</code> (com a sequência no formato FASTA do transcriptoma de referência) e <code>chr20transcripts.bed</code> (com os intervalos genômicos de cada transcrito, usado para o cálculo da contagem de reads de cada transcrito).  Com estes dados, nós vamos executar as seguintes etapas:</p>
+
+<ul>
+<li><p>Alinhar os reads no transcriptoma de referência</p></li>
+<li><p>Processar o arquivo <code>.sam</code> resultante de cada amostra</p></li>
+<li><p>Realizar a contagem dos reads para cada amostra</p></li>
+</ul>
+
+<p>Em seguida, vamos importar um arquivo de contagem de reads de outro experimentos com muitas amostras (que seria inviável de ser processado inteiramente neste tutorial), para análise dos genes diferencialmente expressos.</p>
+
+<hr>
+
+<p><strong>Fazendo download dos softwares necessários</strong></p>
+
+<p>O script abaixo mostra os comandos necessários para fazer o download dos softwares que vamos usar. Alguns deles nós já realizamos em tutoriais anteriores neste curso.</p>
+
+<pre><code>#Criar diretório deste tutorial
+mkdir -p ~/cursobioinfo/Exp3
+
+#Criar diretório bin para os arquivos dos programas que vamos fazer o download
+mkdir -p ~/cursobioinfo/Exp3/bin
+
+#Instalar bwa
+cd ~/cursobioinfo/Exp3/bin
+wget -O bwa-0.7.5a.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.5a.tar.bz2/download
+tar xvfj bwa-0.7.5a.tar.bz2
+cd bwa-0.7.5a/
+make
+
+#Instalar samtools
+cd ~/cursobioinfo/Exp3/bin
+curl -O -L http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
+tar xvfj samtools-0.1.19.tar.bz2
+cd samtools-0.1.19
+make
+
+#Instalar Qualimap
+cd ~/cursobioinfo/Exp3/bin
+wget http://qualimap.bioinfo.cipf.es/release/qualimap_v0.7.1.zip
+unzip qualimap_v0.7.1.zip
+
+#Intalar BEDtools
+cd ~/cursobioinfo/Exp3/bin
+wget https://bedtools.googlecode.com/files/BEDTools.v2.17.0.tar.gz
+tar zxvf BEDTools.v2.17.0.tar.gz
+cd bedtools-2.17.0/
+make
+</code></pre>
+
+<hr>
+
+<p><strong>Fazendo o download dos arquivos necessários</strong></p>
+
+<p>Para esta análise, vamos fornecer 4 arquivos:</p>
+
+<ul>
+<li>Transcriptoma de referência do cromossomo 20 (<code>chr20transcripts.fa</code>)</li>
+<li>Coordenadas genômicas (formato <code>.bed</code>) de cada transcrito (<code>chr20transcripts.bed</code>)</li>
+<li>Reads single-end do cromossomo 20 obtidos de experimento de RNA-seq de amostra de figado humano (<code>liver.chr20.fq</code>)</li>
+<li>Reads single-end do cromossomo 20 obtidos de experimento de RNA-seq de amostra de rim humano (<code>kidney.chr20.fq</code>)</li>
+</ul>
+
+<p>Para fazer o download dos arquivos, vá ao diretório <code>Exp3</code> e faça o download dos arquivos:</p>
+
+<pre><code>cd ~/cursobioinfo/Exp3
+wget https://www.dropbox.com/s/x98exx9t15a5wyr/chr20transcripts.fa
+wget https://www.dropbox.com/s/w4x3axzr01847gv/chr20transcripts.bed
+wget https://www.dropbox.com/s/6gm76k4gko12u4e/liver.chr20.fq
+wget https://www.dropbox.com/s/95whxk5zyqcwxvr/kidney.chr20.fq
+</code></pre>
+
+<hr>
+
+<p><strong>1. Alinhando os reads no transcriptoma de referência</strong></p>
+
+<p>Assim como fizemos no tutorial de identificação de variantes por NGS, antes de alinharmos nossos reads com a referência (nesse caso, transcriptoma de referência), precisamos criar o índice do nosso transcriptoma referência. Para isso, usamos a função <code>index</code> presente no software BWA:</p>
+
+<pre><code>../bin/bwa-0.7.5a/bwa index chr20transcripts.fa
+</code></pre>
+
+<p>Após a execução docomando, podemos notar a criação de uma série de arquivos que representam os índices do transcriptoma de referência.</p>
+
+<p>A próxima etapa é executar o alinhamento de cada amostra por meio da função <code>aln</code> do software BWA. Essa etapa é semelhante à que foi realizada no tutorial de identificação de variantes, com a diferença que ao invés do genoma de referência, colocamos o transcriptoma de referência. Além disso, esse experimento foi feito como <em>single-end</em>, portanto, há apenas um comando para cada read (e não dois como foi feito pelo <em>paired end</em> read):</p>
+
+<pre><code>#Alinhamento dos reads do fígado
+../bin/bwa-0.7.5a/bwa aln chr20transcripts.fa liver.chr20.fq &gt; liver.chr20.sai
+
+#Alinhamento dos reads do rim
+../bin/bwa-0.7.5a/bwa aln chr20transcripts.fa kidney.chr20.fq &gt; kidney.chr20.sai
+</code></pre>
+
+<p>Em seguida, executamos a função <code>samse</code> (pois os reads são <em>single-end</em>), incluindo a entrada no campo <code>@RG</code> do cabeçalho do arquivo <code>.sam</code> a ser formado:</p>
+
+<pre><code>#Compor arquivo SAM para o fígado
+../bin/bwa-0.7.5a/bwa samse -r "@RG\tID:001\tLB:Lane1\tSM:Figado\tPL:ILLUMINA" chr20transcripts.fa liver.chr20.sai liver.chr20.fq &gt; liver.chr20.sam
+
+#Compor arquivo SAM para o rim
+../bin/bwa-0.7.5a/bwa samse -r "@RG\tID:002\tLB:Lane2\tSM:Rim\tPL:ILLUMINA" chr20transcripts.fa kidney.chr20.sai kidney.chr20.fq &gt; kidney.chr20.sam
+</code></pre>
+
+<p>Após a execução desses comandos, nós já temos os dois alinhamentos do cromossomo 20 no formato SAM. A próxima etapa é realizar o processamento dos arquivos SAM em arquivos BAM, da mesma maneira que fizemos no tutorial da detecção de variantes.</p>
+
+<hr>
+
+<p><strong>2. Processamento dos alinhamentos</strong></p>
+
+<p>A etapa de processamento envolve a conversão do arquivo <code>.sam</code> no formato binário <code>.bam</code>, seguido da ordenação e criação do índice. podemos executar os comandos abaixo para realizar essas etapas para as duas amostras que estamos avaliando:</p>
+
+<pre><code>#Converter em binário, ordenar e criar índice da amostra do fígado
+../bin/samtools-0.1.19/samtools view -bS liver.chr20.sam &gt; liver.chr20.bam
+../bin/samtools-0.1.19/samtools sort liver.chr20.bam liver.chr20.sorted
+../bin/samtools-0.1.19/samtools index liver.chr20.sorted.bam liver.chr20.sorted.bam.bai
+
+#Converter em binário, ordenar e criar índice da amostra do rim
+../bin/samtools-0.1.19/samtools view -bS kidney.chr20.sam &gt; kidney.chr20.bam
+../bin/samtools-0.1.19/samtools sort kidney.chr20.bam kidney.chr20.sorted
+../bin/samtools-0.1.19/samtools index kidney.chr20.sorted.bam kidney.chr20.sorted.bam.bai
+</code></pre>
+
+<p>Agora qu nossos alinhamentos estão processados e temos nossos arquivos <code>.sorted.bam</code> acompanhandos de seus respectivos índices <code>.bai</code>, podemos avaliar alguns parâmetros de qualidade dos alinhamentos. Diferentemente da análise de variantes onde temos nosso genoma de referência organizado em cromossomos, nosso transcriptoma é organizado por <strong>transcritos</strong>. Por esse motivo, a análise de qualidade de cobertura executa pelo software Qualimap passsa a ser inviável. No entanto, podemos usar o software <code>samtools</code> para nos dar a quantidade de reads que foram mapeados no nosso transcriptoma de referência, por meio da função <code>flagstat</code>. Vamos executar os comandos abaixo para as amostras de fígado e rim, uma de cada vez:</p>
+
+<pre><code>../bin/samtools-0.1.19/samtools flagstat liver.chr20.sorted.bam
+../bin/samtools-0.1.19/samtools flagstat kidney.chr20.sorted.bam
+</code></pre>
+
+<p>Podemos notar no resultado mostrado na tela a porcentagem de reads mapeados para cada amostra. Vamos anotar o número de reads mapeados para cada amostra, pois essa informação sera importante para o cálculo da contagem de reads. No caso do presente alinhamento, <code>37046</code> reads foram alinhados (mapeados) na amostra <code>liver.chr20.sorted.bam</code> e <code>50117</code>a amostra <code>kidney.chr20.sorted.bam</code>.</p>
+
+<blockquote>
+  <p><strong>Exercício:</strong> O que você acha que podemos fazer com os reads não mapeados? O que eles representam?</p>
+</blockquote>
+
+<hr>
+
+<p><strong>3. Contagem dos reads</strong></p>
+
+<p>A próxima etapa para a análise de genes diferencialmente expressos é a contagem de reads para cada transcrito. Essa contagem representa, a grosso modo, o nível de expressão dos genes, partindo do pressuposto de quanto maior o número de reads que foram alinhados em um determinado transcrito, maior é a quantidade de RNA que havia na amostra inicial, e portanto maior e a expressão desse transcrito.</p>
+
+<p>Para essa etapa, nós vamos usar o software BEDtools, pois vamos trabalhar com intervalos genômicos. Precisamos fornecer ao software nosso arquivo <code>.sorted.bam</code>, que apresenta os reads e suas coordenadas, e um arquivo que contém a coordenada de cada transcrito, ou seja, intervalos genômicos de cada transcrito. Essa informação esta presente em <code>chr20transcripts.bed</code>. Para o cálculo pelo BEDtools, vamos usar a função <code>multicov</code>, que calcula a cobertura de uma determinada região (no nosso caso, dos transcritos, de vários arquivos <code>.bam</code>simultaneamente:</p>
+
+<pre><code>../bin/bedtools-2.17.0/bin/bedtools multicov -bams liver.chr20.sorted.bam kidney.chr20.sorted.bam -bed chr20transcripts.bed &gt; sample_counts.txt
+</code></pre>
+
+<p>Vamos abrir o arquivo <code>sample_counts.txt</code> resultante. Ele apresenta 5 colunas: 1) Nome do transcrito (RefSeq); 2) início da coordenada do transcrito; 3) fim da coordenada do transcrito, ou simplesmente tamanho do transcrito; 4) contagem dos reads que foram alinhados em cada transcrito na amostra <code>liver.chr20.sorted.bam</code>; e 5) contagem dos reads que foram alinhados em cada transcrito na amostra <code>kidney.chr20.sorted.bam</code>.</p>
+
+<p>Em uma análise real, teríamos mais replicatas de cada grupo, e, dessa forma, usariamos esse arquivo resultante para análise de genes diferencialmente expressos por contagem de reads de um experimento de RNA-seq. Abaixo, vamos fazer o download de um arquivo de contagem de reads para simular uma análise de genes diferencialmente expressos.</p>
+
+<hr>
+
+<p><strong>4. Análise de expressão diferencial usando um arquivo de contagem de reads</strong></p>
+
+<p>Esta etapa da análise foi baseada em material fornecido por Benilton Carvalho (beniltoncarvalho@gmail.com).</p>
+
+<p>Devido à impossibilidade de tempo de realizar todas as etapas de alinhamento e processamento de um estudo com muitas amostras neste tutorial, vamos criar um novo diretório e fazer o download de um arquivo de contagem de reads de várias amostras para análise de expressão diferencial por um experimento de RNA-seq:</p>
+
+<pre><code>mkdir DEG_analise
+cd DEG_analise
+wget https://www.dropbox.com/s/g1739bdpjcoceek/transcriptome_counts.txt?dl=0
+</code></pre>
+
+<p>Após o download do arquivo <code>transcriptome_counts.txt</code>, vamos abri-lo usando <code>less</code>. Esse arquivo apresenta várias colunas, semelhante ao arquivo <code>sample_counts.txt</code>criado em nossa análise anterior. A primeira coluna representa o nome do transcrito (aqui no formato do Ensembl) e cada uma dos outras colunas mostra a contagem de reads de cada transcrito em dois grupos, A e B. A última coluna (<em>len</em>) mostra o tamanho do transcrito.</p>
+
+<p>Para as análises dos genes diferencialmente expressos por RNA-seq, vamos usar um pacote do R chamado <code>DESeq2</code>, especializado neste tipo de análise (veja mais informações sobre este pacote <a href="http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html">aqui</a>). </p>
+
+<p>Vamos acessar o R pelo próprio terminal do Linux:</p>
+
+<pre><code>sudo R
+</code></pre>
+
+<p>Após inserir a senha de superusuário, vamos instalar e em seguida carregar os pacotes neessários para as análises, também presente no repositório do Bioconductor. Note como podemos fazer a instalação de mais de um pacote ao mesmo tempo:</p>
+
+<pre><code>#Acessar Bioconductor
+source("http://bioconductor.org/biocLite.R")
+
+#Fazer o download e instalar os pacotes necessários
+biocLite(c('DESeq2', 'genefilter', 'RColorBrewer', 'gtable',' XML', 'ReportingTools'))
+
+#Carregar os pacotes
+library(DESeq2)
+library(RColorBrewer)
+library(genefilter)
+library(ReportingTools)
+</code></pre>
+
+<p>Em seguida, como todas as análises no R, precisamos importar nosso arquivo para dentro de nossa sessão do R. Para isso, usamos <code>read.table()</code>:</p>
+
+<pre><code>dados &lt;- read.table('transcriptome_counts.txt', sep='\t', header=T, row.names=1)
+</code></pre>
+
+<p>Note que nosso arquivo apresenta cabeçalho (<code>header=T</code>), é separado por tabulações (<code>sep="\t"</code>) e podemos chamar a primeira linha do arquivo (a que contém o nome dos transcritos) como identificador das linhas (<code>row.names=1</code>).</p>
+
+<p>Para dar continuidade, precisaremos criar um <code>data.frame</code> que contém a informação sobre o grupo que as amostras pertencem e qualquer outra eventual covariável. É importante lembrar que uma potencial covariável é o <em>lane</em> que amostra correu, e diferentes <em>lanes</em> podem apresentar diferentes rendimentos no sequenciamento e são uma potencial fonte de viés. Com o comando abaixo, vamos criar um <code>data.frame</code>com duas colunas (<code>grupo</code> e <code>lane</code>) e seis linhas, representando as 6 amostras estudadas:</p>
+
+<pre><code>grupo_info &lt;- data.frame(grupo=rep(c('A', 'B'), each=3), lane=rep(c('lane1', 'lane2', 'lane3'), 2))
+</code></pre>
+
+<blockquote>
+  <p>Veja o objeto <code>grupo_info</code> e tente entender a estrutura do comando e identificar como cada um dos argumentos  resulta na tabela gerada em <code>grupo_info</code>.</p>
+</blockquote>
+
+<p>Para a análise pelo <code>DESeq</code>, precisaremos importar os dados que temos (contagem de <em>reads</em> e informações sobre grupos e covariáveis) usando uma função específica do pacote <code>DESeq2</code>:</p>
+
+<pre><code>rawdata &lt;- DESeqDataSetFromMatrix(dados, grupo_info, ~ grupo + lane)
+</code></pre>
+
+<p>Este comando, além de formatar o arquivo de entrada para uso pelo <code>DESeq2</code>,  ele também pede como é a relação entre as variáveis independentes ( <code>~ grupo + lane</code>).</p>
+
+<p>A próxima etapa envolve ajustar um modelo binomial negativo que é o modelo estatístico mais adequado para dados de RNASeq, pois são dados de contagem. Estes dados costumam seguir uma distribuição binomial negativa e por esse motivo precisamos ajustar este modelo. O comando para esta etapa é:</p>
+
+<pre><code>modelo_deseq&lt;- DESeq(rawdata)
+</code></pre>
+
+<p>Este comando inclui não apenas o ajuste do modelo, mas outras etapas que vão garantir a normalização dos dados. O resultado e o objeto <code>dds</code> que é uma estrutura de dados que guarda todas as informações importantes do modelo ajustado.</p>
+
+<p>Como temos duas variáveis independentes (grupo e lane), precisamos escolher quais “contrastes”, ou comparações deseja fazer para identificar os transcritos diferencialmente expressos. Para isso, usamos:</p>
+
+<pre><code>resultados &lt;- results(modelo_deseq, contrast=c('grupo', 'B', 'A'))
+</code></pre>
+
+<p>Ao abrirmos o objeto <code>resultados</code>, ele irá mostrar uma tabela resumida com informações como o <em>log2 Fold Change</em>, o valor de p e o valor de p ajustado para múltiplas comparações. Esta tabela é mostrada na mesma ordem do arquivo que iniciamos (contagem de reads), e pode ser útil se ordenarmos esse arquivo pelo valor de  ajustado:</p>
+
+<pre><code>resultados &lt;- resultados[order(resultado$padj),]
+</code></pre>
+
+<p>Após o estabelecimento da ordem, podemos abrir o objeto <code>resultados</code> novamente e observar que os primeiros transcritos apresentam os menores valores de p, portanto são considerados os transcritos candidatos à expressão diferencial.</p>
+
+<p>Vamos construir o primeiro gráfico, que mostra como é a relação entre o nível de expressão do transcrito e o <em>Fold change</em>, marcando os transcritos muito significativos (p ajustado &lt; 0,00001) em vermelho. O comando abaixo realiza essa tarefa de maneira muito simples:</p>
+
+<pre><code>plotMA(resultados, alpha=0.00001, main='Grupo B vs. Grupo A')
+</code></pre>
+
+<blockquote>
+  <p>Observe o gráfico gerado e tente interpretá-lo. Por que os transcritos com menor expressão não foram candidatos à expressão diferencial?</p>
+</blockquote>
+
+<p>Parece que em nossa análise muitos dos transcritos foram identificados como diferencialmente expressos. Como muitos dados foram gerados, vamos continuar a análise apenas com os top 10 transcritos mais significativos. O comando abaixo salva o resultado da comparação apenas para as 10 primeira linhas do objeto, ou seja, os 10 transcritos com diferença mais expressiva entre os grupos:</p>
+
+<pre><code>top10 &lt;-resultados[1:10,]
+</code></pre>
+
+<p>Chame o novo objeto top 10 e avalie o nível e a diferença de expressão dos top 10.</p>
+
+<p>Agora podemos criar o famoso <em>Heatmap</em>, uma representação gráfica da expressão de cada transcrito diferencialmente expresso (top10) em cada amostra. Para a construção do <em>Heatmap</em>, primeiro precisamos remover o efeito da grande diferença de expressão entre dois ou mais transcritos por meio de uma normalização:</p>
+
+<pre><code>rld &lt;- rlogTransformation(modelo_deseq, blind=TRUE)
+</code></pre>
+
+<p>Em seguida, criamos uma paleta de cores para alimentar o <em>Heatmap</em>:</p>
+
+<pre><code>hmcol &lt;- rev(colorRampPalette(brewer.pal(9, "RdBu"))(100))
+</code></pre>
+
+<p>Por fim, calculamos as contagens normalizadas de cada transcrito e em cada amostra:</p>
+
+<pre><code>norm &lt;- assay(rld, normalized=TRUE)[rownames(top10),]
+</code></pre>
+
+<p>E abaixo , o comando para gerar o <em>HeatMap</em>:</p>
+
+<pre><code>heatmap(norm, col=hmcol, scale='none', Rowv=FALSE, Colv=FALSE)
+</code></pre>
+
+<blockquote>
+  <p>Avalie o <em>Heatmap</em> e veja se consegue “agrupar” amostras e ou genes de interesse.</p>
+</blockquote>
+
+<p><strong>Extra</strong></p>
+
+<p>Como funcionalidade extra, é possível criar um relatório em HTML com o resultado dos transcritos diferencialmente expressos organizados em uma tabela e ligados à gráficos. Para isso, usaremos o pacote <code>ReportingTools</code> disponível no Bioconductor. Este pacote organiza um arquivo de resultados de maneira fácil de compartilhar para colaboradores. O únicos comando que precisam ser executados são:</p>
+
+<pre><code>myreport &lt;- HTMLReport(shortName='Análise DESeq2', title='Análise teste', reportDirectory='Resultados')
+publish(resultados, myreport, DataSet=modelo_deseq, factor=colData(modelo_deseq)$grupo, pvalueCutoff=0.00000000001, reportDir='Resultados')
+finish(myreport)
+</code></pre>
+
+<p>Explore o arquivo em HTML gerado e perceba as grandes funcionalidades desta ferramenta de geração de relatórios.</p>
+
+<hr>
+
+<p><strong>Considerações finais</strong></p>
+
+<p>Neste tutorial, mostramos um exemplo de análise de dados e expressão gênica diferencial por meio de resultados de um experimento de RNA-seq. No entanto, este não e o único e nem o principal métodos usado para este tipo de análise. Diferentes métodos de alinhamento (genoma verus transcriptoma versus montagem de novo), normalização (TMM, RPKM, TPM) e análise estatística (modelos lineares, testes não paramétricos), são usados e ainda não há um consenso na literatura a respeito da melhor maneira de analisar dados de RNA-seq. Esperamos que em alguns anos algum método se sobressaia e seja usado como padrão para a análise comparável e diferentes experimentos. No entanto, independente do método de análise, podemos selecionar os genes diferencialmente expressos e partir para análises funcionais de vias biológicas e ontologia gênica da mesma maneira que fizemos para estudos de microarray.</p></div></body>
+</html>
