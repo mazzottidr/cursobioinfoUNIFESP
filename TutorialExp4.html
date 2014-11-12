@@ -1,0 +1,79 @@
+<h1 id="tutorial-exp4-biologia-de-sistemas">Tutorial Exp4 - Biologia de Sistemas</h1>
+
+<p>Este tutorial irá mostrar em detalhes como utilizar o Cytoscape e seus plug-ins para a construção, visualização e análise de redes biológicas.</p>
+
+<p>Seguem abaixo alguns links interessantes sobre o Cytoscape e sobre a visualização em redes para análise de dados moleculares:</p>
+
+<p><a href="http://www.cytoscape.org/">http://www.cytoscape.org/</a> <br>
+<a href="http://apps.cytoscape.org/">http://apps.cytoscape.org/</a> <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/21149340">http://www.ncbi.nlm.nih.gov/pubmed/21149340</a> <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/25254104">http://www.ncbi.nlm.nih.gov/pubmed/25254104</a> <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/16939803">http://www.ncbi.nlm.nih.gov/pubmed/16939803</a> <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/22385417">http://www.ncbi.nlm.nih.gov/pubmed/22385417</a> <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/17947979">http://www.ncbi.nlm.nih.gov/pubmed/17947979</a></p>
+
+<h2 id="objetivos-do-exercício">Objetivos do exercício</h2>
+
+<p>No exercício a seguir, iremos:</p>
+
+<p>a) Construir uma rede de interação proteína-proteína a partir de um conjunto de dados obtidos do artigo de Zhao et al, 2013: “Association study of 167 candidate genes for schizophrenia selected by a multi-domain evidence-based prioritization algorithm and neurodevelopmental hypothesis”; <br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/23922650">http://www.ncbi.nlm.nih.gov/pubmed/23922650</a></p>
+
+<p>b) Identificar módulos e funções enriquecidas na rede de interação proteína-proteína;</p>
+
+<p>c) Calcular medidas de centralidade nos nós presentes nessa rede;</p>
+
+<p>d) Plotar os valores de medidas de centralidade para cada nó com o objetivo de se identificar hubs e bottlenecks na rede de interação.</p>
+
+
+
+<h2 id="passo-a-passo">Passo a passo</h2>
+
+<ol>
+<li><p>Utilizaremos para construção da rede o software Cytoscape, cujo download pode ser realizado a partir de seu website na internet. Após download e instalação do software, podemos acessar o programa a partir de seu ícone instalado no desktop.</p></li>
+<li><p>Para instalar os plug-ins que utilizaremos, ir na aba Manage plug-ins e instalar os plug-ins GeneMania, MCode, Centiscape e NetworkAnalyzer. Para o GeneMania, é importante instalar as bases de dados referentes às espécies cujos dados de interação entre genes/proteínas desejamos acessar (“Install Data”). <br>
+<img src="http://www.cbs.dtu.dk/phdcourse/cookbooks/ChemProt_and_Cytoscape/plugins.png" alt="enter image description here" title=""></p></li>
+<li><p>Acessar o GeneMania no Cytoscape. Após acessá-lo, selecionar o organismo que se deseja obter as informações (“Choose an Organism”) imputar os dados dos genes ou proteínas que desejamos avaliar (“Choose Genes of Interest”). Selecionar também quais tipos de interação desejamos que estejam presentes na rede que será construída (“Choose Interaction Networks”. Rodar o GeneMania para construir a rede de interação.</p></li>
+</ol>
+
+<p><img src="http://www.genomespace.org/uploaded/content_r1_s6_1.png" alt="enter image description here" title=""></p>
+
+<ol>
+<li>Após remover as proteínas que não estão conectadas, determinar se a distribuição dos graus dos nós presentes na rede seguem uma lei de potência (<em>scale-free network</em>), utilizando o plug-in NetworkAnalyzer. Essa determinação pode ser realizada utilizando o comando “Fit Line”. </li>
+</ol>
+
+<p><img src="http://apps.cytoscape.org/media/networkanalyzer/screenshots/v2.7-screenshot1.png" alt="enter image description here" title=""></p>
+
+<ol>
+<li>editar a rede de acordo com o que se deseja visualizar, utilizando o VizMapper. Pode-se alterar tamanho, formato e cor dos nós e arestas presentes na rede. O link a seguir possui informações detalhadas sobre as possibilidades de edição e visualização da rede utilizando o Vizmapper: <br>
+<a href="http://wiki.cytoscape.org/Cytoscape_User_Manual/Visual_Styles">http://wiki.cytoscape.org/Cytoscape_User_Manual/Visual_Styles</a></li>
+</ol>
+
+<p><img src="http://cytoscape.org/manual/images/VizMapperMainPanel.png" alt="enter image description here" title=""></p>
+
+<ol>
+<li>Identificar módulos funcionais utilizando o plug-in MCode. Esse plug-in calcula os coeficientes de clusterização para cada nó e determinada a partir de um threshold determinado os módulos de nós presentes na rede.</li>
+</ol>
+
+<p><img src="http://opentutorials.cgl.ucsf.edu/images/thumb/7/72/Mcode_analyze.png/800px-Mcode_analyze.png" alt="enter image description here" title=""></p>
+
+<ol>
+<li>Calcular as medidas de centralidade degree e betweenness utilizando o software Cytoscape.</li>
+</ol>
+
+<p><img src="http://www.cbmc.it/~scardonig/centiscape/centiscape_files/usingcentiscape3.jpg" alt="enter image description here" title=""></p>
+
+<ol>
+<li>Exportar resultados contidos no Data Panel a partir da aba File. Nessa aba, ir em Export Results para exportar os resultados da tabela.</li>
+</ol>
+
+<p><img src="http://wiki.cytoscape.org/Cytoscape_User_Manual/Quick_Tour?action=AttachFile&amp;do=get&amp;target=menu_file_26.png" alt="enter image description here" title=""></p>
+
+<ol>
+<li><p>Os dados podem ser posteriormente avaliados plotando os resultados de Node Degree e Node Betweenness para cada nó no excel, com o objetivo de se identificar Hubs e Bottlenecks entre os genes.</p></li>
+<li><p>Funções hiper-representadas pelos genes identificados em cada módulo podem ser encontradas utilizando a ferramenta on-line Enrichr: <br>
+<a href="http://amp.pharm.mssm.edu/Enrichr/">http://amp.pharm.mssm.edu/Enrichr/</a></p></li>
+</ol>
+
+<p>O artigo referência dessa ferramenta se encontra a seguir: <br>
+Chen EY, Tan CM, Kou Y, Duan Q, Wang Z, Meirelles GV, Clark NR, Ma’ayan A. Enrichr: interactive and collaborative HTML5 gene list enrichment analysis tool. BMC Bioinformatics. 2013;128(14).</p>
