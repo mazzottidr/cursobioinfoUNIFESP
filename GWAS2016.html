@@ -1,0 +1,139 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TutorialVar1B</title>
+<link rel="stylesheet" href="templates/markdown7.css">
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<meta charset="utf-8">
+
+<title>GenomeWideAssociationStudy</title><style></style></head><body id="preview">
+
+<h2><a id="Genome_Wide_Association_Studies_GWAS_tutorial_0"></a>Genome Wide Association Studies (GWAS) tutorial</h2>
+<p>In this tutorial, we will discuss a possible analysis strategy for GWAS (Genome Wide Association Studies). These studies are performed by genotyping thousands or million of SNPs (single nucleotide polymorphisms) in a large number of individuals.</p>
+<p>Depending on the platform used (Illumina, Affymetrix) up to 5 million SNPs can be genotyped for each sample, allowing a full genome coverage. Thus, instead of testing the association between one or a few SNPs and a phenotype, 5 million SNPs can be assayed for association with this phenotype simultaneously.</p>
+<p>The main advantage of this type of study is to enable the simultaneous combination of all these SNPs with the phenotype and have a global genomics estimate of the regions that may or may not be associated with the phenotype. Moreover, it is possible to have a very accurate estimate of the genetic ancestry of individuals and identify population substructures that can interfere with the association. However, it demands greater care in relation to quality control and statistical corrections.</p>
+<p>In this tutorial we will learn the basic commands of a GWAS analysis pipeline, containing the main quality control steps, calculating estimates of ancestry (population substructure) and crude association tests as well as adjusted for ancestry.</p>
+<p>For the analysis below, we will use the software PLINK, a powerful and widely used tool, developed for genetic association studies. We will use only a small sample of its features, but you can get an idea of how important and flexible this software is. Currently, PLINK is in its version 1.9 and the website of the <a href="http://pngu.mgh.harvard.edu/~purcell/plink/">earlier versions of PLINK</a>, as well as <a href="https://www.cog-genomics.org/plink2">the new one</a> are vere comprehensive. PLINK is already pre-installed, and since we will be using the 1.9 version, the executable was renamed as <code>plink2</code>, which is the one we will be using in this tutorial.</p>
+<h3><a id="Downloading_required_files_for_analysis_12"></a>Downloading required files for analysis</h3>
+<p>PLINK uses, in general, two types of formats. The first type requires the user to have two files: .ped and .map . The description of these files can be found <a href="http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml">here</a>. This is the “Non-binary” format, best used with small files (few SNPs). The second type of format is called binary, and is related to the processing of regular .ped files in order to make them compact and easily accessed by PLINK algorithms. This format requires three files: .bed (binary ped), .bim and .fam.</p>
+<p>Use the following commands to download the files needed for the analysis of this tutorial. The files are already in binary ped (.bed) format:</p>
+<pre><code>wget https:<span class="hljs-comment">//www.dropbox.com/s/eilcm1b9ha4rivt/gwas.zip</span>
+unzip gwas<span class="hljs-class">.zip</span>
+</code></pre>
+<h3><a id="Largescale_genetic_association_analysis_23"></a>Large-scale genetic association analysis</h3>
+<p>At first, having the software installed and the files ready for analysis, you can start exploring some of PLINK features. The main steps of the analysis are described below:</p>
+<ul>
+<li>
+<p><strong>Exploratory analysis:</strong> Involves the description of quality indicators such as allele frequency, the percentage of genotyped individuals, the percentage of genotyped SNPs and Hardy-Weinberg Equilibrium tests;</p>
+</li>
+<li>
+<p><strong>Quality Control:</strong> In this step, filters are used to remove individuals or SNPs that does not match specific criteria, usually established after the exploratory analysis;</p>
+</li>
+<li>
+<p><strong>Identity by Descent (IBD):</strong> Here, it is possible to estimate the proportion of shared genetic information between each two individuals in the sample. It is important to detect cryptic relatedness or duplicate samples;</p>
+</li>
+<li>
+<p><strong>Principal Component Analysis:</strong> In order to identify population stratification, the principal component analysis has been widely used with genome-wide data;</p>
+</li>
+<li>
+<p><strong>Association Tests:</strong> In this step, the association between the genotyped SNPs and phenotype of interest is performed. Usually the crude association is verified, followed by the association adjusted por potential covariates, such as principal components as a measure of population stratification;</p>
+</li>
+<li>
+<p><strong>Data visualization:</strong> Involves plotting and visual representation of the results in large scale, such as QQ-plots and Manhattan plots. Usually plots are made in R.</p>
+</li>
+</ul>
+<h3><a id="1_Exploratory_analysis_40"></a>1. Exploratory analysis</h3>
+<p>There are several parameters related to the exploratory analysis. The most important are the minor allele frequency (MAF), individual missingness, locus missingness and Hardy-Weinberg equilibrium test results. The following commands show how to create tables that contain this information, which will be used to assess which filters should be used in the quality control step.</p>
+<p>To generate a table with the minor allele frequencies of all SNPs, use the following command:</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwas</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">freq</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">freqstats</span>
+</code></pre>
+<p>Note the structure of a command in PLINK. It always starts with the command <code>plink2</code> followed by --bfile (in the case of binary files - .bed , .bim and .fam ) or --file (in the case of non-binary files - .ped and .map ) and the prefix name of the data file without the extension. The other command arguments are the functions we want to use in this data we are loading. In this case, we want the allele frequency of all SNPs - this function is called by the argument --freq. Finally, the argument --out followed by a file name prefix is used to indicate where the output will be saved.</p>
+<p>The extension of the output files is dependent on the function that was called. In this case, two files were created: freqstats.frq that contains the --freq results (allele frequencies) and freqstats.log , which contains the description of the analysis.</p>
+<p>Then we will create a file containing the percentage of markers that were not genotyped by individual (imiss), and the percentage of individuals that were not genotyped by genotype (lmiss):</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwas</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">missing</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">miss_stats</span>
+</code></pre>
+<p>Finally, we generate the file containing the results of the Hardy-Weinberg Equilibrium tests (.hwe):</p>
+<pre><code><span class="hljs-comment">plink</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">GWAS</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">hardy</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">hardy_stats</span> 
+</code></pre>
+<p>After running these commands, we created four important files with descriptive statistics of each genotyped polymorphism and studied individual: freqstats.frq , miss_stats.imiss , miss_stats.lmiss and hardy_stats.hwe. Try to open each of them using the command less for a brief inspection of its contents. In this sense, cut-offs can be defined in order to filter out bad quality data that could introduce bias.</p>
+<h3><a id="2_Quality_Control_68"></a>2. Quality Control</h3>
+<p>The quality control analysis begins after the establishment of cut-offs of the summary statistics we calculated before. In this analysis, we will use default valuesâ€‹that are well accepted in the literature as the minimum quality criteria for a GWAS:</p>
+<ul>
+<li>
+<p>Minor Allele Frequency of 5%;</p>
+</li>
+<li>
+<p>Individual missingness of 1%;</p>
+</li>
+<li>
+<p>Locus missingness of 1%;</p>
+</li>
+<li>
+<p>Hardy-Weinberg Equilibrium signficance test p&lt;0.001</p>
+</li>
+</ul>
+<p>Using the following command in PLINK, we can create a new set of files (.bed , .bim and .fam ) only with individuals and polymorphisms that passed the quality control:</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwas</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">maf</span> <span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">05</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">mind</span> <span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">01</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">geno</span> <span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">01</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">hwe</span> <span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">001</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">make</span><span class="hljs-literal">-</span><span class="hljs-comment">bed</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">gwasQCpass</span>
+</code></pre>
+<p>This command applies the filters --maf, --mind, --geno and --hwe, with their established cut-off values, and creates another set of files (through the argument --make-bed) with the prefix gwasQCpass containing only individuals and genotypes that met the quality control criteria.</p>
+<p>From now on, every step will be taken with the files gwasQCpass.bed, gwasQCpass.bim and gwasQCpass.fam.</p>
+<h3><a id="3_Estimation_of_Identity_by_Descent_IBD_92"></a>3. Estimation of Identity by Descent (IBD)</h3>
+<p>This step estimates a parameter called PIHAT, which is correspondent to the genetic sharing level between two individuals in the data set. We will use the argument --genome in PLINK to estimate the PIHAT parameter according to the following command:</p>
+<pre><code><span class="hljs-comment">plink</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwasQCpass</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">genome</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">IBD</span>
+</code></pre>
+<p>The resulting file with the extension .genome shows the PIHAT estimate for each pair of samples. The PIHAT parameter (column &quot;PI_HAT&quot;in this file) ranges from 0 (no genetic similarity) to 1 (100% genetic similarity). Cases with PIHAT = 1 corresponds to monozygotic twins or sample duplicates. PIHAT = 0.5 corresponds to siblings or parent-child pairs.</p>
+<p>The PIHAT parameter is a good indicator of population substructure and aids the removal of potential cases of unidentified kinship in genetic association studies. The existence of closely related relatives is a potential bias that must be taken into account in genetic association studies in large population scale, therefore, should be avoided.</p>
+<p>The inspection of the “PI_HAT” column in the .genome file allows the filtering of samples that share more than a pre determined level of genetic relatedness. An appropriate cut-off is 0.2, or 20% of genetic similarity between individuals. At least one individual of each genetically similar pairs should be filtered out.</p>
+<h3><a id="4_Principal_Component_Analysis_PCA_106"></a>4. Principal Component Analysis (PCA)</h3>
+<p>The Principal Component Analysis (PCA) is a dimensionality reduction tool, allowing to summarize a dataset with many variables in just a few variables that explain most of the variation of the data set. It is a robust method to identify patterns in data that have many dimensions, such was genome-wide genotyping data. In large-scale genetic association studies, PCA is used to identify population stratification due to admixture, for example. The following command can be used to run the PCA and generate a file (.eigenvec) that contains the 20 principal components, or the set of variables that explain most of the variance in the genome-wide data:</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwasQCpass</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">pca</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">PCA_results</span>
+</code></pre>
+<p>The principal components generated in this file representes the main source of genetic variation across individuals, which is a good estimate of their genetic ancestry. In this sense, adjusting association analyses by the principal components is an appropriate way to account for population stratification.</p>
+<p>We can visually evaluate the main sources of variation by plotting the first two principal components in R. On the same working directory as the PCA_results.eigenvec file, type <code>R</code> in the terminal and hit Enter. The R environment will load, and we can run the following set of R functions to plot the first two principal components:</p>
+<pre><code>dataPCA &lt;- read.table(<span class="hljs-string">"PCA_results.eigenvec"</span>, header=F)
+plot(dataPCA<span class="hljs-variable">$V3</span>,dataPCA<span class="hljs-variable">$V4</span>)
+</code></pre>
+<p>Note that the 3rd and 4th columns of the PCA_results.eigenvec file are the first and second principal components. With this result, it is possible to have an idea on how the individuals distribute according to their genetic similarity, and identify clusters of individuals belonging to a same ancestral group, for example.</p>
+<h3><a id="5_Association_tests_125"></a>5. Association tests</h3>
+<p>Since we’ve explored many characteristics of the genetic data, we can finally perform the association tests. Our goal is to verify whether there are significant differences in allele frequencies between cases and controls. The following command performs the crude association tests between all QC passed SNPs and disease status:</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwasQCpass</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">assoc</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">adjust</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">crude</span>
+</code></pre>
+<p>Two main files are generated: .assoc and .assoc.adjusted. Both have as many rows the number of SNPs under investigation. The .assoc file shows the crude result of the chi-square test for each studied SNP. The .assoc.adjusted file shows the association results after adjustment for multiple testing, including Bonferroni correction, False Discovery Rate and others. This file is already in p-value ascending order. Since we are performing hundreds of thousands of statistical tests (one for each SNP), multiple tests correction is extremely necessary due to the expected high rate of false positives.</p>
+<p>However, as previously mentioned, the crude or multiple test corrected results are not enough to have robust findings, especially when we know that our population shows stratification as identified by the PCA. Thus, we can perform logistic regressions using the status case / control as the dependent variable and each of the polymorphisms as independent variables along with the three first principal components calculated by PCA, as a measure to correct for population stratification. In PLINK, we can run the following command:</p>
+<pre><code><span class="hljs-comment">plink2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">bfile</span> <span class="hljs-comment">gwasQCpass</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">logistic</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">adjust</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">covar</span> <span class="hljs-comment">PCA_results</span><span class="hljs-string">.</span><span class="hljs-comment">eigenvec</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">covar</span><span class="hljs-literal">-</span><span class="hljs-comment">number</span> <span class="hljs-comment">1</span><span class="hljs-string">,</span><span class="hljs-comment">2</span><span class="hljs-string">,</span><span class="hljs-comment">3</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">out</span> <span class="hljs-comment">logistic</span>
+</code></pre>
+<p>This result is perhaps the most robust, since it is not only corrected for multiple comparisons, but adjusted for population stratification. Note that the --covar argument asks for the file containing the covariates and the argument --covar-number indicates which columns should be used, counting from the third (since the first and the second are the sample identifiers - FID IID, corresponding to the .fam file). The --hide-covar argument shows only the adjusted results for the SNPs, instead of showing the regression estimates for the covariates as well.</p>
+<p>So far, we have four main files as the result of our association study:</p>
+<ul>
+<li>
+<p>crude.assoc: allele frequencies in cases and controls for each SNP, the result of chi-square test, odds ratio and p-values not corrected for multiple comparisons;</p>
+</li>
+<li>
+<p>crude.assoc.adjusted: crude and adjusted for multiple comparisons p-values;</p>
+</li>
+<li>
+<p>logistic.assoc.logistic: logistic regression results for each SNP, adjusted for population stratification, with p-values not adjusted for multiple comparisons;</p>
+</li>
+<li>
+<p>logistic.assoc.logistic.adjusted: p-values adjusted for population stratification for multiple comparisons.</p>
+</li>
+</ul>
+<h3><a id="6_Data_visualization_153"></a>6. Data visualization</h3>
+<p>We can use a few plots to represent and evaluate some of the results of a Genome Wide Association Study, and R has some packages for that. The package qqman has functions to create QQ-plots and Manhattan plots, both used to represent results of a GWAS. The following commands show the steps to create the plots, and since they are R commands, we first need to enter in the R environment, typing <code>R</code> in the terminal and hitting Enter, in the same working directory where your association results are. Then we need to load the library qqman, previously installed in R, load the results of the crude and corrected associations, and generate the QQ-plots and Manhattan plots for both datasets.</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">library</span><span class="hljs-params">(qqman)</span></span>
+
+crude &lt;- read.<span class="hljs-function"><span class="hljs-title">table</span><span class="hljs-params">(<span class="hljs-string">"crude.assoc"</span>, header=T)</span></span>
+corrected &lt;- read.<span class="hljs-function"><span class="hljs-title">table</span><span class="hljs-params">(<span class="hljs-string">"logistic.assoc.logistic"</span>, header=T)</span></span>
+
+<span class="hljs-function"><span class="hljs-title">qq</span><span class="hljs-params">(crude<span class="hljs-variable">$P</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">qq</span><span class="hljs-params">(corrected<span class="hljs-variable">$P</span>)</span></span>
+
+<span class="hljs-function"><span class="hljs-title">manhattan</span><span class="hljs-params">(crude)</span></span>
+<span class="hljs-function"><span class="hljs-title">manhattan</span><span class="hljs-params">(corrected)</span></span>
+</code></pre>
+<p>The inspection and comparison of the plots, together with the evaluation of the top significant hits give an idea of the influence of the correction for population stratification on the analysis results.</p>
+
+</body></html>
