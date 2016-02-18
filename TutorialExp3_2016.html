@@ -16,7 +16,7 @@
 
 
 
-<h2 id="tutorial-exp3">Tutorial Exp3</h2>
+<h2 id="tutorial-exp3">Tutorial Extra RNASeq</h2>
 
 
 
@@ -59,15 +59,10 @@ make
 
 #Instalar samtools
 cd ~/cursobioinfo/Exp3/bin
-curl -O -L http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
+wget http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
 tar xvfj samtools-0.1.19.tar.bz2
 cd samtools-0.1.19
 make
-
-#Instalar Qualimap
-cd ~/cursobioinfo/Exp3/bin
-wget http://qualimap.bioinfo.cipf.es/release/qualimap_v0.7.1.zip
-unzip qualimap_v0.7.1.zip
 
 #Intalar BEDtools
 cd ~/cursobioinfo/Exp3/bin
@@ -184,7 +179,7 @@ wget https://www.dropbox.com/s/95whxk5zyqcwxvr/kidney.chr20.fq
 
 <pre><code>mkdir DEG_analise
 cd DEG_analise
-wget https://www.dropbox.com/s/g1739bdpjcoceek/transcriptome_counts.txt?dl=0
+wget https://www.dropbox.com/s/g1739bdpjcoceek/transcriptome_counts.txt
 </code></pre>
 
 <p>Após o download do arquivo <code>transcriptome_counts.txt</code>, vamos abri-lo usando <code>less</code>. Esse arquivo apresenta várias colunas, semelhante ao arquivo <code>sample_counts.txt</code>criado em nossa análise anterior. A primeira coluna representa o nome do transcrito (aqui no formato do Ensembl) e cada uma dos outras colunas mostra a contagem de reads de cada transcrito em dois grupos, A e B. A última coluna (<em>len</em>) mostra o tamanho do transcrito.</p>
@@ -248,7 +243,7 @@ library(ReportingTools)
 
 <p>Ao abrirmos o objeto <code>resultados</code>, ele irá mostrar uma tabela resumida com informações como o <em>log2 Fold Change</em>, o valor de p e o valor de p ajustado para múltiplas comparações. Esta tabela é mostrada na mesma ordem do arquivo que iniciamos (contagem de reads), e pode ser útil se ordenarmos esse arquivo pelo valor de  ajustado:</p>
 
-<pre><code>resultados &lt;- resultados[order(resultado$padj),]
+<pre><code>resultados &lt;- resultados[order(resultados$padj),]
 </code></pre>
 
 <p>Após o estabelecimento da ordem, podemos abrir o objeto <code>resultados</code> novamente e observar que os primeiros transcritos apresentam os menores valores de p, portanto são considerados os transcritos candidatos à expressão diferencial.</p>
