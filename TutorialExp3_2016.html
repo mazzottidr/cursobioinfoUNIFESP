@@ -196,8 +196,13 @@ wget https://www.dropbox.com/s/g1739bdpjcoceek/transcriptome_counts.txt
 <pre><code>#Acessar Bioconductor
 source("http://bioconductor.org/biocLite.R")
 
-#Fazer o download e instalar os pacotes necessários
-biocLite(c('DESeq2', 'genefilter', 'RColorBrewer', 'gtable',' XML', 'ReportingTools'))
+
+
+#Fazer o download e instalar os pacotes necessários e baixar dados
+biocLite(c('DESeq2', 'genefilter', 'RColorBrewer', 'gtable', 'ReportingTools'))
+install.packages("XML")
+download.file("https://www.dropbox.com/s/g1739bdpjcoceek/transcriptome_counts.txt?raw=1", destfile = "transcriptome_counts.txt")
+
 
 #Carregar os pacotes
 library(DESeq2)
@@ -292,7 +297,7 @@ library(ReportingTools)
 
 <p>Como funcionalidade extra, é possível criar um relatório em HTML com o resultado dos transcritos diferencialmente expressos organizados em uma tabela e ligados à gráficos. Para isso, usaremos o pacote <code>ReportingTools</code> disponível no Bioconductor. Este pacote organiza um arquivo de resultados de maneira fácil de compartilhar para colaboradores. O únicos comando que precisam ser executados são:</p>
 
-<pre><code>myreport &lt;- HTMLReport(shortName='Análise DESeq2', title='Análise teste', reportDirectory='Resultados')
+<pre><code>myreport &lt;- HTMLReport(shortName='AnaliseDESeq2', title='Analise_teste', reportDirectory='Resultados')
 publish(resultados, myreport, DataSet=modelo_deseq, factor=colData(modelo_deseq)$grupo, pvalueCutoff=0.00000000001, reportDir='Resultados')
 finish(myreport)
 </code></pre>
